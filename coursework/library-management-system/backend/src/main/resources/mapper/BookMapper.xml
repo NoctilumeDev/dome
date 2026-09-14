@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kmbeast.mapper.BookMapper">
+
+    <insert id="insert" parameterType="cn.kmbeast.pojo.entity.Book" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO book (name,
+                          author,
+                          isbn,
+                          publisher,
+                          category,
+                          bookshelf_id,
+                          total_count,
+                          available_count,
+                          cover,
+                          description,
+                          create_time)
+        VALUES (#{name},
+                #{author},
+                #{isbn},
+                #{publisher},
+                #{category},
+                #{bookshelfId},
+                #{totalCount},
+                #{availableCount},
+                #{cover},
+                #{description},
+                #{createTime})
+    </insert>
+
+    <update id="update" parameterType="cn.kmbeast.pojo.entity.Book">
+        UPDATE book
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="author != null and author != ''">
+                author = #{author},
+            </if>
+            <if test="isbn != null and isbn != ''">
+                isbn = #{isbn},
+            </if>
+            <if test="publisher != null and publisher != ''">
+                publisher = #{publisher},
+            </if>
+            <if test="category != null and category != ''">
+                category = #{category},
+            </if>
+            <if test="bookshelfId != null">
+                bookshelf_id = #{bookshelfId},
+            </if>
+            <if test="totalCount != null">
+                total_count = #{totalCount},
+            </if>
+            <if test="availableCount != null">
+                available_count = #{availableCount},
+            </if>
+            <if test="cover != null and cover != ''">
+                cover = #{cover},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 硬删除 -->
+    <delete id="batchDelete" parameterType="list">
+        DELETE FROM book WHERE id IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--分页查询图书信息-->
+    <select id="query" resultMap="BaseResultMap">
+        SELECT b.*, s.name AS bookshelf_name, s.location
+        FROM book b
+        LEFT JOIN bookshelf s ON s.id = b.bookshelf_id
+        <where>
+            <if test="name != null and name != ''">
+                AND b.name LIKE concat('%',#{name},'%')
+            </if>
+            <if test="author != null and author != ''">
+                AND b.author LIKE concat('%',#{author},'%')
+            </if>
+            <if test="category != null and category != ''">
+                AND b.category LIKE concat('%',#{category},'%')
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND b.create_time BETWEEN #{startTime} AND #{endTime}
+            </if>
+        </where>
+        ORDER BY b.id DESC
+        <if test="current != null and size != null">
+            LIMIT #{offset},#{size}
+        </if>
+    </select>
+
+    <!--满足分页条件的数据总项-->
+    <select id="queryCount" resultType="integer">
+        SELECT COUNT(*)
+        FROM book b
+        <where>
+            <if test="name != null and name != ''">
+                AND b.name LIKE concat('%',#{name},'%')
+            </if>
+            <if test="author != null and author != ''">
+                AND b.author LIKE concat('%',#{author},'%')
+            </if>
+            <if test="category != null and category != ''">
+                AND b.category LIKE concat('%',#{category},'%')
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND b.create_time BETWEEN #{startTime} AND #{endTime}
+            </if>
+        </where>
+    </select>
+
+    <!-- 通过ID查询图书 -->
+    <select id="getById" resultMap="BaseResultMap">
+        SELECT b.*, s.name AS bookshelf_name, s.location
+        FROM book b
+        LEFT JOIN bookshelf s ON s.id = b.bookshelf_id
+        WHERE b.id = #{id}
+    </select>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.kmbeast.pojo.entity.Book">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="author" property="author"/>
+        <result column="isbn" property="isbn"/>
+        <result column="publisher" property="publisher"/>
+        <result column="category" property="category"/>
+        <result column="bookshelf_id" property="bookshelfId"/>
+        <result column="bookshelf_name" property="bookshelfName"/>
+        <result column="location" property="location"/>
+        <result column="total_count" property="totalCount"/>
+        <result column="available_count" property="availableCount"/>
+        <result column="cover" property="cover"/>
+        <result column="description" property="description"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <!-- 低库存图书 -->
+    <select id="queryLowStock" resultMap="BaseResultMap">
+        SELECT b.* FROM book b
+        WHERE b.available_count &lt;= #{threshold}
+        ORDER BY b.available_count ASC
+    </select>
+
+    <!-- 按分类聚合统计 -->
+    <select id="categoryStats" resultType="map">
+        SELECT COALESCE(b.category, '未分类')   AS category,
+               SUM(b.total_count)               AS totalCount,
+               SUM(b.available_count)           AS availableCount,
+               COUNT(*)                         AS bookCount
+        FROM book b
+        GROUP BY b.category
+        ORDER BY bookCount DESC
+    </select>
+
+    <!-- 原子扣减可借数量：只有库存>0才扣减（防止并发超借） -->
+    <update id="deductAvailableCount">
+        UPDATE book
+        SET available_count = available_count - 1
+        WHERE id = #{id}
+          AND available_count > 0
+    </update>
+
+    <!-- 原子回补可借数量：不超过总数量（防止数据异常） -->
+    <update id="increaseAvailableCount">
+        UPDATE book
+        SET available_count = available_count + 1
+        WHERE id = #{id}
+          AND available_count &lt; total_count
+    </update>
+
+</mapper>

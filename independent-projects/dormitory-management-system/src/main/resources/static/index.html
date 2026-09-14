@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宿舍管理系统</title>
+  <link rel="stylesheet" href="styles.css?v=20260914-3">
+</head>
+<body>
+  <header class="topbar">
+    <h1>宿舍管理系统（本科毕业设计演示版）</h1>
+    <div id="userInfo">未登录</div>
+    <button id="logoutBtn">退出</button>
+  </header>
+
+  <main>
+    <section class="tabs">
+      <button class="tab-btn" data-panel="panel-dashboard">看板</button>
+      <button class="tab-btn" data-panel="panel-admin" data-roles="ADMIN,DORM_MANAGER">系统数据</button>
+      <button class="tab-btn" data-panel="panel-beds">宿舍床位</button>
+      <button class="tab-btn" data-panel="panel-movein">入住/退宿</button>
+      <button class="tab-btn" data-panel="panel-repair">报修</button>
+      <button class="tab-btn" data-panel="panel-bill">账单</button>
+      <button class="tab-btn" data-panel="panel-notice">公告</button>
+    </section>
+
+    <section id="panel-dashboard" class="panel">
+      <h2>数据看板</h2>
+      <div id="dashboardCards"></div>
+      <div id="buildingStats"></div>
+    </section>
+
+    <section id="panel-admin" class="panel">
+      <h2>系统数据管理</h2>
+      <div class="row form-cards">
+        <div data-roles="ADMIN">
+          <h3>添加宿舍楼</h3>
+          <input id="buildingName" aria-label="宿舍楼名称" placeholder="宿舍楼名称（如：1号宿舍楼）">
+          <input id="buildingAddress" aria-label="宿舍楼地址" placeholder="宿舍楼地址">
+          <button id="addBuildingBtn">新增宿舍楼</button>
+        </div>
+        <div data-roles="ADMIN">
+          <h3>添加楼层</h3>
+          <select id="floorBuilding" aria-label="楼层所属楼栋"></select>
+          <input id="floorName" aria-label="楼层名称" placeholder="楼层（如：1层）">
+          <button id="addFloorBtn">新增楼层</button>
+        </div>
+        <div data-roles="ADMIN">
+          <h3>添加宿舍</h3>
+          <input id="dormCode" aria-label="宿舍号" placeholder="宿舍号（如：1-101）">
+          <select id="dormBuilding" aria-label="宿舍所属楼栋"></select>
+          <select id="dormFloor" aria-label="宿舍所属楼层"></select>
+          <input id="dormCapacity" aria-label="宿舍容量" type="number" min="1" max="12" value="6">
+          <div class="preference-grid">
+            <label>宿舍氛围
+              <select id="dormAtmosphere" aria-label="宿舍氛围">
+                <option value="安静">安静</option>
+                <option value="活跃">活跃</option>
+              </select>
+            </label>
+            <label>作息特点
+              <select id="dormSleepHabit" aria-label="宿舍作息特点">
+                <option value="早睡">早睡</option>
+                <option value="正常" selected>正常</option>
+                <option value="晚睡">晚睡</option>
+              </select>
+            </label>
+            <label>卫生特点
+              <select id="dormCleanliness" aria-label="宿舍卫生特点">
+                <option value="整洁">整洁</option>
+                <option value="一般" selected>一般</option>
+              </select>
+            </label>
+            <label>主要兴趣
+              <select id="dormHobby" aria-label="宿舍主要兴趣">
+                <option value="阅读">阅读</option>
+                <option value="运动">运动</option>
+                <option value="游戏">游戏</option>
+                <option value="音乐">音乐</option>
+              </select>
+            </label>
+          </div>
+          <button id="addDormBtn">新增宿舍</button>
+        </div>
+        <div data-roles="ADMIN,DORM_MANAGER">
+          <h3>添加床位</h3>
+          <select id="bedDormSelect" aria-label="床位所属宿舍"></select>
+          <input id="bedNo" aria-label="床位号" placeholder="床位号（如：1号床）">
+          <button id="addBedBtn">新增床位</button>
+        </div>
+      </div>
+
+      <div class="row form-cards single-form-card" data-roles="ADMIN">
+        <div>
+          <h3>添加用户</h3>
+          <input id="userUsername" aria-label="用户名" placeholder="用户名">
+          <input id="userPassword" aria-label="密码" placeholder="密码" type="password">
+          <input id="userFullName" aria-label="姓名" placeholder="姓名">
+          <select id="userRole" aria-label="用户角色">
+            <option value="STUDENT">学生</option>
+            <option value="DORM_MANAGER">宿舍管理员</option>
+            <option value="ADMIN">管理员</option>
+          </select>
+          <select id="userBuilding" aria-label="用户归属楼栋"></select>
+          <button id="addUserBtn">新增用户</button>
+        </div>
+      </div>
+      <div class="row">
+        <button id="refreshAdminData">刷新系统数据</button>
+      </div>
+      <h3 data-roles="ADMIN">宿舍楼</h3>
+      <div id="buildingWrap" data-roles="ADMIN"></div>
+      <h3 data-roles="ADMIN">楼层</h3>
+      <div id="floorWrap" data-roles="ADMIN"></div>
+      <h3 data-roles="ADMIN">宿舍</h3>
+      <div id="dormWrap" data-roles="ADMIN"></div>
+      <h3 data-roles="ADMIN">用户</h3>
+      <div id="userWrap" data-roles="ADMIN"></div>
+    </section>
+
+    <section id="panel-beds" class="panel">
+      <h2>宿舍与床位</h2>
+      <div class="row bed-toolbar">
+        <div data-roles="ADMIN,DORM_MANAGER">
+          <label for="assignStudent">待分配学生</label>
+          <select id="assignStudent" aria-label="待分配学生"></select>
+        </div>
+        <button id="refreshBeds">刷新床位</button>
+      </div>
+      <div id="bedsWrap"></div>
+    </section>
+
+    <section id="panel-movein" class="panel">
+      <h2>入住与退宿</h2>
+      <div class="row form-cards">
+        <div data-roles="STUDENT">
+          <h3>提交入住申请</h3>
+          <p class="help-text">先选择个人偏好，系统会推荐有空床的宿舍。推荐只供参考，最终仍由你选择并由管理人员审批。</p>
+          <div class="preference-grid">
+            <label>希望的氛围
+              <select id="studentAtmosphere" aria-label="希望的宿舍氛围">
+                <option value="安静">安静</option>
+                <option value="活跃">活跃</option>
+              </select>
+            </label>
+            <label>作息习惯
+              <select id="studentSleepHabit" aria-label="学生作息习惯">
+                <option value="早睡">早睡</option>
+                <option value="正常" selected>正常</option>
+                <option value="晚睡">晚睡</option>
+              </select>
+            </label>
+            <label>卫生习惯
+              <select id="studentCleanliness" aria-label="学生卫生习惯">
+                <option value="整洁">整洁</option>
+                <option value="一般" selected>一般</option>
+              </select>
+            </label>
+            <label>兴趣爱好
+              <select id="studentHobby" aria-label="学生兴趣爱好">
+                <option value="阅读">阅读</option>
+                <option value="运动">运动</option>
+                <option value="游戏">游戏</option>
+                <option value="音乐">音乐</option>
+              </select>
+            </label>
+          </div>
+          <button id="recommendDormBtn" type="button">帮我推荐宿舍</button>
+          <div id="recommendationWrap" class="recommendation-wrap"></div>
+          <label for="moveinDorm">意向宿舍（可以采用推荐，也可以自己选）</label>
+          <select id="moveinDorm" aria-label="意向宿舍"></select>
+          <textarea id="moveinReason" aria-label="入住原因" placeholder="请输入入住原因"></textarea>
+          <button id="submitMoveIn">提交入住</button>
+        </div>
+        <div data-roles="STUDENT">
+          <h3>提交退宿申请</h3>
+          <select id="moveoutBedId" aria-label="当前床位"></select>
+          <textarea id="moveoutReason" aria-label="退宿原因" placeholder="请输入退宿原因"></textarea>
+          <button id="submitMoveOut">提交退宿</button>
+        </div>
+      </div>
+      <h3>申请列表</h3>
+      <div id="moveAppWrap"></div>
+    </section>
+
+    <section id="panel-repair" class="panel">
+      <h2>报修处理</h2>
+      <div class="row" data-roles="STUDENT">
+        <input id="repairLocation" aria-label="报修位置" placeholder="宿舍/位置">
+        <textarea id="repairDesc" aria-label="故障描述" placeholder="故障描述"></textarea>
+        <button id="submitRepair">提交报修</button>
+      </div>
+      <h3>报修单</h3>
+      <div id="repairWrap"></div>
+    </section>
+
+    <section id="panel-bill" class="panel">
+      <h2>水电费账单</h2>
+      <div class="row" data-roles="ADMIN,DORM_MANAGER">
+        <select id="billStudentId" aria-label="账单学生"></select>
+        <input id="billMonth" aria-label="账单月份" type="month">
+        <input id="billElec" aria-label="电费" placeholder="电费" type="number" min="0" step="0.01" value="0">
+        <input id="billWater" aria-label="水费" placeholder="水费" type="number" min="0" step="0.01" value="0">
+        <input id="billOther" aria-label="其他费用" placeholder="其他费用" type="number" min="0" step="0.01" value="0">
+        <button id="addBill">录入账单</button>
+      </div>
+      <h3 id="billListTitle">账单列表</h3>
+      <div id="billWrap"></div>
+    </section>
+
+    <section id="panel-notice" class="panel">
+      <h2>公告</h2>
+      <div class="row" data-roles="ADMIN,DORM_MANAGER">
+        <input id="noticeTitle" aria-label="公告标题" placeholder="标题">
+        <textarea id="noticeContent" aria-label="公告内容" placeholder="内容"></textarea>
+        <select id="noticeScope" aria-label="公告范围">
+          <option value="ALL">全体</option>
+          <option value="BUILDING">按楼栋</option>
+        </select>
+        <select id="noticeBuilding" aria-label="公告楼栋"></select>
+        <button id="addNotice">发布公告</button>
+      </div>
+      <div id="noticeWrap"></div>
+    </section>
+  </main>
+
+  <script src="app.js?v=20260914"></script>
+</body>
+</html>

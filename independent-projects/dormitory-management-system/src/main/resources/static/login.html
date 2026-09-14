@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宿舍管理系统 - 登录</title>
+  <link rel="stylesheet" href="styles.css?v=20260914-3">
+</head>
+<body>
+    <main class="login-page">
+      <div class="card">
+        <h1>宿舍管理系统</h1>
+        <p>演示账号：admin / manager / student</p>
+        <p>密码统一为 123456</p>
+      <label class="sr-only" for="username">用户名</label>
+      <input id="username" name="username" autocomplete="username" placeholder="用户名">
+      <label class="sr-only" for="password">密码</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" placeholder="密码">
+        <button id="loginBtn" type="button">登录</button>
+        <div id="msg" role="status" aria-live="polite"></div>
+
+        <details class="register-box">
+          <summary>注册</summary>
+          <label for="registerUsername">用户名</label>
+          <input id="registerUsername" autocomplete="username" placeholder="至少 3 个字符">
+          <label for="registerFullName">姓名</label>
+          <input id="registerFullName" autocomplete="name" placeholder="请输入姓名">
+          <label for="registerPassword">密码</label>
+          <input id="registerPassword" type="password" autocomplete="new-password" placeholder="6～32 个字符">
+          <label for="registerPasswordAgain">确认密码</label>
+          <input id="registerPasswordAgain" type="password" autocomplete="new-password" placeholder="再次输入密码">
+          <button id="registerBtn" type="button">注册学生账号</button>
+          <div id="registerMsg" role="status" aria-live="polite"></div>
+        </details>
+      </div>
+    </main>
+    <script>
+    const msg = document.getElementById('msg');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const registerMsg = document.getElementById('registerMsg');
+
+    function setMsg(text) {
+      msg.textContent = text;
+    }
+
+    function setBusy(isBusy) {
+      loginBtn.disabled = isBusy;
+      loginBtn.textContent = isBusy ? '登录中...' : '登录';
+    }
+
+    const doLogin = async () => {
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+      if (!username || !password) {
+        setMsg('请输入用户名和密码');
+        return;
+      }
+      try {
+        setBusy(true);
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          credentials: 'same-origin',
+          body: JSON.stringify({ username, password })
+        });
+        const dataText = await res.text();
+        let data = {};
+        try {
+          data = dataText ? JSON.parse(dataText) : {};
+        } catch (err) {
+          setMsg('登录返回了不可解析的响应');
+          return;
+        }
+        if (res.ok && data && data.id && data.username) {
+          sessionStorage.setItem('dorm_me', JSON.stringify({
+            id: data.id,
+            username: data.username,
+            fullName: data.fullName,
+            role: data.role
+          }));
+          const target = `${window.location.origin}/index.html`;
+          setMsg('登录成功，正在跳转...');
+          window.location.href = `${target}?fromLogin=1`;
+          setTimeout(() => {
+            msg.innerHTML = `如果没有自动跳转，<a href="${target}">点此进入主页</a>`;
+          }, 800);
+        } else {
+          const reason = data.message || `登录失败（${res.status}）`;
+          setMsg(reason);
+        }
+      } catch (err) {
+        setMsg('网络异常，请检查后端是否启动');
+      } finally {
+        setBusy(false);
+      }
+    };
+
+    const doRegister = async () => {
+      const username = document.getElementById('registerUsername').value.trim();
+      const fullName = document.getElementById('registerFullName').value.trim();
+      const password = document.getElementById('registerPassword').value;
+      const passwordAgain = document.getElementById('registerPasswordAgain').value;
+
+      if (!username || !fullName || !password || !passwordAgain) {
+        registerMsg.textContent = '请把注册信息填写完整';
+        return;
+      }
+      if (password !== passwordAgain) {
+        registerMsg.textContent = '两次输入的密码不一致';
+        return;
+      }
+
+      try {
+        registerBtn.disabled = true;
+        registerBtn.textContent = '注册中...';
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ username, fullName, password })
+        });
+        const data = await res.json();
+        registerMsg.textContent = data.message || (res.ok ? '注册成功' : '注册失败');
+        if (res.ok) {
+          usernameInput.value = username;
+          passwordInput.value = '';
+          document.querySelector('.register-box').open = false;
+          setMsg('注册成功，用户名已填好，请输入密码登录');
+          passwordInput.focus();
+        }
+      } catch (err) {
+        registerMsg.textContent = '网络异常，请检查后端是否启动';
+      } finally {
+        registerBtn.disabled = false;
+        registerBtn.textContent = '注册学生账号';
+      }
+    };
+
+    loginBtn.addEventListener('click', doLogin);
+    registerBtn.addEventListener('click', doRegister);
+    ['username', 'password'].forEach(id => {
+      document.getElementById(id).addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          doLogin();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

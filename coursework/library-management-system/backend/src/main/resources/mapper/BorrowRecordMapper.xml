@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kmbeast.mapper.BorrowRecordMapper">
+
+    <insert id="insert" parameterType="cn.kmbeast.pojo.entity.BorrowRecord" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO borrow_record (user_id,
+                                    book_id,
+                                    borrow_time,
+                                    due_date,
+                                    return_time,
+                                    status,
+                                    fine_amount)
+        VALUES (#{userId},
+                #{bookId},
+                #{borrowTime},
+                #{dueDate},
+                #{returnTime},
+                #{status},
+                #{fineAmount})
+    </insert>
+
+    <!-- 归还：条件更新，只有状态为借阅中(0)才允许归还，防止并发重复还书 -->
+    <update id="returnBook" parameterType="cn.kmbeast.pojo.entity.BorrowRecord">
+        UPDATE borrow_record
+        SET status      = 1,
+            return_time = #{returnTime},
+            fine_amount = #{fineAmount}
+        WHERE id = #{id}
+          AND status = 0
+    </update>
+
+    <!-- 统计未归还记录数（删除图书前检查） -->
+    <select id="countActiveByBookIds" resultType="int">
+        SELECT COUNT(*)
+        FROM borrow_record
+        WHERE status = 0
+          AND book_id IN
+        <foreach collection="bookIds" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <update id="update" parameterType="cn.kmbeast.pojo.entity.BorrowRecord">
+        UPDATE borrow_record
+        <set>
+            <if test="returnTime != null">
+                return_time = #{returnTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="getActiveByUserIdAndBookId" resultMap="BaseResultMap">
+        SELECT br.* FROM borrow_record br
+        WHERE br.user_id = #{userId} AND br.book_id = #{bookId} AND br.status = 0
+    </select>
+
+    <select id="getActiveCountByUserId" resultType="int">
+        SELECT COUNT(*) FROM borrow_record br
+        WHERE br.user_id = #{userId} AND br.status = 0
+    </select>
+
+    <select id="monthlyBorrowStats" resultMap="BorrowRecordVOMap">
+        SELECT br.*, u.user_name, b.name AS book_name
+        FROM borrow_record br
+        LEFT JOIN user u ON br.user_id = u.id
+        LEFT JOIN book b ON br.book_id = b.id
+        WHERE YEAR(br.borrow_time) = #{year} AND MONTH(br.borrow_time) = #{month}
+        ORDER BY br.borrow_time
+    </select>
+
+    <!--分页查询借阅记录-->
+    <select id="query" resultMap="BorrowRecordVOMap">
+        SELECT br.id,
+               br.user_id,
+               br.book_id,
+               br.borrow_time,
+               br.due_date,
+               br.return_time,
+               br.status,
+               u.user_name,
+               b.name AS book_name
+        FROM borrow_record br
+                 LEFT JOIN user u ON br.user_id = u.id
+                 LEFT JOIN book b ON br.book_id = b.id
+        <where>
+            <if test="userId != null">
+                AND br.user_id = #{userId}
+            </if>
+            <if test="bookId != null">
+                AND br.book_id = #{bookId}
+            </if>
+            <if test="status != null">
+                AND br.status = #{status}
+            </if>
+            <if test="bookName != null and bookName != ''">
+                AND b.name LIKE concat('%',#{bookName},'%')
+            </if>
+            <if test="userName != null and userName != ''">
+                AND u.user_name LIKE concat('%',#{userName},'%')
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND br.borrow_time BETWEEN #{startTime} AND #{endTime}
+            </if>
+        </where>
+        ORDER BY br.id DESC
+        <if test="current != null and size != null">
+            LIMIT #{offset},#{size}
+        </if>
+    </select>
+
+    <select id="queryCount" resultType="integer">
+        SELECT COUNT(*)
+        FROM borrow_record br
+        LEFT JOIN user u ON br.user_id = u.id
+        LEFT JOIN book b ON br.book_id = b.id
+        <where>
+            <if test="userId != null">
+                AND br.user_id = #{userId}
+            </if>
+            <if test="bookId != null">
+                AND br.book_id = #{bookId}
+            </if>
+            <if test="status != null">
+                AND br.status = #{status}
+            </if>
+            <if test="bookName != null and bookName != ''">
+                AND b.name LIKE concat('%',#{bookName},'%')
+            </if>
+            <if test="userName != null and userName != ''">
+                AND u.user_name LIKE concat('%',#{userName},'%')
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND br.borrow_time BETWEEN #{startTime} AND #{endTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="getById" resultMap="BaseResultMap">
+        SELECT br.*
+        FROM borrow_record br
+        WHERE br.id = #{id}
+    </select>
+
+    <resultMap id="BaseResultMap" type="cn.kmbeast.pojo.entity.BorrowRecord">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="book_id" property="bookId"/>
+        <result column="borrow_time" property="borrowTime"/>
+        <result column="due_date" property="dueDate"/>
+        <result column="return_time" property="returnTime"/>
+        <result column="status" property="status"/>
+        <result column="fine_amount" property="fineAmount"/>
+    </resultMap>
+
+    <resultMap id="BorrowRecordVOMap" type="cn.kmbeast.pojo.vo.BorrowRecordVO">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="book_id" property="bookId"/>
+        <result column="borrow_time" property="borrowTime"/>
+        <result column="due_date" property="dueDate"/>
+        <result column="return_time" property="returnTime"/>
+        <result column="status" property="status"/>
+        <result column="fine_amount" property="fineAmount"/>
+        <result column="user_name" property="userName"/>
+        <result column="book_name" property="bookName"/>
+    </resultMap>
+
+    <select id="hotBookStats" resultType="map">
+        SELECT b.id             AS bookId,
+               b.name           AS bookName,
+               COUNT(*)         AS borrowCount
+        FROM borrow_record br
+                 LEFT JOIN book b ON br.book_id = b.id
+        GROUP BY b.id, b.name
+        ORDER BY borrowCount DESC
+        LIMIT #{limit}
+    </select>
+
+</mapper>

@@ -1,0 +1,64 @@
+{
+  "name": "library-management-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^1.0.2",
+    "axios": "^0.27.2",
+    "core-js": "^3.29.0",
+    "crypto-js": "^4.2.0",
+    "echarts": "^4.8.0",
+    "element-china-area-data": "^6.1.0",
+    "element-ui": "^2.15.14",
+    "fingerprintjs2": "^2.1.4",
+    "js-md5": "^0.8.3",
+    "jwt-decode": "^3.1.2",
+    "sm4util": "^1.0.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vue-sweetalert2": "^5.0.10",
+    "wangeditor": "^4.7.15"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^7.20.0",
+    "prettier": "^2.8.0",
+    "sass": "^1.32.0",
+    "sass-loader": "^12.6.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/prettier"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宿舍管理系统入门学习指南</title>
+  <style>
+    :root {
+      --blue: #315f9b;
+      --blue-light: #eef5ff;
+      --green: #2f7d4a;
+      --green-light: #eef8f1;
+      --orange: #a65a16;
+      --orange-light: #fff7e8;
+      --ink: #26313d;
+      --muted: #66727f;
+      --line: #dfe5eb;
+      --paper: #ffffff;
+      --page: #f4f6f8;
+      --code: #f1f3f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .hero {
+      padding: 30px;
+      color: #ffffff;
+      background: var(--blue);
+      border-radius: 14px;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.35;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 6px 0;
+      opacity: 0.95;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 3px 10px;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      border-radius: 5px;
+    }
+
+    .guide-note,
+    .section {
+      margin-top: 18px;
+      padding: 22px 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .guide-note {
+      background: var(--green-light);
+      border-color: #cfe8d7;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      color: #234b7c;
+      font-size: 21px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    code {
+      padding: 2px 6px;
+      color: #8c3340;
+      background: var(--code);
+      border-radius: 4px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+    }
+
+    pre {
+      margin: 10px 0;
+      padding: 14px 16px;
+      overflow-x: auto;
+      color: #eef3f8;
+      background: #27313b;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    pre code {
+      padding: 0;
+      color: inherit;
+      background: transparent;
+    }
+
+    table {
+      width: 100%;
+      margin: 12px 0;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--line);
+    }
+
+    th {
+      background: var(--blue-light);
+    }
+
+    .toc {
+      columns: 2;
+      column-gap: 30px;
+    }
+
+    .toc li {
+      break-inside: avoid;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .card {
+      padding: 14px 16px;
+      background: #fafbfc;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+    }
+
+    .tip,
+    .warn {
+      margin: 14px 0;
+      padding: 11px 14px;
+      border-left: 4px solid var(--green);
+      background: var(--green-light);
+      border-radius: 6px;
+    }
+
+    .warn {
+      border-left-color: var(--orange);
+      background: var(--orange-light);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 7px;
+      margin: 14px 0;
+    }
+
+    .flow span {
+      display: flex;
+      min-height: 58px;
+      padding: 8px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--blue-light);
+      border: 1px solid #cdddf2;
+      border-radius: 7px;
+      font-size: 13px;
+    }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+      counter-reset: item;
+    }
+
+    .steps li {
+      position: relative;
+      min-height: 34px;
+      margin: 10px 0;
+      padding-left: 42px;
+      counter-increment: item;
+    }
+
+    .steps li::before {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: flex;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background: var(--blue);
+      border-radius: 50%;
+      content: counter(item);
+      font-weight: bold;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .checklist {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .checklist li::before {
+      margin-right: 8px;
+      color: var(--green);
+      content: "□";
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 24px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 20px, 980px);
+        padding-top: 10px;
+      }
+
+      .hero,
+      .guide-note,
+      .section {
+        padding: 18px;
+        border-radius: 9px;
+      }
+
+      .hero h1 {
+        font-size: 23px;
+      }
+
+      .toc {
+        columns: 1;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <h1>宿舍管理系统入门学习指南</h1>
+      <p>写给第一次接触 Spring Boot 项目的同学。目标不是背代码，而是看懂页面、后端和数据库怎样配合完成一个功能。</p>
+      <div class="tags">
+        <span class="tag">Java 11</span>
+        <span class="tag">Spring Boot 2.7</span>
+        <span class="tag">Spring Data JPA</span>
+        <span class="tag">MySQL 8.0</span>
+        <span class="tag">原生 HTML / CSS / JavaScript</span>
+      </div>
+    </header>
+
+    <div class="guide-note">
+      <strong>怎么使用这份指南：</strong>
+      第一次先看第 1、2、3 节，把项目运行起来；第二次顺着第 6 节找代码；最后按第 9 节自己操作。一次看不懂全部注解很正常，先弄清楚“谁调用谁”。
+    </div>
+
+    <section class="section">
+      <h2>目录</h2>
+      <ol class="toc">
+        <li><a href="#part1">项目是做什么的</a></li>
+        <li><a href="#part2">先把项目运行起来</a></li>
+        <li><a href="#part3">文件夹里都有什么</a></li>
+        <li><a href="#part4">页面数据从哪里来</a></li>
+        <li><a href="#part5">三种用户分别能做什么</a></li>
+        <li><a href="#part6">顺着入住功能看代码</a></li>
+        <li><a href="#part7">数据库的 10 张表</a></li>
+        <li><a href="#part8">常见代码写法</a></li>
+        <li><a href="#part9">建议的学习顺序</a></li>
+        <li><a href="#part10">常见启动问题</a></li>
+        <li><a href="#part11">答辩时怎么介绍</a></li>
+        <li><a href="#part12">学完后的自查清单</a></li>
+      </ol>
+    </section>
+
+    <section class="section" id="part1">
+      <h2>1. 项目是做什么的</h2>
+      <p>这是一个本地运行的高校宿舍管理系统。它把宿舍里的几件常见事情放到网页上完成：</p>
+      <div class="cards">
+        <div class="card">
+          <h3>宿舍资料</h3>
+          <p>维护楼栋、楼层、宿舍和床位。</p>
+        </div>
+        <div class="card">
+          <h3>入住与退宿</h3>
+          <p>学生可先查看宿舍推荐，再提交申请，由管理员或宿管处理。</p>
+        </div>
+        <div class="card">
+          <h3>报修与账单</h3>
+          <p>学生报修、查看自己的水电费账单。</p>
+        </div>
+        <div class="card">
+          <h3>公告与看板</h3>
+          <p>发布公告，并查看床位和申请数量。</p>
+        </div>
+      </div>
+      <div class="tip">
+        <strong>先记住一句话：</strong>页面负责显示和点击，Java 后端负责判断和处理，MySQL 负责保存数据。
+      </div>
+    </section>
+
+    <section class="section" id="part2">
+      <h2>2. 先把项目运行起来</h2>
+      <h3>2.1 准备软件</h3>
+      <ul>
+        <li>JDK 11</li>
+        <li>Maven</li>
+        <li>MySQL 8.0</li>
+      </ul>
+
+      <h3>2.2 导入数据库</h3>
+      <p>先启动 MySQL，然后在 <code>demo</code> 文件夹打开 PowerShell，执行：</p>
+      <pre><code>cmd /c "mysql -h 127.0.0.1 -P 3306 -u root -proot &lt; backend\sql\dorm_demo_mysql_full.sql"</code></pre>
+      <p>项目默认数据库用户名和密码是 <code>root / root</code>。如果你的密码不同，修改：</p>
+      <pre><code>backend\src\main\resources\application.properties</code></pre>
+      <div class="warn">
+        <strong>注意：</strong>数据库脚本会重新建立 <code>dorm_demo</code> 数据库。里面如果已经有需要保留的数据，先不要重复导入。
+      </div>
+
+      <h3>2.3 启动后端</h3>
+      <pre><code>cd backend
+mvn spring-boot:run</code></pre>
+      <p>看到程序正常启动后，浏览器打开：</p>
+      <pre><code>http://localhost:8660/login.html</code></pre>
+
+      <h3>2.4 注册和登录</h3>
+      <p>新生第一次使用时，可以在登录页展开注册区域，填写用户名、姓名和密码。注册身份固定为学生，完成后再使用新账号登录。</p>
+      <table>
+        <thead>
+          <tr><th>账号</th><th>密码</th><th>身份</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>admin</code></td><td><code>123456</code></td><td>管理员</td></tr>
+          <tr><td><code>manager</code></td><td><code>123456</code></td><td>宿舍管理员</td></tr>
+          <tr><td><code>student</code></td><td><code>123456</code></td><td>学生</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="part3">
+      <h2>3. 文件夹里都有什么</h2>
+      <pre><code>demo
+├─ backend
+│  ├─ pom.xml                         项目使用的 Java 依赖
+│  ├─ sql
+│  │  └─ dorm_demo_mysql_full.sql     建库、建表和示例数据
+│  └─ src\main
+│     ├─ resources
+│     │  ├─ application.properties    端口和数据库连接
+│     │  └─ static
+│     │     ├─ login.html             登录页面
+│     │     ├─ index.html             系统主页面
+│     │     ├─ styles.css             页面样式
+│     │     └─ app.js                 页面点击和数据加载
+│     └─ java\com\dorm\demo
+│        ├─ DormManagementApplication.java  程序入口和示例数据
+│        ├─ domain                    数据实体和固定状态
+│        ├─ repo                      数据库查询接口
+│        └─ web                       页面请求入口
+├─ 功能模块图.html
+├─ 页面端点击顺序清单_验收模板.md
+└─ 其他说明文档</code></pre>
+
+      <table>
+        <thead>
+          <tr><th>想找什么</th><th>先看哪里</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>页面长什么样</td><td><code>static/index.html</code> 和 <code>styles.css</code></td></tr>
+          <tr><td>按钮点击后做什么</td><td><code>static/app.js</code></td></tr>
+          <tr><td>后端有哪些地址</td><td><code>web/DemoController.java</code></td></tr>
+          <tr><td>一张表有哪些字段</td><td><code>domain</code> 目录</td></tr>
+          <tr><td>数据怎样查询</td><td><code>repo</code> 目录</td></tr>
+          <tr><td>数据库怎样建立</td><td><code>sql/dorm_demo_mysql_full.sql</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="part4">
+      <h2>4. 页面数据从哪里来</h2>
+      <p>以“打开床位列表”为例，程序按下面的顺序工作：</p>
+      <div class="flow">
+        <span>打开主页面</span>
+        <span>app.js 发出请求</span>
+        <span>DemoController 接收</span>
+        <span>BedRepository 查询</span>
+        <span>MySQL 返回数据</span>
+        <span>页面显示表格</span>
+      </div>
+      <ol class="steps">
+        <li><code>app.js</code> 调用 <code>loadBeds()</code>。</li>
+        <li><code>loadBeds()</code> 请求 <code>GET /api/beds</code>。</li>
+        <li><code>DemoController</code> 中的 <code>beds()</code> 方法接到请求。</li>
+        <li><code>BedRepository</code> 从数据库读取床位。</li>
+        <li>后端把需要的字段整理成数据返回给页面。</li>
+        <li><code>app.js</code> 把这些数据拼成表格。</li>
+      </ol>
+      <div class="tip">
+        看其他功能时也用这条路线：<strong>页面函数 → 请求地址 → Controller 方法 → Repository → 数据表</strong>。
+      </div>
+    </section>
+
+    <section class="section" id="part5">
+      <h2>5. 三种用户分别能做什么</h2>
+      <table>
+        <thead>
+          <tr><th>功能</th><th>管理员</th><th>宿舍管理员</th><th>学生</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>维护楼栋、楼层、宿舍、用户</td><td>可以</td><td>不可以</td><td>不可以</td></tr>
+          <tr><td>新生注册学生账号</td><td>不需要</td><td>不需要</td><td>可在登录页注册</td></tr>
+          <tr><td>宿舍偏好推荐</td><td>维护宿舍特点</td><td>查看申请中的偏好</td><td>选择偏好并查看推荐</td></tr>
+          <tr><td>管理和分配床位</td><td>可以</td><td>可以</td><td>只查看</td></tr>
+          <tr><td>入住、退宿</td><td>处理申请</td><td>处理申请</td><td>提交自己的申请</td></tr>
+          <tr><td>报修</td><td>处理</td><td>处理</td><td>提交自己的报修</td></tr>
+          <tr><td>账单</td><td>录入和标记已缴</td><td>录入和标记已缴</td><td>查看并缴纳自己的账单</td></tr>
+          <tr><td>公告</td><td>发布和查看</td><td>发布和查看</td><td>查看全体及本楼栋公告</td></tr>
+          <tr><td>数据看板</td><td>查看</td><td>查看</td><td>查看</td></tr>
+        </tbody>
+      </table>
+      <p>页面会隐藏没有权限的按钮，后端也会再次检查当前用户身份。真正决定能不能操作的是后端。</p>
+    </section>
+
+    <section class="section" id="part6">
+      <h2>6. 顺着“入住申请”看一遍代码</h2>
+      <p>这是项目里最完整的一条流程。先不要逐行看，先理解每一步发生了什么。</p>
+
+      <h3>6.1 学生先查看宿舍推荐</h3>
+      <ol class="steps">
+        <li>学生选择氛围、作息、卫生和兴趣四项偏好。</li>
+        <li>页面向 <code>POST /api/dormitories/recommend</code> 发送偏好。</li>
+        <li>后端只检查当前有空床的宿舍，再按固定分数比较偏好与宿舍特点。</li>
+        <li>页面最多显示 3 个宿舍，并说明匹配内容和空床数量。</li>
+        <li>学生可以采用推荐，也可以在意向宿舍中改选其他宿舍。</li>
+      </ol>
+      <div class="tip">
+        推荐只帮助学生选择，不会自动通过申请，也不会直接决定最终床位。
+      </div>
+
+      <h3>6.2 学生提交</h3>
+      <ol class="steps">
+        <li>学生确认意向宿舍并填写原因。</li>
+        <li><code>app.js</code> 向 <code>POST /api/move-in</code> 发送数据。</li>
+        <li>后端确认当前用户是学生。</li>
+        <li>后端检查学生是否已有床位、是否已有待处理申请。</li>
+        <li>检查通过后，保存个人偏好、意向宿舍和一条状态为 <code>PENDING</code> 的入住申请。</li>
+      </ol>
+
+      <h3>6.3 管理员或宿管处理</h3>
+      <ol class="steps">
+        <li>管理人员先查看学生偏好和意向宿舍，再点击“通过”或“驳回”。</li>
+        <li>页面请求 <code>PATCH /api/move-in/{id}/approve</code>。</li>
+        <li>后端再次确认申请还处于待处理状态。</li>
+        <li>先找意向宿舍的空床，没有时再找其他空床。</li>
+        <li>床位改成“已占用”，并记录入住学生。</li>
+        <li>申请改成“已通过”，记录处理人和处理时间。</li>
+        <li>页面重新加载申请、床位和看板数据。</li>
+      </ol>
+
+      <h3>6.4 为什么不能只改申请状态</h3>
+      <p>因为“申请通过”和“床位被占用”必须一起完成。只改申请不改床位，页面就会出现申请通过但学生没有床位的情况。</p>
+      <div class="tip">
+        退宿流程正好相反：申请通过后，把原床位恢复成空闲，并清除入住学生。
+      </div>
+    </section>
+
+    <section class="section" id="part7">
+      <h2>7. 数据库的 10 张表</h2>
+      <table>
+        <thead>
+          <tr><th>表名</th><th>保存什么</th><th>主要关系</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>users</code></td><td>用户名、密码摘要、姓名、角色</td><td>可以关联所属楼栋</td></tr>
+          <tr><td><code>building</code></td><td>宿舍楼</td><td>一栋楼有多个楼层</td></tr>
+          <tr><td><code>floor</code></td><td>楼层</td><td>属于某栋楼</td></tr>
+          <tr><td><code>dormitory</code></td><td>宿舍号、容量和生活特点</td><td>属于某栋楼和某个楼层</td></tr>
+          <tr><td><code>bed</code></td><td>床号、状态、入住学生</td><td>属于某个宿舍</td></tr>
+          <tr><td><code>move_in_application</code></td><td>入住申请、学生偏好和意向宿舍</td><td>关联学生、处理人和床位</td></tr>
+          <tr><td><code>move_out_application</code></td><td>退宿申请</td><td>关联学生、处理人和床位</td></tr>
+          <tr><td><code>repair</code></td><td>报修内容和处理状态</td><td>关联学生和处理人</td></tr>
+          <tr><td><code>bill</code></td><td>月份、水费、电费、其他费用</td><td>关联学生</td></tr>
+          <tr><td><code>notice</code></td><td>公告标题、内容和范围</td><td>关联发布人和楼栋</td></tr>
+        </tbody>
+      </table>
+
+      <h3>常见状态</h3>
+      <table>
+        <thead>
+          <tr><th>英文状态</th><th>页面含义</th><th>出现位置</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>VACANT</code></td><td>空闲</td><td>床位</td></tr>
+          <tr><td><code>OCCUPIED</code></td><td>已占用</td><td>床位</td></tr>
+          <tr><td><code>MAINTENANCE</code></td><td>维修中</td><td>床位</td></tr>
+          <tr><td><code>PENDING</code></td><td>待处理</td><td>申请、报修</td></tr>
+          <tr><td><code>APPROVED</code></td><td>已通过</td><td>申请</td></tr>
+          <tr><td><code>REJECTED</code></td><td>已驳回</td><td>申请</td></tr>
+          <tr><td><code>PROCESSING</code></td><td>处理中</td><td>报修</td></tr>
+          <tr><td><code>DONE</code></td><td>已完成</td><td>报修</td></tr>
+          <tr><td><code>UNPAID</code></td><td>未缴</td><td>账单</td></tr>
+          <tr><td><code>PAID</code></td><td>已缴</td><td>账单</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="part8">
+      <h2>8. 常见代码写法</h2>
+      <h3><code>@Entity</code></h3>
+      <p>表示这个 Java 类要和数据库表对应。例如 <code>Bed.java</code> 对应床位表。</p>
+
+      <h3><code>@Id</code></h3>
+      <p>表示主键字段。项目里的主键都是自动增加的数字编号。</p>
+
+      <h3><code>@ManyToOne</code></h3>
+      <p>表示“多条数据属于同一条数据”。例如多个床位属于同一个宿舍。</p>
+
+      <h3><code>@GetMapping</code>、<code>@PostMapping</code></h3>
+      <p>给 Java 方法设置访问地址。一般来说，GET 用来查询，POST 用来新增，PUT 或 PATCH 用来修改，DELETE 用来删除。</p>
+
+      <h3>Repository 方法</h3>
+      <p>像 <code>findByUsername</code>、<code>findByStudentId</code> 这样的名字，JPA 会根据名称完成常见查询，不需要每次都手写 SQL。</p>
+
+      <h3>Session</h3>
+      <p>登录成功后，后端把用户编号放进 Session。以后页面继续访问接口时，后端就知道当前是谁。</p>
+
+      <h3>BCrypt</h3>
+      <p>数据库里不直接保存登录密码，而是保存处理后的密码摘要。注册和管理员新增用户时先处理密码，登录时再比较输入密码和摘要是否匹配。</p>
+
+      <h3>固定评分推荐</h3>
+      <p>推荐接口把学生偏好和宿舍特点逐项比较：氛围相同加 30 分，作息相同加 25 分，卫生相同加 20 分，兴趣相同加 10 分，空床数量加 5～15 分。最后按分数从高到低返回最多 3 个宿舍。</p>
+    </section>
+
+    <section class="section" id="part9">
+      <h2>9. 建议的学习顺序</h2>
+      <table>
+        <thead>
+          <tr><th>顺序</th><th>要做的事</th><th>做到什么程度</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>第一步</td><td>运行项目，注册一个学生账号，再使用三个默认账号登录</td><td>知道注册流程和不同角色页面有什么区别</td></tr>
+          <tr><td>第二步</td><td>看 <code>index.html</code> 和 <code>app.js</code></td><td>能找到一个按钮对应的函数</td></tr>
+          <tr><td>第三步</td><td>看 <code>domain</code> 和数据库脚本</td><td>知道 Java 字段对应哪张表</td></tr>
+          <tr><td>第四步</td><td>看 <code>DemoController</code></td><td>能按地址找到后端方法</td></tr>
+          <tr><td>第五步</td><td>完整跟一次入住或报修流程</td><td>能说出数据在哪一步发生变化</td></tr>
+          <tr><td>第六步</td><td>按手动验收清单操作</td><td>能独立完成一次完整演示</td></tr>
+        </tbody>
+      </table>
+
+      <h3>适合初学者的小练习</h3>
+      <ul>
+        <li>修改登录页标题，重新打开页面观察变化。</li>
+        <li>在 <code>styles.css</code> 中修改一个按钮颜色。</li>
+        <li>在 <code>app.js</code> 中找到床位状态的中文显示位置。</li>
+        <li>在数据库脚本中找到三个默认账号。</li>
+        <li>从 <code>loadBeds()</code> 开始，按第 4 节的路线把床位查询走一遍。</li>
+        <li>选择两组不同偏好，观察推荐顺序和推荐原因有什么变化。</li>
+      </ul>
+      <div class="tip">
+        每次只改一个小地方，运行后确认效果，再继续下一处。这样最容易知道问题出在哪里。
+      </div>
+    </section>
+
+    <section class="section" id="part10">
+      <h2>10. 常见启动问题</h2>
+      <table>
+        <thead>
+          <tr><th>现象</th><th>先检查什么</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>提示无法连接 MySQL</td><td>确认 MySQL 服务已启动，账号密码与 <code>application.properties</code> 一致。</td></tr>
+          <tr><td>提示 <code>Public Key Retrieval is not allowed</code></td><td>确认数据库地址里保留了 <code>allowPublicKeyRetrieval=true</code>。</td></tr>
+          <tr><td>提示没有 <code>dorm_demo</code> 数据库</td><td>重新确认数据库脚本是否成功执行。</td></tr>
+          <tr><td>8660 端口被占用</td><td>关闭占用该端口的程序，或修改 <code>server.port</code>。</td></tr>
+          <tr><td>页面能打开但数据加载失败</td><td>先看后端窗口有没有报错，再确认 MySQL 是否仍在运行。</td></tr>
+          <tr><td>修改页面后看不到变化</td><td>使用浏览器强制刷新，再确认改的是 <code>resources/static</code> 下的文件。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="part11">
+      <h2>11. 答辩时怎么介绍</h2>
+      <h3>问题一：项目用了什么技术？</h3>
+      <p>后端使用 Java 11、Spring Boot 和 Spring Data JPA，数据库使用 MySQL 8.0，前端使用原生 HTML、CSS 和 JavaScript。</p>
+
+      <h3>问题二：登录以后怎样识别用户？</h3>
+      <p>登录成功后把用户编号保存在 Session 中，后面的请求通过这个编号查出当前用户。</p>
+
+      <h3>问题三：怎样限制不同角色的操作？</h3>
+      <p>前端根据角色隐藏无关按钮，后端在处理请求时再次检查角色。后端检查才是真正的权限限制。</p>
+
+      <h3>问题四：入住申请通过后发生了什么？</h3>
+      <p>后端找到空床位，把床位设为已占用并记录学生，同时把入住申请改成已通过。</p>
+
+      <h3>问题五：为什么金额不用普通小数？</h3>
+      <p>水费和电费使用 <code>BigDecimal</code>，可以避免普通小数计算产生精度偏差。</p>
+
+      <h3>问题六：项目最需要保证什么？</h3>
+      <p>学生只能查看和操作自己的数据；同一个学生不能重复入住；申请状态和床位状态要保持一致。</p>
+
+      <h3>问题七：宿舍推荐会不会直接决定床位？</h3>
+      <p>不会。它只按固定分数给学生提供参考，学生可以改选，管理员或宿管还要结合空床情况审批入住申请。</p>
+    </section>
+
+    <section class="section" id="part12">
+      <h2>12. 学完后的自查清单</h2>
+      <ul class="checklist">
+        <li>我能独立启动 MySQL 和 Spring Boot。</li>
+        <li>我知道四个前端文件分别负责什么。</li>
+        <li>我能从页面按钮找到对应的 Java 方法。</li>
+        <li>我知道 Entity、Repository、Controller 的基本作用。</li>
+        <li>我能说出 10 张数据表的大致用途。</li>
+        <li>我能解释登录、入住、退宿和报修的基本流程。</li>
+        <li>我能说明四项偏好、推荐分数和“只供参考”的含义。</li>
+        <li>我知道学生为什么看不到别人的申请和账单。</li>
+        <li>我能按演示清单完整操作一次系统。</li>
+      </ul>
+      <div class="guide-note">
+        如果上面大部分内容都能用自己的话说明，就已经达到“看得懂、讲得清、能演示”的目标，不需要再额外加入复杂功能。
+      </div>
+    </section>
+
+    <footer>
+      本指南按当前项目代码整理，内容以简单、能运行、能讲清楚为准。
+    </footer>
+  </main>
+</body>
+</html>

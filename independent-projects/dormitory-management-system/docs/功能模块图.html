@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>宿舍管理系统 - 功能模块图</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    background: #eef4fb;
+    color: #12263a;
+    padding: 30px 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #15456a;
+    font-size: 24px;
+    margin: 0 0 30px;
+  }
+  /* 根节点 */
+  .root {
+    width: 320px;
+    margin: 0 auto;
+    background: #1c5f90;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px;
+    border-radius: 10px;
+    position: relative;
+  }
+  .root::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -24px;
+    width: 2px;
+    height: 24px;
+    background: #9db8d4;
+  }
+  /* 模块卡片 */
+  .grid {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #c2d3e7;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card h2 {
+    margin: 0;
+    background: #2f79ad;
+    color: #fff;
+    font-size: 15px;
+    padding: 11px 14px;
+  }
+  .card ul {
+    margin: 0;
+    padding: 12px 14px 12px 30px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  .card .sub-title {
+    margin: 0;
+    padding: 8px 14px 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1c5f90;
+  }
+  .note {
+    max-width: 1280px;
+    margin: 18px auto 0;
+    text-align: center;
+    color: #526b80;
+    font-size: 12px;
+  }
+  @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <h1>高校学生宿舍管理系统 · 功能模块图</h1>
+
+  <div class="root">宿舍管理系统（简化版）</div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>1. 用户与会话</h2>
+      <ul>
+        <li>新生注册（固定为学生身份）</li>
+        <li>登录 / 退出（Session 会话保持）</li>
+        <li>三类角色：管理员、宿舍管理员、学生</li>
+        <li>管理员查看用户列表、添加用户</li>
+        <li>密码使用 BCrypt 摘要保存</li>
+        <li>前后端按角色限制页面和接口权限</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. 宿舍资源管理</h2>
+      <p class="sub-title">基础数据（仅管理员增改删）</p>
+      <ul>
+        <li>宿舍楼增 / 改 / 删</li>
+        <li>楼层增 / 改 / 删，归属楼栋</li>
+        <li>宿舍增 / 改 / 删（宿舍号、容量、生活特点）</li>
+      </ul>
+      <p class="sub-title">床位管理（管理员 / 宿管）</p>
+      <ul>
+        <li>床位新增 / 编辑 / 删除（带引用校验）</li>
+        <li>选择学生，为其分配空床位</li>
+        <li>分配前检查学生和床位，避免重复入住</li>
+        <li>床位腾空：解除占用、恢复空闲</li>
+        <li>状态切换：空闲 / 已占用 / 维修中</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. 入住管理</h2>
+      <ul>
+        <li>学生选择氛围、作息、卫生和兴趣偏好</li>
+        <li>按固定分数推荐最多 3 个有空床的宿舍</li>
+        <li>学生可采用推荐，也可自行选择意向宿舍</li>
+        <li>推荐只供参考，不自动审批或决定床位</li>
+        <li>学生提交入住申请（选择意向宿舍、填写原因）</li>
+        <li>学生只查看自己的入住申请</li>
+        <li>管理员 / 宿管查看偏好后审批：通过或驳回</li>
+        <li>通过后自动匹配空床位并完成分配</li>
+        <li>已有床位或待审核申请时不能重复提交</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>4. 退宿管理</h2>
+      <ul>
+        <li>学生从自己的当前床位中选择并提交申请</li>
+        <li>学生只查看自己的退宿申请</li>
+        <li>管理员 / 宿管审批：通过或驳回</li>
+        <li>审批通过后床位自动腾空、恢复空闲</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>5. 维修报修</h2>
+      <ul>
+        <li>学生提交报修单（位置、故障描述）</li>
+        <li>学生只查看自己的报修单</li>
+        <li>管理员 / 宿管受理：待处理 → 处理中</li>
+        <li>管理员 / 宿管完成：处理中 → 已完成</li>
+        <li>记录处理人与处理时间</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>6. 水电费账单</h2>
+      <ul>
+        <li>管理员 / 宿管按月录入水费、电费、其他费用</li>
+        <li>系统自动合计应缴总金额</li>
+        <li>学生查看本人月度账单</li>
+        <li>演示性缴费：未缴 → 已缴</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>7. 公告通知</h2>
+      <ul>
+        <li>管理员 / 宿管发布公告（标题、正文）</li>
+        <li>发布范围：全体 / 指定楼栋</li>
+        <li>记录发布人与发布时间</li>
+        <li>学生查看全体公告和本楼栋公告</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>8. 数据看板</h2>
+      <ul>
+        <li>床位总数 / 已占用 / 空置 / 维修中统计</li>
+        <li>整体入住率</li>
+        <li>分楼栋入住率一览</li>
+        <li>待处理入住、退宿、报修数量</li>
+        <li>本月入住、退宿申请数量统计</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="note">本项目采用 Spring Boot + MySQL + 原生 HTML/CSS/JavaScript，面向本科毕业设计本地演示。</p>
+</body>
+</html>
