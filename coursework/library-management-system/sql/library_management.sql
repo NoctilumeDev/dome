@@ -1,8 +1,14 @@
 -- =====================================================
--- 图书管理系统 数据库初始化脚本
--- 数据库名: library_management
+-- 图书借阅管理系统 MySQL 8 一键初始化脚本
+-- 可在命令行、MySQL 客户端或 Navicat 中直接完整执行
 -- =====================================================
 
+CREATE DATABASE IF NOT EXISTS `library_management`
+    DEFAULT CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+USE `library_management`;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 -- 删除旧表（按外键依赖顺序）
 DROP TABLE IF EXISTS borrow_record;
 DROP TABLE IF EXISTS book;
@@ -103,3 +109,6 @@ INSERT INTO book (name, author, isbn, publisher, category, bookshelf_id, total_c
 ('活着',            '余华',        '9787530215319', '北京十月文艺出版社', '文学', 2, 4, 4, '余华代表作',               NOW()),
 ('三体',            '刘慈欣',      '9787536692930', '重庆出版社',         '科学', 3, 6, 6, '科幻巨作',                 NOW()),
 ('万历十五年',      '黄仁宇',      '9787108009821', '三联书店',           '历史', 3, 2, 2, '明史研究经典',             NOW());
+
+
+SET FOREIGN_KEY_CHECKS = 1;

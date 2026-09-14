@@ -1,5 +1,5 @@
 -- 宿舍管理系统：MySQL 完整建库脚本（可直接执行）
--- 数据库：dormitory_management | 用户：root / 密码：root
+-- 数据库：dormitory_management | 连接账号和密码由运行环境提供
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;

@@ -11,12 +11,21 @@
 
 ## 运行
 
-1. 使用 `sql/init.sql` 初始化 `library_management` 数据库。
-2. 设置数据库密码、JWT 密钥和 DeepSeek API 密钥。
-3. 在 `backend` 中执行 `mvn spring-boot:run`。
-4. 打开 `http://localhost:22090`。
+### 初始化数据库
 
-PowerShell 示例：
+`sql/library_management.sql` 是唯一的数据库初始化入口。它会创建 `library_management` 数据库，重新建立项目数据表，并写入演示数据。
+
+在项目根目录可以直接执行：
+
+```bash
+mysql -u root -p < sql/library_management.sql
+```
+
+也可以在 MySQL 客户端或 Navicat 中打开该文件并完整执行。重复导入会重建本项目的数据表，请先确认其中没有需要保留的数据。
+
+### 启动后端
+
+根据本机环境设置数据库连接信息。需要使用 DeepSeek 进行语义解析时，再设置对应的 API 密钥。
 
 ```powershell
 $env:DB_USERNAME = "root"
@@ -27,13 +36,22 @@ cd backend
 mvn spring-boot:run
 ```
 
-如需前端开发模式，在 `frontend` 中执行 `npm install` 和 `npm run serve`，访问 `http://localhost:22091`。
+启动后打开 `http://localhost:22090`。默认演示账号为 `admin`、`zhangsan`、`lisi`，密码均为 `123456`。
 
-默认演示账号为 `admin`、`zhangsan`、`lisi`，密码均为 `123456`。
+### 前端开发模式
+
+如需单独调试前端，在 `frontend` 中执行：
+
+```bash
+npm install
+npm run serve
+```
+
+开发服务器地址为 `http://localhost:22091`。
 
 ## 图书问答边界
 
-问答功能只处理本馆图书、作者、分类、借阅状态、推荐和馆藏位置相关问题。模型只负责理解查询意图，实际结果来自参数化数据库查询；没有查到的数据不会由模型补写。
+问答功能只处理本馆图书、作者、分类、借阅状态、推荐和馆藏位置相关问题。模型只负责理解查询意图，实际结果来自参数化数据库查询；没有查到的数据不会由模型补写。未配置 DeepSeek API 密钥时，系统使用本地安全解析处理能够确定的馆藏问题。
 
 ## 来源
 
