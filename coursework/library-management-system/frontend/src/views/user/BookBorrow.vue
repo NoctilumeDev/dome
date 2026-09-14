@@ -177,15 +177,12 @@ export default {
             }
         },
         async handleBorrow(row) {
-            const confirmed = await this.$swal.fire({
+            const confirmed = await this.$swalConfirm({
                 title: '确认借阅',
                 text: '确认借阅《' + row.name + '》？',
                 icon: 'question',
-                showCancelButton: true,
-                confirmButtonText: '确认',
-                cancelButtonText: '取消',
             });
-            if (!confirmed.value) return;
+            if (!confirmed) return;
             try {
                 const response = await this.$axios.post('/borrowRecord/borrow/' + row.id);
                 if (response.data.code === 200) {
