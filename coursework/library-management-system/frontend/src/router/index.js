@@ -32,7 +32,7 @@ const routes = [
     children: [
       { name: '图书借阅', path: "/bookBorrow", icon: 'el-icon-reading', component: () => import(`@/views/user/BookBorrow.vue`), meta: { requireAuth: true } },
       { name: '我的借阅', path: "/myBorrows", icon: 'el-icon-collection', component: () => import(`@/views/user/MyBorrows.vue`), meta: { requireAuth: true } },
-      { name: '图书问答', path: "/bookAssistant", icon: 'el-icon-chat-dot-round', component: () => import(`@/views/assistant/BookAssistant.vue`), meta: { requireAuth: true } }
+      { name: '读者图书问答', path: "/user/bookAssistant", icon: 'el-icon-chat-dot-round', component: () => import(`@/views/assistant/BookAssistant.vue`), meta: { requireAuth: true } }
     ]
   }
 ];
