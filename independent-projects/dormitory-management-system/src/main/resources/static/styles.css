@@ -617,3 +617,36 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
 }
+.login-field {
+  display: grid;
+  gap: 6px;
+}
+
+.login-field label {
+  color: #38556f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.login-field input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-field input.is-invalid {
+  border-color: #c44747;
+  background: #fff8f8;
+  box-shadow: 0 0 0 3px rgba(196, 71, 71, 0.12);
+}
+
+.login-page #msg[data-kind="error"] {
+  color: #9d3030;
+  border-color: rgba(196, 71, 71, 0.32);
+  background: #fff5f5;
+}
+
+.login-page #msg[data-kind="success"] {
+  color: #21724e;
+  border-color: rgba(33, 114, 78, 0.28);
+  background: #f2fbf6;
+}

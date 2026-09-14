@@ -4,14 +4,29 @@
       <div class="hero-copy">
         <div class="eyebrow">LIBRARY INTELLIGENCE</div>
         <h2>馆藏智能问答</h2>
-        <p>DeepSeek 只理解查询意图，书名、作者、分类和库存等答案全部以馆藏数据库为准。</p>
+        <p>DeepSeek 是可选的语义理解层，只负责提高自然语言召回；最终答案始终以馆藏数据库为准。</p>
       </div>
-      <div class="trust-flow" aria-label="问答处理流程">
+      <div class="trust-flow" aria-label="问答安全处理流程">
         <span><i class="el-icon-lock"></i> 本地范围过滤</span>
         <i class="el-icon-right flow-arrow"></i>
-        <span><i class="el-icon-connection"></i> 模型语义解析</span>
+        <span><i class="el-icon-finished"></i> 意图白名单</span>
         <i class="el-icon-right flow-arrow"></i>
-        <span><i class="el-icon-coin"></i> 数据库核验</span>
+        <span><i class="el-icon-tickets"></i> 参数化查询</span>
+        <i class="el-icon-right flow-arrow"></i>
+        <span><i class="el-icon-coin"></i> 数据库事实回答</span>
+      </div>
+    </section>
+
+    <section class="degradation-card system-card" aria-label="模型降级说明">
+      <div class="degradation-icon"><i class="el-icon-set-up"></i></div>
+      <div class="degradation-copy">
+        <p class="section-kicker">GRACEFUL DEGRADATION</p>
+        <h3>可降级，但不越过安全边界</h3>
+        <p>DeepSeek 可用时负责理解口语和提高查全率；未配置或暂时不可用时，系统改用本地规则，复杂表达可能漏检，但范围过滤、参数化查询和数据库事实回答保持不变。</p>
+      </div>
+      <div class="tradeoff-tags">
+        <span class="is-stable">安全性保持</span>
+        <span class="is-variable">自然语言召回降低</span>
       </div>
     </section>
 
@@ -43,7 +58,7 @@
         :maxlength="120"
         show-word-limit
         resize="none"
-        placeholder="例如：有关于 Java 的书籍吗？"
+        placeholder="例如：书名《三体》、作者：余华、分类：编程"
         class="assistant-input"
         @keydown.ctrl.enter.native="askQuestion"
       />
@@ -147,10 +162,10 @@ export default {
       databaseVerified: false,
       hasResult: false,
       promptExamples: [
-        '有关于 Java 的书籍吗？',
-        '有《三体》吗？',
-        '刘慈欣写的书',
-        '推荐几本可借的编程类图书',
+        '《Java编程思想》',
+        '《三体》放在哪里？',
+        '作者：刘慈欣',
+        '分类：编程',
       ],
     };
   },
@@ -276,6 +291,7 @@ export default {
   z-index: 1;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 24px;
 }
@@ -296,6 +312,66 @@ export default {
 
 .flow-arrow {
   color: #8ea8c3;
+}
+
+.degradation-card {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 1px solid #d8e6f4;
+  background: linear-gradient(120deg, #ffffff 0%, #f5fbf9 100%);
+}
+
+.degradation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #e9f8f3;
+  color: #087a67;
+  font-size: 19px;
+}
+
+.degradation-copy h3 {
+  margin: 0;
+  color: var(--assistant-ink);
+  font-size: 16px;
+}
+
+.degradation-copy p:last-child {
+  margin: 7px 0 0;
+  color: #60758a;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.tradeoff-tags {
+  display: grid;
+  gap: 7px;
+  justify-items: end;
+}
+
+.tradeoff-tags span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tradeoff-tags .is-stable {
+  background: #e9f8f3;
+  color: #087a67;
+}
+
+.tradeoff-tags .is-variable {
+  background: #fff7e8;
+  color: #9a6113;
 }
 
 .question-card,
@@ -579,6 +655,16 @@ export default {
   .trust-flow {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .degradation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .tradeoff-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: start;
   }
 
   .flow-arrow {
