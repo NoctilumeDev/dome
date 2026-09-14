@@ -199,7 +199,29 @@ body {
 
 .toolbar .el-date-editor.toolbar-input {
   flex-basis: 280px;
+  min-width: 280px;
   max-width: 320px;
+}
+
+.toolbar .el-date-editor--daterange .el-range-input {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+}
+
+.toolbar .el-date-editor--daterange .el-range-separator {
+  display: inline-flex;
+  flex: 0 0 30px;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  min-width: 30px;
+  padding: 0 5px;
+  color: var(--text-sub);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .toolbar-actions {

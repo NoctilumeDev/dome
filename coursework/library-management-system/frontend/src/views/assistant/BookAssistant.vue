@@ -8,73 +8,70 @@
       </div>
       <div class="trust-flow" aria-label="问答安全处理流程">
         <span><i class="el-icon-lock"></i> 本地范围过滤</span>
-        <i class="el-icon-right flow-arrow"></i>
         <span><i class="el-icon-finished"></i> 意图白名单</span>
-        <i class="el-icon-right flow-arrow"></i>
         <span><i class="el-icon-tickets"></i> 参数化查询</span>
-        <i class="el-icon-right flow-arrow"></i>
         <span><i class="el-icon-coin"></i> 数据库事实回答</span>
       </div>
-    </section>
-
-    <section class="degradation-card system-card" aria-label="模型降级说明">
-      <div class="degradation-icon"><i class="el-icon-set-up"></i></div>
-      <div class="degradation-copy">
-        <p class="section-kicker">GRACEFUL DEGRADATION</p>
-        <h3>可降级，但不越过安全边界</h3>
-        <p>DeepSeek 可用时负责理解口语和提高查全率；未配置或暂时不可用时，系统改用本地规则，复杂表达可能漏检，但范围过滤、参数化查询和数据库事实回答保持不变。</p>
-      </div>
-      <div class="tradeoff-tags">
-        <span class="is-stable">安全性保持</span>
-        <span class="is-variable">自然语言召回降低</span>
-      </div>
-    </section>
-
-    <section class="question-card system-card">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">ASK THE CATALOG</p>
-          <h3>你想查询什么？</h3>
+      <div class="degradation-note" aria-label="模型降级说明">
+        <div class="degradation-icon"><i class="el-icon-set-up"></i></div>
+        <div class="degradation-copy">
+          <p class="section-kicker">GRACEFUL DEGRADATION</p>
+          <h3>可降级，但不越过安全边界</h3>
+          <p>DeepSeek 可用时负责理解口语和提高查全率；未配置或暂时不可用时，系统改用本地规则，复杂表达可能漏检，但范围过滤、参数化查询和数据库事实回答保持不变。</p>
         </div>
-        <span class="scope-badge">仅限馆藏相关问题</span>
-      </div>
-
-      <div class="prompt-grid">
-        <button
-          v-for="prompt in promptExamples"
-          :key="prompt"
-          type="button"
-          class="prompt-chip"
-          @click="question = prompt"
-        >
-          {{ prompt }}
-        </button>
-      </div>
-
-      <el-input
-        v-model="question"
-        type="textarea"
-        :rows="4"
-        :maxlength="120"
-        show-word-limit
-        resize="none"
-        placeholder="例如：书名《三体》、作者：余华、分类：编程"
-        class="assistant-input"
-        @keydown.ctrl.enter.native="askQuestion"
-      />
-
-      <div class="composer-footer">
-        <p><i class="el-icon-info"></i> 天气、股票、闲聊等问题会在本地直接拒绝，不消耗模型 API。</p>
-        <div class="toolbar-actions">
-          <el-button class="btn-ghost action-button" :disabled="loading" @click="resetForm">清空</el-button>
-          <el-button class="btn-primary action-button" :loading="loading" @click="askQuestion">
-            {{ loading ? '正在核验馆藏' : '查询馆藏' }}
-          </el-button>
+        <div class="tradeoff-tags">
+          <span class="is-stable">安全性保持</span>
+          <span class="is-variable">自然语言召回降低</span>
         </div>
       </div>
     </section>
 
-    <section v-if="hasResult" class="result-card system-card">
+    <section class="assistant-console system-card">
+      <div class="question-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">ASK THE CATALOG</p>
+            <h3>你想查询什么？</h3>
+          </div>
+          <span class="scope-badge">仅限馆藏相关问题</span>
+        </div>
+
+        <div class="prompt-grid">
+          <button
+            v-for="prompt in promptExamples"
+            :key="prompt"
+            type="button"
+            class="prompt-chip"
+            @click="question = prompt"
+          >
+            {{ prompt }}
+          </button>
+        </div>
+
+        <el-input
+          v-model="question"
+          type="textarea"
+          :rows="4"
+          :maxlength="120"
+          show-word-limit
+          resize="none"
+          placeholder="例如：书名《三体》、作者：余华、分类：编程"
+          class="assistant-input"
+          @keydown.ctrl.enter.native="askQuestion"
+        />
+
+        <div class="composer-footer">
+          <p><i class="el-icon-info"></i> 天气、股票、闲聊等问题会在本地直接拒绝，不消耗模型 API。</p>
+          <div class="toolbar-actions">
+            <el-button class="btn-ghost action-button" :disabled="loading" @click="resetForm">清空</el-button>
+            <el-button class="btn-primary action-button" :loading="loading" @click="askQuestion">
+              {{ loading ? '正在核验馆藏' : '查询馆藏' }}
+            </el-button>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="hasResult" class="result-section">
       <div class="result-status">
         <span :class="['verification-pill', databaseVerified ? 'is-verified' : 'is-refused']">
           <i :class="databaseVerified ? 'el-icon-circle-check' : 'el-icon-warning-outline'"></i>
@@ -124,13 +121,14 @@
           <el-table-column prop="description" label="馆藏简介" min-width="220" show-overflow-tooltip></el-table-column>
         </el-table>
       </div>
-    </section>
+      </div>
 
-    <section v-else class="assistant-empty system-card">
-      <div class="empty-orbit"><i class="el-icon-search"></i></div>
-      <div>
-        <h3>等待你的馆藏问题</h3>
-        <p>可以查具体书名，也可以按作者、分类、出版社或可借状态筛选。</p>
+      <div v-else class="assistant-empty">
+        <div class="empty-orbit"><i class="el-icon-search"></i></div>
+        <div>
+          <h3>等待你的馆藏问题</h3>
+          <p>可以查具体书名，也可以按作者、分类、出版社或可借状态筛选。</p>
+        </div>
       </div>
     </section>
   </div>
@@ -289,49 +287,48 @@ export default {
 .trust-flow {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-top: 24px;
 }
 
 .trust-flow span {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  min-width: 0;
   min-height: 32px;
-  padding: 0 12px;
+  padding: 7px 10px;
   border: 1px solid rgba(36, 87, 214, 0.14);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.78);
   color: #36516c;
   font-size: 12px;
   font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
-.flow-arrow {
-  color: #8ea8c3;
-}
-
-.degradation-card {
+.degradation-note {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 16px;
-  margin-top: 16px;
-  padding: 18px 20px;
-  border: 1px solid #d8e6f4;
-  background: linear-gradient(120deg, #ffffff 0%, #f5fbf9 100%);
+  gap: 14px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(36, 87, 214, 0.12);
 }
 
 .degradation-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   background: #e9f8f3;
   color: #087a67;
   font-size: 19px;
@@ -341,6 +338,7 @@ export default {
   margin: 0;
   color: var(--assistant-ink);
   font-size: 16px;
+  overflow-wrap: anywhere;
 }
 
 .degradation-copy p:last-child {
@@ -348,6 +346,7 @@ export default {
   color: #60758a;
   font-size: 12px;
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .tradeoff-tags {
@@ -374,15 +373,16 @@ export default {
   color: #9a6113;
 }
 
-.question-card,
-.result-card,
-.assistant-empty {
+.assistant-console {
   margin-top: 16px;
+  padding: 24px;
 }
 
-.question-card,
-.result-card {
-  padding: 24px;
+.result-section,
+.assistant-empty {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--assistant-line);
 }
 
 .section-heading,
@@ -391,7 +391,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 16px;
+}
+
+.section-heading > div,
+.degradation-copy,
+.answer-panel > div:last-child {
+  min-width: 0;
 }
 
 .section-heading h3 {
@@ -413,11 +420,14 @@ export default {
   padding: 7px 11px;
   background: #fff7e8;
   color: #9a6113;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
 }
 
 .prompt-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   margin: 18px 0 12px;
 }
@@ -430,6 +440,8 @@ export default {
   color: #49657f;
   font: inherit;
   font-size: 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
   cursor: pointer;
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -459,13 +471,18 @@ export default {
 }
 
 .composer-footer {
+  align-items: flex-end;
   margin-top: 14px;
 }
 
 .composer-footer p {
+  flex: 1 1 320px;
+  min-width: 0;
   margin: 0;
   color: #74879a;
   font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .toolbar-actions {
@@ -515,13 +532,11 @@ export default {
 
 .answer-panel {
   display: grid;
-  grid-template-columns: 42px 1fr;
+  grid-template-columns: 42px minmax(0, 1fr);
   gap: 13px;
   margin-top: 18px;
-  padding: 18px;
-  border: 1px solid #d8e6f4;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #f8fbff, #f4fbf9);
+  padding: 4px 0 4px 16px;
+  border-left: 3px solid #8db1e8;
 }
 
 .assistant-avatar {
@@ -550,6 +565,7 @@ export default {
   font-size: 14px;
   line-height: 1.75;
   white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 .model-note {
@@ -614,7 +630,7 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  min-height: 190px;
+  min-height: 150px;
   color: #7a8ea2;
   text-align: left;
 }
@@ -641,10 +657,36 @@ export default {
   font-size: 13px;
 }
 
+@media (max-width: 1050px) {
+  .trust-flow,
+  .prompt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .degradation-note {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .tradeoff-tags {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: start;
+  }
+
+  .composer-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .toolbar-actions {
+    align-self: flex-end;
+  }
+}
+
 @media (max-width: 760px) {
   .assistant-hero,
-  .question-card,
-  .result-card {
+  .assistant-console {
     padding: 19px;
   }
 
@@ -652,27 +694,19 @@ export default {
     font-size: 25px;
   }
 
-  .trust-flow {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .degradation-card {
+  .degradation-note {
     grid-template-columns: 1fr;
   }
 
   .tradeoff-tags {
+    grid-column: auto;
     display: flex;
     flex-wrap: wrap;
     justify-items: start;
   }
 
-  .flow-arrow {
-    display: none;
-  }
-
-  .section-heading,
-  .composer-footer {
+  .section-heading {
+    align-items: flex-start;
     align-items: stretch;
     flex-direction: column;
   }
@@ -686,12 +720,29 @@ export default {
     width: 100%;
   }
 
-  .answer-panel {
+  .intent-tag {
+    margin-left: 0;
+  }
+
+  .assistant-empty {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-flow,
+  .prompt-grid {
     grid-template-columns: 1fr;
   }
 
-  .intent-tag {
-    margin-left: 0;
+  .result-status {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .answer-panel {
+    grid-template-columns: 1fr;
   }
 }
 </style>
