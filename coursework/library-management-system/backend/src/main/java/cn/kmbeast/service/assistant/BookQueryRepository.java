@@ -75,6 +75,15 @@ public class BookQueryRepository {
         return new QueryResult(rows, sql + System.lineSeparator() + "-- 参数: " + parameters);
     }
 
+    public boolean matchesCurrentUser(Integer currentUserId, String userName) {
+        if (currentUserId == null || userName == null || userName.isBlank()) {
+            return false;
+        }
+        String sql = "SELECT id FROM user WHERE id=? AND (user_name=? OR user_account=?) LIMIT 1";
+        String normalized = userName.trim();
+        return !execute(sql, List.of(currentUserId, normalized, normalized)).isEmpty();
+    }
+
     private QueryResult queryBusinessData(BookQueryPlan plan, Integer currentUserId, boolean isAdmin) {
         if (plan.requiresAdmin() && !isAdmin) {
             throw new IllegalStateException("当前账号无权查询其他读者的数据");

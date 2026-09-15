@@ -441,6 +441,11 @@ public class DeepSeekBookQueryPlanner {
     }
 
     private String extractUnreturnedUserName(String question) {
+        String compact = question == null ? "" : question.replaceAll("\\s+", "");
+        if (compact.matches("^(?:我)?(?:有)?(?:哪些|哪几本|什么)(?:书|图书|书籍)?"
+                + "(?:还没还|没还|未还|未归还|尚未归还)[?？。!！]*$")) {
+            return null;
+        }
         Matcher matcher = USER_UNRETURNED_PATTERN.matcher(question);
         if (!matcher.find()) {
             return null;

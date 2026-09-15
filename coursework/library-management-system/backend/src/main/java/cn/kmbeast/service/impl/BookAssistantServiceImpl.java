@@ -66,10 +66,13 @@ public class BookAssistantServiceImpl implements BookAssistantService {
         BookQueryPlan plan = queryPlanner.plan(question);
         Integer currentUserId = LocalThreadHolder.getUserId();
         boolean isAdmin = Integer.valueOf(1).equals(LocalThreadHolder.getRoleId());
-        if (!isAdmin
+        boolean readerAsksOwnBorrow = !isAdmin
                 && plan.getIntent() == cn.kmbeast.service.assistant.BookIntent.BORROW_OVERVIEW
-                && (plan.getUserName() == null || plan.getUserName().isBlank())) {
+                && ((plan.getUserName() == null || plan.getUserName().isBlank())
+                || queryRepository.matchesCurrentUser(currentUserId, plan.getUserName()));
+        if (readerAsksOwnBorrow) {
             plan.setIntent(cn.kmbeast.service.assistant.BookIntent.MY_BORROWS);
+            plan.setUserName(null);
             if (Boolean.TRUE.equals(plan.getUnreturnedOnly())) {
                 plan.setPlanningNote("已识别为当前读者的未归还查询；本次未调用 DeepSeek，API 调用 0 次");
             }
