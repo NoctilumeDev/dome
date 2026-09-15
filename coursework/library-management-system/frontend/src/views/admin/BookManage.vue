@@ -110,7 +110,7 @@
       <div style="padding:0 20px;">
         <el-row class="dialog-form-item">
           <el-upload class="avatar-uploader" :action="uploadUrl" :headers="uploadHeaders" :show-file-list="false" :on-success="handleCoverSuccess">
-            <img v-if="data.cover" :src="data.cover" class="dialog-avatar">
+            <img v-if="data.cover" :src="getCoverUrl(data.cover)" class="dialog-avatar">
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
           </el-upload>
         </el-row>

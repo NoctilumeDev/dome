@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kmbeast.mapper.BookReviewMapper">
+    <insert id="insert" parameterType="cn.kmbeast.pojo.entity.BookReview" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO book_review (user_id,book_id,rating,content,create_time,update_time)
+        VALUES (#{userId},#{bookId},#{rating},#{content},#{createTime},#{updateTime})
+    </insert>
+    <update id="update" parameterType="cn.kmbeast.pojo.entity.BookReview">
+        UPDATE book_review SET rating=#{rating},content=#{content},update_time=#{updateTime} WHERE id=#{id}
+    </update>
+    <delete id="deleteById">DELETE FROM book_review WHERE id=#{id}</delete>
+    <select id="getById" resultMap="BookReviewMap">SELECT * FROM book_review WHERE id=#{id}</select>
+    <select id="getByUserAndBook" resultMap="BookReviewMap">
+        SELECT * FROM book_review WHERE user_id=#{userId} AND book_id=#{bookId}
+    </select>
+    <select id="query" resultMap="BookReviewVOMap">
+        SELECT r.id,r.user_id,u.user_name,r.book_id,b.name AS book_name,r.rating,r.content,r.create_time,r.update_time
+        FROM book_review r LEFT JOIN user u ON u.id=r.user_id LEFT JOIN book b ON b.id=r.book_id
+        <where>
+            <if test="userId != null">AND r.user_id=#{userId}</if>
+            <if test="bookId != null">AND r.book_id=#{bookId}</if>
+            <if test="rating != null">AND r.rating=#{rating}</if>
+            <if test="userName != null and userName != ''">AND u.user_name LIKE concat('%',#{userName},'%')</if>
+            <if test="bookName != null and bookName != ''">AND b.name LIKE concat('%',#{bookName},'%')</if>
+            <if test="keyword != null and keyword != ''">AND r.content LIKE concat('%',#{keyword},'%')</if>
+        </where>
+        ORDER BY r.id DESC
+        <if test="current != null and size != null">LIMIT #{offset},#{size}</if>
+    </select>
+    <select id="queryCount" resultType="integer">
+        SELECT COUNT(*) FROM book_review r LEFT JOIN user u ON u.id=r.user_id LEFT JOIN book b ON b.id=r.book_id
+        <where>
+            <if test="userId != null">AND r.user_id=#{userId}</if>
+            <if test="bookId != null">AND r.book_id=#{bookId}</if>
+            <if test="rating != null">AND r.rating=#{rating}</if>
+            <if test="userName != null and userName != ''">AND u.user_name LIKE concat('%',#{userName},'%')</if>
+            <if test="bookName != null and bookName != ''">AND b.name LIKE concat('%',#{bookName},'%')</if>
+            <if test="keyword != null and keyword != ''">AND r.content LIKE concat('%',#{keyword},'%')</if>
+        </where>
+    </select>
+    <resultMap id="BookReviewVOMap" type="cn.kmbeast.pojo.vo.BookReviewVO">
+        <id column="id" property="id"/><result column="user_id" property="userId"/><result column="user_name" property="userName"/>
+        <result column="book_id" property="bookId"/><result column="book_name" property="bookName"/><result column="rating" property="rating"/>
+        <result column="content" property="content"/><result column="create_time" property="createTime"/><result column="update_time" property="updateTime"/>
+    </resultMap>
+    <resultMap id="BookReviewMap" type="cn.kmbeast.pojo.entity.BookReview">
+        <id column="id" property="id"/><result column="user_id" property="userId"/><result column="book_id" property="bookId"/>
+        <result column="rating" property="rating"/><result column="content" property="content"/>
+        <result column="create_time" property="createTime"/><result column="update_time" property="updateTime"/>
+    </resultMap>
+</mapper>

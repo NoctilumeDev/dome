@@ -10,6 +10,8 @@ USE `library_management`;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 -- 删除旧表（按外键依赖顺序）
+DROP TABLE IF EXISTS book_review;
+DROP TABLE IF EXISTS feedback;
 DROP TABLE IF EXISTS borrow_record;
 DROP TABLE IF EXISTS book;
 DROP TABLE IF EXISTS bookshelf;
@@ -78,6 +80,36 @@ CREATE TABLE borrow_record (
     INDEX idx_book_id (book_id),
     INDEX idx_status (status)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='借阅记录表';
+
+-- 读者反馈表
+CREATE TABLE feedback (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    user_id     INT          NOT NULL COMMENT '读者ID',
+    content     VARCHAR(500) NOT NULL COMMENT '反馈内容',
+    reply       VARCHAR(500)          COMMENT '管理员回复',
+    status      TINYINT      NOT NULL DEFAULT 0 COMMENT '0=待处理, 1=已回复',
+    create_time DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '提交时间',
+    reply_time  DATETIME              COMMENT '回复时间',
+    INDEX idx_feedback_user (user_id),
+    INDEX idx_feedback_status (status),
+    CONSTRAINT fk_feedback_user FOREIGN KEY (user_id) REFERENCES user(id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='读者反馈表';
+
+-- 图书评论表
+CREATE TABLE book_review (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    user_id     INT          NOT NULL COMMENT '读者ID',
+    book_id     INT          NOT NULL COMMENT '图书ID',
+    rating      TINYINT      NOT NULL COMMENT '评分1-5',
+    content     VARCHAR(500) NOT NULL COMMENT '书评内容',
+    create_time DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    update_time DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    UNIQUE KEY uk_review_user_book (user_id, book_id),
+    INDEX idx_review_book (book_id),
+    CONSTRAINT fk_review_user FOREIGN KEY (user_id) REFERENCES user(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT fk_review_book FOREIGN KEY (book_id) REFERENCES book(id) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='图书评论表';
 
 -- =====================================================
 -- 测试数据（密码均为: 123456，BCrypt 加密存储）

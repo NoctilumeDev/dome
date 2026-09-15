@@ -12,8 +12,10 @@ public class BookQueryPlan {
     private String author;
     private String category;
     private String publisher;
+    private String userName;
     private List<String> keywords = new ArrayList<>();
     private Boolean availableOnly;
+    private Integer days = 3;
     private Integer limit = 20;
     private String planningNote;
 
@@ -43,6 +45,9 @@ public class BookQueryPlan {
         if (hasText(publisher)) {
             return publisher;
         }
+        if (hasText(userName)) {
+            return userName;
+        }
         if (keywords != null) {
             for (String keyword : keywords) {
                 if (hasText(keyword)) {
@@ -51,6 +56,25 @@ public class BookQueryPlan {
             }
         }
         return "当前条件";
+    }
+
+    public boolean requiresAdmin() {
+        return intent == BookIntent.LIST_USERS
+                || intent == BookIntent.BORROW_OVERVIEW
+                || intent == BookIntent.RECENT_RETURNS
+                || intent == BookIntent.DUE_SOON
+                || intent == BookIntent.OVERDUE_BORROWS
+                || intent == BookIntent.FEEDBACK_OVERVIEW;
+    }
+
+    public boolean isBookIntent() {
+        return intent == BookIntent.SEARCH_BOOK
+                || intent == BookIntent.FIND_AUTHOR
+                || intent == BookIntent.FIND_CATEGORY
+                || intent == BookIntent.CHECK_AVAILABILITY
+                || intent == BookIntent.RECOMMEND_BOOK
+                || intent == BookIntent.FIND_LOCATION
+                || intent == BookIntent.LIST_CATALOG;
     }
 
     private static boolean hasText(String value) {

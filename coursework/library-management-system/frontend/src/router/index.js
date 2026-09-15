@@ -22,6 +22,8 @@ const routes = [
       { path: "/bookshelfManage", name: '书架管理', icon: 'el-icon-s-grid', component: () => import(`@/views/admin/BookshelfManage.vue`), meta: { requireAuth: true } },
       { path: "/bookManage", name: '图书管理', icon: 'el-icon-notebook-2', component: () => import(`@/views/admin/BookManage.vue`), meta: { requireAuth: true } },
       { path: "/borrowManage", name: '借阅管理', icon: 'el-icon-document-copy', component: () => import(`@/views/admin/BorrowManage.vue`), meta: { requireAuth: true } },
+      { path: "/feedbackManage", name: '反馈管理', icon: 'el-icon-message', component: () => import(`@/views/admin/FeedbackManage.vue`), meta: { requireAuth: true } },
+      { path: "/reviewManage", name: '书评管理', icon: 'el-icon-star-off', component: () => import(`@/views/admin/ReviewManage.vue`), meta: { requireAuth: true } },
       { path: "/bookAssistant", name: '图书问答', icon: 'el-icon-chat-dot-round', component: () => import(`@/views/assistant/BookAssistant.vue`), meta: { requireAuth: true } }
     ]
   },
@@ -32,6 +34,8 @@ const routes = [
     children: [
       { name: '图书借阅', path: "/bookBorrow", icon: 'el-icon-reading', component: () => import(`@/views/user/BookBorrow.vue`), meta: { requireAuth: true } },
       { name: '我的借阅', path: "/myBorrows", icon: 'el-icon-collection', component: () => import(`@/views/user/MyBorrows.vue`), meta: { requireAuth: true } },
+      { name: '读者反馈', path: "/user/feedback", icon: 'el-icon-chat-line-square', component: () => import(`@/views/user/Feedback.vue`), meta: { requireAuth: true } },
+      { name: '我的书评', path: "/user/reviews", icon: 'el-icon-star-off', component: () => import(`@/views/user/Review.vue`), meta: { requireAuth: true } },
       { name: '读者图书问答', path: "/user/bookAssistant", icon: 'el-icon-chat-dot-round', component: () => import(`@/views/assistant/BookAssistant.vue`), meta: { requireAuth: true } }
     ]
   }

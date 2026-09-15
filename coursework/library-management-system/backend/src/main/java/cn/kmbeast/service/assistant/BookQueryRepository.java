@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -29,7 +30,10 @@ public class BookQueryRepository {
     @Resource
     private DataSource dataSource;
 
-    public QueryResult query(BookQueryPlan plan) {
+    public QueryResult query(BookQueryPlan plan, Integer currentUserId, boolean isAdmin) {
+        if (!plan.isBookIntent()) {
+            return queryBusinessData(plan, currentUserId, isAdmin);
+        }
         List<String> conditions = new ArrayList<>();
         List<Object> parameters = new ArrayList<>();
 
@@ -69,6 +73,66 @@ public class BookQueryRepository {
 
         List<Map<String, Object>> rows = execute(sql, parameters);
         return new QueryResult(rows, sql + System.lineSeparator() + "-- 参数: " + parameters);
+    }
+
+    private QueryResult queryBusinessData(BookQueryPlan plan, Integer currentUserId, boolean isAdmin) {
+        if (plan.requiresAdmin() && !isAdmin) {
+            throw new IllegalStateException("当前账号无权查询其他读者的数据");
+        }
+        int limit = Math.max(1, Math.min(plan.getLimit() == null ? 20 : plan.getLimit(), MAX_ROWS));
+        List<Object> parameters = new ArrayList<>();
+        String sql;
+
+        if (plan.getIntent() == BookIntent.LIST_USERS) {
+            sql = "SELECT id,user_account AS userAccount,user_name AS userName,user_role AS userRole,"
+                    + "is_login AS isLogin,create_time AS createTime FROM user ORDER BY id DESC LIMIT " + limit;
+        } else if (plan.getIntent() == BookIntent.SEARCH_REVIEWS || plan.getIntent() == BookIntent.MY_REVIEWS) {
+            StringBuilder where = new StringBuilder(" WHERE 1=1");
+            if (plan.getIntent() == BookIntent.MY_REVIEWS) {
+                where.append(" AND r.user_id=?");
+                parameters.add(currentUserId);
+            }
+            if (plan.getTitle() != null && !plan.getTitle().isBlank()) {
+                where.append(" AND b.name LIKE ?");
+                parameters.add("%" + plan.getTitle().trim() + "%");
+            }
+            sql = "SELECT r.id,r.user_id AS userId,u.user_name AS userName,r.book_id AS bookId,"
+                    + "b.name AS bookName,r.rating,r.content,r.create_time AS createTime,r.update_time AS updateTime "
+                    + "FROM book_review r LEFT JOIN user u ON u.id=r.user_id LEFT JOIN book b ON b.id=r.book_id"
+                    + where + " ORDER BY r.id DESC LIMIT " + limit;
+        } else if (plan.getIntent() == BookIntent.FEEDBACK_OVERVIEW || plan.getIntent() == BookIntent.MY_FEEDBACK) {
+            String where = plan.getIntent() == BookIntent.MY_FEEDBACK ? " WHERE f.user_id=?" : " WHERE 1=1";
+            if (plan.getIntent() == BookIntent.MY_FEEDBACK) {
+                parameters.add(currentUserId);
+            }
+            sql = "SELECT f.id,f.user_id AS userId,u.user_name AS userName,f.content,f.reply,f.status,"
+                    + "f.create_time AS createTime,f.reply_time AS replyTime FROM feedback f "
+                    + "LEFT JOIN user u ON u.id=f.user_id" + where + " ORDER BY f.id DESC LIMIT " + limit;
+        } else {
+            StringBuilder where = new StringBuilder(" WHERE 1=1");
+            if (plan.getIntent() == BookIntent.MY_BORROWS || plan.getIntent() == BookIntent.MY_DUE_SOON) {
+                where.append(" AND br.user_id=?");
+                parameters.add(currentUserId);
+            } else if (plan.getUserName() != null && !plan.getUserName().isBlank()) {
+                where.append(" AND u.user_name LIKE ?");
+                parameters.add("%" + plan.getUserName().trim() + "%");
+            }
+            if (plan.getIntent() == BookIntent.RECENT_RETURNS) {
+                where.append(" AND br.status=1 AND br.return_time IS NOT NULL");
+            } else if (plan.getIntent() == BookIntent.DUE_SOON || plan.getIntent() == BookIntent.MY_DUE_SOON) {
+                where.append(" AND br.status=0 AND br.due_date>=NOW() AND br.due_date<=?");
+                parameters.add(LocalDateTime.now().plusDays(plan.getDays() == null ? 3 : plan.getDays()));
+            } else if (plan.getIntent() == BookIntent.OVERDUE_BORROWS) {
+                where.append(" AND br.status=0 AND br.due_date<NOW()");
+            }
+            String orderBy = plan.getIntent() == BookIntent.RECENT_RETURNS ? "br.return_time DESC" : "br.due_date ASC";
+            sql = "SELECT br.id,br.user_id AS userId,u.user_name AS userName,br.book_id AS bookId,"
+                    + "b.name AS bookName,br.borrow_time AS borrowTime,br.due_date AS dueDate,"
+                    + "br.return_time AS returnTime,br.status,br.fine_amount AS fineAmount "
+                    + "FROM borrow_record br LEFT JOIN user u ON u.id=br.user_id LEFT JOIN book b ON b.id=br.book_id"
+                    + where + " ORDER BY " + orderBy + " LIMIT " + limit;
+        }
+        return new QueryResult(execute(sql, parameters), sql + System.lineSeparator() + "-- 参数: " + parameters);
     }
 
     private void addLikeCondition(List<String> conditions, List<Object> parameters,

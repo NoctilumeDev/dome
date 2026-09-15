@@ -101,6 +101,8 @@ export default {
             homeModules: [
                 { name: '图书借阅', icon: 'el-icon-reading', title: '图书借阅', desc: '查看可借图书并进行借阅或收藏。', path: '/bookBorrow' },
                 { name: '我的借阅', icon: 'el-icon-collection', title: '我的借阅', desc: '管理我的借阅记录、还书与状态。', path: '/myBorrows' },
+                { name: '读者反馈', icon: 'el-icon-chat-line-square', title: '读者反馈', desc: '提交使用建议并查看管理员回复。', path: '/user/feedback' },
+                { name: '我的书评', icon: 'el-icon-star-off', title: '我的书评', desc: '记录阅读感受并管理自己的书评。', path: '/user/reviews' },
                 { name: '读者图书问答', icon: 'el-icon-chat-line-round', title: '图书问答', desc: '用自然语言查询数据库里的图书信息。', path: '/user/bookAssistant' },
             ],
         };

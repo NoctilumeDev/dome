@@ -8,7 +8,19 @@ public enum BookIntent {
     FIND_CATEGORY,
     CHECK_AVAILABILITY,
     RECOMMEND_BOOK,
-    FIND_LOCATION;
+    FIND_LOCATION,
+    LIST_CATALOG,
+    LIST_USERS,
+    BORROW_OVERVIEW,
+    MY_BORROWS,
+    RECENT_RETURNS,
+    DUE_SOON,
+    MY_DUE_SOON,
+    OVERDUE_BORROWS,
+    SEARCH_REVIEWS,
+    MY_REVIEWS,
+    FEEDBACK_OVERVIEW,
+    MY_FEEDBACK;
 
     public static BookIntent fromModelValue(String value) {
         if (value == null || value.isBlank()) {

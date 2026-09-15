@@ -1,5 +1,6 @@
 package cn.kmbeast.service.impl;
 
+import cn.kmbeast.context.LocalThreadHolder;
 import cn.kmbeast.pojo.api.ApiResult;
 import cn.kmbeast.pojo.api.Result;
 import cn.kmbeast.pojo.dto.query.extend.BookAssistantQueryDto;
@@ -61,8 +62,22 @@ public class BookAssistantServiceImpl implements BookAssistantService {
         }
 
         BookQueryPlan plan = queryPlanner.plan(question);
+        Integer currentUserId = LocalThreadHolder.getUserId();
+        boolean isAdmin = Integer.valueOf(1).equals(LocalThreadHolder.getRoleId());
+        if (plan.requiresAdmin() && !isAdmin) {
+            BookAssistantVO denied = new BookAssistantVO();
+            denied.setQuestion(question);
+            denied.setIntent("FORBIDDEN");
+            denied.setDatabaseVerified(false);
+            denied.setGeneratedSql("");
+            denied.setModelNote("已在执行 SQL 前完成角色权限拦截");
+            denied.setAnswer("该问题涉及其他读者的身份或借阅记录，仅管理员可以查询。你可以查询自己的借阅、反馈和书评。");
+            denied.setTotal(0);
+            denied.setBooks(new ArrayList<>());
+            return ApiResult.success(denied);
+        }
         try {
-            BookQueryRepository.QueryResult queryResult = queryRepository.query(plan);
+            BookQueryRepository.QueryResult queryResult = queryRepository.query(plan, currentUserId, isAdmin);
             List<Map<String, Object>> rows = queryResult.getRows();
 
             BookAssistantVO response = new BookAssistantVO();
@@ -73,7 +88,7 @@ public class BookAssistantServiceImpl implements BookAssistantService {
             response.setModelNote(plan.getPlanningNote());
             response.setAnswer(answerBuilder.build(question, plan, rows));
             response.setTotal(rows.size());
-            response.setBooks(rows);
+            response.setBooks(plan.isBookIntent() ? rows : new ArrayList<>());
             return ApiResult.success(response);
         } catch (IllegalStateException exception) {
             return ApiResult.error("馆藏数据库查询失败，请稍后重试");

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kmbeast.mapper.FeedbackMapper">
+    <insert id="insert" parameterType="cn.kmbeast.pojo.entity.Feedback" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO feedback (user_id, content, status, create_time)
+        VALUES (#{userId}, #{content}, 0, #{createTime})
+    </insert>
+
+    <select id="query" resultMap="FeedbackVOMap">
+        SELECT f.id, f.user_id, u.user_name, f.content, f.reply, f.status, f.create_time, f.reply_time
+        FROM feedback f LEFT JOIN user u ON u.id = f.user_id
+        <where>
+            <if test="userId != null">AND f.user_id = #{userId}</if>
+            <if test="userName != null and userName != ''">AND u.user_name LIKE concat('%', #{userName}, '%')</if>
+            <if test="keyword != null and keyword != ''">
+                AND (f.content LIKE concat('%', #{keyword}, '%') OR f.reply LIKE concat('%', #{keyword}, '%'))
+            </if>
+            <if test="status != null">AND f.status = #{status}</if>
+            <if test="startTime != null and endTime != null">AND f.create_time BETWEEN #{startTime} AND #{endTime}</if>
+        </where>
+        ORDER BY f.id DESC
+        <if test="current != null and size != null">LIMIT #{offset}, #{size}</if>
+    </select>
+
+    <select id="queryCount" resultType="integer">
+        SELECT COUNT(*) FROM feedback f LEFT JOIN user u ON u.id = f.user_id
+        <where>
+            <if test="userId != null">AND f.user_id = #{userId}</if>
+            <if test="userName != null and userName != ''">AND u.user_name LIKE concat('%', #{userName}, '%')</if>
+            <if test="keyword != null and keyword != ''">
+                AND (f.content LIKE concat('%', #{keyword}, '%') OR f.reply LIKE concat('%', #{keyword}, '%'))
+            </if>
+            <if test="status != null">AND f.status = #{status}</if>
+            <if test="startTime != null and endTime != null">AND f.create_time BETWEEN #{startTime} AND #{endTime}</if>
+        </where>
+    </select>
+
+    <update id="reply" parameterType="cn.kmbeast.pojo.entity.Feedback">
+        UPDATE feedback SET reply = #{reply}, status = 1, reply_time = #{replyTime} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">DELETE FROM feedback WHERE id = #{id}</delete>
+
+    <resultMap id="FeedbackVOMap" type="cn.kmbeast.pojo.vo.FeedbackVO">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="content" property="content"/>
+        <result column="reply" property="reply"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="reply_time" property="replyTime"/>
+    </resultMap>
+</mapper>

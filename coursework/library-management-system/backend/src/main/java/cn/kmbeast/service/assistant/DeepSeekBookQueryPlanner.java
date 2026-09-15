@@ -52,6 +52,10 @@ public class DeepSeekBookQueryPlanner {
     private static final Pattern LABELED_PUBLISHER_PATTERN = Pattern.compile(
             "(?:出版社是|出版社叫|出版社为|出版社)\\s*[:：]?\\s*([^，。！？!?]{1,32})"
     );
+    private static final Pattern USER_BORROW_PATTERN = Pattern.compile(
+            "([\\u4e00-\\u9fffA-Za-z0-9_]{1,20})(?:最近|刚才|目前)?(?:借了|借过|借阅了|借阅过)"
+    );
+    private static final Pattern DAYS_PATTERN = Pattern.compile("(?:未来|接下来)?\\s*(\\d{1,2})\\s*天");
 
     @Value("$" + "{deepseek.api-url}")
     private String apiUrl;
@@ -73,6 +77,18 @@ public class DeepSeekBookQueryPlanner {
             .build();
 
     public BookQueryPlan plan(String question) {
+        BookQueryPlan systemPlan = planSystemQuery(question);
+        if (systemPlan != null) {
+            systemPlan.setPlanningNote("已使用本地图书馆业务意图解析，未调用 DeepSeek");
+            return systemPlan;
+        }
+        if (isCatalogOverviewQuestion(question)) {
+            BookQueryPlan plan = new BookQueryPlan();
+            plan.setIntent(BookIntent.LIST_CATALOG);
+            plan.setLimit(50);
+            plan.setPlanningNote("已识别为馆藏总览查询，未调用 DeepSeek");
+            return plan;
+        }
         String deterministicTitle = scopeGuard.extractDeterministicTitle(question);
         if (deterministicTitle != null) {
             BookQueryPlan plan = new BookQueryPlan();
@@ -144,11 +160,13 @@ public class DeepSeekBookQueryPlanner {
         plan.setAuthor(textValue(node, "author"));
         plan.setCategory(textValue(node, "category"));
         plan.setPublisher(textValue(node, "publisher"));
+        plan.setUserName(textValue(node, "userName"));
         plan.setKeywords(readKeywords(node.path("keywords")));
         if (node.has("availableOnly") && !node.get("availableOnly").isNull()) {
             plan.setAvailableOnly(node.get("availableOnly").asBoolean());
         }
         plan.setLimit(node.path("limit").asInt(20));
+        plan.setDays(Math.max(1, Math.min(node.path("days").asInt(3), 30)));
         return plan;
     }
 
@@ -344,12 +362,75 @@ public class DeepSeekBookQueryPlanner {
         return false;
     }
 
+    private boolean isCatalogOverviewQuestion(String question) {
+        String normalized = question == null ? "" : question.toLowerCase(Locale.ROOT);
+        boolean asksForList = containsAny(normalized, "哪些", "所有", "全部", "都有什么", "有什么");
+        boolean mentionsCatalog = containsAny(normalized, "图书", "书籍", "馆藏", "书架");
+        return asksForList && mentionsCatalog;
+    }
+
+    private BookQueryPlan planSystemQuery(String question) {
+        String normalized = question == null ? "" : question.toLowerCase(Locale.ROOT);
+        boolean personal = containsAny(normalized, "我借", "我的借", "我还", "我的反馈", "我的意见", "我的书评", "我的评论", "我快", "我是否");
+        BookQueryPlan plan = new BookQueryPlan();
+
+        if (containsAny(normalized, "书评", "图书评论", "读后评价", "图书评分")) {
+            plan.setIntent(personal ? BookIntent.MY_REVIEWS : BookIntent.SEARCH_REVIEWS);
+            plan.setTitle(scopeGuard.extractDeterministicTitle(question));
+            return plan;
+        }
+        if (containsAny(normalized, "反馈", "意见建议", "读者意见")) {
+            plan.setIntent(personal ? BookIntent.MY_FEEDBACK : BookIntent.FEEDBACK_OVERVIEW);
+            return plan;
+        }
+        if (containsAny(normalized, "快要逾期", "即将逾期", "快逾期", "快到期", "即将到期")) {
+            plan.setIntent(personal ? BookIntent.MY_DUE_SOON : BookIntent.DUE_SOON);
+            plan.setDays(extractDays(question));
+            return plan;
+        }
+        if (containsAny(normalized, "已经逾期", "逾期名单", "谁逾期", "哪些逾期")) {
+            plan.setIntent(BookIntent.OVERDUE_BORROWS);
+            return plan;
+        }
+        if (containsAny(normalized, "刚才还书", "最近还书", "最近归还", "谁还书", "谁归还")) {
+            plan.setIntent(BookIntent.RECENT_RETURNS);
+            return plan;
+        }
+        if (containsAny(normalized, "谁借了", "借了什么", "借了哪些", "借阅记录", "借阅情况", "借过什么", "借过哪些", "我借的书")) {
+            plan.setIntent(personal ? BookIntent.MY_BORROWS : BookIntent.BORROW_OVERVIEW);
+            plan.setUserName(extractUserName(question));
+            return plan;
+        }
+        if (containsAny(normalized, "有哪些用户", "所有用户", "用户列表", "读者名单", "有哪些读者")) {
+            plan.setIntent(BookIntent.LIST_USERS);
+            return plan;
+        }
+        return null;
+    }
+
+    private String extractUserName(String question) {
+        Matcher matcher = USER_BORROW_PATTERN.matcher(question);
+        if (!matcher.find()) {
+            return null;
+        }
+        String value = matcher.group(1).trim();
+        return containsAny(value, "谁", "哪些", "什么", "我") ? null : value;
+    }
+
+    private int extractDays(String question) {
+        Matcher matcher = DAYS_PATTERN.matcher(question);
+        if (!matcher.find()) {
+            return 3;
+        }
+        return Math.max(1, Math.min(Integer.parseInt(matcher.group(1)), 30));
+    }
+
     private String buildSystemPrompt() {
         return "你是图书馆检索计划解析器，不是问答机器人。禁止回答用户问题，禁止编造书名、作者、分类或任何馆藏事实。"
                 + "只提取用户原话中明确出现的查询条件，并且只输出一个 JSON 对象。"
-                + "可用意图：SEARCH_BOOK、FIND_AUTHOR、FIND_CATEGORY、CHECK_AVAILABILITY、RECOMMEND_BOOK、FIND_LOCATION。"
+                + "可用意图还包括用户、借阅归还、逾期、反馈和书评，但不得输出任何事实。"
                 + "固定结构：{\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":null,"
-                + "\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"limit\":20}。"
+                + "\"publisher\":null,\"userName\":null,\"keywords\":[],\"availableOnly\":null,\"days\":3,\"limit\":20}。"
                 + "title 只放明确书名；author 只放作者名；category 只放明确分类；publisher 只放出版社；"
                 + "keywords 最多 3 个，只能来自用户原句；availableOnly 可为 true、false 或 null；limit 范围 1 到 50。"
                 + "例如“有关于Java的书籍吗”应把 Java 放入 keywords，不能把整句话作为关键词。"

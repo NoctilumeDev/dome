@@ -7,6 +7,7 @@ import cn.kmbeast.utils.PathUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
@@ -28,9 +29,6 @@ import java.util.Set;
 @RestController
 @RequestMapping("/file")
 public class FileController {
-
-    @Value("${my-server.api-context-path}")
-    private String API;
 
     @Value("${file.upload-dir:./upload/pic}")
     private String uploadDir;
@@ -96,7 +94,11 @@ public class FileController {
         String fileName = uuid + extension;
         try {
             if (saveFile(multipartFile, fileName)) {
-                return ApiResult.success(API + "/file/getFile?fileName=" + fileName);
+                String fileUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
+                        .path("/file/getFile")
+                        .queryParam("fileName", fileName)
+                        .toUriString();
+                return ApiResult.success(fileUrl);
             }
         } catch (IOException e) {
             return ApiResult.error("文件上传异常");
