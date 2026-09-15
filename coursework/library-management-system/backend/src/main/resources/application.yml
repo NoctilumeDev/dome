@@ -17,8 +17,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/library_management?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
 # 让 Mybatis 在 Mapper目录下找到 XML 映射文件
 mybatis:
@@ -26,7 +26,7 @@ mybatis:
 
 # JWT 配置
 jwt:
-  secret: ${JWT_SECRET:d8c986df-8512-42b5-906f-eeea9b3acf86}
+  secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:604800000}
 
 # 借阅配置
@@ -40,7 +40,7 @@ cors:
 # DeepSeek 模型配置
 deepseek:
   api-url: ${DEEPSEEK_API_URL:https://api.deepseek.com/chat/completions}
-  api-key: ${DEEPSEEK_API_KEY:}
+  api-key: ${DEEPSEEK_API_KEY:123456789}
   model: ${DEEPSEEK_MODEL:deepseek-chat}
 
 # 文件上传路径
