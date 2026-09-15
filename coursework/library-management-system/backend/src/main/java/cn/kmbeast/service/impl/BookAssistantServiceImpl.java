@@ -55,6 +55,8 @@ public class BookAssistantServiceImpl implements BookAssistantService {
             refused.setDatabaseVerified(false);
             refused.setGeneratedSql("");
             refused.setModelNote("已由本地范围规则拒绝，未调用 DeepSeek");
+            refused.setPlanningSource("LOCAL_SCOPE");
+            refused.setModelCalled(false);
             refused.setAnswer(scopeGuard.refusalMessage());
             refused.setTotal(0);
             refused.setBooks(new ArrayList<>());
@@ -64,6 +66,14 @@ public class BookAssistantServiceImpl implements BookAssistantService {
         BookQueryPlan plan = queryPlanner.plan(question);
         Integer currentUserId = LocalThreadHolder.getUserId();
         boolean isAdmin = Integer.valueOf(1).equals(LocalThreadHolder.getRoleId());
+        if (!isAdmin
+                && plan.getIntent() == cn.kmbeast.service.assistant.BookIntent.BORROW_OVERVIEW
+                && (plan.getUserName() == null || plan.getUserName().isBlank())) {
+            plan.setIntent(cn.kmbeast.service.assistant.BookIntent.MY_BORROWS);
+            if (Boolean.TRUE.equals(plan.getUnreturnedOnly())) {
+                plan.setPlanningNote("已识别为当前读者的未归还查询；本次未调用 DeepSeek，API 调用 0 次");
+            }
+        }
         if (plan.requiresAdmin() && !isAdmin) {
             BookAssistantVO denied = new BookAssistantVO();
             denied.setQuestion(question);
@@ -71,6 +81,8 @@ public class BookAssistantServiceImpl implements BookAssistantService {
             denied.setDatabaseVerified(false);
             denied.setGeneratedSql("");
             denied.setModelNote("已在执行 SQL 前完成角色权限拦截");
+            denied.setPlanningSource(plan.getPlanningSource());
+            denied.setModelCalled(plan.getModelCalled());
             denied.setAnswer("该问题涉及其他读者的身份或借阅记录，仅管理员可以查询。你可以查询自己的借阅、反馈和书评。");
             denied.setTotal(0);
             denied.setBooks(new ArrayList<>());
@@ -86,6 +98,8 @@ public class BookAssistantServiceImpl implements BookAssistantService {
             response.setDatabaseVerified(true);
             response.setGeneratedSql(queryResult.getDisplaySql());
             response.setModelNote(plan.getPlanningNote());
+            response.setPlanningSource(plan.getPlanningSource());
+            response.setModelCalled(plan.getModelCalled());
             response.setAnswer(answerBuilder.build(question, plan, rows));
             response.setTotal(rows.size());
             response.setBooks(plan.isBookIntent() ? rows : new ArrayList<>());

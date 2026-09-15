@@ -22,4 +22,6 @@ public class BookAssistantVO {
     private List<Map<String, Object>> books;
     private String intent;
     private Boolean databaseVerified;
+    private String planningSource;
+    private Boolean modelCalled;
 }

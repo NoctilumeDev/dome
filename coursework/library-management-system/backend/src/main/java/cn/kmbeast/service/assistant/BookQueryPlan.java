@@ -15,9 +15,12 @@ public class BookQueryPlan {
     private String userName;
     private List<String> keywords = new ArrayList<>();
     private Boolean availableOnly;
+    private Boolean unreturnedOnly;
     private Integer days = 3;
     private Integer limit = 20;
     private String planningNote;
+    private String planningSource = "LOCAL_RULE";
+    private Boolean modelCalled = false;
 
     public boolean hasSearchCondition() {
         return hasContentCondition()

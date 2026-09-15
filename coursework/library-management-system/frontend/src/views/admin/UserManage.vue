@@ -164,7 +164,7 @@ export default {
     },
     methods: {
         getRoleName(role) {
-            const roleMap = { 1: '超级管理员', 2: '管理员', 3: '采购员', 4: '后勤', 5: '读者' };
+            const roleMap = { 1: '管理员', 2: '读者' };
             return roleMap[role] || '未知';
         },
         messagePushOperation() {

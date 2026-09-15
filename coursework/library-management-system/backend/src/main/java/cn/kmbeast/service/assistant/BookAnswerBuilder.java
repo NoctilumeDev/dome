@@ -26,7 +26,13 @@ public class BookAnswerBuilder {
             return summarizeUsers(rows);
         }
         if (plan.getIntent() == BookIntent.BORROW_OVERVIEW || plan.getIntent() == BookIntent.MY_BORROWS) {
-            return summarizeBorrows(rows, plan.getIntent() == BookIntent.MY_BORROWS ? "你的借阅记录" : "借阅记录");
+            String title;
+            if (Boolean.TRUE.equals(plan.getUnreturnedOnly())) {
+                title = plan.getIntent() == BookIntent.MY_BORROWS ? "你尚未归还的借阅记录" : "未归还借阅记录";
+            } else {
+                title = plan.getIntent() == BookIntent.MY_BORROWS ? "你的借阅记录" : "借阅记录";
+            }
+            return summarizeBorrows(rows, title);
         }
         if (plan.getIntent() == BookIntent.RECENT_RETURNS) {
             return summarizeReturns(rows);

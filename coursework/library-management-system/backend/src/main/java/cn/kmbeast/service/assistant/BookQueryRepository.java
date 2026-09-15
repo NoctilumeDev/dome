@@ -124,6 +124,8 @@ public class BookQueryRepository {
                 parameters.add(LocalDateTime.now().plusDays(plan.getDays() == null ? 3 : plan.getDays()));
             } else if (plan.getIntent() == BookIntent.OVERDUE_BORROWS) {
                 where.append(" AND br.status=0 AND br.due_date<NOW()");
+            } else if (Boolean.TRUE.equals(plan.getUnreturnedOnly())) {
+                where.append(" AND br.status=0");
             }
             String orderBy = plan.getIntent() == BookIntent.RECENT_RETURNS ? "br.return_time DESC" : "br.due_date ASC";
             sql = "SELECT br.id,br.user_id AS userId,u.user_name AS userName,br.book_id AS bookId,"

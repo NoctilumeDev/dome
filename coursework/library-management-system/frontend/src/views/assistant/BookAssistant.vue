@@ -78,6 +78,10 @@
           {{ databaseVerified ? '数据库已核验' : '本地范围已处理' }}
         </span>
         <span v-if="databaseVerified" class="result-count">本次返回 {{ total }} 条馆藏记录</span>
+        <span v-if="planningSource" :class="['source-pill', modelCalled ? 'is-model' : 'is-local']">
+          <i :class="modelCalled ? 'el-icon-connection' : 'el-icon-cpu'"></i>
+          {{ modelCallLabel }}
+        </span>
         <span v-if="intent" class="intent-tag">{{ intentLabel }}</span>
       </div>
 
@@ -142,6 +146,19 @@ const INTENT_LABELS = {
   CHECK_AVAILABILITY: '可借状态',
   RECOMMEND_BOOK: '馆藏推荐',
   FIND_LOCATION: '位置查询',
+  LIST_CATALOG: '馆藏总览',
+  LIST_USERS: '用户查询',
+  BORROW_OVERVIEW: '借阅查询',
+  MY_BORROWS: '我的借阅',
+  RECENT_RETURNS: '最近归还',
+  DUE_SOON: '即将到期',
+  MY_DUE_SOON: '我的到期',
+  OVERDUE_BORROWS: '逾期查询',
+  SEARCH_REVIEWS: '书评查询',
+  MY_REVIEWS: '我的书评',
+  FEEDBACK_OVERVIEW: '反馈查询',
+  MY_FEEDBACK: '我的反馈',
+  FORBIDDEN: '权限受限',
   OUT_OF_SCOPE: '超出范围',
 };
 
@@ -155,21 +172,29 @@ export default {
       total: 0,
       generatedSql: '',
       modelNote: '',
+      planningSource: '',
+      modelCalled: false,
       answer: '',
       intent: '',
       databaseVerified: false,
       hasResult: false,
       promptExamples: [
-        '《Java编程思想》',
         '《三体》放在哪里？',
-        '作者：刘慈欣',
-        '分类：编程',
+        '哪些书没还？',
+        '给我推荐一些计算机的书籍',
+        '谁快要逾期了？',
       ],
     };
   },
   computed: {
     intentLabel() {
       return INTENT_LABELS[this.intent] || this.intent;
+    },
+    modelCallLabel() {
+      if (!this.modelCalled) return '本地解析 · API 0 次';
+      return this.planningSource === 'DEEPSEEK'
+        ? 'DeepSeek 调用成功'
+        : 'DeepSeek 调用失败 · 已本地降级';
     },
   },
   methods: {
@@ -194,6 +219,8 @@ export default {
         this.total = result.total || 0;
         this.generatedSql = result.generatedSql || '';
         this.modelNote = result.modelNote || '';
+        this.planningSource = result.planningSource || '';
+        this.modelCalled = result.modelCalled === true;
         this.answer = result.answer || '馆藏查询已完成。';
         this.intent = result.intent || '';
         this.databaseVerified = result.databaseVerified === true;
@@ -211,6 +238,8 @@ export default {
       this.total = 0;
       this.generatedSql = '';
       this.modelNote = '';
+      this.planningSource = '';
+      this.modelCalled = false;
       this.answer = '';
       this.intent = '';
       this.databaseVerified = false;
@@ -521,6 +550,26 @@ export default {
 .result-count {
   color: #60758a;
   font-size: 12px;
+}
+
+.source-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.source-pill.is-local {
+  background: #eef3f8;
+  color: #526b83;
+}
+
+.source-pill.is-model {
+  background: #e9f8f3;
+  color: #087a67;
 }
 
 .intent-tag {

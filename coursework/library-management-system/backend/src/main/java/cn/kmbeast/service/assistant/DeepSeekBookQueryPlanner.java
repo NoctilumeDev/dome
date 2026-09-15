@@ -55,6 +55,10 @@ public class DeepSeekBookQueryPlanner {
     private static final Pattern USER_BORROW_PATTERN = Pattern.compile(
             "([\\u4e00-\\u9fffA-Za-z0-9_]{1,20})(?:最近|刚才|目前)?(?:借了|借过|借阅了|借阅过)"
     );
+    private static final Pattern USER_UNRETURNED_PATTERN = Pattern.compile(
+            "^\\s*([\\u4e00-\\u9fffA-Za-z0-9_]{1,20}?)(?:有)?(?:哪些|哪几本|什么)"
+                    + "(?:书|图书|书籍)?(?:还没还|没还|未还|未归还|尚未归还)"
+    );
     private static final Pattern DAYS_PATTERN = Pattern.compile("(?:未来|接下来)?\\s*(\\d{1,2})\\s*天");
 
     @Value("$" + "{deepseek.api-url}")
@@ -79,14 +83,18 @@ public class DeepSeekBookQueryPlanner {
     public BookQueryPlan plan(String question) {
         BookQueryPlan systemPlan = planSystemQuery(question);
         if (systemPlan != null) {
-            systemPlan.setPlanningNote("已使用本地图书馆业务意图解析，未调用 DeepSeek");
+            systemPlan.setPlanningSource("LOCAL_BUSINESS");
+            systemPlan.setModelCalled(false);
+            systemPlan.setPlanningNote(localBusinessNote(systemPlan));
             return systemPlan;
         }
         if (isCatalogOverviewQuestion(question)) {
             BookQueryPlan plan = new BookQueryPlan();
             plan.setIntent(BookIntent.LIST_CATALOG);
             plan.setLimit(50);
-            plan.setPlanningNote("已识别为馆藏总览查询，未调用 DeepSeek");
+            plan.setPlanningSource("LOCAL_BUSINESS");
+            plan.setModelCalled(false);
+            plan.setPlanningNote("已识别为馆藏总览查询；本次未调用 DeepSeek，API 调用 0 次");
             return plan;
         }
         String deterministicTitle = scopeGuard.extractDeterministicTitle(question);
@@ -99,13 +107,17 @@ public class DeepSeekBookQueryPlanner {
                 plan.setIntent(BookIntent.CHECK_AVAILABILITY);
             }
             plan.setAvailableOnly(containsAny(question, "可借", "能借") ? Boolean.TRUE : null);
-            plan.setPlanningNote("已使用本地精准书名解析，未调用 DeepSeek");
+            plan.setPlanningSource("LOCAL_TITLE");
+            plan.setModelCalled(false);
+            plan.setPlanningNote("已使用本地精准书名解析；本次未调用 DeepSeek，API 调用 0 次");
             return plan;
         }
 
         if (isDemoApiKey(apiKey)) {
             BookQueryPlan fallback = planLocally(question);
-            fallback.setPlanningNote("DeepSeek 密钥未配置，已使用本地安全解析");
+            fallback.setPlanningSource("LOCAL_FALLBACK");
+            fallback.setModelCalled(false);
+            fallback.setPlanningNote("DeepSeek 密钥未配置，已使用本地安全解析；API 调用 0 次");
             return fallback;
         }
 
@@ -113,11 +125,15 @@ public class DeepSeekBookQueryPlanner {
             BookQueryPlan modelPlan = planByModel(question);
             BookQueryPlan localPlan = planLocally(question);
             modelPlan = normalizeAndGround(modelPlan, localPlan, question);
+            modelPlan.setPlanningSource("DEEPSEEK");
+            modelPlan.setModelCalled(true);
             modelPlan.setPlanningNote("DeepSeek 已完成语义解析；答案仅来自数据库查询结果");
             return modelPlan;
         } catch (Exception ignored) {
             BookQueryPlan fallback = planLocally(question);
-            fallback.setPlanningNote("DeepSeek 暂时不可用，已使用本地安全解析");
+            fallback.setPlanningSource("DEEPSEEK_FALLBACK");
+            fallback.setModelCalled(true);
+            fallback.setPlanningNote("DeepSeek 暂时不可用，已使用本地安全解析；本次模型调用未成功");
             return fallback;
         }
     }
@@ -197,7 +213,7 @@ public class DeepSeekBookQueryPlanner {
             modelPlan.setIntent(localPlan.getIntent());
         }
         if ("编程".equals(localPlan.getCategory())
-                && containsAny(question, "计算机专业", "计算机类", "程序设计", "软件开发")) {
+                && containsAny(question, "计算机", "程序设计", "软件开发")) {
             modelPlan.setCategory("编程");
             modelPlan.setKeywords(new ArrayList<>());
         }
@@ -248,7 +264,7 @@ public class DeepSeekBookQueryPlanner {
         if (publisher != null) {
             plan.setPublisher(cleanTail(publisher));
         }
-        if (containsAny(normalized, "计算机专业", "计算机类", "程序设计", "软件开发")) {
+        if (containsAny(normalized, "计算机", "程序设计", "软件开发")) {
             plan.setCategory("编程");
         }
         if (topic != null) {
@@ -371,7 +387,8 @@ public class DeepSeekBookQueryPlanner {
 
     private BookQueryPlan planSystemQuery(String question) {
         String normalized = question == null ? "" : question.toLowerCase(Locale.ROOT);
-        boolean personal = containsAny(normalized, "我借", "我的借", "我还", "我的反馈", "我的意见", "我的书评", "我的评论", "我快", "我是否");
+        boolean personal = containsAny(normalized, "我借", "我的借", "我还", "我有", "我没还", "我未还",
+                "我的反馈", "我的意见", "我的书评", "我的评论", "我快", "我是否");
         BookQueryPlan plan = new BookQueryPlan();
 
         if (containsAny(normalized, "书评", "图书评论", "读后评价", "图书评分")) {
@@ -396,6 +413,12 @@ public class DeepSeekBookQueryPlanner {
             plan.setIntent(BookIntent.RECENT_RETURNS);
             return plan;
         }
+        if (containsAny(normalized, "没还", "未还", "还没还", "未归还", "尚未归还", "借阅中")) {
+            plan.setIntent(personal ? BookIntent.MY_BORROWS : BookIntent.BORROW_OVERVIEW);
+            plan.setUserName(extractUnreturnedUserName(question));
+            plan.setUnreturnedOnly(true);
+            return plan;
+        }
         if (containsAny(normalized, "谁借了", "借了什么", "借了哪些", "借阅记录", "借阅情况", "借过什么", "借过哪些", "我借的书")) {
             plan.setIntent(personal ? BookIntent.MY_BORROWS : BookIntent.BORROW_OVERVIEW);
             plan.setUserName(extractUserName(question));
@@ -415,6 +438,23 @@ public class DeepSeekBookQueryPlanner {
         }
         String value = matcher.group(1).trim();
         return containsAny(value, "谁", "哪些", "什么", "我") ? null : value;
+    }
+
+    private String extractUnreturnedUserName(String question) {
+        Matcher matcher = USER_UNRETURNED_PATTERN.matcher(question);
+        if (!matcher.find()) {
+            return null;
+        }
+        String value = matcher.group(1).trim();
+        return containsAny(value, "谁", "哪些", "什么", "我") ? null : value;
+    }
+
+    private String localBusinessNote(BookQueryPlan plan) {
+        if (Boolean.TRUE.equals(plan.getUnreturnedOnly())) {
+            String subject = plan.getIntent() == BookIntent.MY_BORROWS ? "本人未归还" : "未归还借阅";
+            return "已识别为" + subject + "查询；本次未调用 DeepSeek，API 调用 0 次";
+        }
+        return "已使用本地图书馆业务意图解析；本次未调用 DeepSeek，API 调用 0 次";
     }
 
     private int extractDays(String question) {
