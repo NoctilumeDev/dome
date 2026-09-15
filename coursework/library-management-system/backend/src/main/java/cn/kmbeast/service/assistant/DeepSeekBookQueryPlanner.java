@@ -81,6 +81,28 @@ public class DeepSeekBookQueryPlanner {
             .build();
 
     public BookQueryPlan plan(String question) {
+        BookQueryPlan localPlan = planWithoutModel(question);
+
+        if (isDemoApiKey(apiKey)) {
+            return localPlan;
+        }
+
+        try {
+            BookQueryPlan modelPlan = planByModel(question);
+            modelPlan = normalizeAndGround(modelPlan, localPlan, question);
+            modelPlan.setPlanningSource("DEEPSEEK");
+            modelPlan.setModelCalled(true);
+            modelPlan.setPlanningNote("DeepSeek 已完成语义解析；答案仅来自数据库查询结果");
+            return modelPlan;
+        } catch (Exception ignored) {
+            localPlan.setPlanningSource("DEEPSEEK_FALLBACK");
+            localPlan.setModelCalled(true);
+            localPlan.setPlanningNote("DeepSeek 暂时不可用，已使用本地安全解析；本次模型调用未成功");
+            return localPlan;
+        }
+    }
+
+    private BookQueryPlan planWithoutModel(String question) {
         BookQueryPlan systemPlan = planSystemQuery(question);
         if (systemPlan != null) {
             systemPlan.setPlanningSource("LOCAL_BUSINESS");
@@ -112,30 +134,11 @@ public class DeepSeekBookQueryPlanner {
             plan.setPlanningNote("已使用本地精准书名解析；本次未调用 DeepSeek，API 调用 0 次");
             return plan;
         }
-
-        if (isDemoApiKey(apiKey)) {
-            BookQueryPlan fallback = planLocally(question);
-            fallback.setPlanningSource("LOCAL_FALLBACK");
-            fallback.setModelCalled(false);
-            fallback.setPlanningNote("DeepSeek 密钥未配置，已使用本地安全解析；API 调用 0 次");
-            return fallback;
-        }
-
-        try {
-            BookQueryPlan modelPlan = planByModel(question);
-            BookQueryPlan localPlan = planLocally(question);
-            modelPlan = normalizeAndGround(modelPlan, localPlan, question);
-            modelPlan.setPlanningSource("DEEPSEEK");
-            modelPlan.setModelCalled(true);
-            modelPlan.setPlanningNote("DeepSeek 已完成语义解析；答案仅来自数据库查询结果");
-            return modelPlan;
-        } catch (Exception ignored) {
-            BookQueryPlan fallback = planLocally(question);
-            fallback.setPlanningSource("DEEPSEEK_FALLBACK");
-            fallback.setModelCalled(true);
-            fallback.setPlanningNote("DeepSeek 暂时不可用，已使用本地安全解析；本次模型调用未成功");
-            return fallback;
-        }
+        BookQueryPlan fallback = planLocally(question);
+        fallback.setPlanningSource("LOCAL_FALLBACK");
+        fallback.setModelCalled(false);
+        fallback.setPlanningNote("DeepSeek 密钥未配置，已使用本地安全解析；API 调用 0 次");
+        return fallback;
     }
 
     private BookQueryPlan planByModel(String question) throws Exception {
@@ -191,6 +194,7 @@ public class DeepSeekBookQueryPlanner {
         modelPlan.setAuthor(groundedValue(modelPlan.getAuthor(), question));
         modelPlan.setPublisher(groundedValue(modelPlan.getPublisher(), question));
         modelPlan.setCategory(groundedValue(modelPlan.getCategory(), question));
+        modelPlan.setUserName(groundedValue(modelPlan.getUserName(), question));
 
         Set<String> keywords = new LinkedHashSet<>();
         if (modelPlan.getKeywords() != null) {
@@ -211,6 +215,13 @@ public class DeepSeekBookQueryPlanner {
         }
         if (localPlan.getIntent() != BookIntent.SEARCH_BOOK) {
             modelPlan.setIntent(localPlan.getIntent());
+        }
+        modelPlan.setUnreturnedOnly(localPlan.getUnreturnedOnly());
+        if (localPlan.getUserName() != null && !localPlan.getUserName().isBlank()) {
+            modelPlan.setUserName(localPlan.getUserName());
+        }
+        if (localPlan.getDays() != null) {
+            modelPlan.setDays(localPlan.getDays());
         }
         if ("编程".equals(localPlan.getCategory())
                 && containsAny(question, "计算机", "程序设计", "软件开发")) {
