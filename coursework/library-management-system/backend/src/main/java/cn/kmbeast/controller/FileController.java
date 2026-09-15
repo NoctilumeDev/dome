@@ -98,7 +98,7 @@ public class FileController {
                         .path("/file/getFile")
                         .queryParam("fileName", fileName)
                         .toUriString();
-                return ApiResult.success(fileUrl);
+            return ApiResult.success("上传成功", fileUrl);
             }
         } catch (IOException e) {
             return ApiResult.error("文件上传异常");
