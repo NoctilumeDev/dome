@@ -89,7 +89,7 @@
 <script>
 import request from "@/utils/request.js";
 import router from "@/router/index";
-import { clearToken } from "@/utils/storage"
+import { clearToken, getToken, isCurrentToken } from "@/utils/storage"
 export default {
     name: "UserHome",
     data() {
@@ -126,12 +126,16 @@ export default {
     },
     methods: {
         async tokenCheckLoad() {
+            const observedToken = getToken();
             try {
                 const res = await request.get('user/auth');
+                if (!isCurrentToken(observedToken)) return;
                 if (res.data.code !== 200) { this.$router.push('/login'); return; }
                 const { id, userAvatar: url, userName: name, userRole: role } = res.data.data;
                 this.userInfo = { id, url, name, role };
-            } catch (e) { this.$router.push('/login'); }
+            } catch (e) {
+                if (isCurrentToken(observedToken)) this.$router.push('/login');
+            }
         },
         handleRouteSelect(path) {
             const item = this.adminRoutes.find(r => r.path === path) || this.homeModules.find(r => r.path === path);

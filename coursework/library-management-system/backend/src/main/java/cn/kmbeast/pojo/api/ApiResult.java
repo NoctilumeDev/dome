@@ -69,6 +69,10 @@ public class ApiResult<T> extends Result<T> {
         return new Result<T>(ResultCode.REQUEST_ERROR.getCode(), msg);
     }
 
+    public static <T> Result<T> error(ResultCode resultCode, String msg) {
+        return new Result<T>(resultCode.getCode(), msg);
+    }
+
 
     public ApiResult(T data, Integer total) {
         setData(data);
