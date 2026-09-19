@@ -9,6 +9,10 @@ export function setToken(token){
     sessionStorage.setItem(TOKEN_KEY,token);
 }
 
+export function isCurrentToken(expectedToken){
+    return getToken() === expectedToken;
+}
+
 export function getHealthInfo(){
     const raw = sessionStorage.getItem(INFO);
     if (raw) {
@@ -27,6 +31,12 @@ export function setHealthInfo(obj){
 
 export function clearToken(){
     sessionStorage.clear();
+}
+
+export function clearTokenIfCurrent(expectedToken){
+    if (!isCurrentToken(expectedToken)) return false;
+    clearToken();
+    return true;
 }
 export function getActivePath(){
     return sessionStorage.getItem(ACTIVE_PATH);

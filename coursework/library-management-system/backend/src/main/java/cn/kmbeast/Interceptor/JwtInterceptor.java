@@ -3,6 +3,7 @@ package cn.kmbeast.Interceptor;
 import cn.kmbeast.context.LocalThreadHolder;
 import cn.kmbeast.pojo.api.ApiResult;
 import cn.kmbeast.pojo.api.Result;
+import cn.kmbeast.pojo.api.ResultCode;
 import cn.kmbeast.utils.JwtUtil;
 import com.alibaba.fastjson2.JSONObject;
 import io.jsonwebtoken.Claims;
@@ -67,13 +68,31 @@ public class JwtInterceptor implements HandlerInterceptor {
         String token = request.getHeader("token");
         Claims claims = JwtUtil.fromToken(token);
         if (claims == null) {
-            return reject(response, "身份认证异常，请先登录");
+            return reject(
+                    response,
+                    HttpServletResponse.SC_UNAUTHORIZED,
+                    ResultCode.AUTHENTICATION_REQUIRED,
+                    "身份认证异常，请先登录"
+            );
         }
         Integer userId = claims.get("id", Integer.class);
         Integer roleId = claims.get("role", Integer.class);
+        if (userId == null || roleId == null) {
+            return reject(
+                    response,
+                    HttpServletResponse.SC_UNAUTHORIZED,
+                    ResultCode.AUTHENTICATION_REQUIRED,
+                    "身份认证异常，请先登录"
+            );
+        }
         // 管理接口角色校验：管理员(0/1)可访问，读者(2+)拒绝
         if (isAdminOnlyPath(requestURI) && roleId > 1) {
-            return reject(response, "无权限操作，该接口仅管理员可用");
+            return reject(
+                    response,
+                    HttpServletResponse.SC_FORBIDDEN,
+                    ResultCode.ACCESS_DENIED,
+                    "无权限操作，该接口仅管理员可用"
+            );
         }
         LocalThreadHolder.setUserId(userId, roleId);
         return true;
@@ -91,10 +110,15 @@ public class JwtInterceptor implements HandlerInterceptor {
         return false;
     }
 
-    private boolean reject(HttpServletResponse response, String msg) throws Exception {
-        Result<String> error = ApiResult.error(msg);
+    private boolean reject(
+            HttpServletResponse response,
+            int httpStatus,
+            ResultCode resultCode,
+            String msg
+    ) throws Exception {
+        Result<String> error = ApiResult.error(resultCode, msg);
         response.setContentType("application/json;charset=UTF-8");
-        response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        response.setStatus(httpStatus);
         Writer stream = response.getWriter();
         stream.write(JSONObject.toJSONString(error));
         stream.flush();

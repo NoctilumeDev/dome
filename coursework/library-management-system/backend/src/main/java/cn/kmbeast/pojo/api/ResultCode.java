@@ -9,6 +9,14 @@ public enum ResultCode {
      */
     REQUEST_SUCCESS(200),
     /**
+     * 未提供有效登录凭据
+     */
+    AUTHENTICATION_REQUIRED(401),
+    /**
+     * 已认证但无权执行当前操作
+     */
+    ACCESS_DENIED(403),
+    /**
      * 请求失败码
      */
     REQUEST_ERROR(400);

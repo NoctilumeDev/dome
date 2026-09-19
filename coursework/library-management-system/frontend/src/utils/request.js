@@ -1,8 +1,9 @@
 import axios from "axios"
-import { getToken, clearToken } from "@/utils/storage.js";
+import { getToken, clearTokenIfCurrent } from "@/utils/storage.js";
 import router from "@/router";
 
 const URL_API = process.env.VUE_APP_API_BASE_URL || 'http://localhost:22090/api/book-manage-sys-api/v1.0'
+const REQUEST_TOKEN_KEY = '__libraryRequestToken'
 
 const request = axios.create({
   baseURL: URL_API,
@@ -12,6 +13,7 @@ const request = axios.create({
 // 请求拦截器：自动附加 token
 request.interceptors.request.use(config => {
   const token = getToken();
+  config[REQUEST_TOKEN_KEY] = token;
   if (token !== null) {
     config.headers["token"] = token;
   }
@@ -26,9 +28,15 @@ request.interceptors.response.use(response => {
 }, error => {
   if (error.response) {
     const { status, data } = error.response;
-    if (status === 401 || (data && (data.code === 401 || data.msg === '身份认证异常，请先登录'))) {
-      clearToken();
-      router.push('/login');
+    const isAuthenticationFailure = status === 401 || Number(data?.code) === 401;
+    if (isAuthenticationFailure) {
+      const failedToken = error.config?.[REQUEST_TOKEN_KEY];
+      const ownsCurrentSession =
+        Object.prototype.hasOwnProperty.call(error.config ?? {}, REQUEST_TOKEN_KEY) &&
+        failedToken === getToken();
+      if (ownsCurrentSession && clearTokenIfCurrent(failedToken)) {
+        router.push('/login');
+      }
     }
   }
   return Promise.reject(error);
