@@ -10,6 +10,7 @@
 
 ## 内容
 
-- `coursework/`：课程作业
-- `independent-projects/`：独立项目
-- `writing/`：文字记录
+- [coursework/](coursework/)：课程作业
+- [independent-projects/](independent-projects/)：独立项目
+- [writing/](writing/)：文字记录
+- [after-class/](after-class/)：下课以后
