@@ -11,5 +11,6 @@
 ## 内容
 
 - `coursework/`：课程作业
+- `after-class/`：下课以后，从 Spring Boot 开始慢慢写
 - `independent-projects/`：独立项目
 - `writing/`：文字记录
