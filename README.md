@@ -12,6 +12,6 @@
 
 - [coursework/](coursework/)：课程作业
 - [independent-projects/](independent-projects/)：独立项目
-- [qingye/](qingye/)：青野，校园社团活动与共享资源管理系统，筹备中
+- [qingye/](qingye/)：青野，校园社团活动与共享资源管理系统；原生微信小程序 + Spring Boot，首版代码已实现，验证范围见项目说明
 - [writing/](writing/)：文字记录
 - [after-class/](after-class/)：下课以后
