@@ -15,3 +15,9 @@
 - [qingye/](qingye/)：青野，校园社团活动与共享资源管理系统；原生微信小程序 + Spring Boot，首版代码已实现，功能与验证范围见 [项目简介](qingye/docs/项目简介.md)
 - [writing/](writing/)：文字记录
 - [after-class/](after-class/)：下课以后
+
+## 青野 · 功能模块图
+
+[![青野功能模块图](qingye/docs/assets/function-modules.png)](qingye/docs/功能模块图.html)
+
+学生、社团负责人、管理员与共用功能分列展示。运行步骤见 [青野 README](qingye/README.md)，完整说明见 [项目简介](qingye/docs/项目简介.md)。
