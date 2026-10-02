@@ -12,3 +12,6 @@
 !.env.example
 .DS_Store
 Thumbs.db
+demo/.build/
+demo/_site/
+independent-projects/dianjing/**/__pycache__/

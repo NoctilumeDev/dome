@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>dome · 项目体验</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f6f8fa;
+        color: #243544;
+        font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+      }
+      main {
+        max-width: 1180px;
+        margin: auto;
+        padding: 48px 28px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      a {
+        color: inherit;
+      }
+      nav a {
+        font-size: 14px;
+        color: #526477;
+        text-decoration: none;
+      }
+      .intro {
+        padding: 76px 0 38px;
+      }
+      .eyebrow {
+        color: #187553;
+        font-size: 12px;
+        letter-spacing: 3px;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: clamp(32px, 5vw, 52px);
+        letter-spacing: -2px;
+        margin: 16px 0;
+      }
+      .intro p {
+        color: #627382;
+        line-height: 1.9;
+        margin: 0;
+        max-width: 680px;
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .project {
+        background: #fff;
+        border: 1px solid #e1e8ed;
+        border-radius: 22px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .cover {
+        height: 210px;
+        position: relative;
+        overflow: hidden;
+        background: #e4edf6;
+        display: grid;
+        place-items: center;
+      }
+      .cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cover .symbol {
+        font-size: 64px;
+        font-weight: 800;
+        color: #395780;
+      }
+      .dorm .cover {
+        background: linear-gradient(135deg, #e7ecff, #e2f2f7);
+      }
+      .library .cover {
+        background: linear-gradient(135deg, #e1e9fd, #edf0ff);
+      }
+      .number {
+        position: absolute;
+        top: 18px;
+        left: 20px;
+        font-size: 12px;
+        color: #455d6d;
+        background: #ffffffcf;
+        border-radius: 20px;
+        padding: 5px 10px;
+      }
+      .copy {
+        padding: 26px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+      h2 {
+        font-size: 23px;
+        letter-spacing: -0.5px;
+        margin: 0 0 12px;
+      }
+      .copy p {
+        font-size: 14px;
+        color: #627382;
+        line-height: 1.8;
+        margin: 0 0 20px;
+      }
+      .tags {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+      .tags span {
+        font-size: 11px;
+        border-radius: 6px;
+        padding: 5px 8px;
+        background: #f0f5f8;
+        color: #526b7e;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: auto;
+      }
+      .play {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        background: #187553;
+        color: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 12px 16px;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .source {
+        font-size: 13px;
+        color: #607789;
+        text-decoration: none;
+      }
+      .note {
+        margin-top: 30px;
+        padding: 20px 24px;
+        background: #edf4f3;
+        border-radius: 14px;
+        color: #52726b;
+        font-size: 13px;
+        line-height: 1.9;
+      }
+      .note strong {
+        color: #187553;
+      }
+      footer {
+        margin-top: 42px;
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        color: #81909b;
+        font-size: 12px;
+      }
+      a:focus-visible {
+        outline: 3px solid #61bca0;
+        outline-offset: 5px;
+      }
+      @media (max-width: 850px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+        .project {
+          display: grid;
+          grid-template-columns: 220px 1fr;
+        }
+        .cover {
+          height: 100%;
+          min-height: 240px;
+        }
+        .intro {
+          padding: 48px 0 28px;
+        }
+      }
+      @media (max-width: 560px) {
+        main {
+          padding: 26px 18px;
+        }
+        .project {
+          display: flex;
+        }
+        .cover {
+          height: 190px;
+          min-height: 0;
+        }
+        .copy {
+          padding: 22px;
+        }
+        footer {
+          flex-direction: column;
+        }
+      }
+      .game-entry {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        background: #fffaf0;
+        border: 1px solid #ebddbf;
+        border-radius: 20px;
+        padding: 28px;
+      }
+      .game-entry h2 {
+        margin: 0 0 8px;
+      }
+      .game-entry p {
+        margin: 0;
+        color: #7a7362;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .game-entry .play {
+        background: #3560c3;
+        white-space: nowrap;
+      }
+      @media (max-width: 560px) {
+        .game-entry {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <span class="brand">dome<span style="color: #187553">.</span></span
+        ><a href="https://github.com/NoctilumeDev/dome">回到 GitHub ↗</a>
+      </nav>
+      <section class="intro">
+        <div class="eyebrow">PROJECT PLAYGROUND</div>
+        <h1>先点开，再了解。</h1>
+        <p>
+          从宿舍生活到图书借阅，再到校园里的相遇。<br />三个项目，打开浏览器就能体验页面和常用操作。
+        </p>
+      </section>
+      <section class="projects" aria-label="项目体验入口">
+        <article class="project dorm">
+          <div class="cover">
+            <span class="number">01 / 校园生活</span
+            ><span class="symbol" aria-hidden="true">⌂</span>
+          </div>
+          <div class="copy">
+            <h2>宿舍管理系统</h2>
+            <p>申请入住、提交报修，切换到管理身份审批。看看一件宿舍里的小事如何走完流程。</p>
+            <div class="tags">
+              <span>入住与退宿</span><span>报修与账单</span><span>角色切换</span>
+            </div>
+            <div class="actions">
+              <a class="play" href="dormitory/index.html">进入体验 <span>→</span></a
+              ><a
+                class="source"
+                href="https://github.com/NoctilumeDev/dome/tree/main/independent-projects/dormitory-management-system"
+                >查看源码 ↗</a
+              >
+            </div>
+          </div>
+        </article>
+        <article class="project library">
+          <div class="cover">
+            <span class="number">02 / 图书借阅</span
+            ><span class="symbol" aria-hidden="true">LIB</span>
+          </div>
+          <div class="copy">
+            <h2>图书管理系统</h2>
+            <p>查找一本书，借阅后再归还；也可以进入后台，体验馆藏、书架和读者管理。</p>
+            <div class="tags">
+              <span>检索与借还</span><span>馆藏管理</span><span>问答页面</span>
+            </div>
+            <div class="actions">
+              <a class="play" href="library/index.html#/user">进入体验 <span>→</span></a
+              ><a
+                class="source"
+                href="https://github.com/NoctilumeDev/dome/tree/main/coursework/library-management-system"
+                >查看源码 ↗</a
+              >
+            </div>
+          </div>
+        </article>
+        <article class="project qingye">
+          <div class="cover">
+            <span class="number">03 / 去见面，去参与</span
+            ><img src="qingye/assets/campus/campus-hero-v1.jpg" alt="青野的校园操场与蓝天" />
+          </div>
+          <div class="copy">
+            <h2>青野</h2>
+            <p>发现活动、报名、申请加入社团，体验共享器材与消息回收站。保留小程序的校园风格。</p>
+            <div class="tags">
+              <span>活动与社团</span><span>器材预约</span><span>浏览器适配</span>
+            </div>
+            <div class="actions">
+              <a class="play" href="qingye/index.html">进入体验 <span>→</span></a
+              ><a class="source" href="https://github.com/NoctilumeDev/dome/tree/main/qingye"
+                >查看源码 ↗</a
+              >
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="game-entry" aria-label="点睛小游戏">
+        <div>
+          <h2>✳ 点睛 · 你画我猜</h2>
+          <p>
+            项目看累了，来猜一幅画。20 幅内置图画，每局随机 5 题，中文或英文都可以。<br />图画由 AI
+            创作后内置，无需 API；边画边猜，给答案点个睛。
+          </p>
+        </div>
+        <a class="play" href="dianjing/index.html">开始玩 <span>↗</span></a>
+      </section>
+      <aside class="note">
+        <strong>随便体验，随时重置。</strong
+        >这里使用虚构的演示数据，修改仅保存在当前浏览器，其他访客不会看到。问答使用本地样例匹配，没有连接真实模型或数据库；完整后端、权限验证和运行步骤请查看各项目源码。青野是小程序页面的浏览器适配版，真实微信与输入法行为以原生小程序为准。
+      </aside>
+      <footer>
+        <span>本科阶段的代码、练习和记录。</span><span>Built to explore. Kept as evidence.</span>
+      </footer>
+    </main>
+  </body>
+</html>

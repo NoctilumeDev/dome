@@ -1,0 +1,49 @@
+#demo-toolbar {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background: #fff;
+  color: #506273;
+  border-bottom: 1px solid #e1e8ed;
+  font: 13px/1.5 -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  box-sizing: border-box;
+}
+#demo-toolbar a {
+  color: #187553;
+  text-decoration: none;
+  font-weight: 700;
+}
+#demo-toolbar .demo-label {
+  flex: 1;
+}
+#demo-toolbar select,
+#demo-toolbar button {
+  width: auto;
+  margin: 0;
+  min-height: 32px;
+  padding: 5px 10px;
+  background: #f6f9fb;
+  color: #314b5f;
+  border: 1px solid #d6e1e8;
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+#demo-toolbar :focus-visible {
+  outline: 3px solid #7bc9b0;
+  outline-offset: 2px;
+}
+@media (max-width: 620px) {
+  #demo-toolbar {
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  #demo-toolbar .demo-label {
+    flex-basis: calc(100% - 110px);
+    font-size: 11px;
+  }
+}

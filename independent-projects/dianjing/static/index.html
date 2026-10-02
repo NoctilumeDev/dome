@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f6f3eb" />
+    <title>点睛 · 你画我猜</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="brand" href="./" aria-label="点睛首页"
+          ><span class="logo" aria-hidden="true">✳</span>点睛<span class="brand-small"
+            >DIANJING</span
+          ></a
+        >
+        <div class="header-links">
+          <a id="projects-link" href="https://noctilumedev.github.io/dome/">项目列表 ↗</a
+          ><a href="https://github.com/NoctilumeDev/dome/tree/main/independent-projects/dianjing"
+            >源码 ↗</a
+          >
+        </div>
+      </header>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">A LITTLE DRAWING. A LITTLE GUESSING.</p>
+          <h1>我画几笔，<br />你来<span class="underlined">点睛。</span></h1>
+        </div>
+        <p class="intro-note">
+          看一幅画慢慢出现，<br />猜猜它想说什么。<br /><span
+            >AI 创作的内置图画题库 · 无需 API</span
+          >
+        </p>
+      </section>
+      <section class="playground" aria-label="你画我猜游戏">
+        <div class="canvas-card">
+          <div class="canvas-top">
+            <span><i class="live-dot"></i><span id="drawing-label">画笔就绪</span></span
+            ><span id="category">20 幅图画 / 随机 5 题</span>
+          </div>
+          <div class="canvas-wrap">
+            <svg id="drawing" viewBox="0 0 500 400" role="img" aria-label="待猜的图画">
+              <g
+                stroke="currentColor"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              >
+                <path
+                  d="M175 205 Q170 100 250 80 Q330 100 325 205 Q315 265 280 278 L220 278 Q185 265 175 205Z"
+                />
+                <path
+                  d="M220 290 L280 290 M225 308 L275 308 M237 326 L263 326 M250 278 L250 195 M230 175 L250 195 L270 175 M130 120 L108 103 M370 120 L392 103 M250 35 L250 15"
+                />
+              </g>
+            </svg>
+            <div id="canvas-caption">答案，藏在接下来的几笔里。</div>
+          </div>
+          <div class="canvas-bottom">
+            <span id="round-label">准备好了吗？</span>
+            <div class="round-dots" id="round-dots" aria-label="五轮游戏进度"></div>
+            <span id="timer-label">60 秒 / 题</span>
+          </div>
+          <div class="timer-track"><div id="timer-fill"></div></div>
+        </div>
+        <aside class="guess-card">
+          <div id="welcome">
+            <p class="panel-kicker">你猜对的那一刻，画才完整。</p>
+            <h2>来点轻松的。</h2>
+            <p class="muted">每局随机 5 题。图画逐笔出现，<br />60 秒内用中文或英文猜答案。</p>
+            <div class="rules">
+              <p><span>01</span> 越快猜对，得分越高</p>
+              <p><span>02</span> 每次提示扣 20 分</p>
+              <p><span>03</span> 猜错没关系，再试一试</p>
+            </div>
+            <button class="primary" id="start">开始，给画点睛 <span>→</span></button>
+            <p class="small-note">
+              本地小游戏，答案按题库别名匹配。<br />没有在线大模型，也没有上传你的输入。
+            </p>
+          </div>
+          <div id="playing" hidden>
+            <div class="score-row"><span>本局得分</span><strong id="score">0</strong></div>
+            <h2 id="guess-title">这一幅，你看懂了吗？</h2>
+            <p class="muted" id="answer-length"></p>
+            <form id="guess-form">
+              <label for="guess">你的答案</label>
+              <div class="guess-input">
+                <input
+                  id="guess"
+                  placeholder="比如：雨伞 / umbrella"
+                  autocomplete="off"
+                  maxlength="60"
+                /><button class="primary" id="submit" type="submit">猜一下 ↗</button>
+              </div>
+            </form>
+            <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+            <div id="hints" class="hint-area"></div>
+            <div class="tools" id="tools">
+              <button id="hint" class="secondary">给点提示 <span>−20</span></button
+              ><button id="skip" class="text-button">跳过这幅 →</button>
+            </div>
+            <button id="next" class="primary" hidden>下一幅 →</button>
+            <p class="small-note">
+              不用想复杂，画的都是身边的小东西。<br />离开这个页面时，计时会暂停。
+            </p>
+          </div>
+          <div id="finished" hidden>
+            <p class="panel-kicker">每一笔，都有你的答案。</p>
+            <h2 id="finish-title"></h2>
+            <div class="finish-score">
+              <strong id="final-score"></strong><span>本局得分 / 500</span>
+            </div>
+            <p class="muted" id="best-score"></p>
+            <ol id="results"></ol>
+            <button class="primary" id="restart">再画一局 <span>↻</span></button>
+          </div>
+        </aside>
+      </section>
+      <footer><span>点睛 / 你画我猜</span><span>不用很会画，也不用总猜对。</span></footer>
+    </main>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

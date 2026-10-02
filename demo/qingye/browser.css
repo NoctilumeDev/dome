@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  background: #eef4f3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+}
+.qy-layout {
+  max-width: 1020px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 430px;
+  gap: 60px;
+  align-items: start;
+  padding: 42px 28px;
+}
+.qy-intro {
+  position: sticky;
+  top: 80px;
+  padding: 80px 12px;
+  color: #243b37;
+}
+.qy-intro > span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #187553;
+}
+.qy-intro h1 {
+  font-size: 64px;
+  line-height: 1.22;
+  letter-spacing: -3px;
+  margin: 26px 0;
+}
+.qy-intro p {
+  color: #617771;
+  line-height: 2;
+  font-size: 16px;
+}
+.qy-intro .qy-hint {
+  font-size: 13px;
+  margin-top: 34px;
+  max-width: 330px;
+}
+.qy-intro a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #187553;
+  font-size: 14px;
+  text-decoration: none;
+}
+.qy-phone {
+  position: relative;
+  min-height: 740px;
+  border: 1px solid #dae5e3;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #f7fafb;
+  box-shadow: 0 12px 46px #1f59430d;
+}
+.qy-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7fafbea;
+  backdrop-filter: blur(10px);
+  padding: 16px 20px;
+  font-size: 16px;
+}
+.qy-nav button {
+  background: transparent;
+  border: 0;
+  font-size: 32px;
+  line-height: 1;
+  width: 24px;
+  padding: 0;
+  color: #243b37;
+  cursor: pointer;
+}
+#qingye-app {
+  min-height: 650px;
+}
+#qy-tabs {
+  position: sticky;
+  bottom: 0;
+  z-index: 11;
+  display: flex;
+  background: #fffffff0;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #edf1f1;
+  justify-content: space-around;
+  padding: 12px 10px;
+}
+#qy-tabs button {
+  display: grid;
+  gap: 5px;
+  border: 0;
+  background: none;
+  color: #849299;
+  font-size: 22px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+#qy-tabs span {
+  font-size: 11px;
+}
+#qy-tabs .selected {
+  color: #187553;
+  font-weight: 700;
+}
+.qy-page input,
+.qy-page textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.6;
+  border: 1px solid #e0e9eb;
+  outline: none;
+  min-width: 0;
+}
+.qy-page input:focus,
+.qy-page textarea:focus {
+  border-color: #187553;
+}
+.qy-page button {
+  cursor: pointer;
+  border: 0;
+}
+.qy-page button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.qy-page img {
+  vertical-align: middle;
+}
+.qy-page .chips {
+  display: flex;
+  gap: 8px;
+}
+.qy-page .chip {
+  flex-shrink: 0;
+}
+.qy-page textarea {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  min-height: 110px;
+}
+.qy-picker {
+  display: block;
+  position: relative;
+}
+.qy-picker select,
+.qy-picker > input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.qy-picker :disabled {
+  cursor: default;
+}
+.qy-page [role='button']:focus-visible,
+.qy-page button:focus-visible {
+  outline: 3px solid #75c4aa;
+  outline-offset: 3px;
+}
+#qy-toast {
+  position: fixed;
+  z-index: 9000;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  background: #243b37;
+  color: white;
+  border-radius: 14px;
+  padding: 12px 20px;
+  font-size: 14px;
+  max-width: 90vw;
+  box-sizing: border-box;
+}
+#qy-dialog {
+  border: 0;
+  border-radius: 20px;
+  padding: 26px;
+  color: #243b37;
+  width: min(380px, calc(100% - 42px));
+  box-sizing: border-box;
+}
+#qy-dialog::backdrop {
+  background: #1c3d3555;
+}
+#qy-dialog h2 {
+  margin: 0;
+  font-size: 20px;
+}
+#qy-dialog p {
+  line-height: 1.8;
+  font-size: 14px;
+}
+#qy-dialog input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9e5df;
+  border-radius: 9px;
+  padding: 10px;
+  font: inherit;
+}
+#qy-dialog form > div {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+#qy-dialog button {
+  flex: 1;
+  border: 0;
+  padding: 12px;
+  border-radius: 9px;
+  color: #187553;
+  background: #eaf3f0;
+  font-weight: 700;
+  cursor: pointer;
+}
+#qy-dialog button[value='confirm'] {
+  background: #187553;
+  color: white;
+}
+@media (max-width: 760px) {
+  .qy-layout {
+    display: block;
+    padding: 0;
+  }
+  .qy-intro {
+    display: none;
+  }
+  .qy-phone {
+    max-width: 430px;
+    margin: auto;
+    border: 0;
+    border-radius: 0;
+    min-height: calc(100vh - 80px);
+    box-shadow: none;
+  }
+  #qy-tabs {
+    position: fixed;
+    width: min(430px, 100%);
+    box-sizing: border-box;
+  }
+  .qy-nav {
+    position: sticky;
+  }
+  .qy-page .page {
+    padding-bottom: 100px;
+  }
+}

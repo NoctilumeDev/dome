@@ -8,6 +8,19 @@
 
 **史书会告诉你：“那年，计算机教育蓬勃发展，中国高等教育蒸蒸日上。”这个仓库只负责保存当年的证据。**
 
+## 打开就能体验
+
+[项目体验入口](https://noctilumedev.github.io/dome/)
+
+| 项目 | 浏览器体验 |
+| --- | --- |
+| 宿舍管理系统 | [入住、报修与管理审批](https://noctilumedev.github.io/dome/dormitory/) |
+| 图书管理系统 | [图书检索、借还与管理页面](https://noctilumedev.github.io/dome/library/index.html#/user) |
+| 青野 | [校园活动、社团与器材预约](https://noctilumedev.github.io/dome/qingye/) |
+| 点睛 · 你画我猜 | [我画几笔，你来点睛](https://noctilumedev.github.io/dome/dianjing/) |
+
+三个管理项目使用虚构的浏览器本地数据，支持身份切换与重置；问答只匹配本地样例，没有连接真实后端、数据库或模型。完整项目仍在各自目录。点睛使用 AI 创作的内置图画题库，无需 API。
+
 ## 内容
 
 - [coursework/](coursework/)：课程作业

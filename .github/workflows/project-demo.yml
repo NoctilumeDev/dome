@@ -1,0 +1,61 @@
+name: Publish project playground
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'demo/**'
+      - 'coursework/library-management-system/frontend/**'
+      - 'independent-projects/dormitory-management-system/src/main/resources/static/**'
+      - 'independent-projects/dianjing/**'
+      - 'qingye/miniprogram/**'
+      - '.github/workflows/project-demo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: coursework/library-management-system/frontend/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install library frontend dependencies
+        run: |
+          node -e "const fs = require('fs'); const file = 'package-lock.json'; fs.writeFileSync(file, fs.readFileSync(file, 'utf8').replaceAll('https://registry.npmmirror.com/', 'https://registry.npmjs.org/'));"
+          npm ci --registry=https://registry.npmjs.org --no-audit --no-fund
+        working-directory: coursework/library-management-system/frontend
+      - name: Verify demo flows and game rules
+        run: |
+          node --test demo/tests/*.test.mjs independent-projects/dianjing/tests/game.test.mjs
+          python -m unittest discover -s independent-projects/dianjing/tests
+      - name: Build static playground
+        run: node demo/build.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: demo/_site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
