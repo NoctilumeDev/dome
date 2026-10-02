@@ -193,6 +193,20 @@ export function createLibraryModel(storage) {
       const key = { book: 'books', category: 'categories', bookshelf: 'shelves', user: 'users' }[
         kind
       ];
+      if (kind === 'book' && ['save', 'insert', 'update'].includes(action)) {
+        const book = body.id ? { ...requireRow(d.books, body.id), ...body } : body;
+        const borrowed = d.borrows.filter((r) => r.bookId === book.id && !r.status).length;
+        const available = book.availableCount ?? book.totalCount;
+        if (
+          !Number.isInteger(book.totalCount) ||
+          !Number.isInteger(available) ||
+          book.totalCount < 0 ||
+          available < 0 ||
+          available > book.totalCount - borrowed
+        )
+          throw new Error('请填写非负整数库存，可借数量不能超过总量减去未归还借阅。');
+        body = { ...body, availableCount: available };
+      }
       if (action === 'query') {
         let rows = d[key];
         for (const field of ['name', 'userName', 'userAccount'])

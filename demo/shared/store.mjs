@@ -1,13 +1,34 @@
 export const clone = (value) => JSON.parse(JSON.stringify(value));
 export function createStore(name, seed, storage = globalThis.localStorage) {
   const key = `dome-demo-v1:${name}`;
+  const fresh = { ...seed(), version: 1 };
   let data;
   try {
     data = JSON.parse(storage.getItem(key));
   } catch (_) {
     /* Start with fresh sample data. */
   }
-  if (!data || data.version !== 1) data = { ...seed(), version: 1 };
+  const valid =
+    data &&
+    data.version === 1 &&
+    Object.entries(fresh).every(([field, sample]) =>
+      Array.isArray(sample)
+        ? Array.isArray(data[field]) &&
+          data[field].every(
+            (row) => row && typeof row === 'object' && Number.isInteger(row.id) && row.id > 0
+          )
+        : field === 'currentUserId'
+        ? data[field] === null || Number.isInteger(data[field])
+        : typeof data[field] === typeof sample
+    ) &&
+    data.users.length > 0 &&
+    data.users.every((user) =>
+      Object.entries(fresh.users[0]).every(
+        ([field, sample]) => typeof user[field] === typeof sample
+      )
+    ) &&
+    (data.currentUserId === null || data.users.some((user) => user.id === data.currentUserId));
+  if (!valid) data = fresh;
   return {
     get data() {
       return data;

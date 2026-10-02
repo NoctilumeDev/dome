@@ -1,6 +1,34 @@
 import { createStore, clone, nextId, requireRow } from '../shared/store.mjs';
 const days = 86400000;
 const time = (offset) => new Date(Date.now() + offset + 8 * 3600000).toISOString().slice(0, 19);
+function peakOccupancy(loans, equipmentId, start, end, excludeId) {
+  const from = Date.parse(start),
+    to = Date.parse(end);
+  if (!Number.isFinite(from) || !Number.isFinite(to) || from >= to)
+    throw new Error('请填写有效的预约开始和结束时间。');
+  const events = new Map();
+  for (const loan of loans) {
+    if (
+      loan.id === excludeId ||
+      loan.equipmentId !== equipmentId ||
+      !['APPROVED', 'CHECKED_OUT'].includes(loan.status)
+    )
+      continue;
+    const left = Math.max(from, Date.parse(loan.plannedStart)),
+      right = Math.min(to, Date.parse(loan.plannedEnd));
+    if (left < right) {
+      events.set(left, (events.get(left) || 0) + loan.quantity);
+      events.set(right, (events.get(right) || 0) - loan.quantity);
+    }
+  }
+  let current = 0,
+    peak = 0;
+  for (const [, change] of [...events].sort((a, b) => a[0] - b[0])) {
+    current += change;
+    peak = Math.max(peak, current);
+  }
+  return peak;
+}
 export function qingyeSeed() {
   const users = [
     { id: 1, name: '张三 · 同学', admin: false, workbench: false },
@@ -125,7 +153,15 @@ export function qingyeSeed() {
 }
 export function createQingyeModel(storage) {
   const store = createStore('qingye', qingyeSeed, storage);
-  const me = () => clone(requireRow(store.data.users, store.data.currentUserId));
+  const me = () => {
+    const user = clone(requireRow(store.data.users, store.data.currentUserId));
+    user.workbench =
+      user.admin ||
+      store.data.memberships.some(
+        (m) => m.userId === user.id && m.role === 'MANAGER' && m.status === 'ACTIVE'
+      );
+    return user;
+  };
   const staff = () => {
     if (!me().workbench) throw new Error('请切换为社团负责人或管理员体验。');
   };
@@ -175,6 +211,19 @@ export function createQingyeModel(storage) {
         .reduce((sum, l) => sum + l.quantity, 0),
     };
   }
+  function validateEquipment(row) {
+    if (
+      typeof row.name !== 'string' ||
+      !row.name.trim() ||
+      typeof row.category !== 'string' ||
+      !row.category.trim() ||
+      !Number.isInteger(row.totalQuantity) ||
+      row.totalQuantity < 0
+    )
+      throw new Error('请填写器材名称、分类和有效的非负整数数量。');
+    if (row.totalQuantity < equipment(row).borrowedQuantity)
+      throw new Error('器材总量不能少于当前已领取数量。');
+  }
   function handle(path, method = 'GET', body = {}) {
     const url = new URL(path, 'https://demo.local'),
       p = url.pathname.split('/').filter(Boolean),
@@ -193,7 +242,10 @@ export function createQingyeModel(storage) {
       } else throw new Error('浏览器演示不接入真实微信登录，请选择演示身份。');
     } else if (kind === 'me') {
       if (method === 'PATCH') {
-        Object.assign(requireRow(d.users, me().id), { name: String(body.name), avatar: '' });
+        Object.assign(requireRow(d.users, me().id), {
+          name: String(body.name),
+          avatar: '',
+        });
       }
       result = me();
     } else if (kind === 'users') {
@@ -247,7 +299,12 @@ export function createQingyeModel(storage) {
             const status = activity(a).registeredCount >= a.capacity ? 'WAITLISTED' : 'REGISTERED';
             if (r) r.status = status;
             else {
-              r = { id: nextId(d.registrations), activityId: id, userId: me().id, status };
+              r = {
+                id: nextId(d.registrations),
+                activityId: id,
+                userId: me().id,
+                status,
+              };
               d.registrations.push(r);
             }
             notify(me().id, status === 'WAITLISTED' ? '已进入候补' : '报名成功', a.title);
@@ -268,7 +325,10 @@ export function createQingyeModel(storage) {
           manageActivity(a);
           result = d.registrations
             .filter((r) => r.activityId === id && r.status !== 'CANCELLED')
-            .map((r) => ({ ...r, name: d.users.find((u) => u.id === r.userId)?.name }));
+            .map((r) => ({
+              ...r,
+              name: d.users.find((u) => u.id === r.userId)?.name,
+            }));
         } else if (action === 'decision') {
           admin();
           a.status = body.approve ? 'PUBLISHED' : 'REJECTED';
@@ -345,11 +405,25 @@ export function createQingyeModel(storage) {
           if (method === 'GET')
             result = d.memberships
               .filter((m) => m.clubId === id)
-              .map((m) => ({ ...m, name: d.users.find((u) => u.id === m.userId)?.name }));
+              .map((m) => ({
+                ...m,
+                name: d.users.find((u) => u.id === m.userId)?.name,
+              }));
           else {
             const member = d.memberships.find((m) => m.clubId === id && m.userId === Number(p[3]));
             if (!member) throw new Error('成员已不存在。');
+            if (!['MEMBER', 'MANAGER'].includes(body.role))
+              throw new Error('请选择有效的成员身份。');
             if (body.role === 'MANAGER') admin();
+            if (
+              member.status === 'ACTIVE' &&
+              member.role === 'MANAGER' &&
+              !(body.approve && body.role === 'MANAGER') &&
+              d.memberships.filter(
+                (m) => m.clubId === id && m.status === 'ACTIVE' && m.role === 'MANAGER'
+              ).length <= 1
+            )
+              throw new Error('社团需要保留至少一位负责人，请先完成交接。');
             Object.assign(member, {
               status: body.approve ? 'ACTIVE' : 'REJECTED',
               role: body.role,
@@ -363,26 +437,20 @@ export function createQingyeModel(storage) {
       else if (!rawId && method === 'POST') {
         admin();
         const row = { ...body, id: nextId(d.equipment) };
+        validateEquipment(row);
         d.equipment.push(row);
         result = row;
       } else if (method === 'PUT') {
         admin();
         const row = requireRow(d.equipment, id);
+        validateEquipment({ ...row, ...body });
         Object.assign(row, body);
         result = equipment(row);
       } else if (action === 'availability') {
         const e = requireRow(d.equipment, id);
         const start = url.searchParams.get('start'),
           end = url.searchParams.get('end');
-        const occupied = d.loans
-          .filter(
-            (l) =>
-              l.equipmentId === id &&
-              ['APPROVED', 'CHECKED_OUT'].includes(l.status) &&
-              l.plannedStart < end &&
-              l.plannedEnd > start
-          )
-          .reduce((n, l) => n + l.quantity, 0);
+        const occupied = peakOccupancy(d.loans, id, start, end);
         result = {
           totalQuantity: e.totalQuantity,
           peakOccupied: occupied,
@@ -413,8 +481,11 @@ export function createQingyeModel(storage) {
         staff();
         const a = requireRow(d.activities, body.activityId);
         manageActivity(a);
-        if (!(Number(body.quantity) > 0) || !body.reason || body.plannedEnd <= body.plannedStart)
+        const e = requireRow(d.equipment, body.equipmentId);
+        if (!e.enabled) throw new Error('这类器材已暂停预约。');
+        if (!Number.isInteger(Number(body.quantity)) || Number(body.quantity) <= 0 || !body.reason)
           throw new Error('请填写有效数量、用途和预约时间。');
+        peakOccupancy([], e.id, body.plannedStart, body.plannedEnd);
         const row = {
           ...body,
           quantity: Number(body.quantity),
@@ -436,16 +507,13 @@ export function createQingyeModel(storage) {
           if (action === 'decision') {
             if (l.status !== 'PENDING') throw new Error('申请已处理。');
             const e = requireRow(d.equipment, l.equipmentId);
-            const occupied = d.loans
-              .filter(
-                (r) =>
-                  r.id !== l.id &&
-                  r.equipmentId === l.equipmentId &&
-                  ['APPROVED', 'CHECKED_OUT'].includes(r.status) &&
-                  r.plannedStart < l.plannedEnd &&
-                  r.plannedEnd > l.plannedStart
-              )
-              .reduce((n, r) => n + r.quantity, 0);
+            const occupied = peakOccupancy(
+              d.loans,
+              l.equipmentId,
+              l.plannedStart,
+              l.plannedEnd,
+              l.id
+            );
             if (body.approve && occupied + l.quantity > e.totalQuantity)
               throw new Error('演示预约量超过可用容量。');
             l.status = body.approve ? 'APPROVED' : 'REJECTED';

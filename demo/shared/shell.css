@@ -37,6 +37,50 @@
   outline: 3px solid #7bc9b0;
   outline-offset: 2px;
 }
+#demo-reset-dialog {
+  width: min(400px, calc(100vw - 48px));
+  box-sizing: border-box;
+  padding: 26px;
+  border: 1px solid #d5e5de;
+  border-radius: 20px;
+  background: #fff;
+  color: #263f36;
+  font: 14px/1.7 -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+}
+#demo-reset-dialog::backdrop {
+  background: rgb(30 50 43 / 32%);
+}
+#demo-reset-dialog h2 {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+#demo-reset-dialog p {
+  margin: 0 0 24px;
+  color: #62756d;
+}
+.demo-reset-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#demo-reset-dialog button {
+  padding: 9px 16px;
+  border: 1px solid #d5e5de;
+  border-radius: 10px;
+  background: #fff;
+  color: #187553;
+  font: inherit;
+  cursor: pointer;
+}
+#demo-reset-dialog .demo-reset-confirm {
+  border-color: #187553;
+  background: #187553;
+  color: #fff;
+}
+#demo-reset-dialog button:focus-visible {
+  outline: 3px solid #7bc9b0;
+  outline-offset: 2px;
+}
 @media (max-width: 620px) {
   #demo-toolbar {
     gap: 8px;

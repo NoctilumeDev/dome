@@ -4,7 +4,13 @@ export function dormitorySeed() {
     currentUserId: 3,
     users: [
       { id: 1, username: 'admin', fullName: '林老师', role: 'ADMIN' },
-      { id: 2, username: 'manager', fullName: '王老师', role: 'DORM_MANAGER', building: { id: 1 } },
+      {
+        id: 2,
+        username: 'manager',
+        fullName: '王老师',
+        role: 'DORM_MANAGER',
+        building: { id: 1 },
+      },
       { id: 3, username: 'student', fullName: '张三', role: 'STUDENT' },
       { id: 4, username: 'lisi', fullName: '李四', role: 'STUDENT' },
     ],
@@ -234,6 +240,8 @@ export function createDormitoryModel(storage) {
           if (row.status !== 'PENDING') throw new Error('申请已处理。');
           if (action === 'approve') {
             if (kind === 'move-in') {
+              if (d.beds.some((b) => b.occupantId === row.studentId))
+                throw new Error('该学生已经入住，请拒绝重复申请。');
               const bed = d.beds.find(
                 (b) =>
                   b.status === 'VACANT' &&
@@ -244,6 +252,8 @@ export function createDormitoryModel(storage) {
               bed.status = 'OCCUPIED';
             } else {
               const bed = requireRow(d.beds, row.bedId);
+              if (bed.status !== 'OCCUPIED' || bed.occupantId !== row.studentId)
+                throw new Error('床位入住信息已变化，请拒绝旧退宿申请。');
               bed.occupantId = null;
               bed.status = 'VACANT';
             }

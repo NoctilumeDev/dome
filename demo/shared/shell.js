@@ -8,6 +8,45 @@
       render();
     },
   };
+  function confirmReset(trigger) {
+    if (document.getElementById('demo-reset-dialog')) return;
+    const dialog = document.createElement('dialog');
+    dialog.id = 'demo-reset-dialog';
+    dialog.setAttribute('aria-labelledby', 'demo-reset-title');
+    dialog.setAttribute('aria-describedby', 'demo-reset-description');
+    const title = document.createElement('h2');
+    title.id = 'demo-reset-title';
+    title.textContent = '重新体验当前项目？';
+    const description = document.createElement('p');
+    description.id = 'demo-reset-description';
+    description.textContent = '当前项目将恢复为初始样例，其他项目的数据会保留。';
+    const actions = document.createElement('div');
+    actions.className = 'demo-reset-actions';
+    const cancel = document.createElement('button');
+    cancel.type = 'button';
+    cancel.textContent = '取消';
+    cancel.addEventListener('click', () => dialog.close());
+    const confirm = document.createElement('button');
+    confirm.type = 'button';
+    confirm.className = 'demo-reset-confirm';
+    confirm.textContent = '重置当前项目';
+    confirm.addEventListener('click', () => {
+      dialog.close();
+      options.reset();
+    });
+    actions.append(cancel, confirm);
+    dialog.append(title, description, actions);
+    dialog.addEventListener('close', () => {
+      dialog.remove();
+      trigger.focus();
+    });
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    document.body.append(dialog);
+    dialog.showModal();
+    cancel.focus();
+  }
   function render() {
     if (!document.body || !options) return;
     document.getElementById('demo-toolbar')?.remove();
@@ -33,9 +72,7 @@
     const reset = document.createElement('button');
     reset.type = 'button';
     reset.textContent = '重置演示';
-    reset.addEventListener('click', () => {
-      if (confirm('重置当前项目的演示数据？其他项目的数据会保留。')) options.reset();
-    });
+    reset.addEventListener('click', () => confirmReset(reset));
     bar.append(back, label, select, reset);
     document.body.prepend(bar);
   }
