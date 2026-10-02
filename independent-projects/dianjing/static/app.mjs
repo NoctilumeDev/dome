@@ -8,6 +8,7 @@ let remaining = ROUND_SECONDS,
   timer = null,
   lastTick = 0,
   drawingAnimations = [],
+  drawingComplete = false,
   running = false;
 if (location.pathname.includes('/dianjing/')) {
   $('projects-link').href = '../index.html';
@@ -38,6 +39,7 @@ document.addEventListener('visibilitychange', () => {
 function draw() {
   drawingAnimations.forEach((animation) => animation.cancel());
   drawingAnimations = [];
+  drawingComplete = false;
   const svg = $('drawing');
   svg.replaceChildren();
   svg.classList.remove('completed');
@@ -70,6 +72,12 @@ function draw() {
     }
   });
   svg.setAttribute('aria-label', '待猜图画，类别：' + game.current.category);
+  Promise.all(drawingAnimations.map((animation) => animation.finished.catch(() => {}))).then(() => {
+    if (!running || svg.firstChild !== group) return;
+    drawingComplete = true;
+    $('drawing-label').textContent = '画好了，轮到你了';
+    $('canvas-caption').textContent = '想到了就猜，也可以看看提示。';
+  });
 }
 function dots() {
   $('round-dots').replaceChildren();
@@ -155,7 +163,9 @@ $('guess-form').addEventListener('submit', (event) => {
   const result = game.guess(value, remaining);
   if (result) resolve(result);
   else {
-    $('feedback').textContent = '还差一点，再看看接下来的线索。';
+    $('feedback').textContent = drawingComplete
+      ? '还差一点，换个猜想，或看看提示。'
+      : '还差一点，再看看接下来的线索。';
     $('guess').select();
   }
 });
