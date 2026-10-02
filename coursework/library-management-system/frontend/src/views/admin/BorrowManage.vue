@@ -1,6 +1,6 @@
 <template>
   <div class="feature-shell">
-    <section class="toolbar">
+    <section class="toolbar" @keydown.enter.prevent="handleFilter">
       <span class="toolbar-label">图书名称</span>
       <el-input
         v-model="borrowQueryDto.bookName"
@@ -71,16 +71,16 @@
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column label="操作">
+      <el-table-column label="操作" width="100" fixed="right">
         <template slot-scope="scope">
-          <span v-if="!scope.row.status" class="text-button" @click="handleReturn(scope.row)">还书</span>
+          <button v-if="!scope.row.status" type="button" class="text-button" @click="handleReturn(scope.row)">还书</button>
           <span v-else style="color: #909399;">已归还</span>
         </template>
       </el-table-column>
     </el-table>
 
     <el-pagination
-      style="margin: 20px 0;float: right;"
+      class="system-pagination"
       :current-page="currentPage"
       :page-sizes="[8, 20]"
       :page-size="pageSize"
@@ -93,6 +93,7 @@
 </template>
 
 <script>
+import { toQueryRange } from '@/utils/queryTime';
 export default {
     data() {
         return {
@@ -144,18 +145,13 @@ export default {
         resetQueryCondition() {
             this.borrowQueryDto = {};
             this.searchTime = [];
+            this.currentPage = 1;
             this.fetchFreshData();
         },
         async fetchFreshData() {
             try {
                 this.tableData = [];
-                let startTime = null;
-                let endTime = null;
-                if (this.searchTime != null && this.searchTime.length === 2) {
-                    const [startDate, endDate] = await Promise.all(this.searchTime.map(date => date.toISOString()));
-                    startTime = startDate.split('T')[0] + 'T00:00:00';
-                    endTime = endDate.split('T')[0] + 'T23:59:59';
-                }
+                const { startTime, endTime } = toQueryRange(this.searchTime);
                 const params = {
                     current: this.currentPage,
                     size: this.pageSize,

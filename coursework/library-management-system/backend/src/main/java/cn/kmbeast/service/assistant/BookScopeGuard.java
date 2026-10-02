@@ -3,6 +3,9 @@ package cn.kmbeast.service.assistant;
 import org.springframework.stereotype.Component;
 
 import java.util.Locale;
+import java.text.Normalizer;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,9 +28,9 @@ public class BookScopeGuard {
     );
     private static final Pattern LIBRARY_QUERY = Pattern.compile(
             "(?i)(图书馆|本馆|馆藏|图书|书籍|书名|作者|出版社|isbn|分类|类别|借阅|书架|用户|读者|"
-                    + "还书|归还|没还|未还|还没还|未归还|尚未归还|借阅中|逾期|到期|反馈|意见|书评|评论|评分|"
+                    + "还书|归还|借了|借过|没还|未还|还没还|未归还|尚未归还|借阅中|逾期|到期|反馈|意见|书评|评论|评分|"
                     + "小说|教材|著作|(?:推荐|查找|查询|搜索).{0,12}(?:书|读物)|"
-                    + "(?:写的|著的|创作的)(?:书|作品)|(?:相关|有关|方面|类).{0,4}(?:书|读物)|"
+                    + "(?:写的|著的|创作的)(?:书|作品)|(?:关于|相关|有关|方面|类).{0,12}(?:书|读物)|"
                     + "(?:可借|能借|库存).{0,12}(?:书|图书|书籍)|"
                     + "(?:书|图书|书籍).{0,12}(?:可借|能借|库存))"
     );
@@ -49,7 +52,8 @@ public class BookScopeGuard {
         if (question == null || question.trim().isEmpty()) {
             return false;
         }
-        String normalized = question.trim().toLowerCase(Locale.ROOT);
+        question = normalize(question);
+        String normalized = question.toLowerCase(Locale.ROOT);
         if (hasQuotedTitle(question) || LIBRARY_QUERY.matcher(question).find()) {
             return true;
         }
@@ -57,6 +61,37 @@ public class BookScopeGuard {
             return false;
         }
         return extractDeterministicTitle(question) != null;
+    }
+
+    public String normalize(String question) {
+        return Normalizer.normalize(question == null ? "" : question, Normalizer.Form.NFKC)
+                .replaceAll("\\p{Cf}", "").trim();
+    }
+
+    /** Titles remain literal parameters, never instructions or executable SQL. */
+    public String rejectionReason(String question) {
+        String outsideTitles = withoutTitles(question);
+        if (Pattern.compile("(?i)(密码(?!学)|密钥|api.?key|secret|access.?token|连接串|"
+                + "忽略.{0,8}(规则|指令|限制)|绕过.{0,8}(权限|限制)|最高权限|最高管理员|程序创始人|"
+                + "清空.{0,12}(数据库|数据|表)|删除.{0,12}(数据|用户|图书|记录)|"
+                + "(?:执行|运行|输出|生成).{0,8}sql|drop\\s+table|delete\\s+from|truncate\\s+table|"
+                + "insert\\s+into|update\\s+\\w+\\s+set)").matcher(outsideTitles).find()) {
+            return "我只能查询图书馆记录，不能提供密码、变更身份或执行修改和删除操作。";
+        }
+        Matcher titles = QUOTED_TITLE.matcher(normalize(question));
+        Set<String> distinct = new LinkedHashSet<>();
+        while (titles.find()) distinct.add(titles.group());
+        boolean borrows = Pattern.compile("借阅|借了|借过|未还|没还|归还|还书|逾期|到期").matcher(outsideTitles).find();
+        int kinds = (borrows ? 1 : 0) + (outsideTitles.contains("反馈") ? 1 : 0)
+                + (outsideTitles.matches("(?s).*(书评|评论).*") ? 1 : 0);
+        if (distinct.size() > 1 || kinds > 1) {
+            return "请一次查询一本书或一种记录。我会分别核对，避免遗漏你的其他问题。";
+        }
+        return null;
+    }
+
+    public String withoutTitles(String question) {
+        return QUOTED_TITLE.matcher(normalize(question)).replaceAll("");
     }
 
     public String extractDeterministicTitle(String question) {

@@ -42,6 +42,7 @@
             :key="prompt"
             type="button"
             class="prompt-chip"
+            :disabled="loading"
             @click="question = prompt"
           >
             {{ prompt }}
@@ -50,6 +51,7 @@
 
         <el-input
           v-model="question"
+          :disabled="loading"
           type="textarea"
           :rows="4"
           :maxlength="120"
@@ -77,7 +79,7 @@
           <i :class="databaseVerified ? 'el-icon-circle-check' : 'el-icon-warning-outline'"></i>
           {{ databaseVerified ? '数据库已核验' : '本地范围已处理' }}
         </span>
-        <span v-if="databaseVerified" class="result-count">本次返回 {{ total }} 条馆藏记录</span>
+        <span v-if="databaseVerified" class="result-count">符合条件 {{ total }} 条，本次返回 {{ returnedCount }} 条</span>
         <span v-if="planningSource" :class="['source-pill', modelCalled ? 'is-model' : 'is-local']">
           <i :class="modelCalled ? 'el-icon-connection' : 'el-icon-cpu'"></i>
           {{ modelCallLabel }}
@@ -100,7 +102,7 @@
       <el-collapse v-if="generatedSql" class="sql-collapse">
         <el-collapse-item name="sql">
           <template slot="title">
-            <span class="sql-title"><i class="el-icon-tickets"></i> 查看实际执行的参数化 SQL</span>
+            <span class="sql-title"><i class="el-icon-tickets"></i> 查看参数化列表查询</span>
           </template>
           <pre class="assistant-sql">{{ generatedSql }}</pre>
         </el-collapse-item>
@@ -125,6 +127,19 @@
           <el-table-column prop="description" label="馆藏简介" min-width="220" show-overflow-tooltip></el-table-column>
         </el-table>
       </div>
+      <div v-if="records.length" class="table-wrap">
+        <el-table :data="records" class="system-table" stripe>
+          <el-table-column
+            v-for="column in recordColumns"
+            :key="column.prop"
+            :prop="column.prop"
+            :label="column.label"
+            :min-width="column.width || 150"
+            :formatter="formatRecordCell"
+          />
+        </el-table>
+      </div>
+      <p v-if="truncated" class="model-note">仅展示前 {{ returnedCount }} 条，请细化书名、作者或其他支持的查询条件。</p>
       </div>
 
       <div v-else class="assistant-empty">
@@ -160,6 +175,7 @@ const INTENT_LABELS = {
   MY_FEEDBACK: '我的反馈',
   FORBIDDEN: '权限受限',
   OUT_OF_SCOPE: '超出范围',
+  CLARIFY: '请分开查询',
 };
 
 export default {
@@ -169,7 +185,11 @@ export default {
       question: '',
       loading: false,
       books: [],
+      records: [],
       total: 0,
+      returnedCount: 0,
+      truncated: false,
+      requestId: 0,
       generatedSql: '',
       modelNote: '',
       planningSource: '',
@@ -187,6 +207,13 @@ export default {
     };
   },
   computed: {
+    recordColumns() {
+      const user = { prop: 'userName', label: '读者' };
+      if (this.intent === 'LIST_USERS') return [user, { prop: 'userAccount', label: '账号' }, { prop: 'userRole', label: '角色' }];
+      if (this.intent.includes('FEEDBACK')) return [user, { prop: 'content', label: '反馈内容', width: 260 }, { prop: 'reply', label: '回复', width: 240 }, { prop: 'status', label: '处理状态' }];
+      if (this.intent.includes('REVIEWS')) return [user, { prop: 'bookName', label: '图书' }, { prop: 'rating', label: '评分' }, { prop: 'content', label: '书评', width: 260 }];
+      return [user, { prop: 'bookName', label: '图书' }, { prop: 'borrowTime', label: '借阅时间', width: 200 }, { prop: 'dueDate', label: '应还时间', width: 200 }, { prop: 'returnTime', label: '归还时间', width: 200 }, { prop: 'status', label: '状态' }];
+    },
     intentLabel() {
       return INTENT_LABELS[this.intent] || this.intent;
     },
@@ -199,6 +226,7 @@ export default {
   },
   methods: {
     async askQuestion() {
+      if (this.loading) return;
       const question = this.question.trim();
       if (!question) {
         this.$message.warning('请先输入你的馆藏问题');
@@ -206,8 +234,11 @@ export default {
       }
 
       this.loading = true;
+      const requestId = ++this.requestId;
+      this.clearResult();
       try {
         const response = await this.$axios.post('/book/assistant/query', { question });
+        if (requestId !== this.requestId) return;
         const payload = response.data;
         if (payload.code !== 200 || !payload.data) {
           this.$message.error(payload.msg || '查询失败，请稍后重试');
@@ -216,7 +247,10 @@ export default {
 
         const result = payload.data;
         this.books = result.books || [];
+        this.records = result.records || [];
         this.total = result.total || 0;
+        this.returnedCount = result.returnedCount || 0;
+        this.truncated = result.truncated === true;
         this.generatedSql = result.generatedSql || '';
         this.modelNote = result.modelNote || '';
         this.planningSource = result.planningSource || '';
@@ -226,16 +260,25 @@ export default {
         this.databaseVerified = result.databaseVerified === true;
         this.hasResult = true;
       } catch (error) {
+        if (requestId !== this.requestId) return;
         const message = error.response && error.response.data && error.response.data.msg;
         this.$message.error(message || '请求异常，请稍后再试');
       } finally {
-        this.loading = false;
+        if (requestId === this.requestId) this.loading = false;
       }
     },
     resetForm() {
+      ++this.requestId;
+      this.loading = false;
       this.question = '';
+      this.clearResult();
+    },
+    clearResult() {
       this.books = [];
+      this.records = [];
       this.total = 0;
+      this.returnedCount = 0;
+      this.truncated = false;
       this.generatedSql = '';
       this.modelNote = '';
       this.planningSource = '';
@@ -245,6 +288,16 @@ export default {
       this.databaseVerified = false;
       this.hasResult = false;
     },
+    formatRecordCell(row, column, value) {
+      if (column.property === 'status') return this.intent.includes('FEEDBACK')
+        ? (Number(value) === 1 ? '已回复' : '待处理')
+        : (Number(value) === 1 ? '已归还' : '借阅中');
+      if (column.property === 'userRole') return ['超级管理员', '管理员', '读者', '采购员', '物流员'][Number(value)] || '未识别';
+      return value == null || value === '' ? '—' : value;
+    },
+  },
+  beforeDestroy() {
+    ++this.requestId;
   },
 };
 </script>

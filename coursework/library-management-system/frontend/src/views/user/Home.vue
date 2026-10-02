@@ -2,10 +2,14 @@
   <div class="system-layout">
     <aside class="system-sidebar">
       <h3 class="system-sidebar-title">读者中心</h3>
+      <button type="button" class="system-menu-item" :class="{ 'is-active': isLandingPage }" @click="handleRouteSelect('/user')"><i class="el-icon-house"></i><span>首页</span></button>
       <button
         v-for="(item, idx) in adminRoutes"
         :key="idx"
         class="system-menu-item"
+        type="button"
+        :aria-label="item.name"
+        :title="item.name"
         :class="{ 'is-active': currentPath === item.path }"
         @click="handleRouteSelect(item.path)"
       >
@@ -37,7 +41,7 @@
             <article class="module-card system-card module-card-mini">
               <p class="module-label">名称</p>
               <p class="module-value">{{ userInfo.name || '--' }}</p>
-              <p class="module-desc">支持图书检索、借阅与收藏</p>
+              <p class="module-desc">支持图书检索、借阅与归还</p>
             </article>
             <article class="module-card system-card module-card-mini">
               <p class="module-label">服务状态</p>
@@ -53,7 +57,7 @@
             <span class="panel-subtitle">按功能快速进入常用页面</span>
           </header>
           <section class="module-grid module-grid-modules">
-            <article
+            <button type="button"
               class="module-card module-card-action system-card"
               v-for="(item, idx) in homeModules"
               :key="item.path"
@@ -68,13 +72,13 @@
               <p class="module-title">{{ item.title }}</p>
               <p class="module-desc">{{ item.desc }}</p>
               <span class="module-enter">进入模块 <i class="el-icon-arrow-right"></i></span>
-            </article>
+            </button>
           </section>
         </section>
 
         <section v-else class="home-panel module-workspace">
           <header class="panel-title-wrap">
-            <h2 class="panel-title">功能入口</h2>
+            <h2 class="panel-title">{{ tag }}</h2>
             <span class="panel-subtitle">当前页面内容</span>
           </header>
           <div class="system-card module-view-card">
@@ -99,7 +103,7 @@ export default {
             userInfo: { id: null, url: '', name: '', role: null },
             tag: '首页',
             homeModules: [
-                { name: '图书借阅', icon: 'el-icon-reading', title: '图书借阅', desc: '查看可借图书并进行借阅或收藏。', path: '/bookBorrow' },
+                { name: '图书借阅', icon: 'el-icon-reading', title: '图书借阅', desc: '检索馆藏图书，查看余量并借阅。', path: '/bookBorrow' },
                 { name: '我的借阅', icon: 'el-icon-collection', title: '我的借阅', desc: '管理我的借阅记录、还书与状态。', path: '/myBorrows' },
                 { name: '读者反馈', icon: 'el-icon-chat-line-square', title: '读者反馈', desc: '提交使用建议并查看管理员回复。', path: '/user/feedback' },
                 { name: '我的书评', icon: 'el-icon-star-off', title: '我的书评', desc: '记录阅读感受并管理自己的书评。', path: '/user/reviews' },
@@ -132,12 +136,14 @@ export default {
                 if (!isCurrentToken(observedToken)) return;
                 if (res.data.code !== 200) { this.$router.push('/login'); return; }
                 const { id, userAvatar: url, userName: name, userRole: role } = res.data.data;
+                if (role === 0 || role === 1) { this.$router.replace('/admin'); return; }
                 this.userInfo = { id, url, name, role };
             } catch (e) {
                 if (isCurrentToken(observedToken)) this.$router.push('/login');
             }
         },
         handleRouteSelect(path) {
+            if (this.$route.path === path) return;
             const item = this.adminRoutes.find(r => r.path === path) || this.homeModules.find(r => r.path === path);
             if (item) this.tag = item.name;
             this.currentPath = path;
@@ -148,7 +154,7 @@ export default {
             this.tag = item ? item.name : '首页';
         },
         async loginOut() {
-            if (confirm('确认退出？')) {
+            if (await this.$swalConfirm({ title: '退出登录', text: '确定退出当前账号？' })) {
                 clearToken();
                 this.$router.push("/login");
             }

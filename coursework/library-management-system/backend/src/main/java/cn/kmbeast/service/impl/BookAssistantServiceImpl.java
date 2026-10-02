@@ -43,29 +43,34 @@ public class BookAssistantServiceImpl implements BookAssistantService {
             return ApiResult.error("问题不能为空");
         }
 
-        String question = dto.getQuestion().trim();
+        String question = scopeGuard.normalize(dto.getQuestion());
         if (question.length() > MAX_QUESTION_LENGTH) {
             return ApiResult.error("问题过长，请控制在 " + MAX_QUESTION_LENGTH + " 个字符内");
         }
 
-        if (!scopeGuard.isAllowed(question)) {
+        String rejection = scopeGuard.rejectionReason(question);
+        if (rejection != null || !scopeGuard.isAllowed(question)) {
             BookAssistantVO refused = new BookAssistantVO();
             refused.setQuestion(question);
-            refused.setIntent("OUT_OF_SCOPE");
+            refused.setIntent(rejection != null && rejection.startsWith("请一次") ? "CLARIFY" : "OUT_OF_SCOPE");
             refused.setDatabaseVerified(false);
             refused.setGeneratedSql("");
             refused.setModelNote("已由本地范围规则拒绝，未调用 DeepSeek");
             refused.setPlanningSource("LOCAL_SCOPE");
             refused.setModelCalled(false);
-            refused.setAnswer(scopeGuard.refusalMessage());
+            refused.setAnswer(rejection != null ? rejection : scopeGuard.refusalMessage());
             refused.setTotal(0);
+            refused.setReturnedCount(0);
+            refused.setTruncated(false);
             refused.setBooks(new ArrayList<>());
+            refused.setRecords(new ArrayList<>());
             return ApiResult.success(refused);
         }
 
         BookQueryPlan plan = queryPlanner.plan(question);
         Integer currentUserId = LocalThreadHolder.getUserId();
-        boolean isAdmin = Integer.valueOf(1).equals(LocalThreadHolder.getRoleId());
+        Integer role = LocalThreadHolder.getRoleId();
+        boolean isAdmin = Integer.valueOf(0).equals(role) || Integer.valueOf(1).equals(role);
         boolean readerAsksOwnBorrow = !isAdmin
                 && plan.getIntent() == cn.kmbeast.service.assistant.BookIntent.BORROW_OVERVIEW
                 && ((plan.getUserName() == null || plan.getUserName().isBlank())
@@ -73,9 +78,6 @@ public class BookAssistantServiceImpl implements BookAssistantService {
         if (readerAsksOwnBorrow) {
             plan.setIntent(cn.kmbeast.service.assistant.BookIntent.MY_BORROWS);
             plan.setUserName(null);
-            if (Boolean.TRUE.equals(plan.getUnreturnedOnly())) {
-                plan.setPlanningNote("已识别为当前读者的未归还查询；本次未调用 DeepSeek，API 调用 0 次");
-            }
         }
         if (plan.requiresAdmin() && !isAdmin) {
             BookAssistantVO denied = new BookAssistantVO();
@@ -88,7 +90,10 @@ public class BookAssistantServiceImpl implements BookAssistantService {
             denied.setModelCalled(plan.getModelCalled());
             denied.setAnswer("该问题涉及其他读者的身份或借阅记录，仅管理员可以查询。你可以查询自己的借阅、反馈和书评。");
             denied.setTotal(0);
+            denied.setReturnedCount(0);
+            denied.setTruncated(false);
             denied.setBooks(new ArrayList<>());
+            denied.setRecords(new ArrayList<>());
             return ApiResult.success(denied);
         }
         try {
@@ -103,9 +108,21 @@ public class BookAssistantServiceImpl implements BookAssistantService {
             response.setModelNote(plan.getPlanningNote());
             response.setPlanningSource(plan.getPlanningSource());
             response.setModelCalled(plan.getModelCalled());
-            response.setAnswer(answerBuilder.build(question, plan, rows));
-            response.setTotal(rows.size());
+            String answer = answerBuilder.build(question, plan, rows);
+            if (plan.getIntent() == cn.kmbeast.service.assistant.BookIntent.LIST_CATALOG) {
+                answer = "本馆共登记 " + queryResult.getCatalogCount() + " 种图书，已登记 "
+                        + queryResult.getShelfCount() + " 个书架。" + System.lineSeparator() + answer;
+            }
+            if (queryResult.getTotal() > rows.size()) {
+                answer = "符合条件共 " + queryResult.getTotal() + " 条，本次仅返回前 " + rows.size()
+                        + " 条。请细化查询条件查看其他记录。" + System.lineSeparator() + answer;
+            }
+            response.setAnswer(answer);
+            response.setTotal(queryResult.getTotal());
+            response.setReturnedCount(rows.size());
+            response.setTruncated(queryResult.getTotal() > rows.size());
             response.setBooks(plan.isBookIntent() ? rows : new ArrayList<>());
+            response.setRecords(plan.isBookIntent() ? new ArrayList<>() : rows);
             return ApiResult.success(response);
         } catch (IllegalStateException exception) {
             return ApiResult.error("馆藏数据库查询失败，请稍后重试");

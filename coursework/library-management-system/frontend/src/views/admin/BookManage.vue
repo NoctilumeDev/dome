@@ -1,6 +1,6 @@
 <template>
   <div class="feature-shell">
-    <section class="toolbar">
+    <section class="toolbar" @keydown.enter.prevent="handleFilter">
       <span class="toolbar-label">图书名称</span>
       <el-input
         v-model="bookQueryDto.name"
@@ -87,15 +87,14 @@
       <el-table-column :sortable="true" prop="createTime" width="160" label="入库时间"></el-table-column>
       <el-table-column label="操作" width="140" fixed="right">
         <template slot-scope="scope">
-          <span class="text-button" @click="handleEdit(scope.row)">编辑</span>
-          <span class="text-button" style="margin-left: 10px;" @click="handleDelete(scope.row)">删除</span>
+          <button type="button" class="text-button" @click="handleEdit(scope.row)">编辑</button>
+          <button type="button" class="text-button" style="margin-left: 10px;" @click="handleDelete(scope.row)">删除</button>
         </template>
       </el-table-column>
     </el-table>
 
     <el-pagination
       class="system-pagination"
-      style="margin: 20px 0; float: right;"
       :current-page="currentPage"
       :page-size="pageSize"
       :page-sizes="[5, 7]"
@@ -155,6 +154,7 @@
 </template>
 
 <script>
+import { toQueryRange } from '@/utils/queryTime';
 export default {
     data() {
         return {
@@ -211,19 +211,20 @@ export default {
         handleSelectionChange(selection) {
             this.selectedRows = selection;
         },
-        async batchDelete() {
-            if (!this.selectedRows.length) {
+        async batchDelete(rows) {
+            const targets = Array.isArray(rows) ? rows : this.selectedRows;
+            const ids = targets.map(entity => entity.id);
+            if (!ids.length) {
                 this.$message('未选中任何数据');
                 return;
             }
             const confirmed = await this.$swalConfirm({
                 title: '删除图书数据',
-                text: '删除后不可恢复，是否继续？',
+                text: `即将删除 ${ids.length} 本图书：${targets.map(row => row.name).join('、')}。删除后不可恢复，是否继续？`,
                 icon: 'warning',
             });
             if (confirmed) {
                 try {
-                    let ids = this.selectedRows.map(entity => entity.id);
                     const response = await this.$axios.post('/book/batchDelete', ids);
                     if (response.data.code === 200) {
                         this.$swal.fire({
@@ -251,6 +252,7 @@ export default {
         resetQueryCondition() {
             this.bookQueryDto = {};
             this.searchTime = [];
+            this.currentPage = 1;
             this.fetchFreshData();
         },
         clearFormData() {
@@ -300,13 +302,7 @@ export default {
         async fetchFreshData() {
             try {
                 this.tableData = [];
-                let startTime = null;
-                let endTime = null;
-                if (this.searchTime != null && this.searchTime.length === 2) {
-                    const [startDate, endDate] = await Promise.all(this.searchTime.map(date => date.toISOString()));
-                    startTime = `${startDate.split('T')[0]}T00:00:00`;
-                    endTime = `${endDate.split('T')[0]}T23:59:59`;
-                }
+                const { startTime, endTime } = toQueryRange(this.searchTime);
                 const params = {
                     current: this.currentPage,
                     size: this.pageSize,
@@ -349,8 +345,7 @@ export default {
             this.data = { ...row };
         },
         handleDelete(row) {
-            this.selectedRows.push(row);
-            this.batchDelete();
+            return this.batchDelete([row]);
         },
         async fetchCategories() {
             try {

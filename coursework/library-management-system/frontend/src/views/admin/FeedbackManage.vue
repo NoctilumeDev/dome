@@ -28,8 +28,8 @@
       </el-table-column>
       <el-table-column label="操作" width="130" fixed="right">
         <template slot-scope="scope">
-          <span class="text-button" @click="openReply(scope.row)">{{ scope.row.status === 1 ? '修改回复' : '回复' }}</span>
-          <span class="text-button danger-text" @click="deleteFeedback(scope.row)">删除</span>
+          <button type="button" class="text-button" @click="openReply(scope.row)">{{ scope.row.status === 1 ? '修改回复' : '回复' }}</button>
+          <button type="button" class="text-button danger-text" @click="deleteFeedback(scope.row)">删除</button>
         </template>
       </el-table-column>
     </el-table>

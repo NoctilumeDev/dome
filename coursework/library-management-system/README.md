@@ -30,7 +30,7 @@ mysql -u your_mysql_admin -p < sql/library_management.sql
 ```powershell
 $env:DB_USERNAME = "你的应用数据库账号"
 $env:DB_PASSWORD = "你的数据库密码"
-$env:JWT_SECRET = "本地随机密钥"
+$env:JWT_SECRET = [Convert]::ToBase64String([Guid]::NewGuid().ToByteArray() + [Guid]::NewGuid().ToByteArray())
 $env:DEEPSEEK_API_KEY = "你的 DeepSeek API 密钥"
 cd backend
 mvn spring-boot:run
@@ -38,7 +38,7 @@ mvn spring-boot:run
 
 应用不内置数据库账号、密码或 JWT 密钥。运行账号只需拥有 `library_management` 数据库所需的查询与增删改权限，不应使用 MySQL `root` 超级用户。
 
-启动后打开 `http://localhost:22090`。默认演示账号为 `admin`、`zhangsan`、`lisi`，密码均为 `123456`。
+启动后打开 `http://localhost:22090/api/book-manage-sys-api/v1.0/`。默认演示账号为 `admin`、`zhangsan`、`lisi`，密码均为 `123456`。JWT 签名密钥至少需要 32 字节，上面的命令会生成随机密钥。
 
 ### 前端开发模式
 
@@ -51,9 +51,25 @@ npm run serve
 
 开发服务器地址为 `http://localhost:22091`。
 
+后端默认允许本机 `localhost:22091` 与 `127.0.0.1:22091` 的开发请求；自定义前端地址可用 `CORS_ORIGINS` 设置，多个地址用逗号分隔。
+
+读者页面支持回车搜索、无结果后重置、查看零余量馆藏，以及借阅和归还确认。当前没有收藏、预约的后端功能，页面不展示这些未实现的入口。窄窗口保留导航文字和表格操作列，编辑弹窗内部滚动，底部操作保持可见。
+
 ## 图书问答边界
 
 问答功能只处理本馆图书、作者、分类、借阅状态、推荐和馆藏位置相关问题。模型只负责理解查询意图，实际结果来自参数化数据库查询；没有查到的数据不会由模型补写。未配置 DeepSeek API 密钥时，系统使用本地安全解析处理能够确定的馆藏问题。
+
+本人借阅、反馈和书评由登录身份限定；他人的借阅和反馈、用户列表只向管理员和超级管理员开放。每次请求重新核对数据库中的冻结状态和角色，旧 token 不保留冻结前或降级前的权限。
+
+模型计划必须是单个 JSON 对象，只接受白名单字段和类型，不能更换已识别的查询类型或条件。外部模型完整响应限时 5 秒，同一账号最多一个模型请求，全局最多四个；超时、错误或繁忙时使用本地规则。当前以中文查询为主；多本书或多种记录需要拆开查询。每次最多返回 50 条，页面区分匹配总数与本次返回数，并提示截断。
+
+### 回归测试与案例
+
+在 `backend` 执行 `mvn test`，在 `frontend` 执行 `npm test`。后端的 `src/test/resources/assistant-cases.json` 保存原始项目案例，覆盖伪造权限、编码、Unicode、混合查询、非法模型 JSON、条件漂移、凭据索取和虚构馆藏；测试同时验证正常查书、本人记录和管理员查询。
+
+攻击分类参考 [garak](https://github.com/NVIDIA/garak)、[PyRIT](https://github.com/microsoft/PyRIT) 和 [promptfoo](https://github.com/promptfoo/promptfoo)。案例根据本项目边界编写，没有运行或宣称覆盖这些工具的全部测试集。
+
+前端修改后执行 `npm run build`，将 `frontend/dist` 内容同步到 `backend/src/main/resources/static`，然后重新编译后端，确保后端提供的页面与前端源码一致。
 
 ## 降级与权衡
 

@@ -15,7 +15,7 @@
       <el-table-column label="评分" width="150"><template slot-scope="scope"><el-rate :value="scope.row.rating" disabled></el-rate></template></el-table-column>
       <el-table-column prop="content" label="书评内容" min-width="260"></el-table-column>
       <el-table-column prop="updateTime" label="更新时间" width="168"></el-table-column>
-      <el-table-column label="操作" width="120"><template slot-scope="scope"><span class="text-button" @click="editReview(scope.row)">编辑</span><span class="text-button danger-text" @click="deleteReview(scope.row)">删除</span></template></el-table-column>
+      <el-table-column label="操作" width="120" fixed="right"><template slot-scope="scope"><el-button type="text" @click="editReview(scope.row)">编辑</el-button><el-button type="text" class="danger-text" @click="deleteReview(scope.row)">删除</el-button></template></el-table-column>
     </el-table>
   </div>
 </template>

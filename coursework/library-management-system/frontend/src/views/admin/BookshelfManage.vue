@@ -1,6 +1,6 @@
 <template>
   <div class="feature-shell">
-    <section class="toolbar">
+    <section class="toolbar" @keydown.enter.prevent="handleFilter">
       <span class="toolbar-label">书架名称</span>
       <el-input
         v-model="queryDto.name"
@@ -32,16 +32,16 @@
       <el-table-column prop="capacity" label="容量" width="100"></el-table-column>
       <el-table-column prop="description" label="备注" width="200"></el-table-column>
       <el-table-column prop="createTime" label="创建时间" width="180"></el-table-column>
-      <el-table-column label="操作">
+      <el-table-column label="操作" width="130" fixed="right">
         <template slot-scope="scope">
-          <span class="text-button" @click="handleEdit(scope.row)">编辑</span>
-          <span class="text-button" style="margin-left: 10px;" @click="handleDelete(scope.row)">删除</span>
+          <button type="button" class="text-button" @click="handleEdit(scope.row)">编辑</button>
+          <button type="button" class="text-button" style="margin-left: 10px;" @click="handleDelete(scope.row)">删除</button>
         </template>
       </el-table-column>
     </el-table>
 
     <el-pagination
-      style="margin: 20px 0;float: right;"
+      class="system-pagination"
       :current-page="currentPage"
       :page-sizes="[5, 10]"
       :page-size="pageSize"
@@ -105,12 +105,13 @@ export default {
             }
         },
         handleSelectionChange(selection) { this.selectedRows = selection; },
-        async batchDelete() {
-            if (!this.selectedRows.length) { this.$message('未选中任何数据'); return; }
-            const confirmed = await this.$swalConfirm({ title: '删除书架', text: '删除后不可恢复，是否继续？', icon: 'warning' });
+        async batchDelete(rows) {
+            const targets = Array.isArray(rows) ? rows : this.selectedRows;
+            const ids = targets.map(row => row.id);
+            if (!ids.length) { this.$message('未选中任何数据'); return; }
+            const confirmed = await this.$swalConfirm({ title: '删除书架', text: `即将删除 ${ids.length} 个书架：${targets.map(row => row.name).join('、')}。删除后不可恢复，是否继续？`, icon: 'warning' });
             if (confirmed) {
                 try {
-                    let ids = this.selectedRows.map(e => e.id);
                     const response = await this.$axios.post('/bookshelf/batchDelete', ids);
                     if (response.data.code === 200) {
                         this.$swal.fire({ title: '删除提示', text: response.data.msg, icon: 'success', showConfirmButton: false, timer: 2000 });
@@ -153,9 +154,9 @@ export default {
         },
         add() { this.isEdit = false; this.form = { name: '', location: '', capacity: 100, description: '' }; this.dialogVisible = true; },
         handleEdit(row) { this.isEdit = true; this.form = { ...row }; this.dialogVisible = true; },
-        handleDelete(row) { this.selectedRows = [row]; this.batchDelete(); },
+        handleDelete(row) { return this.batchDelete([row]); },
         handleFilter() { this.currentPage = 1; this.fetchData(); },
-        resetCondition() { this.queryDto = {}; this.fetchData(); },
+        resetCondition() { this.queryDto = {}; this.currentPage = 1; this.fetchData(); },
         handleSizeChange(val) { this.pageSize = val; this.currentPage = 1; this.fetchData(); },
         handleCurrentChange(val) { this.currentPage = val; this.fetchData(); },
     },

@@ -19,7 +19,10 @@ public class BookAssistantVO {
     private String modelNote;
     private String answer;
     private Integer total;
+    private Integer returnedCount;
+    private Boolean truncated;
     private List<Map<String, Object>> books;
+    private List<Map<String, Object>> records;
     private String intent;
     private Boolean databaseVerified;
     private String planningSource;

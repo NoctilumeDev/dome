@@ -2,10 +2,14 @@
   <div class="system-layout">
     <aside class="system-sidebar">
       <h3 class="system-sidebar-title">图书管理</h3>
+      <button type="button" class="system-menu-item" :class="{ 'is-active': isLandingPage }" @click="handleRouteSelect('/admin')"><i class="el-icon-house"></i><span>首页</span></button>
       <button
         v-for="(item, idx) in adminRoutes"
         :key="idx"
         class="system-menu-item"
+        type="button"
+        :aria-label="item.name"
+        :title="item.name"
         :class="{ 'is-active': currentPath === item.path }"
         @click="handleRouteSelect(item.path)"
       >
@@ -31,7 +35,7 @@
           <section class="module-grid module-grid-summary">
             <article class="module-card system-card module-card-mini">
               <p class="module-label">当前角色</p>
-              <p class="module-value">管理员</p>
+              <p class="module-value">{{ userInfo.role === 0 ? '超级管理员' : '管理员' }}</p>
               <p class="module-desc">账号：{{ userInfo.id || '--' }}</p>
             </article>
             <article class="module-card system-card module-card-mini">
@@ -40,9 +44,9 @@
               <p class="module-desc">可直接切换到常用模块入口</p>
             </article>
             <article class="module-card system-card module-card-mini">
-              <p class="module-label">系统状态</p>
-              <p class="module-value">运行中</p>
-              <p class="module-desc">前后端联调正常</p>
+              <p class="module-label">会话状态</p>
+              <p class="module-value">已登录</p>
+              <p class="module-desc">当前账号已通过身份校验</p>
             </article>
           </section>
         </section>
@@ -53,7 +57,7 @@
             <span class="panel-subtitle">按模块快速进入对应工作台</span>
           </header>
           <section class="module-grid module-grid-modules">
-            <article
+            <button type="button"
               class="module-card module-card-action system-card"
               v-for="(item, idx) in homeModules"
               :key="item.path"
@@ -68,13 +72,13 @@
               <p class="module-title">{{ item.title }}</p>
               <p class="module-desc">{{ item.desc }}</p>
               <span class="module-enter">进入模块 <i class="el-icon-arrow-right"></i></span>
-            </article>
+            </button>
           </section>
         </section>
 
         <section v-else class="home-panel module-workspace">
           <header class="panel-title-wrap">
-            <h2 class="panel-title">功能入口</h2>
+            <h2 class="panel-title">{{ tag }}</h2>
             <span class="panel-subtitle">当前页面内容</span>
           </header>
           <div class="system-card module-view-card">
@@ -102,8 +106,8 @@ export default {
                 { name: '数据总览', icon: 'el-icon-data-analysis', title: '数据总览', desc: '查看图书、用户、借阅与书架核心指标。', path: '/adminLayout' },
                 { name: '借阅管理', icon: 'el-icon-document-copy', title: '借阅管理', desc: '处理借还与逾期监控，维护借阅记录。', path: '/borrowManage' },
                 { name: '图书管理', icon: 'el-icon-notebook-2', title: '图书管理', desc: '新增、编辑图书，控制库存与可借数量。', path: '/bookManage' },
-                { name: '用户管理', icon: 'el-icon-user-solid', title: '用户管理', desc: '管理系统用户、冻结状态与消息推送。', path: '/userManage' },
-                { name: '分类管理', icon: 'el-icon-menu', title: '分类管理', desc: '维护图书分类结构与展示层级。', path: '/categoryManage' },
+                { name: '用户管理', icon: 'el-icon-user-solid', title: '用户管理', desc: '管理用户资料、角色与冻结状态。', path: '/userManage' },
+                { name: '分类管理', icon: 'el-icon-menu', title: '分类管理', desc: '维护图书分类名称与说明。', path: '/categoryManage' },
                 { name: '书架管理', icon: 'el-icon-s-grid', title: '书架管理', desc: '管理实体书架信息、位置与容量。', path: '/bookshelfManage' },
                 { name: '图书问答', icon: 'el-icon-chat-dot-round', title: '图书问答', desc: '用自然语言查询数据库里的图书信息。', path: '/bookAssistant' },
             ],
@@ -134,12 +138,14 @@ export default {
                 if (!isCurrentToken(observedToken)) return;
                 if (res.data.code !== 200) { this.$router.push('/login'); return; }
                 const { id, userAvatar: url, userName: name, userRole: role } = res.data.data;
+                if (role !== 0 && role !== 1) { this.$router.replace('/user'); return; }
                 this.userInfo = { id, url, name, role };
             } catch (e) {
                 if (isCurrentToken(observedToken)) this.$router.push('/login');
             }
         },
         handleRouteSelect(path) {
+            if (this.$route.path === path) return;
             const item = this.adminRoutes.find(r => r.path === path) || this.homeModules.find(r => r.path === path);
             if (item) this.tag = item.name;
             this.currentPath = path;
@@ -150,7 +156,7 @@ export default {
             this.tag = item ? item.name : '首页';
         },
         async loginOut() {
-            if (confirm('确认退出？')) {
+            if (await this.$swalConfirm({ title: '退出登录', text: '确定退出当前账号？' })) {
                 clearToken();
                 this.$router.push("/login");
             }

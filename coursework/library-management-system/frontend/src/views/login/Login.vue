@@ -13,12 +13,12 @@
         <li>借还记录与罚款自动计算</li>
         <li>支持用户、图书、分类、书架一体化后台管理</li>
       </ul>
-      <div class="visit-card">在线访客序号：{{ visitorCount }}</div>
+      <div class="visit-card">让每一本好书，遇见它的读者。</div>
     </div>
     <div class="login-panel">
       <h1 class="login-title">欢迎回来</h1>
       <p class="login-tip">请先登录后继续使用系统</p>
-      <el-form class="login-form" @submit.native.prevent="login">
+      <el-form class="login-form" @submit.native.prevent="login" @keydown.enter.native.prevent="login">
         <el-form-item label="账号" label-width="44px">
           <el-input v-model="act" clearable prefix-icon="el-icon-user" placeholder="请输入账号"></el-input>
         </el-form-item>
@@ -26,8 +26,8 @@
           <el-input v-model="pwd" type="password" show-password prefix-icon="el-icon-lock" placeholder="请输入密码"></el-input>
         </el-form-item>
         <div class="login-actions">
-          <el-button type="primary" class="btn-primary login-action" @click="login">立即登录</el-button>
-          <el-button class="btn-ghost login-action" @click="$router.push('/register')">前往注册</el-button>
+          <el-button type="primary" class="btn-primary login-action" :loading="loading" @click="login">立即登录</el-button>
+          <el-button class="btn-ghost login-action" :disabled="loading" @click="$router.push('/register')">前往注册</el-button>
         </div>
       </el-form>
     </div>
@@ -37,23 +37,25 @@
 <script>
 import request from "@/utils/request.js";
 import { setToken } from "@/utils/storage.js";
-const ADMIN_ROLES = [0, 1, 3, 4];
+const ADMIN_ROLES = [0, 1];
 export default {
     name: "Login",
     data() {
         return {
             act: '', pwd: '',
-            visitorCount: Math.floor(Math.random() * 9000) + 1000,
+            loading: false,
         }
     },
     methods: {
         async login() {
-            if (!this.act || !this.pwd) {
+            if (this.loading) return;
+            if (!this.act.trim() || !this.pwd) {
                 this.$message.error('账号或密码不能为空');
                 return;
             }
+            this.loading = true;
             try {
-                const { data } = await request.post('user/login', { userAccount: this.act, userPwd: this.pwd });
+                const { data } = await request.post('user/login', { userAccount: this.act.trim(), userPwd: this.pwd });
                 if (data.code !== 200) {
                     this.$message.error(data.msg);
                     return;
@@ -64,7 +66,7 @@ export default {
                 else { this.$router.push('/user'); }
             } catch (e) {
                 this.$message.error('登录出错');
-            }
+            } finally { this.loading = false; }
         },
     }
 };

@@ -3,10 +3,8 @@ package cn.kmbeast.service.assistant;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * 只使用数据库结果确定性地生成自然语言答案。
@@ -20,7 +18,7 @@ public class BookAnswerBuilder {
             return emptyAnswer(plan);
         }
         if (plan.getIntent() == BookIntent.LIST_CATALOG) {
-            return summarizeCatalog(rows);
+            return "本次馆藏记录：" + System.lineSeparator() + summarize(rows);
         }
         if (plan.getIntent() == BookIntent.LIST_USERS) {
             return summarizeUsers(rows);
@@ -55,7 +53,7 @@ public class BookAnswerBuilder {
         if (plan.getIntent() == BookIntent.CHECK_AVAILABILITY) {
             long available = rows.stream().filter(this::isAvailable).count();
             int availableCopies = rows.stream().mapToInt(row -> number(row.get("availableCount"))).sum();
-            return "本馆共查到 " + total + " 种相关图书，其中 " + available
+            return "本次返回 " + total + " 种相关图书，其中 " + available
                     + " 种当前可借，合计可借 " + availableCopies + " 册。"
                     + System.lineSeparator() + summarize(rows);
         }
@@ -67,13 +65,13 @@ public class BookAnswerBuilder {
             return "我只根据本馆实际馆藏进行推荐，共找到 " + total + " 种符合条件的图书："
                     + System.lineSeparator() + summarize(rows);
         }
-        return "本馆数据库中共找到 " + total + " 种相关图书："
+        return "本次返回 " + total + " 种相关图书："
                 + System.lineSeparator() + summarize(rows);
     }
 
     private String emptyAnswer(BookQueryPlan plan) {
         if (plan.getIntent() == BookIntent.LIST_CATALOG) {
-            return "本馆数据库中暂未登记图书或书架信息。";
+            return "本次条件没有找到馆藏记录。";
         }
         if (!plan.isBookIntent()) {
             return "数据库中暂未检索到符合当前条件的记录。";
@@ -163,24 +161,9 @@ public class BookAnswerBuilder {
         return answer.append("。").toString();
     }
 
-    private String summarizeCatalog(List<Map<String, Object>> rows) {
-        Set<String> shelves = new LinkedHashSet<>();
-        for (Map<String, Object> row : rows) {
-            String name = text(row.get("bookshelfName"), "");
-            String location = text(row.get("location"), "");
-            if (!name.isBlank()) {
-                shelves.add(location.isBlank() ? name : name + "（" + location + "）");
-            }
-        }
-        String shelfText = shelves.isEmpty() ? "暂未登记书架" : String.join("、", shelves);
-        return "本馆数据库中共登记 " + rows.size() + " 种图书，涉及 " + shelves.size()
-                + " 个书架：" + shelfText + "。"
-                + System.lineSeparator() + summarize(rows);
-    }
-
     private String summarizeUsers(List<Map<String, Object>> rows) {
-        StringBuilder answer = new StringBuilder("系统中共查到 ").append(rows.size()).append(" 个用户：");
-        for (Map<String, Object> row : visibleRows(rows)) {
+        StringBuilder answer = new StringBuilder("本次返回 ").append(rows.size()).append(" 个用户：");
+        for (Map<String, Object> row : rows) {
             answer.append(System.lineSeparator()).append("• ").append(text(row.get("userName"), "未命名用户"))
                     .append("（账号：").append(text(row.get("userAccount"), "未记录")).append("，角色：")
                     .append(number(row.get("userRole")) == 1 ? "管理员" : "读者").append("）");
@@ -190,7 +173,7 @@ public class BookAnswerBuilder {
 
     private String summarizeBorrows(List<Map<String, Object>> rows, String title) {
         StringBuilder answer = new StringBuilder(title).append("共 ").append(rows.size()).append(" 条：");
-        for (Map<String, Object> row : visibleRows(rows)) {
+        for (Map<String, Object> row : rows) {
             boolean returned = booleanValue(row.get("status"));
             answer.append(System.lineSeparator()).append("• ").append(text(row.get("userName"), "当前读者"))
                     .append("借阅《").append(text(row.get("bookName"), "未知图书")).append("》，应还时间：")
@@ -201,8 +184,8 @@ public class BookAnswerBuilder {
     }
 
     private String summarizeReturns(List<Map<String, Object>> rows) {
-        StringBuilder answer = new StringBuilder("最近共有 ").append(rows.size()).append(" 条归还记录：");
-        for (Map<String, Object> row : visibleRows(rows)) {
+        StringBuilder answer = new StringBuilder("本次返回 ").append(rows.size()).append(" 条归还记录：");
+        for (Map<String, Object> row : rows) {
             answer.append(System.lineSeparator()).append("• ").append(text(row.get("userName"), "未知读者"))
                     .append("归还了《").append(text(row.get("bookName"), "未知图书")).append("》，归还时间：")
                     .append(text(row.get("returnTime"), "未记录"));
@@ -212,7 +195,7 @@ public class BookAnswerBuilder {
 
     private String summarizeDueSoon(List<Map<String, Object>> rows, int days) {
         StringBuilder answer = new StringBuilder("未来 ").append(days).append(" 天内共有 ").append(rows.size()).append(" 条借阅即将到期：");
-        for (Map<String, Object> row : visibleRows(rows)) {
+        for (Map<String, Object> row : rows) {
             answer.append(System.lineSeparator()).append("• 请提醒 ").append(text(row.get("userName"), "当前读者"))
                     .append("归还《").append(text(row.get("bookName"), "未知图书")).append("》，应还时间：")
                     .append(text(row.get("dueDate"), "未记录"));
@@ -221,8 +204,8 @@ public class BookAnswerBuilder {
     }
 
     private String summarizeReviews(List<Map<String, Object>> rows) {
-        StringBuilder answer = new StringBuilder("数据库中共查到 ").append(rows.size()).append(" 条书评：");
-        for (Map<String, Object> row : visibleRows(rows)) {
+        StringBuilder answer = new StringBuilder("本次返回 ").append(rows.size()).append(" 条书评：");
+        for (Map<String, Object> row : rows) {
             answer.append(System.lineSeparator()).append("• 《").append(text(row.get("bookName"), "未知图书")).append("》")
                     .append("，评分：").append(number(row.get("rating"))).append("/5，")
                     .append(text(row.get("userName"), "匿名读者")).append("：")
@@ -232,8 +215,8 @@ public class BookAnswerBuilder {
     }
 
     private String summarizeFeedback(List<Map<String, Object>> rows) {
-        StringBuilder answer = new StringBuilder("数据库中共查到 ").append(rows.size()).append(" 条反馈：");
-        for (Map<String, Object> row : visibleRows(rows)) {
+        StringBuilder answer = new StringBuilder("本次返回 ").append(rows.size()).append(" 条反馈：");
+        for (Map<String, Object> row : rows) {
             answer.append(System.lineSeparator()).append("• ").append(text(row.get("userName"), "当前读者")).append("：")
                     .append(text(row.get("content"), "未填写内容")).append("；处理状态：")
                     .append(number(row.get("status")) == 1 ? "已回复" : "待处理");
@@ -242,10 +225,6 @@ public class BookAnswerBuilder {
             }
         }
         return answer.toString();
-    }
-
-    private List<Map<String, Object>> visibleRows(List<Map<String, Object>> rows) {
-        return rows.subList(0, Math.min(rows.size(), 8));
     }
 
     private boolean booleanValue(Object value) {

@@ -1,6 +1,8 @@
 package cn.kmbeast.config;
 
 import cn.kmbeast.Interceptor.JwtInterceptor;
+import cn.kmbeast.mapper.UserMapper;
+import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -19,12 +21,15 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Value("${my-server.api-context-path}")
     private String API;
 
+    @Resource
+    private UserMapper userMapper;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // JWT Token 拦截器：只拦截后端 API，静态资源放行
         // 注意：MappedInterceptor 用 lookupPath(不含 context-path)匹配路径，
         // 因此 pattern 必须用相对路径 "/**"，而不能用 apiPrefix + "/**"
-        registry.addInterceptor(new JwtInterceptor(API))
+        registry.addInterceptor(new JwtInterceptor(API, userMapper))
                 .addPathPatterns("/**")
                 .excludePathPatterns(
                         "/user/login",

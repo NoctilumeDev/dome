@@ -23,13 +23,6 @@ public enum BookIntent {
     MY_FEEDBACK;
 
     public static BookIntent fromModelValue(String value) {
-        if (value == null || value.isBlank()) {
-            return SEARCH_BOOK;
-        }
-        try {
-            return valueOf(value.trim().toUpperCase(Locale.ROOT));
-        } catch (IllegalArgumentException ignored) {
-            return SEARCH_BOOK;
-        }
+        return valueOf(value.trim().toUpperCase(Locale.ROOT));
     }
 }

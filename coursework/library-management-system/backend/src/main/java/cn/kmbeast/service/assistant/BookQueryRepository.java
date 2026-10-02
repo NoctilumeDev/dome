@@ -48,10 +48,10 @@ public class BookQueryRepository {
                 if (keyword == null || keyword.isBlank()) {
                     continue;
                 }
-                keywordConditions.add("(b.name LIKE ? OR b.author LIKE ? OR b.isbn LIKE ? OR "
-                        + "b.publisher LIKE ? OR b.category LIKE ? OR b.description LIKE ?)");
+                keywordConditions.add("(b.name LIKE ? ESCAPE '!' OR b.author LIKE ? ESCAPE '!' OR b.isbn LIKE ? ESCAPE '!' OR "
+                        + "b.publisher LIKE ? ESCAPE '!' OR b.category LIKE ? ESCAPE '!' OR b.description LIKE ? ESCAPE '!')");
                 for (int index = 0; index < 6; index++) {
-                    parameters.add("%" + keyword.trim() + "%");
+                    parameters.add(literalLike(keyword));
                 }
             }
             if (!keywordConditions.isEmpty()) {
@@ -72,7 +72,13 @@ public class BookQueryRepository {
         String sql = SELECT_COLUMNS + " WHERE " + where + " ORDER BY " + orderBy + " LIMIT " + limit;
 
         List<Map<String, Object>> rows = execute(sql, parameters);
-        return new QueryResult(rows, sql + System.lineSeparator() + "-- 参数: " + parameters);
+        String from = " FROM book b LEFT JOIN bookshelf s ON s.id=b.bookshelf_id WHERE " + where;
+        int total = count("SELECT COUNT(*) AS count" + from, parameters);
+        Integer shelves = plan.getIntent() == BookIntent.LIST_CATALOG
+                ? count("SELECT COUNT(*) AS count FROM bookshelf", List.of()) : null;
+        Integer catalogCount = plan.getIntent() == BookIntent.LIST_CATALOG
+                ? count("SELECT COUNT(*) AS count FROM book", List.of()) : null;
+        return new QueryResult(rows, sql + System.lineSeparator() + "-- 参数: " + parameters, total, shelves, catalogCount);
     }
 
     public boolean matchesCurrentUser(Integer currentUserId, String userName) {
@@ -102,8 +108,8 @@ public class BookQueryRepository {
                 parameters.add(currentUserId);
             }
             if (plan.getTitle() != null && !plan.getTitle().isBlank()) {
-                where.append(" AND b.name LIKE ?");
-                parameters.add("%" + plan.getTitle().trim() + "%");
+                where.append(" AND b.name LIKE ? ESCAPE '!'");
+                parameters.add(literalLike(plan.getTitle()));
             }
             sql = "SELECT r.id,r.user_id AS userId,u.user_name AS userName,r.book_id AS bookId,"
                     + "b.name AS bookName,r.rating,r.content,r.create_time AS createTime,r.update_time AS updateTime "
@@ -113,6 +119,9 @@ public class BookQueryRepository {
             String where = plan.getIntent() == BookIntent.MY_FEEDBACK ? " WHERE f.user_id=?" : " WHERE 1=1";
             if (plan.getIntent() == BookIntent.MY_FEEDBACK) {
                 parameters.add(currentUserId);
+            } else if (plan.getUserName() != null && !plan.getUserName().isBlank()) {
+                where += " AND u.user_name LIKE ? ESCAPE '!'";
+                parameters.add(literalLike(plan.getUserName()));
             }
             sql = "SELECT f.id,f.user_id AS userId,u.user_name AS userName,f.content,f.reply,f.status,"
                     + "f.create_time AS createTime,f.reply_time AS replyTime FROM feedback f "
@@ -123,8 +132,12 @@ public class BookQueryRepository {
                 where.append(" AND br.user_id=?");
                 parameters.add(currentUserId);
             } else if (plan.getUserName() != null && !plan.getUserName().isBlank()) {
-                where.append(" AND u.user_name LIKE ?");
-                parameters.add("%" + plan.getUserName().trim() + "%");
+                where.append(" AND u.user_name LIKE ? ESCAPE '!'");
+                parameters.add(literalLike(plan.getUserName()));
+            }
+            if (plan.getTitle() != null && !plan.getTitle().isBlank()) {
+                where.append(" AND b.name LIKE ? ESCAPE '!'");
+                parameters.add(literalLike(plan.getTitle()));
             }
             if (plan.getIntent() == BookIntent.RECENT_RETURNS) {
                 where.append(" AND br.status=1 AND br.return_time IS NOT NULL");
@@ -143,15 +156,25 @@ public class BookQueryRepository {
                     + "FROM borrow_record br LEFT JOIN user u ON u.id=br.user_id LEFT JOIN book b ON b.id=br.book_id"
                     + where + " ORDER BY " + orderBy + " LIMIT " + limit;
         }
-        return new QueryResult(execute(sql, parameters), sql + System.lineSeparator() + "-- 参数: " + parameters);
+        String countSql = "SELECT COUNT(*) AS count" + sql.substring(sql.indexOf(" FROM "), sql.lastIndexOf(" ORDER BY "));
+        return new QueryResult(execute(sql, parameters), sql + System.lineSeparator() + "-- 参数: " + parameters,
+                count(countSql, parameters), null, null);
     }
 
     private void addLikeCondition(List<String> conditions, List<Object> parameters,
                                   String column, String value) {
         if (value != null && !value.isBlank()) {
-            conditions.add(column + " LIKE ?");
-            parameters.add("%" + value.trim() + "%");
+            conditions.add(column + " LIKE ? ESCAPE '!'");
+            parameters.add(literalLike(value));
         }
+    }
+
+    private String literalLike(String value) {
+        return "%" + value.trim().replace("!", "!!").replace("%", "!%").replace("_", "!_") + "%";
+    }
+
+    private int count(String sql, List<Object> parameters) {
+        return ((Number) execute(sql, parameters).get(0).get("count")).intValue();
     }
 
     private List<Map<String, Object>> execute(String sql, List<Object> parameters) {
@@ -205,10 +228,16 @@ public class BookQueryRepository {
     public static class QueryResult {
         private final List<Map<String, Object>> rows;
         private final String displaySql;
+        private final int total;
+        private final Integer shelfCount;
+        private final Integer catalogCount;
 
-        public QueryResult(List<Map<String, Object>> rows, String displaySql) {
+        public QueryResult(List<Map<String, Object>> rows, String displaySql, int total, Integer shelfCount, Integer catalogCount) {
             this.rows = rows;
             this.displaySql = displaySql;
+            this.total = total;
+            this.shelfCount = shelfCount;
+            this.catalogCount = catalogCount;
         }
 
         public List<Map<String, Object>> getRows() {
@@ -218,5 +247,10 @@ public class BookQueryRepository {
         public String getDisplaySql() {
             return displaySql;
         }
+
+        public int getTotal() { return total; }
+
+        public Integer getShelfCount() { return shelfCount; }
+        public Integer getCatalogCount() { return catalogCount; }
     }
 }

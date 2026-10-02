@@ -1,6 +1,9 @@
 package cn.kmbeast.Interceptor;
 
 import cn.kmbeast.context.LocalThreadHolder;
+import cn.kmbeast.mapper.UserMapper;
+import cn.kmbeast.pojo.entity.User;
+import cn.kmbeast.pojo.em.RoleEnum;
 import cn.kmbeast.pojo.api.ApiResult;
 import cn.kmbeast.pojo.api.Result;
 import cn.kmbeast.pojo.api.ResultCode;
@@ -27,6 +30,7 @@ import java.util.List;
 public class JwtInterceptor implements HandlerInterceptor {
 
     private final String apiPrefix;
+    private final UserMapper userMapper;
 
     private static final AntPathMatcher PATH_MATCHER = new AntPathMatcher();
 
@@ -44,12 +48,14 @@ public class JwtInterceptor implements HandlerInterceptor {
             "/bookshelf/save", "/bookshelf/update", "/bookshelf/batchDelete"
     );
 
-    public JwtInterceptor(String apiPrefix) {
+    public JwtInterceptor(String apiPrefix, UserMapper userMapper) {
         this.apiPrefix = apiPrefix;
+        this.userMapper = userMapper;
     }
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        LocalThreadHolder.clear();
         String requestMethod = request.getMethod();
         // 放行预检请求
         if ("OPTIONS".equals(requestMethod)) {
@@ -75,16 +81,25 @@ public class JwtInterceptor implements HandlerInterceptor {
                     "身份认证异常，请先登录"
             );
         }
-        Integer userId = claims.get("id", Integer.class);
-        Integer roleId = claims.get("role", Integer.class);
-        if (userId == null || roleId == null) {
+        Integer userId;
+        try {
+            userId = claims.get("id", Integer.class);
+            if (claims.get("role", Integer.class) == null) throw new IllegalArgumentException("角色字段缺失");
+        } catch (RuntimeException exception) {
+            return reject(response, HttpServletResponse.SC_UNAUTHORIZED,
+                    ResultCode.AUTHENTICATION_REQUIRED, "身份认证异常，请先登录");
+        }
+        User current = userId == null ? null : userMapper.getByActive(User.builder().id(userId).build());
+        if (current == null || !Boolean.FALSE.equals(current.getIsLogin())
+                || current.getUserRole() == null || RoleEnum.ROLE(current.getUserRole()) == null) {
             return reject(
                     response,
                     HttpServletResponse.SC_UNAUTHORIZED,
                     ResultCode.AUTHENTICATION_REQUIRED,
-                    "身份认证异常，请先登录"
+                    "账号不存在或已被禁用，请重新登录"
             );
         }
+        Integer roleId = current.getUserRole();
         // 管理接口角色校验：管理员(0/1)可访问，读者(2+)拒绝
         if (isAdminOnlyPath(requestURI) && roleId > 1) {
             return reject(

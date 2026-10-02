@@ -2,7 +2,7 @@
   <div class="register-wrap">
     <div class="register-card">
       <h2 class="register-title">读者注册</h2>
-      <el-form label-width="80px" @submit.native.prevent="registerFunc">
+      <el-form label-width="80px" @submit.native.prevent="registerFunc" @keydown.enter.native.prevent="registerFunc">
         <el-form-item label="账号">
           <el-input v-model="act" clearable placeholder="4-16位字符"></el-input>
         </el-form-item>
@@ -15,9 +15,9 @@
         <el-form-item label="确认密码">
           <el-input v-model="pwdConfirm" type="password" show-password placeholder="请再次输入密码"></el-input>
         </el-form-item>
-        <el-button type="primary" class="btn-primary" style="width:100%;" @click="registerFunc">立即注册</el-button>
+        <el-button type="primary" class="btn-primary" style="width:100%;" :loading="loading" @click="registerFunc">立即注册</el-button>
         <div class="register-footer">
-          <span @click="$router.push('/login')" class="link-action">返回登录</span>
+          <el-button type="text" :disabled="loading" @click="$router.push('/login')">返回登录</el-button>
         </div>
       </el-form>
     </div>
@@ -28,19 +28,22 @@
 import request from "@/utils/request.js";
 export default {
     name: "Register",
-    data() { return { act: '', pwd: '', pwdConfirm: '', name: '' } },
+    data() { return { act: '', pwd: '', pwdConfirm: '', name: '', loading: false } },
     methods: {
         async registerFunc() {
-            if (!this.act || !this.pwd || !this.pwdConfirm || !this.name) { alert('请填写完整信息'); return; }
-            if (this.pwd !== this.pwdConfirm) { alert('前后密码不一致'); return; }
-            if (this.pwd.length < 6) { alert('密码至少6位'); return; }
-            const paramDTO = { userAccount: this.act, userPwd: this.pwd, userName: this.name };
+            if (this.loading) return;
+            if (!this.act.trim() || !this.pwd || !this.pwdConfirm || !this.name.trim()) { this.$message.error('请填写完整信息'); return; }
+            if (this.pwd !== this.pwdConfirm) { this.$message.error('前后密码不一致'); return; }
+            if (this.pwd.length < 6) { this.$message.error('密码至少6位'); return; }
+            const paramDTO = { userAccount: this.act.trim(), userPwd: this.pwd, userName: this.name.trim() };
+            this.loading = true;
             try {
                 const { data } = await request.post(`user/register`, paramDTO);
-                if (data.code !== 200) { alert(data.msg); return; }
-                alert('注册成功');
+                if (data.code !== 200) { this.$message.error(data.msg); return; }
+                this.$message.success('注册成功');
                 this.$router.push('/login');
-            } catch (error) { alert('注册请求出错'); }
+            } catch (error) { this.$message.error('注册请求出错'); }
+            finally { this.loading = false; }
         }
     }
 };

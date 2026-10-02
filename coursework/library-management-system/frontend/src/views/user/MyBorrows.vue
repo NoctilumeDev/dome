@@ -41,15 +41,15 @@
           <el-tag v-else type="warning" size="small">借阅中</el-tag>
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="100">
+      <el-table-column label="操作" width="100" fixed="right">
         <template slot-scope="scope">
-          <span v-if="!scope.row.status" class="text-button" @click="handleReturn(scope.row)">还书</span>
+          <el-button v-if="!scope.row.status" type="text" @click="handleReturn(scope.row)">还书</el-button>
           <span v-else style="color: #909399;">已归还</span>
         </template>
       </el-table-column>
     </el-table>
     <el-pagination
-      style="margin: 20px 0;float: right;"
+      class="system-pagination"
       :current-page="currentPage"
       :page-sizes="[5, 10]"
       :page-size="pageSize"
@@ -148,6 +148,7 @@ export default {
         resetCondition() {
             this.statusFilter = null;
             this.overdueFilter = null;
+            this.currentPage = 1;
             this.fetchData();
         },
         handleSizeChange(val) {

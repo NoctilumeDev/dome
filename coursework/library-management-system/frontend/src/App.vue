@@ -10,6 +10,7 @@
   --primary-color-dark: #296bcd;
   --text-main: #1f2937;
   --text-sub: #59616d;
+  --text-muted: #59616d;
   --border-color: #ebedf5;
   --line-color: #e5e9f3;
   --bg: #f4f7fb;
@@ -52,6 +53,15 @@ body {
   color: var(--primary-color);
   cursor: pointer;
   font-size: 13px;
+  border: 0;
+  background: transparent;
+  padding: 4px 6px;
+  font-family: inherit;
+}
+
+button:focus-visible, .el-button:focus-visible {
+  outline: 2px solid var(--primary-color-dark);
+  outline-offset: 3px;
 }
 
 .text-button:hover {
@@ -183,6 +193,19 @@ body {
   gap: 10px;
 }
 
+.toolbar-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.toolbar-field .toolbar-input {
+  min-width: 0;
+  max-width: none;
+}
+
 .toolbar-label {
   color: var(--text-sub);
   font-size: 13px;
@@ -298,7 +321,24 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  margin: 18px 0 24px;
+  clear: both;
+  float: none;
 }
+
+.module-card-action { font: inherit; color: inherit; text-align: left; }
+.list-error { display: flex; align-items: center; gap: 12px; color: #b42318; }
+
+.el-dialog {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 64px);
+  max-width: calc(100% - 24px);
+  margin: 32px auto !important;
+}
+.el-dialog__header, .el-dialog__footer { flex-shrink: 0; }
+.el-dialog__body { min-height: 0; overflow-y: auto; }
+.el-message-box { max-width: calc(100vw - 24px); }
 
 .system-dialog {
   border-radius: 12px;
@@ -412,22 +452,17 @@ body {
 
 @media (max-width: 900px) {
   .system-sidebar {
-    flex-basis: 74px;
-    width: 74px;
+    flex-basis: 164px;
+    width: 164px;
     padding: 12px 8px;
   }
 
   .system-main {
-    width: calc(100% - 74px);
-  }
-
-  .system-sidebar-title,
-  .system-menu-item span {
-    display: none;
+    width: calc(100% - 164px);
   }
 
   .system-menu-item {
-    justify-content: center;
+    padding: 10px 8px;
   }
 
   .system-content {
@@ -456,11 +491,13 @@ body {
   }
 
   .system-menu-item {
-    flex: 0 0 42px;
-    width: 42px;
+    flex: 0 0 auto;
+    width: auto;
     margin: 0;
     padding: 10px;
   }
+
+  .system-sidebar-title { display: none; }
 
   .system-main {
     width: 100%;
@@ -490,6 +527,12 @@ body {
     margin-bottom: -5px;
   }
 
+  .toolbar-field {
+    flex: 1 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .toolbar-input,
   .toolbar .el-date-editor.toolbar-input {
     flex: 1 0 100%;
@@ -517,9 +560,13 @@ body {
   }
 
   .el-dialog {
-    max-width: 520px;
+    max-width: min(520px, calc(100vw - 24px));
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 </style>

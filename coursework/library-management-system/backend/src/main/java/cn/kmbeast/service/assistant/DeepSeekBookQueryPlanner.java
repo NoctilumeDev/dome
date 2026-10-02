@@ -2,6 +2,8 @@ package cn.kmbeast.service.assistant;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonParser;
+import cn.kmbeast.context.LocalThreadHolder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +20,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,6 +34,8 @@ import java.util.regex.Pattern;
 public class DeepSeekBookQueryPlanner {
     private static final String DEFAULT_API_KEY = "123456789";
     private static final int MAX_FILTER_LENGTH = 64;
+    private static final Set<String> FIELDS = Set.of("intent", "title", "author", "category", "publisher",
+            "userName", "keywords", "availableOnly", "days", "limit");
     private static final String FENCE = String.valueOf((char) 96).repeat(3);
     private static final Pattern CODE_BLOCK = Pattern.compile(
             "(?s)" + Pattern.quote(FENCE) + "(?:json)?\\s*(.*?)\\s*" + Pattern.quote(FENCE)
@@ -70,6 +78,9 @@ public class DeepSeekBookQueryPlanner {
     @Value("$" + "{deepseek.model:deepseek-chat}")
     private String model;
 
+    @Value("${deepseek.timeout-ms:5000}")
+    private long timeoutMillis = 5000;
+
     @Resource
     private ObjectMapper objectMapper;
 
@@ -79,6 +90,8 @@ public class DeepSeekBookQueryPlanner {
     private final HttpClient httpClient = HttpClient.newBuilder()
             .connectTimeout(Duration.ofSeconds(5))
             .build();
+    private final Semaphore modelSlots = new Semaphore(4);
+    private final Set<Integer> modelUsers = ConcurrentHashMap.newKeySet();
 
     public BookQueryPlan plan(String question) {
         BookQueryPlan localPlan = planWithoutModel(question);
@@ -86,7 +99,12 @@ public class DeepSeekBookQueryPlanner {
         if (isDemoApiKey(apiKey)) {
             return localPlan;
         }
-
+        Integer userId = LocalThreadHolder.getUserId();
+        if (userId == null || !modelUsers.add(userId)) return busyPlan(localPlan);
+        if (!modelSlots.tryAcquire()) {
+            modelUsers.remove(userId);
+            return busyPlan(localPlan);
+        }
         try {
             BookQueryPlan modelPlan = planByModel(question);
             modelPlan = normalizeAndGround(modelPlan, localPlan, question);
@@ -99,7 +117,16 @@ public class DeepSeekBookQueryPlanner {
             localPlan.setModelCalled(true);
             localPlan.setPlanningNote("DeepSeek 暂时不可用，已使用本地安全解析；本次模型调用未成功");
             return localPlan;
+        } finally {
+            modelSlots.release();
+            modelUsers.remove(userId);
         }
+    }
+
+    private BookQueryPlan busyPlan(BookQueryPlan plan) {
+        plan.setPlanningSource("LOCAL_BUSY");
+        plan.setPlanningNote("模型查询繁忙，已使用本地规则；本次未调用模型");
+        return plan;
     }
 
     private BookQueryPlan planWithoutModel(String question) {
@@ -155,26 +182,44 @@ public class DeepSeekBookQueryPlanner {
                 .uri(URI.create(apiUrl))
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + apiKey)
-                .timeout(Duration.ofSeconds(15))
+                .timeout(Duration.ofMillis(timeoutMillis))
                 .POST(HttpRequest.BodyPublishers.ofString(objectMapper.writeValueAsString(payload)))
                 .build();
 
-        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        CompletableFuture<HttpResponse<String>> future = httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response;
+        try {
+            response = future.get(timeoutMillis, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException exception) {
+            Thread.currentThread().interrupt();
+            throw exception;
+        } finally {
+            if (!future.isDone()) future.cancel(true);
+        }
         if (response.statusCode() / 100 != 2) {
             throw new IllegalStateException("模型服务响应异常");
         }
 
         JsonNode root = objectMapper.readTree(response.body());
+        if (!"stop".equals(root.path("choices").path(0).path("finish_reason").asText())) {
+            throw new IllegalStateException("模型输出未完整结束");
+        }
         String content = root.path("choices").path(0).path("message").path("content").asText("");
         if (content.isBlank()) {
             throw new IllegalStateException("模型未返回查询计划");
         }
         Matcher matcher = CODE_BLOCK.matcher(content.trim());
-        String json = matcher.find() ? matcher.group(1) : content.trim();
-        JsonNode node = objectMapper.readTree(json);
+        String json = matcher.matches() ? matcher.group(1) : content.trim();
+        JsonNode node;
+        try (JsonParser parser = objectMapper.getFactory().createParser(json)) {
+            parser.enable(JsonParser.Feature.STRICT_DUPLICATE_DETECTION);
+            node = objectMapper.readTree(parser);
+            if (parser.nextToken() != null) throw new IllegalArgumentException("多个模型计划");
+        }
+        validateNode(node);
 
         BookQueryPlan plan = new BookQueryPlan();
-        plan.setIntent(BookIntent.fromModelValue(node.path("intent").asText("SEARCH_BOOK")));
+        plan.setIntent(BookIntent.fromModelValue(node.get("intent").textValue()));
         plan.setTitle(textValue(node, "title"));
         plan.setAuthor(textValue(node, "author"));
         plan.setCategory(textValue(node, "category"));
@@ -189,7 +234,41 @@ public class DeepSeekBookQueryPlanner {
         return plan;
     }
 
+    private void validateNode(JsonNode node) {
+        if (node == null || !node.isObject() || !node.has("intent") || !node.get("intent").isTextual()) {
+            throw new IllegalArgumentException("无效模型计划");
+        }
+        node.fieldNames().forEachRemaining(field -> {
+            if (!FIELDS.contains(field)) throw new IllegalArgumentException("额外字段");
+        });
+        BookIntent.fromModelValue(node.get("intent").textValue());
+        for (String field : List.of("title", "author", "category", "publisher", "userName")) {
+            JsonNode value = node.get(field);
+            if (value != null && !value.isNull() && (!value.isTextual()
+                    || value.textValue().isBlank() || value.textValue().length() > MAX_FILTER_LENGTH)) {
+                throw new IllegalArgumentException("无效文本条件");
+            }
+        }
+        JsonNode keywords = node.get("keywords");
+        if (keywords != null && (!keywords.isArray() || keywords.size() > 3)) throw new IllegalArgumentException("无效关键词");
+        if (keywords != null) for (JsonNode value : keywords) {
+            if (!value.isTextual() || value.textValue().isBlank() || value.textValue().length() > MAX_FILTER_LENGTH) {
+                throw new IllegalArgumentException("无效关键词");
+            }
+        }
+        JsonNode available = node.get("availableOnly");
+        if (available != null && !available.isNull() && !available.isBoolean()) throw new IllegalArgumentException("无效库存条件");
+        for (String field : List.of("limit", "days")) {
+            JsonNode value = node.get(field);
+            int max = field.equals("limit") ? 50 : 30;
+            if (value != null && (!value.isIntegralNumber() || !value.canConvertToInt() || value.intValue() < 1 || value.intValue() > max)) {
+                throw new IllegalArgumentException("无效数值条件");
+            }
+        }
+    }
+
     private BookQueryPlan normalizeAndGround(BookQueryPlan modelPlan, BookQueryPlan localPlan, String question) {
+        if (modelPlan.getIntent() != localPlan.getIntent()) throw new IllegalArgumentException("查询意图不一致");
         modelPlan.setTitle(groundedValue(modelPlan.getTitle(), question));
         modelPlan.setAuthor(groundedValue(modelPlan.getAuthor(), question));
         modelPlan.setPublisher(groundedValue(modelPlan.getPublisher(), question));
@@ -213,9 +292,18 @@ public class DeepSeekBookQueryPlanner {
         } else {
             modelPlan.setAvailableOnly(localPlan.getAvailableOnly());
         }
-        if (localPlan.getIntent() != BookIntent.SEARCH_BOOK) {
-            modelPlan.setIntent(localPlan.getIntent());
+        modelPlan.setTitle(retainKnown(modelPlan.getTitle(), localPlan.getTitle()));
+        modelPlan.setAuthor(retainKnown(modelPlan.getAuthor(), localPlan.getAuthor()));
+        modelPlan.setPublisher(retainKnown(modelPlan.getPublisher(), localPlan.getPublisher()));
+        modelPlan.setCategory(retainKnown(modelPlan.getCategory(), localPlan.getCategory()));
+        modelPlan.setUserName(retainKnown(modelPlan.getUserName(), localPlan.getUserName()));
+        if (!localPlan.isBookIntent() && (modelPlan.getAuthor() != null || modelPlan.getCategory() != null
+                || modelPlan.getPublisher() != null || !modelPlan.getKeywords().isEmpty()
+                || (modelPlan.getTitle() != null && localPlan.getTitle() == null)
+                || (modelPlan.getUserName() != null && localPlan.getUserName() == null))) {
+            throw new IllegalArgumentException("不支持的业务查询条件");
         }
+        modelPlan.setIntent(localPlan.getIntent());
         modelPlan.setUnreturnedOnly(localPlan.getUnreturnedOnly());
         if (localPlan.getUserName() != null && !localPlan.getUserName().isBlank()) {
             modelPlan.setUserName(localPlan.getUserName());
@@ -233,6 +321,14 @@ public class DeepSeekBookQueryPlanner {
             return localPlan;
         }
         return modelPlan;
+    }
+
+    private String retainKnown(String supplied, String known) {
+        if (known == null) return supplied;
+        if (supplied != null && !normalizeForGrounding(supplied).equals(normalizeForGrounding(known))) {
+            throw new IllegalArgumentException("模型更改已知条件");
+        }
+        return known;
     }
 
     private BookQueryPlan planLocally(String question) {
@@ -313,7 +409,10 @@ public class DeepSeekBookQueryPlanner {
         }
         String normalizedQuestion = normalizeForGrounding(question);
         String normalizedValue = normalizeForGrounding(cleaned);
-        return !normalizedValue.isBlank() && normalizedQuestion.contains(normalizedValue) ? cleaned : null;
+        if (normalizedValue.isBlank() || !normalizedQuestion.contains(normalizedValue)) {
+            throw new IllegalArgumentException("模型条件不来自问题");
+        }
+        return cleaned;
     }
 
     private String normalizeForGrounding(String value) {
@@ -397,10 +496,11 @@ public class DeepSeekBookQueryPlanner {
     }
 
     private BookQueryPlan planSystemQuery(String question) {
-        String normalized = question == null ? "" : question.toLowerCase(Locale.ROOT);
+        String normalized = scopeGuard.withoutTitles(question).toLowerCase(Locale.ROOT);
         boolean personal = containsAny(normalized, "我借", "我的借", "我还", "我有", "我没还", "我未还",
                 "我的反馈", "我的意见", "我的书评", "我的评论", "我快", "我是否");
         BookQueryPlan plan = new BookQueryPlan();
+        plan.setTitle(scopeGuard.extractDeterministicTitle(question));
 
         if (containsAny(normalized, "书评", "图书评论", "读后评价", "图书评分")) {
             plan.setIntent(personal ? BookIntent.MY_REVIEWS : BookIntent.SEARCH_REVIEWS);
@@ -409,19 +509,23 @@ public class DeepSeekBookQueryPlanner {
         }
         if (containsAny(normalized, "反馈", "意见建议", "读者意见")) {
             plan.setIntent(personal ? BookIntent.MY_FEEDBACK : BookIntent.FEEDBACK_OVERVIEW);
+            plan.setUserName(extractUserName(question));
             return plan;
         }
         if (containsAny(normalized, "快要逾期", "即将逾期", "快逾期", "快到期", "即将到期")) {
             plan.setIntent(personal ? BookIntent.MY_DUE_SOON : BookIntent.DUE_SOON);
             plan.setDays(extractDays(question));
+            plan.setUserName(extractUserName(question));
             return plan;
         }
         if (containsAny(normalized, "已经逾期", "逾期名单", "谁逾期", "哪些逾期")) {
             plan.setIntent(BookIntent.OVERDUE_BORROWS);
+            plan.setUserName(extractUserName(question));
             return plan;
         }
         if (containsAny(normalized, "刚才还书", "最近还书", "最近归还", "谁还书", "谁归还")) {
             plan.setIntent(BookIntent.RECENT_RETURNS);
+            plan.setUserName(extractUserName(question));
             return plan;
         }
         if (containsAny(normalized, "没还", "未还", "还没还", "未归还", "尚未归还", "借阅中")) {
@@ -443,6 +547,13 @@ public class DeepSeekBookQueryPlanner {
     }
 
     private String extractUserName(String question) {
+        Matcher namedRecord = Pattern.compile("(?:^|[，。\\s])(?:(?:请|只|帮我|查询|查看|查一下|查|给我)\\s*)*"
+                + "([\\u4e00-\\u9fffA-Za-z0-9_]{1,20}?)(?:的)?(?:未来\\d{1,2}天|接下来\\d{1,2}天)?"
+                + "(?:借阅记录|借阅情况|反馈|借了|借过|快要逾期|即将逾期|快逾期|快到期|即将到期|已经逾期|最近归还|最近还书|刚才还书)").matcher(question);
+        if (namedRecord.find()) {
+            String subject = namedRecord.group(1);
+            return containsAny(subject, "我", "谁", "哪些", "所有") ? null : subject;
+        }
         Matcher matcher = USER_BORROW_PATTERN.matcher(question);
         if (!matcher.find()) {
             return null;
@@ -484,7 +595,7 @@ public class DeepSeekBookQueryPlanner {
     private String buildSystemPrompt() {
         return "你是图书馆检索计划解析器，不是问答机器人。禁止回答用户问题，禁止编造书名、作者、分类或任何馆藏事实。"
                 + "只提取用户原话中明确出现的查询条件，并且只输出一个 JSON 对象。"
-                + "可用意图还包括用户、借阅归还、逾期、反馈和书评，但不得输出任何事实。"
+                + "intent 必须是以下枚举之一：" + java.util.Arrays.toString(BookIntent.values()) + "。不得输出任何事实。"
                 + "固定结构：{\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":null,"
                 + "\"publisher\":null,\"userName\":null,\"keywords\":[],\"availableOnly\":null,\"days\":3,\"limit\":20}。"
                 + "title 只放明确书名；author 只放作者名；category 只放明确分类；publisher 只放出版社；"
