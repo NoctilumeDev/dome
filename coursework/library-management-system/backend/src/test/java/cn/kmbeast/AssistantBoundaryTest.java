@@ -139,12 +139,14 @@ class AssistantBoundaryTest {
         when(mapper.getByActive(any())).thenAnswer(invocation -> account);
         JwtInterceptor interceptor = new JwtInterceptor("/api", mapper);
         MockHttpServletRequest request = new MockHttpServletRequest("POST", "/api/user/query");
+        request.setAttribute(org.springframework.web.servlet.HandlerMapping.BEST_MATCHING_PATTERN_ATTRIBUTE, "/user/query");
         request.addHeader("token", adminToken);
         assertTrue(interceptor.preHandle(request, new MockHttpServletResponse(), new Object()));
         account.setUserRole(2);
         MockHttpServletResponse denied = new MockHttpServletResponse();
         assertFalse(interceptor.preHandle(request, denied, new Object())); assertEquals(403, denied.getStatus());
         request.setRequestURI("/api/book/assistant/query");
+        request.setAttribute(org.springframework.web.servlet.HandlerMapping.BEST_MATCHING_PATTERN_ATTRIBUTE, "/book/assistant/query");
         assertTrue(interceptor.preHandle(request, new MockHttpServletResponse(), new Object()));
         assertEquals(2, LocalThreadHolder.getRoleId());
         account.setIsLogin(true);

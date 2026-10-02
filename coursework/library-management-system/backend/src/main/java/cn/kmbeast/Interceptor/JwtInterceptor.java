@@ -12,6 +12,7 @@ import com.alibaba.fastjson2.JSONObject;
 import io.jsonwebtoken.Claims;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.HandlerMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,10 +30,12 @@ import java.util.List;
  */
 public class JwtInterceptor implements HandlerInterceptor {
 
-    private final String apiPrefix;
     private final UserMapper userMapper;
 
     private static final AntPathMatcher PATH_MATCHER = new AntPathMatcher();
+    private static final List<String> PUBLIC_PATHS = Arrays.asList(
+            "/user/login", "/user/register", "/file/upload", "/file/video/upload", "/file/getFile", "/error"
+    );
 
     /**
      * 仅管理员可访问的接口（写操作/敏感操作）
@@ -49,7 +52,6 @@ public class JwtInterceptor implements HandlerInterceptor {
     );
 
     public JwtInterceptor(String apiPrefix, UserMapper userMapper) {
-        this.apiPrefix = apiPrefix;
         this.userMapper = userMapper;
     }
 
@@ -61,14 +63,13 @@ public class JwtInterceptor implements HandlerInterceptor {
         if ("OPTIONS".equals(requestMethod)) {
             return true;
         }
-        String requestURI = request.getRequestURI();
-        // 白名单路径（不需要登录）
-        if (requestURI.startsWith(apiPrefix + "/user/login")
-                || requestURI.startsWith(apiPrefix + "/user/register")
-                || requestURI.startsWith(apiPrefix + "/file/upload")
-                || requestURI.startsWith(apiPrefix + "/file/video/upload")
-                || requestURI.startsWith(apiPrefix + "/file/getFile")
-                || requestURI.startsWith(apiPrefix + "/error")) {
+        // 使用 Spring 已解析的实际接口映射，与路由共享矩阵参数、编码与尾斜杠语义。
+        Object mapping = request.getAttribute(HandlerMapping.BEST_MATCHING_PATTERN_ATTRIBUTE);
+        String route = mapping instanceof String ? (String) mapping : null;
+        if (route != null && route.length() > 1 && route.endsWith("/")) {
+            route = route.substring(0, route.length() - 1);
+        }
+        if (PUBLIC_PATHS.contains(route)) {
             return true;
         }
         String token = request.getHeader("token");
@@ -100,8 +101,12 @@ public class JwtInterceptor implements HandlerInterceptor {
             );
         }
         Integer roleId = current.getUserRole();
+        if (route == null) {
+            return reject(response, HttpServletResponse.SC_FORBIDDEN,
+                    ResultCode.ACCESS_DENIED, "无法确认接口权限");
+        }
         // 管理接口角色校验：管理员(0/1)可访问，读者(2+)拒绝
-        if (isAdminOnlyPath(requestURI) && roleId > 1) {
+        if (isAdminOnlyPath(route) && roleId > 1) {
             return reject(
                     response,
                     HttpServletResponse.SC_FORBIDDEN,
@@ -116,9 +121,9 @@ public class JwtInterceptor implements HandlerInterceptor {
     /**
      * 判断当前请求路径是否为仅管理员可访问的接口
      */
-    private boolean isAdminOnlyPath(String requestURI) {
+    private boolean isAdminOnlyPath(String route) {
         for (String path : ADMIN_ONLY_PATHS) {
-            if (PATH_MATCHER.match(apiPrefix + path, requestURI)) {
+            if (PATH_MATCHER.match(path, route)) {
                 return true;
             }
         }
