@@ -34,6 +34,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Result<Void> save(Book book) {
+        if (book.getTotalCount() == null || book.getTotalCount() < 0) {
+            return ApiResult.error("总数量必须是非负整数");
+        }
         book.setCreateTime(LocalDateTime.now());
         book.setAvailableCount(book.getTotalCount());
         bookMapper.insert(book);
@@ -42,10 +45,18 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Result<Void> update(Book book) {
-        if (bookMapper.getById(book.getId()) == null) {
+        Book current = bookMapper.getById(book.getId());
+        if (current == null) {
             return ApiResult.error("图书不存在");
         }
-        bookMapper.update(book);
+        Integer total = book.getTotalCount() == null ? current.getTotalCount() : book.getTotalCount();
+        Integer available = book.getAvailableCount() == null ? current.getAvailableCount() : book.getAvailableCount();
+        if (total == null || available == null || total < 0 || available < 0 || available > total) {
+            return ApiResult.error("可借数量必须是非负整数，且不能超过总数量");
+        }
+        if (bookMapper.update(book) == 0) {
+            return ApiResult.error("库存已变化或数量无效，请刷新后重试");
+        }
         return ApiResult.success();
     }
 

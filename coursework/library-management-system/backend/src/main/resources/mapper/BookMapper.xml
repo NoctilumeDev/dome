@@ -62,6 +62,9 @@
             </if>
         </set>
         WHERE id = #{id}
+          AND COALESCE(#{totalCount}, total_count) >= 0
+          AND COALESCE(#{availableCount}, available_count) >= 0
+          AND COALESCE(#{availableCount}, available_count) &lt;= COALESCE(#{totalCount}, total_count)
     </update>
 
     <!-- 硬删除 -->

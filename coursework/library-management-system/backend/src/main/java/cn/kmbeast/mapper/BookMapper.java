@@ -16,7 +16,7 @@ public interface BookMapper {
 
     void insert(Book book);
 
-    void update(Book book);
+    int update(Book book);
 
     void batchDelete(@Param(value = "ids") List<Integer> ids);
 

@@ -138,7 +138,7 @@
           <span class="dialog-hover">总数量</span>
           <el-input-number size="small" style="width: 100%;" v-model="data.totalCount" :min="0" :max="9999" placeholder="总数量"></el-input-number>
           <span class="dialog-hover">可借数量</span>
-          <el-input-number size="small" style="width: 100%;" v-model="data.availableCount" :min="0" :max="9999" placeholder="可借数量"></el-input-number>
+          <el-input-number size="small" style="width: 100%;" v-model="data.availableCount" :min="0" :max="Math.min(9999, data.totalCount || 0)" placeholder="可借数量"></el-input-number>
           <span class="dialog-hover">简介</span>
           <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="图书简介" v-model="data.description">
           </el-input>
