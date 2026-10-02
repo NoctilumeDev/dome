@@ -622,6 +622,14 @@ tbody tr:hover {
   gap: 6px;
 }
 
+.login-page [hidden] { display: none !important; }
+#loginForm { display: grid; gap: 11px; }
+.login-failure { display: grid; gap: 16px; padding: 16px 0; }
+.login-failure .failure-code { font-size: 42px; font-weight: 700; color: var(--brand); }
+.login-failure h2 { margin: 0; }
+.login-failure p { line-height: 1.8; }
+.failure-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
 .login-field label {
   color: #38556f;
   font-size: 13px;

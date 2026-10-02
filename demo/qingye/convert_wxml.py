@@ -68,7 +68,8 @@ class Converter(HTMLParser):
 def css(source):
     source = re.sub(r'(-?\d+(?:\.\d+)?)rpx', r'calc(\1 * var(--rpx))', source)
     for original, target in [('page', '.qy-surface'), ('view', 'div'), ('text', 'span'), ('image', 'img')]:
-        source = re.sub(r'\b' + original + r'\b(?=[\s,.:#>{\[])', target, source)
+        # Convert native element names without changing .page, #view or .cover-image.
+        source = re.sub(r'(?<![\w.#-])\b' + original + r'\b(?=[\s,.:#>{\[])', target, source)
     return source
 
 def convert(path):

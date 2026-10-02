@@ -216,7 +216,7 @@ for (const folder of fs.readdirSync(path.join(mini, 'pages'))) {
       `pages/${folder}/index`
     )}:function(module,exports,require){\n${fs.readFileSync(file, 'utf8')}\n},\n`;
 }
-for (const name of ['view', 'navigation'])
+for (const name of ['view', 'navigation', 'request-error'])
   sources += `${JSON.stringify(
     `utils/${name}`
   )}:function(module,exports,require){\n${fs.readFileSync(

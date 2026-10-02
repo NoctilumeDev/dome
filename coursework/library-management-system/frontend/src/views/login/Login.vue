@@ -16,8 +16,19 @@
       <div class="visit-card">让每一本好书，遇见它的读者。</div>
     </div>
     <div class="login-panel">
+      <section v-if="failure" class="login-failure" role="alert" aria-live="polite">
+        <div class="failure-code">{{ failure.code }}</div>
+        <h1 class="login-title">{{ failure.title }}</h1>
+        <p>{{ failure.description }}</p>
+        <div class="login-actions">
+          <el-button class="login-action" type="primary" :loading="loading" @click="login">重新尝试</el-button>
+          <el-button class="login-action" :disabled="loading" @click="failure = null">返回登录</el-button>
+        </div>
+      </section>
+      <template v-else>
       <h1 class="login-title">欢迎回来</h1>
       <p class="login-tip">请先登录后继续使用系统</p>
+      <p v-if="loginMessage" class="login-message" role="alert">{{ loginMessage }}</p>
       <el-form class="login-form" @submit.native.prevent="login" @keydown.enter.native.prevent="login">
         <el-form-item label="账号" label-width="44px">
           <el-input v-model="act" clearable prefix-icon="el-icon-user" placeholder="请输入账号"></el-input>
@@ -30,6 +41,7 @@
           <el-button class="btn-ghost login-action" :disabled="loading" @click="$router.push('/register')">前往注册</el-button>
         </div>
       </el-form>
+      </template>
     </div>
   </div>
 </template>
@@ -44,9 +56,27 @@ export default {
         return {
             act: '', pwd: '',
             loading: false,
+            failure: null, loginMessage: '',
         }
     },
     methods: {
+        describeFailure(error) {
+            const status = Number(error.response && error.response.status);
+            const copy = {
+                403: ['登录请求被拒绝', '当前账号或登录入口不允许访问。请返回检查账号，或联系管理员。'],
+                404: ['找不到登录服务', '登录接口不存在或地址已变更。请联系管理员检查服务地址。'],
+                429: ['登录请求过于频繁', '请稍等片刻再尝试，避免连续提交。'],
+                500: ['登录服务出现故障', '服务暂时无法完成登录，请稍后重试。'],
+                502: ['登录服务暂不可达', '服务连接暂时异常，请稍后重试。'],
+                503: ['登录服务暂不可用', '服务可能正在维护，请稍后重试。'],
+                504: ['登录服务响应超时', '服务没有及时响应，请稍后重试。'],
+            };
+            if (copy[status]) return { code: String(status), title: copy[status][0], description: copy[status][1] };
+            if (status) return { code: String(status), title: '暂时无法登录', description: '登录请求没有完成，请返回登录或稍后重试。' };
+            if (error.code === 'INVALID_RESPONSE') return { code: '响应异常', title: '登录响应不完整', description: '服务没有返回有效的登录信息。请重试，或联系管理员检查服务。' };
+            if (['ECONNABORTED', 'ETIMEDOUT'].includes(error.code)) return { code: '连接超时', title: '登录服务响应超时', description: '请检查网络连接，稍后重试。' };
+            return { code: '连接失败', title: '暂时连接不上登录服务', description: '请检查网络连接；本地运行时请确认后端已启动。' };
+        },
         async login() {
             if (this.loading) return;
             if (!this.act.trim() || !this.pwd) {
@@ -54,18 +84,34 @@ export default {
                 return;
             }
             this.loading = true;
+            this.loginMessage = '';
             try {
                 const { data } = await request.post('user/login', { userAccount: this.act.trim(), userPwd: this.pwd });
+                if (!data || typeof data !== 'object' || typeof data.code !== 'number') {
+                    throw Object.assign(new Error('Invalid login response'), { code: 'INVALID_RESPONSE' });
+                }
                 if (data.code !== 200) {
-                    this.$message.error(data.msg);
+                    if ([403, 404, 429].includes(data.code) || data.code >= 500) {
+                        this.failure = this.describeFailure({ response: { status: data.code } });
+                    } else {
+                        this.failure = null;
+                        this.loginMessage = data.msg || '账号或密码不正确，请检查后重试。';
+                    }
                     return;
                 }
+                if (!data.data || !data.data.token || ![0, 1, 2].includes(data.data.role)) {
+                    throw Object.assign(new Error('Incomplete session'), { code: 'INVALID_RESPONSE' });
+                }
+                this.failure = null;
                 setToken(data.data.token);
                 this.$message.success('登录成功！');
                 if (ADMIN_ROLES.includes(data.data.role)) { this.$router.push('/admin'); }
                 else { this.$router.push('/user'); }
             } catch (e) {
-                this.$message.error('登录出错');
+                if (e.response && [400, 401, 422].includes(e.response.status)) {
+                    this.failure = null;
+                    this.loginMessage = e.response.status === 401 ? '账号或密码不正确，请检查后重试。' : '登录信息未通过检查，请返回核对账号和密码。';
+                } else this.failure = this.describeFailure(e);
             } finally { this.loading = false; }
         },
     }
@@ -167,6 +213,11 @@ export default {
   margin: 0 0 22px;
   color: #607086;
 }
+
+.login-failure { padding: 12px 0; }
+.failure-code { color: #3656b5; font-size: 42px; font-weight: 700; margin-bottom: 18px; }
+.login-failure p { color: #607086; line-height: 1.8; margin-bottom: 24px; }
+.login-message { padding: 12px; border-radius: 10px; background: #fff4ef; color: #a34d2b; line-height: 1.6; }
 
 .login-actions {
   margin-top: 8px;

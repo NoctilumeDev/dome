@@ -14,4 +14,5 @@
 Thumbs.db
 demo/.build/
 demo/_site/
+demo/**/__pycache__/
 independent-projects/dianjing/**/__pycache__/

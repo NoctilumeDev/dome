@@ -29,7 +29,8 @@ request.interceptors.response.use(response => {
   if (error.response) {
     const { status, data } = error.response;
     const isAuthenticationFailure = status === 401 || Number(data?.code) === 401;
-    if (isAuthenticationFailure) {
+    const isPublicLogin = /(?:^|\/)user\/(?:login|register)$/.test(String(error.config?.url || '').split('?')[0].replace(/\/$/, ''));
+    if (isAuthenticationFailure && !isPublicLogin) {
       const failedToken = error.config?.[REQUEST_TOKEN_KEY];
       const ownsCurrentSession =
         Object.prototype.hasOwnProperty.call(error.config ?? {}, REQUEST_TOKEN_KEY) &&
