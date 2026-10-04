@@ -64,6 +64,8 @@ python -B scripts/check.py all    # 再执行真实MySQL测试
 
 单项为`hygiene`、`client`、`h2`、`mysql`。缺工具/测试凭据或非qingye_test URL直接拒绝；MySQL测试会清空测试业务表，必须专库专用。H2命令只在子进程移除MySQL测试环境，保留调用者配置。`client`检查JSON/JS/WXML结构和实际页面脚本测试；微信原生编译另运行`python -B scripts/check-client.py --compiler-dir <现有wcc-exec目录>`，结构检查不冒充编译或真机证明。旧`test-mysql.ps1`只作为本机便利入口，CI与维护统一使用上述显式变量。
 
+数据库DATETIME按上海本地业务时间保存，读取使用LocalDateTime，避免经JVM默认时区转换。新增CI首次在UTC宿主击穿了原日期映射，原[失败运行](https://github.com/NoctilumeDev/dome/actions/runs/37214544021)保留；修正按同样UTC条件复验。
+
 ### 遗留物收口门禁
 
 阶段退出：实现 → 测试 → 文档/公开读回 → 遗留物收口 → 结束。`hygiene`只读检查本模块Git跟踪的已知构建/运行态/私有配置及当前文档本地链接，另有负控制；不扫描或清理其他dome项目，不自动删除图片或数据库，不单独证明LOCAL_DORMANT。
