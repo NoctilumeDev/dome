@@ -105,10 +105,11 @@ class BusinessIntegrationTest {
     }
     @Test void databaseWallTimesRoundTripWithoutJvmZoneConversion() {
         var expected = NOW.plusDays(2);
-        sql.update("UPDATE activity SET start_time=?,signup_deadline=? WHERE id=?",
-                expected,NOW.plusDays(1),activityA);
-        var actual = sql.one("SELECT start_time,signup_deadline FROM activity WHERE id=?",activityA);
+        sql.update("UPDATE activity SET start_time=?,end_time=?,signup_deadline=? WHERE id=?",
+                expected,expected.plusHours(2),NOW.plusDays(1),activityA);
+        var actual = sql.one("SELECT start_time,end_time,signup_deadline FROM activity WHERE id=?",activityA);
         assertThat(time(actual,"startTime")).isEqualTo(expected);
+        assertThat(time(actual,"endTime")).isEqualTo(expected.plusHours(2));
         assertThat(time(actual,"signupDeadline")).isEqualTo(NOW.plusDays(1));
     }
 
