@@ -29,7 +29,10 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: coursework/library-management-system/frontend/package-lock.json
-      - run: npm ci --no-audit --no-fund
+      - name: Install locked frontend dependencies
+        run: |
+          node -e "const fs = require('fs'); const p = 'package-lock.json'; fs.writeFileSync(p, fs.readFileSync(p, 'utf8').replaceAll('https://registry.npmmirror.com/', 'https://registry.npmjs.org/'));"
+          npm ci --registry=https://registry.npmjs.org --no-audit --no-fund
         working-directory: coursework/library-management-system/frontend
       - run: npm test && npm run build
         working-directory: coursework/library-management-system/frontend
