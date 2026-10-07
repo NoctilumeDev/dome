@@ -38,3 +38,6 @@
 [![青野功能模块图](qingye/docs/assets/function-modules.png)](qingye/docs/功能模块图.html)
 
 学生、社团负责人、管理员与共用功能分列展示。运行步骤见 [青野 README](qingye/README.md)，完整说明见 [项目简介](qingye/docs/项目简介.md)。
+
+2026-10-08 的[助手语义对照结果](qingye/docs/semantic-comparison-20261008.md)记录了模型与本地规则的已知误判：
+权限和只读边界通过本轮检查，复杂自然语言查询仍可能查错对象或误拒；浏览器演示问答仍仅使用本地样例。
