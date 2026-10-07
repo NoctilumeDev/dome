@@ -9,4 +9,6 @@ import cn.kmbeast.pojo.vo.BookAssistantVO;
  */
 public interface BookAssistantService {
     Result<BookAssistantVO> ask(BookAssistantQueryDto dto);
+    Result<BookAssistantVO> ask(BookAssistantQueryDto dto, String session);
+    Result<BookAssistantVO> confirm(java.util.Map<String, Object> dto, String session);
 }

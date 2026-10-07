@@ -7,6 +7,9 @@ import java.util.List;
 
 @Data
 public class BookQueryPlan {
+    private String action = "QUERY";
+    private String reason;
+    private String timeOption = "ALL";
     private BookIntent intent = BookIntent.SEARCH_BOOK;
     private String title;
     private String author;
@@ -16,7 +19,7 @@ public class BookQueryPlan {
     private List<String> keywords = new ArrayList<>();
     private Boolean availableOnly;
     private Boolean unreturnedOnly;
-    private Integer days = 3;
+    private Integer days;
     private Integer limit = 20;
     private String planningNote;
     private String planningSource = "LOCAL_RULE";
@@ -78,6 +81,22 @@ public class BookQueryPlan {
                 || intent == BookIntent.RECOMMEND_BOOK
                 || intent == BookIntent.FIND_LOCATION
                 || intent == BookIntent.LIST_CATALOG;
+    }
+
+    public boolean isPersonal() {
+        return intent == BookIntent.MY_BORROWS || intent == BookIntent.MY_DUE_SOON
+                || intent == BookIntent.MY_REVIEWS || intent == BookIntent.MY_FEEDBACK;
+    }
+
+    /** Stored consent cannot be changed by a caller or a late planner. */
+    public BookQueryPlan snapshot() {
+        BookQueryPlan p = new BookQueryPlan();
+        p.action = action; p.reason = reason; p.timeOption = timeOption; p.intent = intent;
+        p.title = title; p.author = author; p.category = category; p.publisher = publisher;
+        p.userName = userName; p.keywords = List.copyOf(keywords); p.availableOnly = availableOnly;
+        p.unreturnedOnly = unreturnedOnly; p.days = days; p.limit = limit;
+        p.planningNote = planningNote; p.planningSource = planningSource; p.modelCalled = modelCalled;
+        return p;
     }
 
     private static boolean hasText(String value) {

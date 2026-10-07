@@ -19,6 +19,7 @@ import java.util.Map;
  */
 @Repository
 public class BookQueryRepository {
+    private java.time.Clock clock = java.time.Clock.systemDefaultZone();
     private static final int MAX_ROWS = 50;
     private static final String SELECT_COLUMNS =
             "SELECT b.id,b.name,b.author,b.isbn,b.publisher,b.category,"
@@ -31,6 +32,9 @@ public class BookQueryRepository {
     private DataSource dataSource;
 
     public QueryResult query(BookQueryPlan plan, Integer currentUserId, boolean isAdmin) {
+        if (BookPlanPolicy.check(plan) != null || !"QUERY".equals(plan.getAction())) {
+            throw new IllegalStateException("助手计划不具备执行资格");
+        }
         if (!plan.isBookIntent()) {
             return queryBusinessData(plan, currentUserId, isAdmin);
         }
@@ -142,8 +146,10 @@ public class BookQueryRepository {
             if (plan.getIntent() == BookIntent.RECENT_RETURNS) {
                 where.append(" AND br.status=1 AND br.return_time IS NOT NULL");
             } else if (plan.getIntent() == BookIntent.DUE_SOON || plan.getIntent() == BookIntent.MY_DUE_SOON) {
-                where.append(" AND br.status=0 AND br.due_date>=NOW() AND br.due_date<=?");
-                parameters.add(LocalDateTime.now().plusDays(plan.getDays() == null ? 3 : plan.getDays()));
+                LocalDateTime now = LocalDateTime.now(clock);
+                where.append(" AND br.status=0 AND br.due_date>=? AND br.due_date<=?");
+                parameters.add(now);
+                parameters.add(now.plusDays(plan.getDays()));
             } else if (plan.getIntent() == BookIntent.OVERDUE_BORROWS) {
                 where.append(" AND br.status=0 AND br.due_date<NOW()");
             } else if (Boolean.TRUE.equals(plan.getUnreturnedOnly())) {

@@ -71,63 +71,65 @@ class AssistantBoundaryTest {
         releaseBody.countDown(); server.stop(0); LocalThreadHolder.clear(); Thread.interrupted();
     }
 
-    static Stream<String> badPlans() {
-        return Stream.of(
-                "{\"intent\":\"MY_FEEDBACK\",\"title\":\"三体\"}",
-                "{\"intent\":\"MY_BORROWS\",\"title\":\"三体\"}",
-                "{\"intent\":\"LIST_USERS\",\"title\":\"三体\"}",
-                "{\"intent\":\"DELETE_ALL\",\"title\":\"三体\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"userId\":3}",
-                "{\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"sql\":\"DROP TABLE user\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"intent\":\"MY_FEEDBACK\",\"title\":\"三体\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\"} {\"intent\":\"LIST_USERS\"}",
-                "explanation {\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"title\":true}",
-                "{\"intent\":\"SEARCH_BOOK\",\"keywords\":\"三体\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"availableOnly\":\"yes\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"limit\":\"20\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"limit\":999999}",
-                "{\"intent\":\"SEARCH_BOOK\",\"days\":0}",
-                "{\"intent\":\"SEARCH_BOOK\",\"title\":\"虚构馆藏\"}",
-                "{\"intent\":\"SEARCH_BOOK\",\"title\":\"活着\"}",
-                "[]", "null", "not JSON");
+    private static String plan(String intent, String title) {
+        return "{\"action\":\"QUERY\",\"intent\":\"" + intent + "\",\"title\":"
+                + (title == null ? "null" : "\"" + title + "\"")
+                + ",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}";
     }
-
-    @ParameterizedTest @MethodSource("badPlans") void badProviderCannotChangePurpose(String value) {
+    static Stream<String> badPlans() {
+        String valid = plan("SEARCH_BOOK", "三体");
+        return Stream.of(
+                valid.replace("\"title\":\"三体\"", "\"title\":true"),
+                valid.replace("\"keywords\":[]", "\"keywords\":\"三体\""),
+                valid.replace("\"availableOnly\":null", "\"availableOnly\":\"yes\""),
+                valid.replace("\"limit\":20", "\"limit\":\"20\""),
+                valid.replace("\"limit\":20", "\"limit\":999999"),
+                valid.replace("\"days\":null", "\"days\":0"),
+                valid.replace("\"reason\":null", "\"reason\":null,\"userId\":3"),
+                valid.replace("\"reason\":null", "\"reason\":null,\"sql\":\"DROP TABLE user\""),
+                valid.replace("\"reason\":null", "\"reason\":null,\"userName\":\"李四\""),
+                valid.replace("\"reason\":null", "\"reason\":null,\"actions\":[]"),
+                valid.replace("\"intent\":\"SEARCH_BOOK\"", "\"intent\":\"SEARCH_BOOK\",\"intent\":\"MY_BORROWS\""),
+                valid + valid, "explanation " + valid, "[]", "null", "not JSON");
+    }
+    @ParameterizedTest @MethodSource("badPlans") void invalidProviderPlanCannotExecuteOrGuessFallback(String value) {
         payload.set(value);
-        BookQueryPlan result = planner.plan("查《三体》");
-        assertEquals(BookIntent.SEARCH_BOOK, result.getIntent());
-        assertEquals("三体", result.getTitle());
-        assertEquals("DEEPSEEK_FALLBACK", result.getPlanningSource());
+        BookQueryPlan result = planner.plan("请查《三体》的馆藏");
+        assertEquals("REJECT", result.getAction());
+        assertEquals("INVALID_PLAN", result.getReason());
         assertTrue(result.getModelCalled());
     }
-
     @Test void validProviderAndWholeFenceRemainSupported() {
-        payload.set("```json\n{\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"keywords\":[],\"availableOnly\":null,\"limit\":20}\n```");
-        assertEquals("DEEPSEEK", planner.plan("查《三体》").getPlanningSource());
+        payload.set("```json\n" + plan("SEARCH_BOOK", "三体") + "\n```");
+        assertEquals("MODEL", planner.plan("请查《三体》的馆藏").getPlanningSource());
     }
-    @Test void catalogCanRetainAnExplicitAuthorFilter() {
-        payload.set("{\"intent\":\"LIST_CATALOG\",\"author\":\"不存在的人\"}");
-        BookQueryPlan result = planner.plan("作者是不存在的人，本馆有哪些图书？");
-        assertEquals("DEEPSEEK", result.getPlanningSource());
-        assertEquals("不存在的人", result.getAuthor());
+    @Test void openLanguageTypeBelongsToModelAndFinalCapabilityValidation() {
+        payload.set(plan("FIND_LOCATION", "三体"));
+        BookQueryPlan p = planner.plan("我的借阅记录先不查，只查《三体》放在哪里");
+        assertEquals(BookIntent.FIND_LOCATION, p.getIntent());
+        assertNull(BookPlanPolicy.check(p));
+        payload.set(plan("LIST_USERS", null));
+        assertEquals("FORBIDDEN", BookPlanPolicy.check(planner.plan("有哪些用户")));
     }
-
-    @Test void partialGenerationAndStalledBodyFallBack() {
-        payload.set("{\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\"}");
-        finish.set("length");
-        assertEquals("DEEPSEEK_FALLBACK", planner.plan("查《三体》").getPlanningSource());
-        stalled = true;
-        ReflectionTestUtils.setField(planner, "timeoutMillis", 200L);
+    @Test void declaredUnsupportedConditionsAreNotDropped() {
+        payload.set(plan("MY_BORROWS", "三体").replace("\"timeOption\":\"ALL\"", "\"timeOption\":\"TODAY\""));
+        BookQueryPlan p = planner.plan("我今天借了哪些图书");
+        assertEquals("TODAY", p.getTimeOption());
+        assertEquals("UNSUPPORTED_FILTER", BookPlanPolicy.check(p));
+        payload.set(plan("MY_FEEDBACK", "三体"));
+        assertEquals("UNSUPPORTED_FILTER", BookPlanPolicy.check(planner.plan("我的三体反馈")));
+    }
+    @Test void partialGenerationAndStalledBodyClarifyWithoutQuery() {
+        payload.set(plan("SEARCH_BOOK", "三体")); finish.set("length");
+        assertEquals("CLARIFY", planner.plan("请查《三体》的馆藏").getAction());
+        stalled = true; ReflectionTestUtils.setField(planner, "timeoutMillis", 200L);
         long start = System.nanoTime();
-        assertEquals("DEEPSEEK_FALLBACK", planner.plan("查《三体》").getPlanningSource());
+        assertEquals("CLARIFY", planner.plan("请查《三体》的馆藏").getAction());
         assertTrue(TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start) < 1000);
     }
-
     @Test void interruptionIsRestored() {
-        payload.set("{\"intent\":\"SEARCH_BOOK\"}");
-        Thread.currentThread().interrupt();
-        assertEquals("DEEPSEEK_FALLBACK", planner.plan("查《三体》").getPlanningSource());
+        payload.set(plan("SEARCH_BOOK", "三体")); Thread.currentThread().interrupt();
+        assertEquals("CLARIFY", planner.plan("请查《三体》的馆藏").getAction());
         assertTrue(Thread.currentThread().isInterrupted());
     }
 

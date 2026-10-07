@@ -4,7 +4,9 @@
       <div class="hero-copy">
         <div class="eyebrow">LIBRARY INTELLIGENCE</div>
         <h2>馆藏智能问答</h2>
-        <p>DeepSeek 是可选的语义理解层，只负责提高自然语言召回；最终答案始终以馆藏数据库为准。</p>
+        <p>
+          模型负责理解你的表达，查询范围会明确展示；结果来自馆藏数据库，你可以纠正我的理解。
+        </p>
       </div>
       <div class="trust-flow" aria-label="问答安全处理流程">
         <span><i class="el-icon-lock"></i> 本地范围过滤</span>
@@ -17,11 +19,13 @@
         <div class="degradation-copy">
           <p class="section-kicker">GRACEFUL DEGRADATION</p>
           <h3>可降级，但不越过安全边界</h3>
-          <p>DeepSeek 可用时负责理解口语和提高查全率；未配置或暂时不可用时，系统改用本地规则，复杂表达可能漏检，但范围过滤、参数化查询和数据库事实回答保持不变。</p>
+          <p>
+            语义服务不可用时，只保留完整标准命令，不猜测复杂表达。助手只查公开信息和自己的记录，管理操作请到工作台。
+          </p>
         </div>
         <div class="tradeoff-tags">
           <span class="is-stable">安全性保持</span>
-          <span class="is-variable">自然语言召回降低</span>
+          <span class="is-variable">不猜测备用查询</span>
         </div>
       </div>
     </section>
@@ -43,7 +47,7 @@
             type="button"
             class="prompt-chip"
             :disabled="loading"
-            @click="question = prompt"
+            @click="choosePrompt(prompt)"
           >
             {{ prompt }}
           </button>
@@ -54,92 +58,173 @@
           :disabled="loading"
           type="textarea"
           :rows="4"
-          :maxlength="120"
+          :maxlength="2048"
           show-word-limit
           resize="none"
           placeholder="例如：书名《三体》、作者：余华、分类：编程"
           class="assistant-input"
+          @input="questionChanged"
           @keydown.ctrl.enter.native="askQuestion"
         />
 
         <div class="composer-footer">
-          <p><i class="el-icon-info"></i> 天气、股票、闲聊等问题会在本地直接拒绝，不消耗模型 API。</p>
+          <p>
+            <i class="el-icon-info"></i>
+            明确越权请求会整条拒绝。寒暄可以和一个业务查询共存；个人记录先核对范围。
+          </p>
           <div class="toolbar-actions">
-            <el-button class="btn-ghost action-button" :disabled="loading" @click="resetForm">清空</el-button>
-            <el-button class="btn-primary action-button" :loading="loading" @click="askQuestion">
-              {{ loading ? '正在核验馆藏' : '查询馆藏' }}
+            <el-button
+              class="btn-ghost action-button"
+              :disabled="loading"
+              @click="resetForm"
+              >清空</el-button
+            >
+            <el-button
+              class="btn-primary action-button"
+              :loading="loading"
+              @click="askQuestion"
+            >
+              {{ loading ? "正在核验馆藏" : "查询馆藏" }}
             </el-button>
           </div>
         </div>
       </div>
 
       <div v-if="hasResult" class="result-section">
-      <div class="result-status">
-        <span :class="['verification-pill', databaseVerified ? 'is-verified' : 'is-refused']">
-          <i :class="databaseVerified ? 'el-icon-circle-check' : 'el-icon-warning-outline'"></i>
-          {{ databaseVerified ? '数据库已核验' : '本地范围已处理' }}
-        </span>
-        <span v-if="databaseVerified" class="result-count">符合条件 {{ total }} 条，本次返回 {{ returnedCount }} 条</span>
-        <span v-if="planningSource" :class="['source-pill', modelCalled ? 'is-model' : 'is-local']">
-          <i :class="modelCalled ? 'el-icon-connection' : 'el-icon-cpu'"></i>
-          {{ modelCallLabel }}
-        </span>
-        <span v-if="intent" class="intent-tag">{{ intentLabel }}</span>
-      </div>
-
-      <div class="answer-panel">
-        <div class="assistant-avatar"><i class="el-icon-reading"></i></div>
-        <div>
-          <p class="answer-label">馆藏助手</p>
-          <p class="assistant-answer">{{ answer }}</p>
+        <div class="result-status">
+          <span
+            :class="[
+              'verification-pill',
+              databaseVerified ? 'is-verified' : 'is-refused',
+            ]"
+          >
+            <i
+              :class="
+                databaseVerified
+                  ? 'el-icon-circle-check'
+                  : 'el-icon-warning-outline'
+              "
+            ></i>
+            {{ databaseVerified ? "数据库已核验" : "本地范围已处理" }}
+          </span>
+          <span v-if="databaseVerified" class="result-count"
+            >符合条件 {{ total }} 条，本次返回 {{ returnedCount }} 条</span
+          >
+          <span
+            v-if="planningSource"
+            :class="['source-pill', modelCalled ? 'is-model' : 'is-local']"
+          >
+            <i :class="modelCalled ? 'el-icon-connection' : 'el-icon-cpu'"></i>
+            {{ modelCallLabel }}
+          </span>
+          <span v-if="intent" class="intent-tag">{{ intentLabel }}</span>
         </div>
-      </div>
 
-      <p v-if="modelNote" class="model-note">
-        <i class="el-icon-document-checked"></i> {{ modelNote }}
-      </p>
+        <div class="answer-panel">
+          <div class="assistant-avatar"><i class="el-icon-reading"></i></div>
+          <div>
+            <p class="answer-label">馆藏助手</p>
+            <p class="assistant-answer">{{ answer }}</p>
+          </div>
+        </div>
 
-      <el-collapse v-if="generatedSql" class="sql-collapse">
-        <el-collapse-item name="sql">
-          <template slot="title">
-            <span class="sql-title"><i class="el-icon-tickets"></i> 查看参数化列表查询</span>
-          </template>
-          <pre class="assistant-sql">{{ generatedSql }}</pre>
-        </el-collapse-item>
-      </el-collapse>
+        <p v-if="modelNote" class="model-note">
+          <i class="el-icon-document-checked"></i> {{ modelNote }}
+        </p>
 
-      <div v-if="books.length" class="table-wrap">
-        <el-table :data="books" class="system-table" stripe>
-          <el-table-column prop="name" label="书名" min-width="180"></el-table-column>
-          <el-table-column prop="author" label="作者" min-width="140"></el-table-column>
-          <el-table-column prop="category" label="分类" width="100"></el-table-column>
-          <el-table-column prop="bookshelfName" label="所属书架" min-width="120"></el-table-column>
-          <el-table-column prop="location" label="馆藏位置" min-width="150"></el-table-column>
-          <el-table-column prop="publisher" label="出版社" min-width="170"></el-table-column>
-          <el-table-column prop="isbn" label="ISBN" min-width="145"></el-table-column>
-          <el-table-column prop="availableCount" label="可借" width="88" align="center">
-            <template slot-scope="scope">
-              <span :class="['stock-value', scope.row.availableCount > 0 ? 'has-stock' : 'no-stock']">
-                {{ scope.row.availableCount }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column prop="description" label="馆藏简介" min-width="220" show-overflow-tooltip></el-table-column>
-        </el-table>
-      </div>
-      <div v-if="records.length" class="table-wrap">
-        <el-table :data="records" class="system-table" stripe>
-          <el-table-column
-            v-for="column in recordColumns"
-            :key="column.prop"
-            :prop="column.prop"
-            :label="column.label"
-            :min-width="column.width || 150"
-            :formatter="formatRecordCell"
-          />
-        </el-table>
-      </div>
-      <p v-if="truncated" class="model-note">仅展示前 {{ returnedCount }} 条，请细化书名、作者或其他支持的查询条件。</p>
+        <div v-if="interpretation" class="model-note">
+          <strong>我理解的是：{{ interpretation }}</strong>
+          <p>如果我听岔了，可以修改问题再查询。</p>
+          <p v-if="status === 'CONFIRM_SCOPE'">确认五分钟内有效；重新提问会使旧确认失效。</p>
+          <el-button
+            v-if="status === 'CONFIRM_SCOPE'"
+            :loading="loading"
+            @click="confirmScope"
+            >继续按此范围查询</el-button
+          >
+          <el-button :disabled="loading" @click="correctInterpretation"
+            >不是这个意思</el-button
+          >
+        </div>
+
+        <div v-if="books.length" class="table-wrap">
+          <el-table :data="books" class="system-table" stripe>
+            <el-table-column
+              prop="name"
+              label="书名"
+              min-width="180"
+            ></el-table-column>
+            <el-table-column
+              prop="author"
+              label="作者"
+              min-width="140"
+            ></el-table-column>
+            <el-table-column
+              prop="category"
+              label="分类"
+              width="100"
+            ></el-table-column>
+            <el-table-column
+              prop="bookshelfName"
+              label="所属书架"
+              min-width="120"
+            ></el-table-column>
+            <el-table-column
+              prop="location"
+              label="馆藏位置"
+              min-width="150"
+            ></el-table-column>
+            <el-table-column
+              prop="publisher"
+              label="出版社"
+              min-width="170"
+            ></el-table-column>
+            <el-table-column
+              prop="isbn"
+              label="ISBN"
+              min-width="145"
+            ></el-table-column>
+            <el-table-column
+              prop="availableCount"
+              label="可借"
+              width="88"
+              align="center"
+            >
+              <template slot-scope="scope">
+                <span
+                  :class="[
+                    'stock-value',
+                    scope.row.availableCount > 0 ? 'has-stock' : 'no-stock',
+                  ]"
+                >
+                  {{ scope.row.availableCount }}
+                </span>
+              </template>
+            </el-table-column>
+            <el-table-column
+              prop="description"
+              label="馆藏简介"
+              min-width="220"
+              show-overflow-tooltip
+            ></el-table-column>
+          </el-table>
+        </div>
+        <div v-if="records.length" class="table-wrap">
+          <el-table :data="records" class="system-table" stripe>
+            <el-table-column
+              v-for="column in recordColumns"
+              :key="column.prop"
+              :prop="column.prop"
+              :label="column.label"
+              :min-width="column.width || 150"
+              :formatter="formatRecordCell"
+            />
+          </el-table>
+        </div>
+        <p v-if="truncated" class="model-note">
+          仅展示前
+          {{ returnedCount }} 条，请细化书名、作者或其他支持的查询条件。
+        </p>
       </div>
 
       <div v-else class="assistant-empty">
@@ -154,35 +239,38 @@
 </template>
 
 <script>
+import { getToken } from "@/utils/storage.js";
 const INTENT_LABELS = {
-  SEARCH_BOOK: '查找图书',
-  FIND_AUTHOR: '作者检索',
-  FIND_CATEGORY: '分类检索',
-  CHECK_AVAILABILITY: '可借状态',
-  RECOMMEND_BOOK: '馆藏推荐',
-  FIND_LOCATION: '位置查询',
-  LIST_CATALOG: '馆藏总览',
-  LIST_USERS: '用户查询',
-  BORROW_OVERVIEW: '借阅查询',
-  MY_BORROWS: '我的借阅',
-  RECENT_RETURNS: '最近归还',
-  DUE_SOON: '即将到期',
-  MY_DUE_SOON: '我的到期',
-  OVERDUE_BORROWS: '逾期查询',
-  SEARCH_REVIEWS: '书评查询',
-  MY_REVIEWS: '我的书评',
-  FEEDBACK_OVERVIEW: '反馈查询',
-  MY_FEEDBACK: '我的反馈',
-  FORBIDDEN: '权限受限',
-  OUT_OF_SCOPE: '超出范围',
-  CLARIFY: '请分开查询',
+  SEARCH_BOOK: "查找图书",
+  FIND_AUTHOR: "作者检索",
+  FIND_CATEGORY: "分类检索",
+  CHECK_AVAILABILITY: "可借状态",
+  RECOMMEND_BOOK: "馆藏推荐",
+  FIND_LOCATION: "位置查询",
+  LIST_CATALOG: "馆藏总览",
+  LIST_USERS: "用户查询",
+  BORROW_OVERVIEW: "借阅查询",
+  MY_BORROWS: "我的借阅",
+  RECENT_RETURNS: "最近归还",
+  DUE_SOON: "即将到期",
+  MY_DUE_SOON: "我的到期",
+  OVERDUE_BORROWS: "逾期查询",
+  SEARCH_REVIEWS: "书评查询",
+  MY_REVIEWS: "我的书评",
+  FEEDBACK_OVERVIEW: "反馈查询",
+  MY_FEEDBACK: "我的反馈",
+  FORBIDDEN: "权限受限",
+  OUT_OF_SCOPE: "超出范围",
+  CLARIFY: "需要说明",
+  REJECT: "未执行",
+  CONFIRM_SCOPE: "待核对范围",
 };
 
 export default {
-  name: 'BookAssistant',
+  name: "BookAssistant",
   data() {
     return {
-      question: '',
+      question: "",
       loading: false,
       books: [],
       records: [],
@@ -190,46 +278,133 @@ export default {
       returnedCount: 0,
       truncated: false,
       requestId: 0,
-      generatedSql: '',
-      modelNote: '',
-      planningSource: '',
+      status: "",
+      interpretation: "",
+      confirmationToken: "",
+      confirmationExpiresAt: "",
+      modelNote: "",
+      planningSource: "",
       modelCalled: false,
-      answer: '',
-      intent: '',
+      answer: "",
+      intent: "",
       databaseVerified: false,
       hasResult: false,
       promptExamples: [
-        '《三体》放在哪里？',
-        '哪些书没还？',
-        '给我推荐一些计算机的书籍',
-        '谁快要逾期了？',
+        "《三体》放在哪里？",
+        "我的借阅记录",
+        "给我推荐一些计算机的书籍",
+        "我的反馈",
       ],
     };
   },
   computed: {
     recordColumns() {
-      const user = { prop: 'userName', label: '读者' };
-      if (this.intent === 'LIST_USERS') return [user, { prop: 'userAccount', label: '账号' }, { prop: 'userRole', label: '角色' }];
-      if (this.intent.includes('FEEDBACK')) return [user, { prop: 'content', label: '反馈内容', width: 260 }, { prop: 'reply', label: '回复', width: 240 }, { prop: 'status', label: '处理状态' }];
-      if (this.intent.includes('REVIEWS')) return [user, { prop: 'bookName', label: '图书' }, { prop: 'rating', label: '评分' }, { prop: 'content', label: '书评', width: 260 }];
-      return [user, { prop: 'bookName', label: '图书' }, { prop: 'borrowTime', label: '借阅时间', width: 200 }, { prop: 'dueDate', label: '应还时间', width: 200 }, { prop: 'returnTime', label: '归还时间', width: 200 }, { prop: 'status', label: '状态' }];
+      const user = { prop: "userName", label: "读者" };
+      if (this.intent === "LIST_USERS")
+        return [
+          user,
+          { prop: "userAccount", label: "账号" },
+          { prop: "userRole", label: "角色" },
+        ];
+      if (this.intent.includes("FEEDBACK"))
+        return [
+          user,
+          { prop: "content", label: "反馈内容", width: 260 },
+          { prop: "reply", label: "回复", width: 240 },
+          { prop: "status", label: "处理状态" },
+        ];
+      if (this.intent.includes("REVIEWS"))
+        return [
+          user,
+          { prop: "bookName", label: "图书" },
+          { prop: "rating", label: "评分" },
+          { prop: "content", label: "书评", width: 260 },
+        ];
+      return [
+        user,
+        { prop: "bookName", label: "图书" },
+        { prop: "borrowTime", label: "借阅时间", width: 200 },
+        { prop: "dueDate", label: "应还时间", width: 200 },
+        { prop: "returnTime", label: "归还时间", width: 200 },
+        { prop: "status", label: "状态" },
+      ];
     },
     intentLabel() {
       return INTENT_LABELS[this.intent] || this.intent;
     },
     modelCallLabel() {
-      if (!this.modelCalled) return '本地解析 · API 0 次';
-      return this.planningSource === 'DEEPSEEK'
-        ? 'DeepSeek 调用成功'
-        : 'DeepSeek 调用失败 · 已本地降级';
+      if (!this.modelCalled) return "本地解析 · API 0 次";
+      return this.planningSource === "MODEL"
+        ? "模型已提出计划"
+        : "模型未提供可执行计划";
     },
   },
   methods: {
+    applyResult(result) {
+      this.books = result.books || [];
+      this.records = result.records || [];
+      this.total = result.total || 0;
+      this.returnedCount = result.returnedCount || 0;
+      this.truncated = result.truncated === true;
+      this.status = result.status || "";
+      this.interpretation = result.interpretation || "";
+      this.confirmationToken = result.confirmationToken || "";
+      this.confirmationExpiresAt = result.confirmationExpiresAt || "";
+      this.modelNote = result.modelNote || "";
+      this.planningSource = result.planningSource || "";
+      this.modelCalled = result.modelCalled === true;
+      this.answer = result.answer || "馆藏查询已完成。";
+      this.intent = result.intent || "";
+      this.databaseVerified = result.databaseVerified === true;
+      this.hasResult = true;
+    },
+    choosePrompt(prompt) {
+      this.question = prompt;
+      this.questionChanged();
+    },
+    questionChanged() {
+      ++this.requestId;
+      this.loading = false;
+      this.clearResult();
+    },
+    correctInterpretation() {
+      this.questionChanged();
+    },
+    async confirmScope() {
+      if (this.loading || !this.confirmationToken) return;
+      const token = this.confirmationToken;
+      const session = getToken();
+      const requestId = ++this.requestId;
+      this.loading = true;
+      this.confirmationToken = "";
+      try {
+        const response = await this.$axios.post("/book/assistant/confirm", {
+          confirmationToken: token,
+        });
+        if (requestId !== this.requestId || session !== getToken()) return;
+        if (response.data.code !== 200 || !response.data.data) {
+          this.clearResult();
+          this.$message.error(response.data.msg || "确认失效，请重新提问");
+          return;
+        }
+        this.applyResult(response.data.data);
+      } catch (error) {
+        if (requestId !== this.requestId || session !== getToken()) return;
+        this.clearResult();
+        this.$message.error("查询结果暂未确认，请到记录页面查看或重新提问");
+      } finally {
+        if (requestId === this.requestId) {
+          this.loading = false;
+          if (session !== getToken()) this.clearResult();
+        }
+      }
+    },
     async askQuestion() {
       if (this.loading) return;
       const question = this.question.trim();
+      const session = getToken();
       if (!question) {
-        this.$message.warning('请先输入你的馆藏问题');
+        this.$message.warning("请先输入你的馆藏问题");
         return;
       }
 
@@ -237,40 +412,33 @@ export default {
       const requestId = ++this.requestId;
       this.clearResult();
       try {
-        const response = await this.$axios.post('/book/assistant/query', { question });
-        if (requestId !== this.requestId) return;
+        const response = await this.$axios.post("/book/assistant/query", {
+          question,
+        });
+        if (requestId !== this.requestId || session !== getToken()) return;
         const payload = response.data;
         if (payload.code !== 200 || !payload.data) {
-          this.$message.error(payload.msg || '查询失败，请稍后重试');
+          this.$message.error(payload.msg || "查询失败，请稍后重试");
           return;
         }
 
-        const result = payload.data;
-        this.books = result.books || [];
-        this.records = result.records || [];
-        this.total = result.total || 0;
-        this.returnedCount = result.returnedCount || 0;
-        this.truncated = result.truncated === true;
-        this.generatedSql = result.generatedSql || '';
-        this.modelNote = result.modelNote || '';
-        this.planningSource = result.planningSource || '';
-        this.modelCalled = result.modelCalled === true;
-        this.answer = result.answer || '馆藏查询已完成。';
-        this.intent = result.intent || '';
-        this.databaseVerified = result.databaseVerified === true;
-        this.hasResult = true;
+        this.applyResult(payload.data);
       } catch (error) {
-        if (requestId !== this.requestId) return;
-        const message = error.response && error.response.data && error.response.data.msg;
-        this.$message.error(message || '请求异常，请稍后再试');
+        if (requestId !== this.requestId || session !== getToken()) return;
+        const message =
+          error.response && error.response.data && error.response.data.msg;
+        this.$message.error(message || "请求异常，请稍后再试");
       } finally {
-        if (requestId === this.requestId) this.loading = false;
+        if (requestId === this.requestId) {
+          this.loading = false;
+          if (session !== getToken()) this.clearResult();
+        }
       }
     },
     resetForm() {
       ++this.requestId;
       this.loading = false;
-      this.question = '';
+      this.question = "";
       this.clearResult();
     },
     clearResult() {
@@ -279,21 +447,33 @@ export default {
       this.total = 0;
       this.returnedCount = 0;
       this.truncated = false;
-      this.generatedSql = '';
-      this.modelNote = '';
-      this.planningSource = '';
+      this.status = "";
+      this.interpretation = "";
+      this.confirmationToken = "";
+      this.confirmationExpiresAt = "";
+      this.modelNote = "";
+      this.planningSource = "";
       this.modelCalled = false;
-      this.answer = '';
-      this.intent = '';
+      this.answer = "";
+      this.intent = "";
       this.databaseVerified = false;
       this.hasResult = false;
     },
     formatRecordCell(row, column, value) {
-      if (column.property === 'status') return this.intent.includes('FEEDBACK')
-        ? (Number(value) === 1 ? '已回复' : '待处理')
-        : (Number(value) === 1 ? '已归还' : '借阅中');
-      if (column.property === 'userRole') return ['超级管理员', '管理员', '读者', '采购员', '物流员'][Number(value)] || '未识别';
-      return value == null || value === '' ? '—' : value;
+      if (column.property === "status")
+        return this.intent.includes("FEEDBACK")
+          ? Number(value) === 1
+            ? "已回复"
+            : "待处理"
+          : Number(value) === 1
+          ? "已归还"
+          : "借阅中";
+      if (column.property === "userRole")
+        return (
+          ["超级管理员", "管理员", "读者", "采购员", "物流员"][Number(value)] ||
+          "未识别"
+        );
+      return value == null || value === "" ? "—" : value;
     },
   },
   beforeDestroy() {
@@ -316,13 +496,16 @@ export default {
   overflow: hidden;
   padding: 28px 30px;
   border: 1px solid #cfe0f2;
-  background:
-    radial-gradient(circle at 88% 18%, rgba(13, 148, 136, 0.16), transparent 30%),
+  background: radial-gradient(
+      circle at 88% 18%,
+      rgba(13, 148, 136, 0.16),
+      transparent 30%
+    ),
     linear-gradient(125deg, #f8fbff 0%, #edf5ff 54%, #f7fffd 100%);
 }
 
 .assistant-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   right: -54px;
   bottom: -72px;
@@ -695,7 +878,7 @@ export default {
   border-radius: 10px;
   background: #f6f9fc;
   color: #29445f;
-  font-family: Consolas, 'Courier New', monospace;
+  font-family: Consolas, "Courier New", monospace;
   font-size: 12px;
   line-height: 1.6;
   white-space: pre-wrap;

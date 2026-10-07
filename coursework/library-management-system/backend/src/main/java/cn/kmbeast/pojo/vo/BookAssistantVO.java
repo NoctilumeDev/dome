@@ -14,6 +14,11 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BookAssistantVO {
+    private String status;
+    private String reason;
+    private String interpretation;
+    private String confirmationToken;
+    private String confirmationExpiresAt;
     private String question;
     private String generatedSql;
     private String modelNote;
