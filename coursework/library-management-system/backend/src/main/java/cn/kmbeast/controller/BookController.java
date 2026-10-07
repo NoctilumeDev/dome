@@ -52,8 +52,13 @@ public class BookController {
 
     @PostMapping("/assistant/query")
     @ResponseBody
-    public Result<BookAssistantVO> askBookByQuestion(@RequestBody BookAssistantQueryDto dto) {
-        return bookAssistantService.ask(dto);
+    public Result<BookAssistantVO> askBookByQuestion(@RequestBody BookAssistantQueryDto dto, @RequestHeader("token") String session) {
+        return bookAssistantService.ask(dto, session);
+    }
+
+    @PostMapping("/assistant/confirm")
+    public Result<BookAssistantVO> confirmAssistantScope(@RequestBody java.util.Map<String, Object> dto, @RequestHeader("token") String session) {
+        return bookAssistantService.confirm(dto, session);
     }
 
     @GetMapping("/daysQuery/{day}")

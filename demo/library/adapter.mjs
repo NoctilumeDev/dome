@@ -86,26 +86,16 @@ export function createLibraryModel(storage) {
       truncated: false,
       databaseVerified: false,
     };
-    if (/密码|口令|token|secret|清空|删除数据库|忽略|最高权限|管理员指令/i.test(q))
-      return {
-        ...base,
-        answer: '演示问答只查看样例馆藏与本人的借阅，不处理凭据或管理指令。',
-        intent: 'OUT_OF_SCOPE',
-      };
-    if (/借阅|没还|逾期|还书/.test(q)) {
-      const records = viewBorrows()
-        .filter((b) => me().userRole <= 1 || b.userId === me().id)
-        .filter((b) => !/没还|逾期/.test(q) || !b.status);
-      return {
-        ...base,
-        records,
-        total: records.length,
-        returnedCount: records.length,
-        databaseVerified: true,
-        intent: me().userRole <= 1 ? 'BORROW_OVERVIEW' : 'MY_BORROWS',
-        answer: `演示记录中匹配到 ${records.length} 条借阅。`,
-      };
+    if (/密码|口令|token|secret|清空|删除数据库|忽略|无视|最高权限|管理员指令/i.test(q))
+      return { ...base, status: 'REJECT', intent: 'REJECT', answer: '演示问答不处理凭据、越权或管理指令，请单独提交合法查询。' };
+    if (q === '我的借阅记录' || q === '我借了哪些书') {
+      const records = viewBorrows().filter((b) => b.userId === me().id);
+      return { ...base, status: 'QUERY', records, total: records.length, returnedCount: records.length,
+        databaseVerified: true, interpretation: '当前账号的全部借阅记录 · 不按书名或日期筛选',
+        intent: 'MY_BORROWS', answer: `演示记录中匹配到 ${records.length} 条自己的借阅。` };
     }
+    if (/借阅|没还|逾期|还书|用户|反馈|书评/.test(q))
+      return { ...base, status: 'CLARIFY', intent: 'CLARIFY', answer: '演示没有模型或范围确认服务；复杂记录请求请运行完整后端。可以使用标准命令“我的借阅记录”。' };
     let books = viewBooks();
     const named = books.find((b) => q.includes(b.name));
     const author = books.find((b) => q.includes(b.author));
@@ -126,6 +116,8 @@ export function createLibraryModel(storage) {
       total: books.length,
       returnedCount: books.length,
       databaseVerified: true,
+      status: 'QUERY',
+      interpretation: '浏览器虚构样例馆藏匹配',
       intent: 'SEARCH_BOOK',
       answer: `演示馆藏中匹配到 ${books.length} 本图书。`,
     };
