@@ -1,0 +1,13 @@
+{
+  "state": "TOOL_OR_HARNESS_FAIL",
+  "stage": "measurement-v1",
+  "date": "2026-10-08",
+  "originalScorerSha256": "0a3d57130c1ceae683d0ad4b974cf389e352908f1ac0d8592ab520224451d034",
+  "exception": "KeyError: title",
+  "location": "measure.py:40, requested set derivation from fixture books",
+  "cause": "Model plan uses title, fixture book uses name; preflight native facts mapping passed but set derivation was not exercised",
+  "paidRequestsRetained": 234,
+  "nativeRecordsRetained": 474,
+  "oldOutput": "output (empty, created before failure)",
+  "repair": "measure_v2.py changes only output coordinate and title-to-name mapping; plan/oracle/response/native evidence unchanged; no API request rerun"
+}
