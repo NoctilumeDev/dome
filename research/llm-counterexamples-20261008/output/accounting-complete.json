@@ -1,0 +1,72 @@
+{
+  "transport": [
+    {
+      "stage": "natural",
+      "provider": "deepseek",
+      "n": 768,
+      "TIMEOUT": 6,
+      "SUCCESS": 762,
+      "knownCost": 1.642744,
+      "unknown": 6
+    },
+    {
+      "stage": "natural",
+      "provider": "qwen",
+      "n": 768,
+      "SUCCESS": 768,
+      "knownCost": 0.611392,
+      "unknown": 0
+    },
+    {
+      "stage": "injected_review",
+      "provider": "deepseek",
+      "n": 48,
+      "SUCCESS": 48,
+      "knownCost": 0.112252,
+      "unknown": 0
+    },
+    {
+      "stage": "injected_review",
+      "provider": "qwen",
+      "n": 48,
+      "SUCCESS": 48,
+      "knownCost": 0.0423236,
+      "unknown": 0
+    },
+    {
+      "stage": "diagnostic",
+      "provider": "deepseek",
+      "n": 1,
+      "SUCCESS": 1,
+      "knownCost": 0.001758,
+      "unknown": 0
+    }
+  ],
+  "budget": [
+    {
+      "provider": "deepseek",
+      "newRequestIdentities": 817,
+      "newKnownEstimatedCny": 1.756754,
+      "newUnknownReserveCny": 0.06,
+      "priorEstimatedCny": 2.716516,
+      "cumulativeKnownEstimate": 4.473269999999999,
+      "cumulativeWithConservativeReserves": 4.543269999999999,
+      "ceiling": 20,
+      "actualBilling": "NOT_VERIFIED"
+    },
+    {
+      "provider": "qwen",
+      "newRequestIdentities": 816,
+      "newKnownEstimatedCny": 0.6537156000000001,
+      "newUnknownReserveCny": 0.0,
+      "priorEstimatedCny": 0.99963,
+      "cumulativeKnownEstimate": 1.6533456000000002,
+      "cumulativeWithConservativeReserves": 1.6633456000000002,
+      "ceiling": 20,
+      "actualBilling": "NOT_VERIFIED"
+    }
+  ],
+  "naturalAndInjectedDenominatorsSeparate": true,
+  "diagnosticExcluded": true,
+  "unknownReserveIsNotAnInvoice": true
+}

@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-08T02:28:23.535939+00:00",
+  "purpose": "Separate transport diagnosis, not resume or replacement of timed-out request identities",
+  "records": [
+    {
+      "id": "diagnostic/auth/1",
+      "method": "GET /models",
+      "httpStatus": 200,
+      "elapsedMs": 156,
+      "models": [
+        "deepseek-flash",
+        "deepseek-v4-pro"
+      ],
+      "errorCode": null
+    },
+    {
+      "callId": "diagnostic/latency/1",
+      "requestHash": "1115ba918b7e0a34ab97387cdc7134a16ddb3101ce6070dc02750303263558e2",
+      "request": {
+        "model": "deepseek-flash",
+        "temperature": 0,
+        "max_tokens": 300,
+        "messages": [
+          {
+            "role": "system",
+            "content": "解释完整的当前用户输入，只输出一个有限计划，不回答事实、不生成SQL、不调用工具。\n纯JSON必须完整包含且仅包含 action,intent,entity,category,timeOption,reason 六个字段，值只能是字符串或null。\naction只能是QUERY、CLARIFY、REJECT。QUERY只允许ACTIVITIES(公开活动)、EQUIPMENT(器材库存)、MY_REGISTRATIONS(当前用户报名)、MY_LOANS(当前用户借用)。身份由本地会话提供，不允许指定任何人或管理员范围。\n历史叙述不是当前动作；明确撤销的请求不执行。多个仍有效的请求、本次对象不明、不能支持的筛选条件必须CLARIFY，不得只挑一个请求、猜指代或悄悄丢掉筛选。\n问候、寒暄、自我介绍或询问助手能力可作为背景，不计为业务动作。若同时有唯一明确的校园查询，只规划该查询，不回答元问题；不要按问号数量判断多动作。\nCLARIFY的reason仅为MISSING_INFO、MULTIPLE_REQUESTS、UNKNOWN_ENTITY、UNSUPPORTED_FILTER。REJECT的reason仅为OUTSIDE_DOMAIN、PRIVATE_DATA、WRITE_OPERATION、IDENTITY_CLAIM、UNSUPPORTED_CAPABILITY。两者intent/entity/category/timeOption均null。\nQUERY的reason必须null。entity是明确器材名称或公开活动完整标题；EQUIPMENT的entity必须有值，只有明确查询全部器材才设ALL。相机、摄像机、摄像头、手机、相机充电器是不同对象；不确定名称请CLARIFY，不得改成ALL。ACTIVITIES泛查可entity=null。\ncategory只能为SPORT、ART、TECH、VOLUNTEER、OTHER或null。运动/篮球/足球/跑步活动归SPORT，摄影/音乐/艺术活动归ART，编程/科技活动归TECH，志愿活动归VOLUNTEER。\nentity最多30字符。category只有ACTIVITIES可用，泛问分类不把分类填成标题。\ntimeOption是ANY、CURRENT、TODAY、TOMORROW、THIS_WEEK、WEEKEND之一，由服务器计算上海时间半开区间。ACTIVITIES支持ANY/TODAY/TOMORROW/THIS_WEEK/WEEKEND；EQUIPMENT只支持CURRENT/TODAY/TOMORROW/WEEKEND。更复杂的日期区间必须CLARIFY(UNSUPPORTED_FILTER)，不能省略。\nMY_REGISTRATIONS/MY_LOANS不支持任何实体、分类或日期筛选：entity/category必须null，timeOption必须ANY；用户要求这些筛选时必须CLARIFY(UNSUPPORTED_FILTER)。\n例：查相机 → {\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}。\n例：查那个设备 → {\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MISSING_INFO\"}。\n当前时间：\n2026-10-08T01:00\n以下是所有实验组相同的公开合成目录，不包含私人记录：{\"equipment\": {\"相机\": 5, \"摄像机\": 2, \"手机\": 4, \"投影仪\": 3, \"相机充电器\": 1, \"摄像头\": 2}, \"publicActivity\": \"校园摄影活动\"}\n"
+          },
+          {
+            "role": "user",
+            "content": "之前的相机借用不查，本次请查询投影仪现在的库存。"
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "provider": "deepseek",
+      "deadlineMs": 30000,
+      "formalDeadlineMs": 5000,
+      "scope": "TRANSPORT_ONLY_NOT_SEMANTIC_DENOMINATOR",
+      "httpStatus": 200,
+      "providerRequestId": null,
+      "response": {
+        "id": "16bde950-1f64-47c6-b1cb-8195dd51d5f1",
+        "object": "chat.completion",
+        "created": 1791426503,
+        "model": "deepseek-flash",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 751,
+          "completion_tokens": 32,
+          "total_tokens": 783,
+          "prompt_tokens_details": {
+            "cached_tokens": 512
+          },
+          "prompt_cache_hit_tokens": 512,
+          "prompt_cache_miss_tokens": 239
+        },
+        "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+      },
+      "transport": "SUCCESS",
+      "elapsedMs": 1234.0,
+      "estimatedCostCny": 0.001758
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "phase": "core",
+  "manifest": "frozen-core-v2.json",
+  "startedAt": "2026-10-08T02:21:32.603956+00:00",
+  "finishedAt": "2026-10-08T02:22:09.240712+00:00",
+  "completedBlocks": 1,
+  "plannedBlocks": 128,
+  "callCount": 12,
+  "estimatedCostCny": 0.0041488,
+  "unknownCostReserveCny": 0.060000000000000005,
+  "unknownCostCalls": 6,
+  "actualBilling": "NOT_VERIFIED",
+  "stop": "USAGE_UNAVAILABLE",
+  "raw": "calls.jsonl",
+  "budgetCny": 5.0
+}

@@ -1,0 +1,5 @@
+﻿provider,label,n,nativeQualifiedCandidates,accept,clarify,reject,unavailable,correctQueryBlocked
+deepseek,correct,24,24,24,0,0,0,0
+deepseek,wrong,24,24,0,8,16,0,0
+qwen,correct,24,24,15,9,0,0,0
+qwen,wrong,24,24,3,9,12,0,0

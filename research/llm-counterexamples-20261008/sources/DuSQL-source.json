@@ -1,0 +1,18 @@
+{
+  "url": "https://dataset-bj.cdn.bcebos.com/qianyan/DuSQL.zip",
+  "archiveSha256": "292a3e8b3d0084e1d03323c0f849bf823749a62ca4f1fcf57399772735f3d0ff",
+  "entries": [
+    {
+      "archiveEntry": "DuSQL/dev.json",
+      "local": "DuSQL-dev.json",
+      "sha256": "5033c54318d5221a2532bc7c7388245e14ce1979ae9c79e928d4e21ec245c860",
+      "bytes": 6424593
+    },
+    {
+      "archiveEntry": "DuSQL/db_schema.json",
+      "local": "DuSQL-db_schema.json",
+      "sha256": "7718bd33276ec3a7fc3d1799fdc32617abfd13129c9be032ad3f60ced0163dcc",
+      "bytes": 933521
+    }
+  ]
+}
