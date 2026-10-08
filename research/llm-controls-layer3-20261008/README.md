@@ -11,6 +11,7 @@
 - `output/RESULTS.md`、`metrics.json`：资格、分包结果与严格标签；不把代理指标当事实事故。
 - `BILLING_NOTE.md`：千问新用户赠送额度的事后补充；费用表是未抵扣赠送额度的公开价理论成本，实际扣款仍未核。
 - `NEXT_CONTROLS.md`：对象消歧、同名主体绑定、模糊目标、时间证据四组后续草稿；`DRAFT_NOT_SEALED / NOT_RUN`，不改变本轮封印或day1窗口。
+- [研究方法与复现导航](REPRODUCTION.md)：术语、四层职责、只读选择理由、相关工作联系及三层证据入口；离线核对与新的完整复刻分别说明。
 
 只读核对入口 `python -X utf8 -B verify.py`。本轮收集入口是历史施工工具，归档后不原地覆盖结果。各阶段分别是pilot/formal/external/tier/day0/day1；新的正式回放应有新输出坐标。真人确认、独立真人盲标最后实施，当前PENDING_HUMAN_STUDY。
 
