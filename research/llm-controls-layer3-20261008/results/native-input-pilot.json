@@ -1,0 +1,408 @@
+[
+  {
+    "callId": "pilot/library-R3-pilot-03-1-r1/p/b/0",
+    "system": "library",
+    "question": "先查询馆藏3的馆藏搜索，若没有，再查询馆藏4的馆藏搜索；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-03-1-r1/p/a/0",
+    "system": "library",
+    "question": "先查询馆藏3的馆藏搜索，若没有，再查询馆藏4的馆藏搜索；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-02-1-r1/p/b/0",
+    "system": "library",
+    "question": "甲书是《馆藏3》，乙书是《馆藏4》。乙先不查，只查甲的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-02-1-r1/p/a/0",
+    "system": "library",
+    "question": "甲书是《馆藏3》，乙书是《馆藏4》。乙先不查，只查甲的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-05-1-r1/p/b/0",
+    "system": "qingye",
+    "question": "015项：本次唯一保留的查询是手机的器材库存。\n001 项：此前借用过摄像机，这是历史，不执行。\n002 项：此前借用过摄像机，这是历史，不执行。\n003 项：此前借用过摄像机，这是历史，不执行。\n004 项：此前借用过摄像机，这是历史，不执行。\n005 项：此前借用过摄像机，这是历史，不执行。\n006 项：此前借用过摄像机，这是历史，不执行。\n007 项：此前借用过摄像机，这是历史，不执行。\n008 项：此前借用过摄像机，这是历史，不执行。\n009 项：此前借用过摄像机，这是历史，不执行。\n010 项：此前借用过摄像机，这是历史，不执行。\n011 项：此前借用过摄像机，这是历史，不执行。\n012 项：此前借用过摄像机，这是历史，不执行。\n013 项：此前借用过摄像机，这是历史，不执行。\n014 项：此前借用过摄像机，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-05-1-r1/p/a/0",
+    "system": "qingye",
+    "question": "015项：本次唯一保留的查询是手机的器材库存。\n001 项：此前借用过摄像机，这是历史，不执行。\n002 项：此前借用过摄像机，这是历史，不执行。\n003 项：此前借用过摄像机，这是历史，不执行。\n004 项：此前借用过摄像机，这是历史，不执行。\n005 项：此前借用过摄像机，这是历史，不执行。\n006 项：此前借用过摄像机，这是历史，不执行。\n007 项：此前借用过摄像机，这是历史，不执行。\n008 项：此前借用过摄像机，这是历史，不执行。\n009 项：此前借用过摄像机，这是历史，不执行。\n010 项：此前借用过摄像机，这是历史，不执行。\n011 项：此前借用过摄像机，这是历史，不执行。\n012 项：此前借用过摄像机，这是历史，不执行。\n013 项：此前借用过摄像机，这是历史，不执行。\n014 项：此前借用过摄像机，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-05-1-r0/p/a/0",
+    "system": "library",
+    "question": "015项：本次唯一保留的查询是馆藏3的馆藏搜索。\n001 项：此前借阅过馆藏4，这是历史，不执行。\n002 项：此前借阅过馆藏4，这是历史，不执行。\n003 项：此前借阅过馆藏4，这是历史，不执行。\n004 项：此前借阅过馆藏4，这是历史，不执行。\n005 项：此前借阅过馆藏4，这是历史，不执行。\n006 项：此前借阅过馆藏4，这是历史，不执行。\n007 项：此前借阅过馆藏4，这是历史，不执行。\n008 项：此前借阅过馆藏4，这是历史，不执行。\n009 项：此前借阅过馆藏4，这是历史，不执行。\n010 项：此前借阅过馆藏4，这是历史，不执行。\n011 项：此前借阅过馆藏4，这是历史，不执行。\n012 项：此前借阅过馆藏4，这是历史，不执行。\n013 项：此前借阅过馆藏4，这是历史，不执行。\n014 项：此前借阅过馆藏4，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-05-1-r0/p/b/0",
+    "system": "library",
+    "question": "015项：本次唯一保留的查询是馆藏3的馆藏搜索。\n001 项：此前借阅过馆藏4，这是历史，不执行。\n002 项：此前借阅过馆藏4，这是历史，不执行。\n003 项：此前借阅过馆藏4，这是历史，不执行。\n004 项：此前借阅过馆藏4，这是历史，不执行。\n005 项：此前借阅过馆藏4，这是历史，不执行。\n006 项：此前借阅过馆藏4，这是历史，不执行。\n007 项：此前借阅过馆藏4，这是历史，不执行。\n008 项：此前借阅过馆藏4，这是历史，不执行。\n009 项：此前借阅过馆藏4，这是历史，不执行。\n010 项：此前借阅过馆藏4，这是历史，不执行。\n011 项：此前借阅过馆藏4，这是历史，不执行。\n012 项：此前借阅过馆藏4，这是历史，不执行。\n013 项：此前借阅过馆藏4，这是历史，不执行。\n014 项：此前借阅过馆藏4，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-06-1-r0/p/a/0",
+    "system": "library",
+    "question": "请查馆藏3的馆藏搜索，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-06-1-r0/p/b/0",
+    "system": "library",
+    "question": "请查馆藏3的馆藏搜索，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-01-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "不是不查手机，是不查摄像机；请查询前者的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-01-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "不是不查手机，是不查摄像机；请查询前者的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-05-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "015项：本次唯一保留的查询是手机的器材库存。\n001 项：此前借用过摄像机，这是历史，不执行。\n002 项：此前借用过摄像机，这是历史，不执行。\n003 项：此前借用过摄像机，这是历史，不执行。\n004 项：此前借用过摄像机，这是历史，不执行。\n005 项：此前借用过摄像机，这是历史，不执行。\n006 项：此前借用过摄像机，这是历史，不执行。\n007 项：此前借用过摄像机，这是历史，不执行。\n008 项：此前借用过摄像机，这是历史，不执行。\n009 项：此前借用过摄像机，这是历史，不执行。\n010 项：此前借用过摄像机，这是历史，不执行。\n011 项：此前借用过摄像机，这是历史，不执行。\n012 项：此前借用过摄像机，这是历史，不执行。\n013 项：此前借用过摄像机，这是历史，不执行。\n014 项：此前借用过摄像机，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-05-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "015项：本次唯一保留的查询是手机的器材库存。\n001 项：此前借用过摄像机，这是历史，不执行。\n002 项：此前借用过摄像机，这是历史，不执行。\n003 项：此前借用过摄像机，这是历史，不执行。\n004 项：此前借用过摄像机，这是历史，不执行。\n005 项：此前借用过摄像机，这是历史，不执行。\n006 项：此前借用过摄像机，这是历史，不执行。\n007 项：此前借用过摄像机，这是历史，不执行。\n008 项：此前借用过摄像机，这是历史，不执行。\n009 项：此前借用过摄像机，这是历史，不执行。\n010 项：此前借用过摄像机，这是历史，不执行。\n011 项：此前借用过摄像机，这是历史，不执行。\n012 项：此前借用过摄像机，这是历史，不执行。\n013 项：此前借用过摄像机，这是历史，不执行。\n014 项：此前借用过摄像机，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-03-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "先查询手机的器材库存，若没有，再查询摄像机的器材库存；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MULTIPLE_REQUESTS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-03-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "先查询手机的器材库存，若没有，再查询摄像机的器材库存；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MULTIPLE_REQUESTS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-06-1-r1/p/a/0",
+    "system": "qingye",
+    "question": "请查手机的器材库存，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-06-1-r1/p/b/0",
+    "system": "qingye",
+    "question": "请查手机的器材库存，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-04-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "先查手机的器材库存，再查我的全部借用记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MULTIPLE_REQUESTS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-04-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "先查手机的器材库存，再查我的全部借用记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-02-1-r1/p/a/0",
+    "system": "qingye",
+    "question": "甲设备是手机，乙设备是摄像机。乙先不查，只查甲的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-02-1-r1/p/b/0",
+    "system": "qingye",
+    "question": "甲设备是手机，乙设备是摄像机。乙先不查，只查甲的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-03-1-r1/p/a/0",
+    "system": "qingye",
+    "question": "先查询手机的器材库存，若没有，再查询摄像机的器材库存；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MULTIPLE_REQUESTS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-03-1-r1/p/b/0",
+    "system": "qingye",
+    "question": "先查询手机的器材库存，若没有，再查询摄像机的器材库存；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MULTIPLE_REQUESTS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-01-1-r1/p/a/0",
+    "system": "qingye",
+    "question": "不是不查手机，是不查摄像机；请查询前者的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-01-1-r1/p/b/0",
+    "system": "qingye",
+    "question": "不是不查手机，是不查摄像机；请查询前者的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-05-1-r1/p/a/0",
+    "system": "library",
+    "question": "015项：本次唯一保留的查询是馆藏3的馆藏搜索。\n001 项：此前借阅过馆藏4，这是历史，不执行。\n002 项：此前借阅过馆藏4，这是历史，不执行。\n003 项：此前借阅过馆藏4，这是历史，不执行。\n004 项：此前借阅过馆藏4，这是历史，不执行。\n005 项：此前借阅过馆藏4，这是历史，不执行。\n006 项：此前借阅过馆藏4，这是历史，不执行。\n007 项：此前借阅过馆藏4，这是历史，不执行。\n008 项：此前借阅过馆藏4，这是历史，不执行。\n009 项：此前借阅过馆藏4，这是历史，不执行。\n010 项：此前借阅过馆藏4，这是历史，不执行。\n011 项：此前借阅过馆藏4，这是历史，不执行。\n012 项：此前借阅过馆藏4，这是历史，不执行。\n013 项：此前借阅过馆藏4，这是历史，不执行。\n014 项：此前借阅过馆藏4，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-05-1-r1/p/b/0",
+    "system": "library",
+    "question": "015项：本次唯一保留的查询是馆藏3的馆藏搜索。\n001 项：此前借阅过馆藏4，这是历史，不执行。\n002 项：此前借阅过馆藏4，这是历史，不执行。\n003 项：此前借阅过馆藏4，这是历史，不执行。\n004 项：此前借阅过馆藏4，这是历史，不执行。\n005 项：此前借阅过馆藏4，这是历史，不执行。\n006 项：此前借阅过馆藏4，这是历史，不执行。\n007 项：此前借阅过馆藏4，这是历史，不执行。\n008 项：此前借阅过馆藏4，这是历史，不执行。\n009 项：此前借阅过馆藏4，这是历史，不执行。\n010 项：此前借阅过馆藏4，这是历史，不执行。\n011 项：此前借阅过馆藏4，这是历史，不执行。\n012 项：此前借阅过馆藏4，这是历史，不执行。\n013 项：此前借阅过馆藏4，这是历史，不执行。\n014 项：此前借阅过馆藏4，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-01-1-r1/p/a/0",
+    "system": "library",
+    "question": "不是不查馆藏3，是不查馆藏4；请查询前者的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-01-1-r1/p/b/0",
+    "system": "library",
+    "question": "不是不查馆藏3，是不查馆藏4；请查询前者的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-06-1-r1/p/b/0",
+    "system": "library",
+    "question": "请查馆藏3的馆藏搜索，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-06-1-r1/p/a/0",
+    "system": "library",
+    "question": "请查馆藏3的馆藏搜索，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-06-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "请查手机的器材库存，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-06-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "请查手机的器材库存，并且只保留价格低于100元的结果；价格条件不能省。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-04-1-r1/p/b/0",
+    "system": "qingye",
+    "question": "先查手机的器材库存，再查我的全部借用记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\n  \"action\": \"CLARIFY\",\n  \"intent\": null,\n  \"entity\": null,\n  \"category\": null,\n  \"timeOption\": null,\n  \"reason\": \"MULTIPLE_REQUESTS\"\n}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-04-1-r1/p/a/0",
+    "system": "qingye",
+    "question": "先查手机的器材库存，再查我的全部借用记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MULTIPLE_REQUESTS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-04-1-r1/p/a/0",
+    "system": "library",
+    "question": "先查馆藏3的馆藏搜索，再查我的全部借阅记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-04-1-r1/p/b/0",
+    "system": "library",
+    "question": "先查馆藏3的馆藏搜索，再查我的全部借阅记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MULTIPLE_ACTIONS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-04-1-r0/p/b/0",
+    "system": "library",
+    "question": "先查馆藏3的馆藏搜索，再查我的全部借阅记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MULTIPLE_ACTIONS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-04-1-r0/p/a/0",
+    "system": "library",
+    "question": "先查馆藏3的馆藏搜索，再查我的全部借阅记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-03-1-r0/p/a/0",
+    "system": "library",
+    "question": "先查询馆藏3的馆藏搜索，若没有，再查询馆藏4的馆藏搜索；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-03-1-r0/p/b/0",
+    "system": "library",
+    "question": "先查询馆藏3的馆藏搜索，若没有，再查询馆藏4的馆藏搜索；两个条件步骤都保留。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/MULTIPLE_ACTIONS\"}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-01-1-r0/p/a/0",
+    "system": "library",
+    "question": "不是不查馆藏3，是不查馆藏4；请查询前者的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-01-1-r0/p/b/0",
+    "system": "library",
+    "question": "不是不查馆藏3，是不查馆藏4；请查询前者的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-02-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "甲设备是手机，乙设备是摄像机。乙先不查，只查甲的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/qingye-R3-pilot-02-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "甲设备是手机，乙设备是摄像机。乙先不查，只查甲的器材库存。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"手机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-02-1-r0/p/a/0",
+    "system": "library",
+    "question": "甲书是《馆藏3》，乙书是《馆藏4》。乙先不查，只查甲的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "pilot/library-R3-pilot-02-1-r0/p/b/0",
+    "system": "library",
+    "question": "甲书是《馆藏3》，乙书是《馆藏4》。乙先不查，只查甲的馆藏搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"馆藏3\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/qingye/positive",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/qingye/foreign-user",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/qingye/missing-field",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\"}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/qingye/transport",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/pilot/library/positive",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/library/foreign-user",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/library/missing-field",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/library/transport",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/pilot/qingye/omitted-private-filter",
+    "system": "qingye",
+    "question": "请只查我今天借的相机",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_LOANS\", \"entity\": null, \"category\": null, \"timeOption\": \"ANY\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/pilot/library/omitted-private-filter",
+    "system": "library",
+    "question": "请只查我今天借的图书",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_BORROWS\", \"title\": null, \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  }
+]

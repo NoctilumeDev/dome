@@ -1,0 +1,4 @@
+Before native-pilot output creation:
+replay_all.py attempted an unused import/compile of frozen prepare_native.py and raised ModuleNotFoundError: core.
+No native input/output created by this failed attempt; no request repeated or scoring changed.
+Minimal repair removes the unused compile. Controls are taken directly and unchanged from the retained historical native input.

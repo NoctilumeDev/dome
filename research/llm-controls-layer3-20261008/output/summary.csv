@@ -1,0 +1,15 @@
+﻿phase,stratum,slot,n,questions,match,valid,public,wrongPublicPlan,scope,entryBlocked,medianLatencyMs,estimatedCny
+day0,prospective_executor_labels,a,36,12,33,36,21,3,0,0,726.5,0.075096
+day0,prospective_executor_labels,b,36,12,24,36,21,3,0,0,1460.5,0.027762400000000003
+external,external_adapted_compatible,a,24,8,24,24,24,0,0,0,812.5,0.052836
+external,external_adapted_compatible,b,24,8,24,24,24,0,0,0,1687.0,0.0192048
+external,external_original_boundary,a,24,8,15,24,0,0,0,15,835.5,0.05271
+external,external_original_boundary,b,24,8,3,18,0,0,0,15,1812.0,0.0194392
+formal,prospective_executor_labels,a,768,24,683,768,466,21,32,0,703.0,1.59948
+formal,prospective_executor_labels,b,768,24,549,768,484,36,38,0,1625.0,0.5910668
+pilot,prospective_executor_labels,a,24,12,22,24,14,2,0,0,781.5,0.05016
+pilot,prospective_executor_labels,b,24,12,17,24,13,1,0,0,1546.5,0.0185704
+tier,prospective_executor_labels,a,36,12,34,36,20,2,0,0,773.0,0.075112
+tier,prospective_executor_labels,b,36,12,25,36,21,3,0,0,1507.5,0.0277424
+tier,prospective_executor_labels,ds_pro,36,12,30,30,18,0,0,0,1422.0,0.344817
+tier,prospective_executor_labels,q_flash,36,12,21,35,30,12,0,0,726.5,0.00744345

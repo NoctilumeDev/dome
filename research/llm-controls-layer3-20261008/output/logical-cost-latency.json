@@ -1,0 +1,114 @@
+[
+  {
+    "group": "A:a",
+    "serialMedianMs": 703.0,
+    "meanEstimatedCny": 0.00208283,
+    "meanInputTokens": 843.5,
+    "meanOutputTokens": 49.479,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "A:b",
+    "serialMedianMs": 1625.0,
+    "meanEstimatedCny": 0.00076956,
+    "meanInputTokens": 849.708,
+    "meanOutputTokens": 44.896,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "B",
+    "serialMedianMs": 2257.5,
+    "meanEstimatedCny": 0.00285239,
+    "meanInputTokens": 1693.208,
+    "meanOutputTokens": 94.375,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "C:a",
+    "serialMedianMs": 3320.0,
+    "meanEstimatedCny": 0.00376553,
+    "meanInputTokens": 2756.214,
+    "meanOutputTokens": 125.74,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "C:b",
+    "serialMedianMs": 2977.0,
+    "meanEstimatedCny": 0.00528445,
+    "meanInputTokens": 2768.219,
+    "meanOutputTokens": 129.63,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "D",
+    "serialMedianMs": 4069.5,
+    "meanEstimatedCny": 0.00619759,
+    "meanInputTokens": 3831.224,
+    "meanOutputTokens": 160.995,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "E:a",
+    "serialMedianMs": 1516.5,
+    "meanEstimatedCny": 0.00454067,
+    "meanInputTokens": 1917.271,
+    "meanOutputTokens": 88.266,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "E:b",
+    "serialMedianMs": 2640.5,
+    "meanEstimatedCny": 0.00168243,
+    "meanInputTokens": 1913.13,
+    "meanOutputTokens": 75.964,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "F2:a",
+    "serialMedianMs": 1453.0,
+    "meanEstimatedCny": 0.00416542,
+    "meanInputTokens": 1687,
+    "meanOutputTokens": 98.927,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "F2:b",
+    "serialMedianMs": 3289.0,
+    "meanEstimatedCny": 0.00153929,
+    "meanInputTokens": 1699.417,
+    "meanOutputTokens": 89.88,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "F3:a",
+    "serialMedianMs": 2202.5,
+    "meanEstimatedCny": 0.00624813,
+    "meanInputTokens": 2530.5,
+    "meanOutputTokens": 148.391,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "F3:b",
+    "serialMedianMs": 4821.5,
+    "meanEstimatedCny": 0.00230903,
+    "meanInputTokens": 2549.125,
+    "meanOutputTokens": 134.865,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "F4:a",
+    "serialMedianMs": 2921.0,
+    "meanEstimatedCny": 0.00833062,
+    "meanInputTokens": 3374,
+    "meanOutputTokens": 197.828,
+    "knownCostBlocks": 192
+  },
+  {
+    "group": "F4:b",
+    "serialMedianMs": 6133.5,
+    "meanEstimatedCny": 0.00307847,
+    "meanInputTokens": 3398.833,
+    "meanOutputTokens": 179.703,
+    "knownCostBlocks": 192
+  }
+]

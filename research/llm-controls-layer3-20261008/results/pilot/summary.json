@@ -1,0 +1,14 @@
+{
+  "phase": "pilot",
+  "startedAt": "2026-10-08T10:04:52.987642+00:00",
+  "finishedAt": "2026-10-08T10:05:50.279424+00:00",
+  "completedBlocks": 24,
+  "plannedBlocks": 24,
+  "requestIdentities": 48,
+  "stop": null,
+  "estimatedAllNew": {
+    "deepseek": 0.05016,
+    "qwen": 0.0185704
+  },
+  "actualBilling": "NOT_VERIFIED"
+}

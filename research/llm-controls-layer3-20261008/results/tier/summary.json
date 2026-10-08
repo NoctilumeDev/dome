@@ -1,0 +1,14 @@
+{
+  "phase": "tier",
+  "startedAt": "2026-10-08T10:55:53.483270+00:00",
+  "finishedAt": "2026-10-08T10:58:55.841272+00:00",
+  "completedBlocks": 36,
+  "plannedBlocks": 36,
+  "requestIdentities": 144,
+  "stop": null,
+  "estimatedAllNew": {
+    "deepseek": 3.113975,
+    "qwen": 1.03406025
+  },
+  "actualBilling": "NOT_VERIFIED"
+}

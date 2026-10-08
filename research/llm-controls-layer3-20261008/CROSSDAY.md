@@ -1,0 +1,15 @@
+# 真实下一日控制
+
+本轮只有两个窗口：day0、day1。各12道固定正式题第一变体、3重复、两家主模型，72请求。两窗口使用完全相同的题、system prompt、JSON schema、max_tokens、temperature0、thinking关闭、5s期限、模型alias和固定Clock/H2 fixture。
+
+day1最早在day0的finishedAt后86400秒执行，并且上海自然日期必须不同。真实时间变了不等于改变业务Clock；不能改Clock去伪装跨日。按collect.py预先确定的day0种子保持块/模型顺序，只有phase身份和实际采集日期不同。模型payload的哈希应逐块逐模型相等。
+
+未来执行前先只读检查本层seal、全部已完成summary、累计费用和资源归属；原始数据只追加到尚不存在的day1坐标，不重发旧身份。继续计入原来每家¥20累计和本层新增¥7上限。若内存凭据不再可用，只请求补充凭据，不把Key存成文件供定时任务用。
+
+完成后新建native-day1回放（72提案加原10项控制），对比day0已保留的H2快照。day1不得覆盖results/native-all或旧output；使用新的output-day1衍生汇总，旧分数、正文与截图原样保存。用户确认由helper模拟，只是机制证明，不能升格真人收益。
+
+跨日结果报告72个配对观测，但推断单位仍为12道题/6个题族。协议/语义标签/原生资格/传输/响应model/价格和延迟分别比较。模型alias未冻结权重，因此观察属于服务时间窗口稳定性，不是参数权重不变的保证。
+
+后续入口顺序为 `collect.py day1 --keys-stdin` → `replay_all.py --phase day1 --output results/native-day1` → `day1_report.py`。报告入口再次校验真实间隔、上海日期、逐请求payload与顺序、冻结文件、原生控制及快照、累计预算；输出到独立的 `output-day1`，拒绝覆盖旧坐标。输入Key只经非回显控制台，不写进脚本、环境文件或调度提示。
+
+本窗口结束后清除内存凭据、退出自己的进程、收束自己的可重建target/helper；保留Git、唯一原始response、首败与最终记录。自动删除若被拒，不改用另一条命令绕过，给出精确人工路径。真人部分继续PENDING_HUMAN_STUDY。

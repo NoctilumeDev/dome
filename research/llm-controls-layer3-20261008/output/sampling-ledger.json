@@ -1,0 +1,4994 @@
+[
+  {
+    "block": "qingye-R3-formal-03-1-r3",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r3",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-06-2-r2",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r2",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r4",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-06-1-r4",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r3",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r3",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r6",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r6",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r3",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r3",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r7",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r7",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r6",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r6",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r2",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r2",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r2",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r2",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r3",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r3",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r3",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r3",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r4",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r4",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-02-1-r0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r4",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r4",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r6",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r6",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r5",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r5",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r5",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r5",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r7",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r7",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r7",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r7",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r7",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r7",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r7",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      true,
+      false
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r7",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r2",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r2",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r5",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r5",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r6",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r6",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r6",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r6",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r1",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r1",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r7",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r7",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-06-2-r5",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r5",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r7",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r7",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r3",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r3",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r6",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r6",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r5",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r5",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r6",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r6",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r2",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r2",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r7",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r7",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r3",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r3",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r3",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r3",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r6",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r6",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-02-2-r7",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r7",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r2",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r2",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r4",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r4",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r2",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r2",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r1",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r1",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r3",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r3",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r6",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r6",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r5",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r5",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r7",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r7",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r2",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r2",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r6",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r6",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r4",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r4",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r4",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r4",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r4",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r4",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r1",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r1",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r5",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r5",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r6",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r6",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r2",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r2",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r5",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r5",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r3",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r3",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r7",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r7",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r0",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r0",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r5",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r5",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r7",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r7",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r4",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r4",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r1",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r1",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r6",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r6",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r4",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r4",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      true,
+      false
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-04-2-r4",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r4",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r4",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r4",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r2",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r2",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r3",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r3",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r1",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r1",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r7",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r7",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r3",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r3",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r4",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r4",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r5",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r5",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r5",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r5",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r7",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r7",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r5",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r5",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r1",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r1",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r3",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r3",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r7",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r7",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r1",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r1",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r5",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r5",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r3",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r3",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r4",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r4",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r7",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r7",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r6",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r6",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r7",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r7",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r7",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r7",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r3",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r3",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r0",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r0",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r1",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r1",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r1",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r1",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-05-1-r1",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r1",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r7",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r7",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r0",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r0",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r6",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r6",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r7",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r7",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r3",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r3",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r7",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r7",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r0",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r0",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r1",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r1",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r3",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r3",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r7",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r7",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r5",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r5",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r5",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r5",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-06-2-r1",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r1",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r3",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r3",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r1",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r1",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r1",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-06-1-r1",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r5",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r5",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r0",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r0",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r4",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r4",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r4",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r4",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r3",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r3",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r0",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r0",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r0",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r0",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r4",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r4",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r4",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r4",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r3",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r3",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r5",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r5",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r7",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-2-r7",
+    "caseId": "library-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r2",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r2",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r3",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r3",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r0",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r0",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r1",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r1",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r3",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r3",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r1",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r1",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r2",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r2",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r0",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-2-r0",
+    "caseId": "qingye-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r6",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r6",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "planEntropy": 1.5
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r2",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r2",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r2",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r2",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r2",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r2",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r6",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r6",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r6",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r6",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r3",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r3",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-1-r0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r2",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r2",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r1",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r1",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-1-r0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r4",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-1-r4",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r7",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r7",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r5",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r5",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r6",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r6",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r1",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r1",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r1",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r1",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r5",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r5",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r2",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-02-1-r2",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r6",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r6",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r4",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r4",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r1",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r1",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r6",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      true,
+      false,
+      false,
+      true
+    ],
+    "planEntropy": 1.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r6",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r3",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r3",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r4",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r4",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r2",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r2",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r5",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r5",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r6",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-1-r6",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r2",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-1-r2",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r5",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-2-r5",
+    "caseId": "library-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r1",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-2-r1",
+    "caseId": "qingye-R3-formal-06-2",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-02-2-r6",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r6",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r2",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-05-2-r2",
+    "caseId": "library-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r1",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-1-r1",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r1",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r1",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r5",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-01-2-r5",
+    "caseId": "library-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r4",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-01-2-r4",
+    "caseId": "qingye-R3-formal-01-2",
+    "family": "nested_negation",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r6",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r6",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r1",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-06-1-r1",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r0",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-2-r0",
+    "caseId": "qingye-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r4",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r4",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r2",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r2",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r2",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-04-1-r2",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      true,
+      false,
+      true,
+      true
+    ],
+    "planEntropy": 0.8112781244591328
+  },
+  {
+    "block": "library-R3-formal-04-2-r6",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-04-2-r6",
+    "caseId": "library-R3-formal-04-2",
+    "family": "cancel_retained",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r0",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r0",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r5",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-1-r5",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r4",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-03-1-r4",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r5",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r5",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r2",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-03-2-r2",
+    "caseId": "qingye-R3-formal-03-2",
+    "family": "conditional_branch",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r4",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "qingye-R3-formal-05-2-r4",
+    "caseId": "qingye-R3-formal-05-2",
+    "family": "long_business_list",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r2",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "a",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-06-1-r2",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "model": "b",
+    "errorBits": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r0",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "a",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  },
+  {
+    "block": "library-R3-formal-02-2-r0",
+    "caseId": "library-R3-formal-02-2",
+    "family": "reference_binding",
+    "model": "b",
+    "errorBits": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "planEntropy": -0.0
+  }
+]
