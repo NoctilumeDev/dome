@@ -1,0 +1,520 @@
+[
+  {
+    "callId": "qingye-02-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-02-1-r0/p/b/1",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-02-1-r0/p/b/2",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-02-1-r0/p/b/3",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-02-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-02-1-r0/p/a/1",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-02-1-r0/p/a/2",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-02-1-r0/p/a/3",
+    "system": "qingye",
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"投影仪\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/a/1",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/a/2",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/a/3",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/b/1",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/b/2",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-08-1-r0/p/b/3",
+    "system": "qingye",
+    "question": "请只看我尚未归还的相机借用记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/b/0",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/b/1",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/b/2",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/b/3",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/a/0",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/a/1",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/a/2",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-06-1-r0/p/a/3",
+    "system": "library",
+    "question": "请只查我今天借阅的图书记录",
+    "rawContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/b/0",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":true,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/b/1",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":true,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/b/2",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"unreturnedOnly\":true,\"availableOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/b/3",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"unreturnedOnly\":true,\"availableOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/a/0",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":true,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/a/1",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":true,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/a/2",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":true,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-08-1-r0/p/a/3",
+    "system": "library",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":true,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/b/0",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/b/1",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/b/2",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/b/3",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/a/0",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/a/1",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/a/2",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-01-1-r0/p/a/3",
+    "system": "library",
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/a/0",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/a/1",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/a/2",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/a/3",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/b/0",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/b/1",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/b/2",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "library-02-1-r0/p/b/3",
+    "system": "library",
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/b/1",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/b/2",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/b/3",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/a/1",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/a/2",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-01-1-r0/p/a/3",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/a/0",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/a/1",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/a/2",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/a/3",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/b/0",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"TODAY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/b/1",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"TODAY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/b/2",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"TODAY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "qingye-06-1-r0/p/b/3",
+    "system": "qingye",
+    "question": "请只查我今天借用的器材记录",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"TODAY\",\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/positive",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/foreign-user",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/missing-field",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\"}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/transport",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/library/positive",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/foreign-user",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/missing-field",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/transport",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/qingye/omitted-private-filter",
+    "system": "qingye",
+    "question": "请只查我今天借的相机",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_LOANS\", \"entity\": null, \"category\": null, \"timeOption\": \"ANY\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/omitted-private-filter",
+    "system": "library",
+    "question": "请只查我今天借的图书",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_BORROWS\", \"title\": null, \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  }
+]

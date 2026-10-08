@@ -1,0 +1,3 @@
+﻿provider,attempts,http200,estimatedCostCny,unknownUsage,authorizedCeilingCny,actualDebit
+deepseek,1296,1296,2.716516,0,20,NOT_VERIFIED
+qwen,1296,1295,0.99963,1,20,NOT_VERIFIED

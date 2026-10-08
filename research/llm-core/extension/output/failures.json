@@ -1,0 +1,328 @@
+[
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "library-06-1",
+    "group": "A:b",
+    "question": "请只查我今天借阅的图书记录",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "library-09-2",
+    "group": "A:b",
+    "question": "帮我查那个图书的位置，没有说是哪一本",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/AMBIGUOUS\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-05-2",
+    "group": "A:b",
+    "question": "相机库存与我报名了什么都查一下",
+    "actualStatus": "QUERY",
+    "wrongAutomatic": true,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"EQUIPMENT\",\"entity\":\"相机\",\"category\":null,\"timeOption\":\"CURRENT\",\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "library-06-2",
+    "group": "A:b",
+    "question": "仅看昨天我的借阅记录，不要全部历史",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-06-1",
+    "group": "A:a",
+    "question": "请只查我今天借用的器材记录",
+    "actualStatus": "CONFIRM_SCOPE",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-06-1",
+    "group": "A:b",
+    "question": "请只查我今天借用的器材记录",
+    "actualStatus": "CLARIFY",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"TODAY\",\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "library-05-1",
+    "group": "A:b",
+    "question": "请同时查《三体》的位置和我的借阅，两项都需要",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"CLARIFY/MULTIPLE_ACTIONS\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"MULTIPLE_ACTIONS\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-08-1",
+    "group": "A:a",
+    "question": "请只看我尚未归还的相机借用记录",
+    "actualStatus": "CONFIRM_SCOPE",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-08-1",
+    "group": "A:b",
+    "question": "请只看我尚未归还的相机借用记录",
+    "actualStatus": "CONFIRM_SCOPE",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness",
+    "caseId": "library-H03-1",
+    "group": "A:b",
+    "question": "先查询《三体》的位置；如果找不到，再查询《Java入门》的位置，需要按这个条件完成两步。",
+    "actualStatus": "QUERY",
+    "wrongAutomatic": true,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness",
+    "caseId": "library-H04-2",
+    "group": "A:a",
+    "question": "三体|历史背景；Java入门|本次唯一请求：馆藏位置。",
+    "actualStatus": "CLARIFY",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"CLARIFY\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"MULTIPLE_ACTIONS\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness",
+    "caseId": "library-H04-2",
+    "group": "A:b",
+    "question": "三体|历史背景；Java入门|本次唯一请求：馆藏位置。",
+    "actualStatus": "QUERY",
+    "wrongAutomatic": true,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-09-2",
+    "group": "A:a",
+    "question": "帮我看看那个设备，没有具体名称",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MISSING_INFO\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-09-2",
+    "group": "A:b",
+    "question": "帮我看看那个设备，没有具体名称",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MISSING_INFO\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "library-05-2",
+    "group": "A:b",
+    "question": "馆藏位置和我个人反馈都查一下",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/MULTIPLE_ACTIONS\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness",
+    "caseId": "library-H03-2",
+    "group": "A:b",
+    "question": "如果找不到《三体》就查《Java入门》的位置，找得到就查我的借阅；帮我按这个分支办理查询。",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/AMBIGUOUS\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "library-09-1",
+    "group": "A:b",
+    "question": "那本书放哪里，我没有提供书名",
+    "actualStatus": "REJECT",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"FIND_LOCATION\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/AMBIGUOUS\"}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-08-2",
+    "group": "A:a",
+    "question": "我的相机借用，仅查询未归还的",
+    "actualStatus": "CONFIRM_SCOPE",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  },
+  {
+    "stratum": "same frozen core question, later window",
+    "caseId": "qingye-08-2",
+    "group": "A:b",
+    "question": "我的相机借用，仅查询未归还的",
+    "actualStatus": "CONFIRM_SCOPE",
+    "wrongAutomatic": false,
+    "raw": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    }
+  }
+]

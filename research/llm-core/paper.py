@@ -1,0 +1,303 @@
+"""Generate the paper from the final descriptive metrics, then render for QA."""
+import html,json,re
+from pathlib import Path
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Table,TableStyle,PageBreak,KeepTogether
+from reportlab.graphics.shapes import Drawing,String,Rect,Line
+from reportlab.graphics import renderSVG
+ROOT=Path(__file__).resolve().parent;OUT=ROOT/'output';PDF=OUT/'pdf'
+FONT='CN';pdfmetrics.registerFont(TTFont(FONT,'C:/Windows/Fonts/msyh.ttc',subfontIndex=0))
+INK=colors.HexColor('#203741');ACCENT=colors.HexColor('#456f70');LIGHT=colors.HexColor('#e7eeeb')
+
+def mdtable(rows,fields):
+ labels={'system':'系统','provider':'模型','n':'数量','httpSuccess':'HTTP成功','protocolValid':'协议合格','semanticCorrect':'语义匹配','primaryN':'主提案数','primarySemanticCorrect':'主提案匹配','entryGateRejected':'入口拦截','group':'组','handlingCorrect':'处置符合','expectedQueries':'应可查询','queryHandlingCorrect':'查询或范围正确','publicCompletedCorrect':'公开正确执行','pendingScope':'待确认','wrongAutomaticExecution':'错误自动执行','policyAbstentions':'策略弃权','reviewer':'审查者','proposer':'提案者','correctCandidates':'正确候选','falseKill':'明确误杀','unavailableCorrect':'正确候选审查不可用','incorrectCandidates':'错误候选','missedError':'漏判接受','invalidOrUnavailable':'审查不可用','attempts':'请求数','http200':'HTTP200','estimatedCostCny':'估算元','unknownUsage':'费用未知','authorizedCeilingCny':'上限元','actualDebit':'实际扣费'}
+ labels.update(nativeQualifiedCorrect='合格且正确',qualifiedPlanNonAccept='合格正确未接受',queryFalseKill='正确查询被阻断')
+ return '\n'.join(['|'+'|'.join(labels.get(f,f) for f in fields)+'|','|'+'|'.join('---' for _ in fields)+'|']+['|'+'|'.join(str(r[k]) for k in fields)+'|' for r in rows])
+
+def make_figure(groups):
+ d=Drawing(470,305);d.add(String(0,286,'处置符合合同与正确公开执行（正式 144 配对块）',fontName=FONT,fontSize=11,fillColor=INK))
+ selected=[g for g in groups if g['group'] in ('A:a','A:b','B','C:a','C:b','D','E:a','E:b','F2:a','F2:b')]
+ x0=65;width=290
+ for j,g in enumerate(selected):
+  y=260-j*23
+  d.add(String(0,y+1,g['group'],fontName=FONT,fontSize=8))
+  d.add(Rect(x0,y,width*g['handlingCorrect']/144,7,fillColor=ACCENT,strokeColor=None))
+  d.add(Rect(x0,y-8,width*g['publicCompletedCorrect']/144,7,fillColor=colors.HexColor('#ab684e'),strokeColor=None))
+  d.add(String(x0+width+8,y-2,f"{g['handlingCorrect']} / {g['publicCompletedCorrect']}",fontName=FONT,fontSize=8))
+ for x in (0,36,72,108,144):
+  xx=x0+width*x/144;d.add(Line(xx,22,xx,271,strokeColor=colors.HexColor('#dce4e1'),strokeWidth=.4));d.add(String(xx-5,10,str(x),fontName=FONT,fontSize=7))
+ d.add(String(0,-4,'上条：处置符合；下条：公开正确执行。弃权和待确认不是查询完成。',fontName=FONT,fontSize=8,fillColor=INK))
+ return d
+
+def extended_sections():
+ m=json.loads((ROOT/'extension/output/metrics.json').read_text(encoding='utf-8'))
+ rows=[g for g in m['groups'] if g['system']=='both']
+ strata=list(m['strata'])
+ fields=['group','n','queryHandlingCorrect','publicCompletedCorrect','pendingScope','wrongAutomaticExecution','policyAbstentions']
+ later=[g for g in rows if g['stratum']==strata[0]]
+ new=[g for g in rows if g['stratum']==strata[1]]
+ cost=sum(c['estimatedCostCny'] for c in m['cumulativeCosts'])
+ return f'''## 5.5 后窗口与前瞻组合题：分层补充
+
+核心结果冻结后另建扩展合同，保持相同源码、提示、协议、Clock、H2 夹具与 v2 评分器。原四十八题各一次后窗口重测，另有十六题、四种语法组合：引用旧请求、序号指代、条件分支、结构化列表。扩展前冻结原文和标签；标签由同一执行者制定，模型不可见标签，不能称独立盲评。总计六十四块、768 次调用，全部 HTTP 200。
+
+表四仅为原四十八题后窗口，应可查询分母为 34。它与核心三次重复作逐题描述性配对，原表见 paired-window.csv；时间和重平衡顺序共同改变，不能把差异归于纯时间或权重变化。
+
+{mdtable(later,fields)}
+
+表五仅为十六道前瞻组合题，应可查询分母为 12。它与旧题难度不同，不能与核心 144 块混成一个总准确率。
+
+{mdtable(new,fields)}
+
+这两层中 B 与 D 公开正确执行分别同为 26 和 11，错误自动执行均为零。D 再增加的弃权均未增加正确查询；这延续核心观察，但不提升为长期或独立人群结论。
+
+新题出现两个新的千问公开错误坐标：library-H03-1 把“先查三体，找不到再查 Java入门”缩成一次 FIND_LOCATION/三体；library-H04-2 把“三体是背景，Java入门才是本次唯一请求”也查成三体。它们属于条件遗漏和目标误读，不是越权。H04-2 中 DeepSeek 同样未成功，却给 CLARIFY/MULTIPLE_ACTIONS；B 因分歧弃权，挡错但没有恢复应有的 Java入门查询。这说明安全收束与任务可用性仍需分账。
+
+后窗口 DeepSeek 的 F2/F3/F4 比主提案少一次正确公开执行，多次采样不是单调改进。原个人条件遗漏仍可进入 CONFIRM_SCOPE；不存在确认前个人读取，不代表遗漏消失。两个后窗口阶段都没有继续修改业务代码或根据新失败调整旧题答案。
+
+## 5.6 历史保留题转移回放
+
+历史青野 133 题和图书馆 65 题的两家保留提案，共 396 个题/厂商对，另加十个原生负控制，在当前固定 actor、目录、Clock 和 H2 中回放，共 406 条见证。相关历史产品的 src/main 与当前冻结业务树相同；所有快照保持不变。这个结果证明这些保留计划经过当前原生边界的实际处置，不是历史完整环境复刻，也不重新评分其语义或混入本次模型调用分母。
+
+历史报告还有 X01/X02 两个补充题，但原冻结 133 题表没有保存其原文。四个厂商/题坐标明确保留为 NOT_PROVEN_INPUT，不从报告摘要猜题补齐。它们若要重放，需要恢复原输入及原合同。缺口不会因为其余 396 对已执行而消失。
+
+## 5.7 控制总账与全轮费用
+
+八个控制族以二十一行总账管理：单模型、调用预算、一致性、审查、协议、本地执行、业务系统、泛化与时间。声明范围内的批次已执行或归类；PASS 只表示该项核对完成。独立盲标、真人识别范围和跨日稳定仍未做；同金额/同 token 的收益不在本文主张内；纯业务域效应仍与协议/能力/输出长度混杂。CONTROL_LEDGER.md 反向列出每个结论依赖，不能因表已填完就宣称全部结论合格。
+
+先导 96 + 核心 1,728 + 扩展 768，共 2,592 个请求身份，2,591 次 HTTP 200、一次中断未知。累计保守估算约 ¥{cost:.4f}，未知调用另留 ¥0.01 余量，实际扣费未验证。
+
+{mdtable(m['cumulativeCosts'],['provider','attempts','http200','estimatedCostCny','unknownUsage','authorizedCeilingCny','actualDebit'])}
+
+'''
+
+def main():
+ m=json.loads((OUT/'metrics.json').read_text(encoding='utf-8'));groups=[g for g in m['groups'] if g['system']=='both'];G={g['group']:g for g in groups}
+ cost=sum(c['estimatedCostCny'] for c in m['costs']);unknown=sum(c['unknownUsage'] for c in m['costs'])
+ reviews=m['reviews'];nonaccept=sum(r['qualifiedPlanNonAccept'] for r in reviews);kills=sum(r['queryFalseKill'] for r in reviews);unavailable=sum(r['invalidOrUnavailable'] for r in reviews)
+ fields=['group','handlingCorrect','expectedQueries','queryHandlingCorrect','publicCompletedCorrect','pendingScope','wrongAutomaticExecution','policyAbstentions']
+ modelrows=m['models'];examples=json.loads((OUT/'examples.json').read_text(encoding='utf-8'))
+ text=f'''# 开放语言与有限执行权：两个校园只读助手的受控消融研究
+
+版本：核心实验 v1，测量修订 v2，补充控制批次 v1；2026-10-08。研究记录稿，未投稿，作者署名待确定。
+
+## 摘要
+
+自然语言入口同时面对语义误解、协议失配和执行权限约束。把“没有越权”当成“任务答对”，或把确定性关键词规则当成永远正确的语义兜底，均可能掩盖失效。本研究在青野和图书馆两个既有校园系统上冻结业务源码、题表、原生协议和数据库夹具，比较单模型提案、双提案一致性、单向交叉审查、双向审查、自审，以及相同调用数的独立重规划。正式实验覆盖十二个已知题族、四十八道执行者指定标签的题目、三次重复，共一百四十四个配对块；记录 1,728 个请求身份，另有 96 次先导调用。包含 {unknown} 次中断后结果与费用未知，未重发或删去分母。
+
+实验区分模型计划、协议资格、原生处置、公开执行和个人范围待确认。单模型 A:a/A:b 的合同处置符合数分别为 {G['A:a']['handlingCorrect']}/144 和 {G['A:b']['handlingCorrect']}/144；双提案一致性 B 为 {G['B']['handlingCorrect']}/144，双向审查 D 为 {G['D']['handlingCorrect']}/144。该口径含期望澄清时的离线弃权，不能解释成完成查询。各组公开正确执行分别见表二。范围确认前未读取开放个人记录，固定夹具的事实表保持不变；这不是生产环境或所有语言上的安全证明。计费保守估算合计约 ¥{cost:.4f}，实际扣费未核对。结果支持将语义解释、有限执行权和用户可见范围分开评估；不支持直接把增加审查次数视为可靠性提升。
+
+关键词：结构化计划；有限能力；语义污染；模型审查；范围确认；弃权；消融实验。
+
+## 1 问题与工程背景
+
+用户可能在一句话中同时描述历史动作、否定一个对象、撤销前一个请求，最后提出唯一业务动作。例如“我昨天借过相机，今天只查询投影仪的当前库存”。这些表达在业务域内合法，难点在当前请求的识别，而不是输入有没有业务关键词。
+
+两个项目的旧本地规则曾把已撤销的个人查询当成当前请求。青野后来的请求切分器又把时间修饰词当成边界；图书馆旧版本把“我的借阅记录先不查，只查《三体》放在哪里”解释成个人借阅。既有修复记录保留了这些反例。本轮不重跑旧源码，不把历史数据与新实验合并作前后准确率比较。它们只解释为什么当前系统撤掉通用本地 NLP 兜底。
+
+当前合同把职责分开：模型提出有限计划；本地决定计划是否有资格执行；用户通过可见理解和范围确认纠正自己的意图。老师、管理员的自然语言助手仍只查公开信息和本人记录，工作台保留结构化管理权限。模型协议不能承载用户 ID、SQL、任意返回字段或多动作编排。
+
+研究问题有三项：在完全相同的原始提案上，审查相对一致性筛选增加了什么；相同调用数下，审查相对独立重规划的拦截和可用性如何变化；有限能力与范围确认能证明什么，仍不能证明什么。本文不讨论自动审批、交易或开放工具代理。
+
+## 2 系统边界与评价单位
+
+产品源码绑定 dome 主线 dbb32160a811fd06c826a8d9eafbc660a0548219，两个系统的 src/main 未改变。青野协议有六字段；图书馆有十三字段，额外条件包括书名、作者、出版社、未归还、到期天数与 limit。二者分别校验，不能压缩成同一小协议后比较。
+
+模型完整响应经严格解析和原生能力策略检查后才进入候选池。缺字段、类型错、重复字段和不支持的条件不会自动修补。规范化只消除 JSON 字段顺序和空白；对象、时间、null、筛选、limit 和 reason 差异均保留。完整字段相同是保守结构一致，不是一般查询逻辑等价证明。不同的合理澄清 reason 因而也可能不能达成结构一致。
+
+公开查询可按合格计划执行并显示实际理解。开放个人记录先呈现实际范围，未确认不读记录；确认执行同一份计划，不重新调用模型。本文另外模拟“接受展示范围”来验证机制，但没有真人纠错实验。模型遗漏条件时，确认让遗漏可见，不保证用户一定看懂。
+
+第一道门仍在原生链路前置执行。本轮核心题表以业务域内输入为目标，但实际发现青野“那个设备”题被原生第一门拒绝。为了保留冻结分母，该题不删除；供应商组件响应可用于诊断，最终策略不能越过原生第一门。这使实验同时报告入口误拒，不能声称全部题都自然通过第一门。
+
+## 3 受控设计
+
+十二个题族为基准、历史、否定、改口、多请求、不支持日期、个人范围、业务能力差异、缺失指代、寒暄、时间选项及同域词汇污染。每族每系统两变体；每题重复三次。标签由执行者按冻结合同写定，属于已知机制评估，不是独立人工标注、真实用户样本或未知题族盲测。
+
+供应商为 DeepSeek 的 deepseek-flash 和 Qwen 的 qwen-plus。两家使用同一系统协议及公开合成目录，temperature=0，禁用思考，无自动重试，完整响应期限 5 秒；提案输出上限按产品分别为 300/500 token，审查为 250。提示附加的合成目录用于组件实验，不能冒充生产实时目录接入。保存请求模型名、响应模型名、最终内容、usage、耗时和请求身份；不保存内部思维链或凭据。模型别名不是冻结权重，供应商内部修订仍未知。
+
+每块先保存两家各四次独立提案，再保存四次审查：A 自审、B 自审、A 审 B、B 审 A。问题块、模型顺序及审查顺序由种子 20261008 打乱，串行采集。审核者只看用户输入、该系统协议、公开目录和单个提案，不看品牌、标签、另一提案或另一审查意见。三次重复不会把同题变成三个独立用户；temperature=0 也不保证远端输出严格确定。
+
+| 组 | 规则 | 逻辑调用数 |
+|---|---|---|
+| A:a / A:b | 单个原始提案，经原生本地边界 | 1 |
+| B | 同一对原始提案完整合格且结构一致 | 2 |
+| C:a / C:b | B，加另一家对主提案的独立审查通过 | 3 |
+| D | B，加两次交叉审查均通过 | 4 |
+| E:a / E:b | 主提案加同模型新调用自审通过 | 2 |
+| F2 / F3 / F4 | 同厂商 2/3/4 次独立提案，严格多数；平票弃权 | 2/3/4 |
+
+B/C/D 复用同一 PA/PB；F 各预算共享同一厂商的独立采样池。这里匹配的是调用数，不是 token 数、金额或计算量。审查只有否决权，不产生替代计划；C/D 的查询候选集合在设计上不能超过 B。发现错误后弃权不等于恢复了正确查询。研究比较的是有限的审查门控，不是多轮辩论或自我修订。
+
+## 4 原生回放与测量纪律
+
+真实供应商调用与原生执行分离：保存真实最终计划后，用原生 Java 解析器、能力校验、固定查询与同计划确认进行 H2 回放。青野使用九表，图书馆使用六表；固定上海时钟为 2026-10-08 01:00，对象数量与归属可区分。每次执行前后比较事实快照，并置入另一用户的私人 canary。青野记录实际 SQL 调用及写方法尝试；图书馆记录确认前仓储查询次数并检查输出与快照。这不是任意信息泄漏的完整动态证明。
+
+独立负控制包含正常查询、夹带 userId、缺字段、供应商不可用和私人筛选遗漏。前四类分别见证正常路径与拒绝/降级；私人筛选遗漏必须进入范围确认且确认前零私人查询。个人确认的模拟接受单独留证，不混入真人完成率。
+
+首次采集因非交互凭据输入而失败，未调用 API。正式采集又发现评分器把“正确澄清提案 + 原生 REJECT”算成正确处置，归类为工具错误。采集停止，保存 v1 工具、反例和冻结坐标；修订 v2 后按原条件及负控制重放。711 次已返回响应不重发；一条已发出但中断的请求标记 UNKNOWN_INTERRUPTED。未知不被编译成失败、免费或新的成功样本。恢复保持原随机调度，题表、提示和业务源码不变。结果仅采用 v2 评分，保留旧失败，不继承旧评分资格。
+
+评价分层为：HTTP 完整性；完整协议资格；冻结合同下的计划匹配；实际原生处置；公开正确计划执行；私人范围待确认；模拟同范围完成。合同处置符合对期望 QUERY 要求正确计划和原生 QUERY/CONFIRM_SCOPE；对期望 CLARIFY 要求正确原生澄清，或离线策略弃权。原生拒绝不被正确提案洗成成功。该指标含保守弃权，必须与查询覆盖一起读。
+
+## 5 结果
+
+### 5.1 模型、协议与原生资格
+
+表一分别保留全部独立提案和每块第一个主提案。n=288 是每系统每厂商的全部四次采样池，不是 288 道不同题；primaryN=72 是该系统主提案。协议、语义与原生资格计数不能互换。
+
+{mdtable(modelrows,['system','provider','n','httpSuccess','protocolValid','semanticCorrect','primaryN','primarySemanticCorrect','entryGateRejected'])}
+
+格式不合格不等于完全没有理解，语义核心看似正确也不取得执行资格。本文完整计划评分对缺字段直接不合格，不通过自动补字段取得语义满分。核心有一条完整 HTTP 响应协议不合格、但显式非空目标与标签相符，另列 protocolInvalidTargetMatch；这只说明声明的部分目标匹配，不证明条件完整或原意完全正确。历史图书馆实验的 12/41 Qwen 格式失败仅作背景，不能继承到本轮不同题表和时段。
+
+### 5.2 决策覆盖、弃权与执行
+
+表二每组分母为 144 配对块。expectedQueries 表示其中应当可查询的块；queryHandlingCorrect 包含正确的待范围确认。publicCompletedCorrect 是正确公开计划在固定原生链路中的执行数，不是完整真人任务效用，也不证明任意数据库状态下返回对象绝对正确。wrongAutomaticExecution 是该组出现错误公开计划执行的计数；不同组共享请求，不能跨组累加成独立事故。
+
+{mdtable(groups,fields)}
+
+单模型主提案中出现错误公开计划自动执行的独立见证数为 {m['uniqueWrongPublicPrimary']}，均是千问将“相机库存与我报名了什么都查一下”缩为相机公开查询的三次重复；这是一道题的重复失效，不是三种新失败机制。观察是否减少此数时，必须同时看公开正确执行的损失、范围待确认和弃权增加。即使 D 更少出错，也不能只据此判定 D 更好；全拒绝策略也可以没有错误自动执行。
+
+在同一 PA/PB 上，B 与 D 的公开正确执行均为 76，正确查询或范围提议均为 99/102，错误自动执行均为零。D 额外六次弃权发生在原本正确的澄清计划上，未增加该样本的查询收益；逻辑平均成本从 ¥0.0026983 增至 ¥0.0058918，串行逻辑中位耗时从 2,164.0 ms 增至 4,118.0 ms。这里没有证据表明双向审查相对一致性筛选提高了最终查询质量，但不能推论所有任务上审查无用。
+
+同厂商多数投票 F2/F3/F4:b 都保留上述三次错误公开查询，说明重复调用没有消除该题上的相关错误。E:b 在这组输入上挡住错误自动执行，但另一次正确 QUERY 被自审澄清，且其正确查询/范围覆盖为 100/102；不能把拦错直接归为普遍胜出。
+
+B 仍有六次错误个人范围待确认，均来自两家同时把“相机且未归还”的窄需求提议成全部本人借用记录。两模型一致并不证明条件完整。这六次没有在确认前读取个人记录；另行模拟接受展示范围也不修复语义错误，不能被计作真实用户纠错成功。
+
+### 5.3 审查误杀与不可用
+
+表三按 proposer/reviewer 区分方向。correctCandidates 是冻结标签下的语义计划匹配；qualifiedPlanNonAccept 是进一步具有原生资格但没有获得 ACCEPT 的计划，含正确澄清计划。审查提示本身允许对多请求返回 CLARIFY，因此不能将此数全部归为误杀。queryFalseKill 只计算正确、合格 QUERY 被阻断。格式或能力不合格的候选被拒绝也不属于这种误杀。invalidOrUnavailable 是审查格式或传输不可用。missedError 指不匹配冻结合同的提案被审查 ACCEPT，但不表示一定执行。v2 原 falseKill 字段保留供追溯，派生结果按上述更准确名称报告，不更改原请求或策略结果。
+
+{mdtable(reviews,['reviewer','proposer','n','correctCandidates','nativeQualifiedCorrect','qualifiedPlanNonAccept','queryFalseKill','missedError'])}
+
+四个方向共观察 {nonaccept} 次正确合格计划未获 ACCEPT，其中 {kills} 次涉及正确 QUERY；其余是澄清计划被再次判澄清，不能称查询误杀。另有 {unavailable} 次审查格式/服务不可用。审查协议同时表达候选判断和原请求是否需澄清，这是解释门控计数时必须保留的歧义。仅报告拦错会遗漏代价；但把正常澄清门控夸大为误杀，同样不成立。本轮审核者不改计划，故无法验证重新规划后的修复成功。
+
+### 5.4 费用、延迟与探索性区间
+
+{mdtable(m['costs'],['provider','attempts','http200','estimatedCostCny','unknownUsage','authorizedCeilingCny','actualDebit'])}
+
+此表仅包含先导与核心批次。费用按官方峰值输入缓存未命中单价保守估算，正式采集采用 ¥10 总上限，用户授权硬上限为每家 ¥20。未知调用另留 ¥0.01 预算余量；实际扣费未读取。单次 HTTP 中位与 p95 是实测，包含一般失败；未知中断不虚构时长。各组串行求和的逻辑时延和成本在 group-table.csv 中，因复用原始调用不等于线上部署时延，组费用不能再次合计。
+
+区间按十二个题族整体重采样，保留两系统、两变体和重复，4,000 次探索性 bootstrap。配对差异及区间在 evaluation-v2/report.json；没有独立用户总体、未作确认性假设检验，也未按多重比较作显著性声明。因此不使用“显著优于”或面向所有中文请求的概率保证。
+
+## 6 代表性反例
+
+下列反例由公开脚本按预定义类别取首个见证，使用真实记录身份，不伪造旧版页面。记录查看器截图只作旁证，原始 JSONL 和原生见证才是主体。
+'''
+ text=text.replace('## 6 代表性反例',extended_sections()+'## 6 代表性反例')
+ text=text.replace('计费保守估算合计约', '先导与核心批次计费保守估算合计约')
+ text=text.replace('关键词：结构化计划', '另完成原四十八题后窗口与十六道前瞻组合题的 768 次扩展调用，以及 396 个历史题/厂商对的原生转移回放，结果分层报告，不混入核心分母。独立盲标、真人识别收益和跨日稳定仍未证明。\n\n关键词：结构化计划')
+ for i,e in enumerate(examples,1):
+  text+=f"\n### 6.{i} {e['label']}\n\n输入：{e['question']}。记录：{e['callId']}。原生状态：{e['native']['response']['status']}。\n\n模型最终内容：\n\n```json\n{e['modelContent']}\n```\n"
+  if 'review' in e:
+   text+=f"\n审查最终内容：\n\n```json\n{e['review']}\n```\n"
+   text+='\n此例是 MY_DUE_SOON/3 天；原生 BookQueryRepository 的这个 intent 已固定约束 br.status=0 及到期日期范围，BookPlanPolicy 不要求该 intent 额外带 unreturnedOnly。审查者将 MY_BORROWS 的筛选要求错误套到 MY_DUE_SOON，要求补 unreturnedOnly=true，反而会产生该 intent 不支持的参数。故这里有源码与原生见证支持“正确查询被阻断”，而非只凭人工印象给审查定罪。\n'
+ text+='''
+## 7 讨论：可以从结果提出什么
+
+有限能力校验回答“该计划能否做”，不回答“它一定是用户原意吗”。模型计划可能语义错却在公开只读能力内合法；本地入口也可能错误拒绝。把任一层视为天然正确，会把错误从一个解释器转移到另一个解释器。
+
+双提案一致性提供分歧信号，但协议差异、reason 和 limit 差异也会造成不一致。审查新增信息必须在同一对提案上相对 B 衡量，而不能用新采样后的双模型结果与旧单模型结果混比。本研究只验证保守结构一致，未验证更宽的语义等价器。
+
+范围确认的价值在把查询集合扩大暴露给用户：它阻止未确认就读私人记录，不证明所有用户会拒绝误解。模拟确认后的正确执行不能当成人类成功率，也不能掩盖个人错误计划仍然待确认。正确的交互需要展示条件、未使用的筛选与后续纠正入口。
+
+后续可以提出三个假设：把审查降为高风险差异探测器而不是全局否决者；把双提案分歧用于澄清而非多轮辩论；对个人集合持续要求范围可见。这些假设必须在新冻结题表、独立标签和未用于选择规则的数据上检验。本轮不把后验选出的策略包装成已证实新解法。
+
+## 8 相关工作与定位
+
+CheckList [1] 以语言能力与测试类型组织行为测试，启发本文按失败机制构造题族；本文规模更小且题目由执行者指定，不复刻其人类研究。Text-to-SQL 的测试套件评价 [2] 强调用多个数据库状态检验语义；本文只在有区分度的固定 H2 夹具回放，不能称同等强度的查询语义证明。
+
+Self-Refine [3] 通过模型自反馈与修订改善输出；本文 E 只做一次门控自审，禁止修订，因而不是对其迭代方法的复现。多代理辩论 [4] 与 Free-MAD [5] 研究交互与最终选择；本文让审查独立看单个提案，避免互相意见影响，不测试多轮辩论。其结果不能被直接移植为本文的收益。
+
+ToolGate [6] 把工具调用和状态更新置于前置/后置合同验证；ToolSafe [7] 在动作执行前进行步骤级安全检测。它们与有限执行权相关，但本文没有通用工具状态空间、训练守卫模型或多步代理，重点是现有中文只读产品的语义误解、协议资格和范围确认。
+
+Structured Uncertainty [8] 在工具参数空间区分规格不确定与模型不确定；本文的未知对象与范围展示是工程性有限实现，没有其信息价值优化或动态多轮标注。认知强制研究 [9] 使用真人实验研究 AI 依赖与交互代价，提示确认机制的行为收益需要另外评估。AgentDojo [10] 将安全和正常任务放在同一环境观察，本文同样分离安全与可用性，但不宣称覆盖其代理任务和提示注入威胁。
+
+本文的贡献是一个可复算、保留失败坐标的有界工程案例和测量分层，而非首次提出有限工具校验、确认交互或模型互审。相关工作采用官方摘要和元数据定位；未做系统性全文综述，也不宣称穷尽该领域。
+
+## 9 局限性
+
+两个系统来自同一开发者和同一仓库，不能称两个独立组织的外部复现。核心表只有四十八道已知机制输入、三个重复；十六道扩展题仍由同一执行者在核心后设计，不能消除选择偏差。部分题族正确答案只有 CLARIFY 动作而未核验 reason 的细粒度语义。模型格式失败可能受十三字段长度与输出上限影响，本文没有预算长度消融，不能归因于厂商能力本身。
+
+组件调用发生在同一天的相邻窗口，源时钟固定而供应商时钟不固定；模型别名和底层权重不可冻结，后窗口不证明跨日稳定。审查提示、保守结构一致与严格多数只是一个明确策略族，不覆盖最优策略。中断的一条未知请求影响其配对预算组，保留为不可用而不做插补；少量个案不能稳定估计长尾概率。
+
+原生 H2 回放不证明生产 MySQL、多节点、微信真机、外部身份撤销或容量。确认在产品中为单实例短期状态，既有会话/重放/到期测试是机制证据，没有真人读懂率。对公开正确执行的判断依赖计划匹配及固定链路资格，不是对所有返回字段的独立人工验真；由此不能宣称完整业务正确率。
+
+## 10 结论
+
+开放语言理解、协议服从、执行权限和用户意图确认是不同事实。相同原始提案上的一致性与审查消融，让额外模型的收益和误杀代价可以分别观察；相同调用数的独立重规划使“只是多调用几次”成为显式对照。审查没有修订权时，拦截不应被命名为恢复。
+
+这轮结果应当作为有边界的测量事实，而非模型排名或产品零错误证明。下一阶段只在新的独立数据和声明过的假设下扩展，不继续为旧题表优化中文规则。系统应允许模型出错，同时让执行权有限、查询范围可见、测量失败可追踪。
+
+## 参考文献
+
+[1] Ribeiro, M. T., Wu, T., Guestrin, C., Singh, S. 2020. Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. ACL, 4902-4912. https://aclanthology.org/2020.acl-main.442/
+
+[2] Zhong, R., Yu, T., Klein, D. 2020. Semantic Evaluation for Text-to-SQL with Distilled Test Suites. EMNLP, 396-411. https://aclanthology.org/2020.emnlp-main.29/
+
+[3] Madaan, A. et al. 2023. Self-Refine: Iterative Refinement with Self-Feedback. arXiv:2303.17651v2. https://arxiv.org/abs/2303.17651
+
+[4] Du, Y., Li, S., Torralba, A., Tenenbaum, J. B., Mordatch, I. 2023. Improving Factuality and Reasoning in Language Models through Multiagent Debate. arXiv:2305.14325. https://arxiv.org/abs/2305.14325
+
+[5] Cui, Y., Fu, H., Zhang, H., Wang, L., Zuo, C. 2026. Free-MAD: Consensus-Free Multi-Agent Debate. Findings ACL, 31977-31997. https://aclanthology.org/2026.findings-acl.1600/
+
+[6] Liu, Y. et al. 2026. ToolGate: Contract-Grounded and Verified Tool Execution for LLMs. Findings ACL, 9653-9684. https://aclanthology.org/2026.findings-acl.470/
+
+[7] Mou, Y. et al. 2026. ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback. Findings ACL, 37125-37153. https://aclanthology.org/2026.findings-acl.1850/
+
+[8] Suri, M. et al. 2026. Structured Uncertainty guided Clarification for LLM Agents. Findings ACL, 40811-40838. https://aclanthology.org/2026.findings-acl.2028/
+
+[9] Buçinca, Z., Malaya, M. B., Gajos, K. Z. 2021. To Trust or to Think: Cognitive Forcing Functions Can Reduce Overreliance on AI in AI-assisted Decision-making. DOI:10.1145/3449287. https://arxiv.org/abs/2102.09692
+
+[10] Debenedetti, E. et al. 2024. AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. arXiv:2406.13352v3. https://arxiv.org/abs/2406.13352
+
+## 附录：复核入口
+
+cases.json、plan.json、prompts/ 为原冻结输入；frozen-core.json 和 frozen-core-v2.json 分别绑定停止前和修订后工具。results/core/calls.jsonl 为请求/最终响应，request-journal.jsonl 为发出账本，blocks.jsonl 为配对块完成记录；native-v2/ 为实际原生结果与快照；evaluation-v2/ 为评分与题族区间；output/ 为逐题账本、汇总表、截图和论文。Git 删除记录无需另造永久清理清单。
+
+本轮产品源码未改。历史架构反例来自 qingye/docs/semantic-repair-20261008.md 与 coursework/library-management-system/docs/semantic-repair-20261008.md；历史数字不进入正式模型分母。extension/ 分开保存新题与后窗口；history/ 保留原输入来源、缺失坐标及转移见证；CURRENT.md 为唯一维护入口。研究目录通过 .gitattributes 保留证据字节，source-portability.json 另外绑定原 Git 源树的 LF 哈希，仅容许 checkout 的 CRLF/LF 差异，原始 Windows 字节哈希仍保留。复现需要 Python 标准库、JDK 17、Maven、原项目测试依赖；真实调用另需新凭据及新费用授权，旧响应的离线重评不需凭据。
+
+首次独立检出曾发现 Git 索引转换研究输入换行而击穿原冻结哈希，首败保留在 git-readback-first-failure.txt。修复保存原字节而非改旧哈希；保存资格须经新的独立检出通过，旧失败提交不升级。
+'''
+ OUT.mkdir(exist_ok=True);PDF.mkdir(exist_ok=True)
+ (OUT/'paper.md').write_text(text,encoding='utf-8')
+ styles={k:ParagraphStyle(k,fontName=FONT,fontSize=size,leading=leading,textColor=INK,spaceAfter=after,wordWrap='CJK') for k,size,leading,after in [('body',9.1,15,7),('title',22,30,16),('h2',13.5,21,11),('h3',10.5,18,8),('code',7.4,11,6),('cell',7,10,0)]}
+ for k in ('h2','h3'):styles[k].keepWithNext=True
+ def para(t,style='body'):
+  t=html.escape(t);t=re.sub(r'\*\*(.*?)\*\*',r'<b>\1</b>',t)
+  return Paragraph(t,styles[style])
+ story=[];ls=text.splitlines();i=0;code=False
+ while i<len(ls):
+  line=ls[i].strip()
+  if line.startswith('```'):
+   chunk=[];i+=1
+   while i<len(ls) and not ls[i].startswith('```'):chunk.append(ls[i]);i+=1
+   raw='\n'.join(chunk)
+   try:raw=json.dumps(json.loads(raw),ensure_ascii=False,indent=2)
+   except ValueError:pass
+   story.append(para(raw.replace('\n',' '),'code'))
+  elif line.startswith('|'):
+   rows=[]
+   while i<len(ls) and ls[i].strip().startswith('|'):
+    parts=ls[i].strip().strip('|').split('|')
+    if not all(re.fullmatch('[-: ]+',p) for p in parts):rows.append([para(p,'cell') for p in parts])
+    i+=1
+   i-=1;n=len(rows[0]);width=475
+   tbl=Table(rows,colWidths=[width/n]*n,repeatRows=1,hAlign='LEFT')
+   tbl.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),LIGHT),('GRID',(0,0),(-1,-1),.35,colors.HexColor('#cbd7d3')),('VALIGN',(0,0),(-1,-1),'TOP'),('TOPPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),6)]));story.extend([tbl,Spacer(1,11)])
+   if rows[0][0].text=='组' and n==8:story.extend([make_figure(groups),Spacer(1,16)])
+  elif line.startswith('# '):story.append(para(line[2:],'title'))
+  elif line.startswith('## '):story.append(para(line[3:],'h2'))
+  elif line.startswith('### '):story.append(para(line[4:],'h3'))
+  elif line:story.append(para(line))
+  i+=1
+ def decorate(canvas,doc):
+  canvas.setStrokeColor(colors.HexColor('#cbd7d3'));canvas.line(58,44,537,44)
+  canvas.setFont(FONT,7);canvas.setFillColor(ACCENT);canvas.drawString(58,30,'双系统有限能力实验 · 研究记录稿 · measurement-v2');canvas.drawRightString(537,30,str(doc.page))
+ doc=SimpleDocTemplate(str(PDF/'双系统有限能力实验论文.pdf'),pagesize=A4,rightMargin=58,leftMargin=58,topMargin=49,bottomMargin=57,title='开放语言与有限执行权',author='署名待确定')
+ doc.build(story,onFirstPage=decorate,onLaterPages=decorate)
+ renderSVG.drawToFile(make_figure(groups),str(OUT/'outcomes.svg'))
+ print('Paper MD and PDF generated from final metrics')
+if __name__=='__main__':main()

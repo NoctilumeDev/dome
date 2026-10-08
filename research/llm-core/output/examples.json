@@ -1,0 +1,302 @@
+[
+  {
+    "label": "原生第一门拒绝",
+    "callId": "qingye-09-2-r1/p/b/0",
+    "question": "帮我看看那个设备，没有具体名称",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "modelContent": "{\"action\":\"CLARIFY\",\"intent\":null,\"entity\":null,\"category\":null,\"timeOption\":null,\"reason\":\"MISSING_INFO\"}",
+    "native": {
+      "callId": "qingye-09-2-r1/p/b/0",
+      "system": "qingye",
+      "nativePlannerCalled": false,
+      "askSql": [],
+      "mutationAttempt": false,
+      "nativeQualified": false,
+      "effectiveNativePlan": null,
+      "response": {
+        "answer": "目前支持中文查询校园活动、报名和器材借用，不处理其他话题。",
+        "items": [],
+        "status": "REJECT",
+        "mode": "LOCAL",
+        "reason": "OUTSIDE_DOMAIN",
+        "corrections": [
+          "查相机",
+          "我的借用记录",
+          "我的报名",
+          "这周末有什么活动？"
+        ],
+        "interpretation": "请求不允许执行",
+        "intent": ""
+      },
+      "databaseUnchanged": true
+    }
+  },
+  {
+    "label": "协议失败",
+    "callId": "library-08-1-r0/p/b/0",
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_BORROWS",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": true,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "modelContent": "{\"action\":\"QUERY\",\"intent\":\"MY_BORROWS\",\"title\":\"Java入门\",\"unreturnedOnly\":true,\"availableOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "native": {
+      "callId": "library-08-1-r0/p/b/0",
+      "system": "library",
+      "nativePlannerCalled": true,
+      "nativeParseAccepted": false,
+      "nativeQualified": false,
+      "repositoryQueriesBeforeConfirm": 0,
+      "response": {
+        "status": "REJECT",
+        "reason": "INVALID_PLAN",
+        "interpretation": null,
+        "confirmationToken": null,
+        "confirmationExpiresAt": null,
+        "question": "请只看我尚未归还的《Java入门》借阅记录",
+        "generatedSql": "",
+        "modelNote": null,
+        "answer": "查询计划不符合能力协议，未执行。请重新提问。",
+        "total": 0,
+        "returnedCount": 0,
+        "truncated": false,
+        "books": [],
+        "records": [],
+        "intent": "REJECT",
+        "databaseVerified": false,
+        "planningSource": "LOCAL_RULE",
+        "modelCalled": false
+      },
+      "databaseUnchanged": true
+    }
+  },
+  {
+    "label": "语义偏差",
+    "callId": "qingye-08-1-r1/p/b/0",
+    "question": "请只看我尚未归还的相机借用记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "modelContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "native": {
+      "callId": "qingye-08-1-r1/p/b/0",
+      "system": "qingye",
+      "nativePlannerCalled": true,
+      "askSql": [],
+      "mutationAttempt": false,
+      "nativeQualified": true,
+      "effectiveNativePlan": {
+        "action": "QUERY",
+        "intent": "MY_LOANS",
+        "entity": null,
+        "category": null,
+        "timeOption": "ANY",
+        "reason": null
+      },
+      "simulatedConfirmation": {
+        "answer": "你的借用记录，展示 1 条（最多 10 条）：\n相机 ×1，待审核",
+        "status": "QUERY",
+        "corrections": [
+          "查相机",
+          "我的借用记录",
+          "我的报名",
+          "这周末有什么活动？"
+        ],
+        "intent": "MY_LOANS",
+        "mode": "MODEL_PLAN",
+        "interpretation": "我按「你的借用记录 · 当前登录用户 · 不限时间」帮你查了。",
+        "items": [
+          {
+            "id": 1,
+            "equipmentName": "相机",
+            "quantity": 1,
+            "status": "PENDING"
+          }
+        ]
+      },
+      "simulatedUser": "ACCEPT_EXACT_DISPLAYED_SCOPE; not a human",
+      "response": {
+        "interpretation": "我理解你要查询：我的全部借用记录",
+        "answer": "查询范围是当前账号的全部借用记录，最多展示10条。不会按器材、日期或状态筛选。",
+        "corrections": [
+          "查相机",
+          "我的借用记录",
+          "我的报名",
+          "这周末有什么活动？"
+        ],
+        "confirmationExpiresAt": "2026-10-07T17:05:00Z",
+        "mode": "MODEL_PLAN",
+        "status": "CONFIRM_SCOPE",
+        "intent": "MY_LOANS",
+        "items": []
+      },
+      "databaseUnchanged": true
+    }
+  },
+  {
+    "label": "个人范围待确认",
+    "callId": "qingye-07-1-r1/p/b/0",
+    "question": "请帮我查看当前账号所有借用记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_LOANS",
+          "entity": null,
+          "category": null,
+          "timeOption": "ANY",
+          "reason": null
+        }
+      ]
+    },
+    "modelContent": "{\"action\":\"QUERY\",\"intent\":\"MY_LOANS\",\"entity\":null,\"category\":null,\"timeOption\":\"ANY\",\"reason\":null}",
+    "native": {
+      "callId": "qingye-07-1-r1/p/b/0",
+      "system": "qingye",
+      "nativePlannerCalled": true,
+      "askSql": [],
+      "mutationAttempt": false,
+      "nativeQualified": true,
+      "effectiveNativePlan": {
+        "action": "QUERY",
+        "intent": "MY_LOANS",
+        "entity": null,
+        "category": null,
+        "timeOption": "ANY",
+        "reason": null
+      },
+      "simulatedConfirmation": {
+        "answer": "你的借用记录，展示 1 条（最多 10 条）：\n相机 ×1，待审核",
+        "status": "QUERY",
+        "corrections": [
+          "查相机",
+          "我的借用记录",
+          "我的报名",
+          "这周末有什么活动？"
+        ],
+        "intent": "MY_LOANS",
+        "mode": "MODEL_PLAN",
+        "interpretation": "我按「你的借用记录 · 当前登录用户 · 不限时间」帮你查了。",
+        "items": [
+          {
+            "id": 1,
+            "equipmentName": "相机",
+            "quantity": 1,
+            "status": "PENDING"
+          }
+        ]
+      },
+      "simulatedUser": "ACCEPT_EXACT_DISPLAYED_SCOPE; not a human",
+      "response": {
+        "interpretation": "我理解你要查询：我的全部借用记录",
+        "answer": "查询范围是当前账号的全部借用记录，最多展示10条。不会按器材、日期或状态筛选。",
+        "corrections": [
+          "查相机",
+          "我的借用记录",
+          "我的报名",
+          "这周末有什么活动？"
+        ],
+        "confirmationExpiresAt": "2026-10-07T17:05:00Z",
+        "mode": "MODEL_PLAN",
+        "status": "CONFIRM_SCOPE",
+        "intent": "MY_LOANS",
+        "items": []
+      },
+      "databaseUnchanged": true
+    }
+  },
+  {
+    "label": "正确提案被审查否决",
+    "callId": "library-11-1-r2/p/b/0",
+    "question": "请看看我未来三天内未归还且到期的借阅",
+    "modelContent": "{\"action\":\"QUERY\",\"intent\":\"MY_DUE_SOON\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"DUE_WITHIN\",\"days\":3,\"limit\":20,\"reason\":null}",
+    "review": "{\"decision\":\"CLARIFY\",\"reason\":\"MY_DUE_SOON需明确unreturnedOnly=true，当前为null，条件缺失\"}",
+    "native": {
+      "callId": "library-11-1-r2/p/b/0",
+      "system": "library",
+      "nativePlannerCalled": true,
+      "nativeParseAccepted": true,
+      "nativeQualified": true,
+      "repositoryQueriesBeforeConfirm": 0,
+      "simulatedConfirmation": {
+        "status": "QUERY",
+        "reason": null,
+        "interpretation": "当前账号未来 3 天内未归还、即将到期的借阅 · 不按书名筛选 · 最多返回 20 条，并显示匹配总数",
+        "confirmationToken": null,
+        "confirmationExpiresAt": null,
+        "question": "请看看我未来三天内未归还且到期的借阅",
+        "generatedSql": "",
+        "modelNote": null,
+        "answer": "未来 3 天内共有 1 条借阅即将到期：\r\n• 请提醒 张三归还《Java入门》，应还时间：2026-10-10 01:00:00.0",
+        "total": 1,
+        "returnedCount": 1,
+        "truncated": false,
+        "books": [],
+        "records": [
+          {
+            "id": 1,
+            "userId": 2,
+            "userName": "张三",
+            "bookId": 1,
+            "bookName": "Java入门",
+            "borrowTime": 1791306000000,
+            "dueDate": 1791565200000,
+            "returnTime": null,
+            "status": 0,
+            "fineAmount": null
+          }
+        ],
+        "intent": "MY_DUE_SOON",
+        "databaseVerified": true,
+        "planningSource": "MODEL",
+        "modelCalled": true
+      },
+      "simulatedUser": "ACCEPT_EXACT_DISPLAYED_SCOPE; not a human",
+      "response": {
+        "status": "CONFIRM_SCOPE",
+        "reason": null,
+        "interpretation": "当前账号未来 3 天内未归还、即将到期的借阅 · 不按书名筛选 · 最多返回 20 条，并显示匹配总数",
+        "confirmationToken": null,
+        "confirmationExpiresAt": "2026-10-07T17:05:00Z",
+        "question": "请看看我未来三天内未归还且到期的借阅",
+        "generatedSql": "",
+        "modelNote": null,
+        "answer": "请核对上面的实际查询范围。确认后才读取个人记录；不是这个意思可以修改问题或到对应记录页面查询。",
+        "total": 0,
+        "returnedCount": 0,
+        "truncated": false,
+        "books": [],
+        "records": [],
+        "intent": "MY_DUE_SOON",
+        "databaseVerified": false,
+        "planningSource": "MODEL",
+        "modelCalled": true
+      },
+      "databaseUnchanged": true
+    }
+  }
+]

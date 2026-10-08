@@ -1,0 +1,5 @@
+﻿system,provider,n,httpSuccess,protocolValid,semanticCorrect,protocolInvalidTargetMatch,primaryN,primarySemanticCorrect,entryGateRejected,nativeQualified
+qingye,deepseek,288,288,288,252,0,72,63,3,276
+qingye,qwen,288,288,288,240,0,72,60,3,264
+library,deepseek,288,288,288,283,0,72,70,0,288
+library,qwen,288,287,286,214,1,72,53,0,214

@@ -1,0 +1,5 @@
+2026-10-08 collection startup, before any provider request.
+Command: python -B run.py pilot --keys-stdin --budget-cny 1
+Observed: JSONDecodeError while reading sys.stdin.readline(); noninteractive shell closed standard input.
+Classification: TEST_OR_HARNESS_FAIL, not a product failure or model result.
+Fix: require an interactive Windows console and use getpass non-echo input. No credentials were supplied to the failed invocation; no model calls occurred.

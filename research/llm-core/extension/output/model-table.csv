@@ -1,0 +1,9 @@
+﻿stratum,system,provider,n,httpSuccess,protocolValid,semanticCorrect,primaryN,primarySemanticCorrect,entryRejected
+"same frozen core question, later window",qingye,deepseek,96,96,96,84,24,21,1
+"same frozen core question, later window",qingye,qwen,96,96,96,80,24,20,1
+"same frozen core question, later window",library,deepseek,96,96,96,94,24,24,0
+"same frozen core question, later window",library,qwen,96,96,96,72,24,18,0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,deepseek,32,32,32,32,8,8,0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,qwen,32,32,32,32,8,8,0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,deepseek,32,32,32,30,8,7,0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,qwen,32,32,32,20,8,5,0

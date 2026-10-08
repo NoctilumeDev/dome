@@ -1,0 +1,9 @@
+﻿stratum,reviewer,proposer,n,qualifiedCorrectNonAccept,queryFalseKill,missedError
+"same frozen core question, later window",a,a,48,0,0,2
+"same frozen core question, later window",a,b,48,0,0,2
+"same frozen core question, later window",b,a,48,9,0,2
+"same frozen core question, later window",b,b,48,2,0,2
+"prospective-held-out-from-core; executor labels, no independent human blindness",a,a,16,0,0,1
+"prospective-held-out-from-core; executor labels, no independent human blindness",a,b,16,0,0,0
+"prospective-held-out-from-core; executor labels, no independent human blindness",b,a,16,4,0,0
+"prospective-held-out-from-core; executor labels, no independent human blindness",b,b,16,2,0,0

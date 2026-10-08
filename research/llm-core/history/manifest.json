@@ -1,0 +1,44 @@
+{
+  "inputs": [
+    {
+      "file": "qingye/docs/semantic-v2-results.json",
+      "sha256": "5055d5fdbd237af5f4b0b9fe9fba4f64c0d554a3e1d26cfbdc30efbc0c781dbd",
+      "sourceSha": "22dbf13dfd69a32a27d4c8f097bae6c83d530780",
+      "currentProductionTreeMatches": true
+    },
+    {
+      "file": "coursework/library-management-system/docs/semantic-v2-results.json",
+      "sha256": "ae2cec087ad7a166d6a93ef43a68c68b4b9d57bc1e2df661d3b0e4027ac4f69d",
+      "sourceSha": "6187a1412a07bc37854c1fdf0a9c12c7ce04dbdb",
+      "currentProductionTreeMatches": true
+    }
+  ],
+  "historicalCaseProviderPairs": 396,
+  "unpreservedSupplementCoordinates": [
+    {
+      "provider": "deepseek-flash",
+      "id": "X01",
+      "status": "NOT_PROVEN_INPUT",
+      "reason": "supplement input not preserved in the frozen 133-case table; do not guess from description"
+    },
+    {
+      "provider": "deepseek-flash",
+      "id": "X02",
+      "status": "NOT_PROVEN_INPUT",
+      "reason": "supplement input not preserved in the frozen 133-case table; do not guess from description"
+    },
+    {
+      "provider": "qwen-plus",
+      "id": "X01",
+      "status": "NOT_PROVEN_INPUT",
+      "reason": "supplement input not preserved in the frozen 133-case table; do not guess from description"
+    },
+    {
+      "provider": "qwen-plus",
+      "id": "X02",
+      "status": "NOT_PROVEN_INPUT",
+      "reason": "supplement input not preserved in the frozen 133-case table; do not guess from description"
+    }
+  ],
+  "scope": "same current native source; old model plans/questions transferred to current fixed fixture/actor. Not exact old workload or new provider calls; no semantic regrading or cross-window pooling"
+}

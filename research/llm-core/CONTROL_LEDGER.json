@@ -1,0 +1,243 @@
+{
+  "version": "control-ledger-v1",
+  "statusMeaning": "PASS means declared execution/measurement completed; not every answer correct or broad conclusion true",
+  "controls": [
+    {
+      "id": "C01",
+      "family": 1,
+      "name": "两家单提案基线",
+      "status": "PASS",
+      "evidence": "results/core/calls.jsonl; output/model-table.csv",
+      "boundary": "已知题表观察；不是所有输入的厂商排名"
+    },
+    {
+      "id": "C02",
+      "family": 2,
+      "name": "F2/F3/F4 相同调用数重规划",
+      "status": "PASS",
+      "evidence": "results/core/evaluation-v2/decisions.json; output/group-table.csv",
+      "boundary": "匹配调用数，未匹配token/金额；各预算共享采样池"
+    },
+    {
+      "id": "C02-money",
+      "family": 2,
+      "name": "同金额/同token因果对照",
+      "status": "NOT_APPLICABLE",
+      "evidence": "plan.json; output/group-table.csv",
+      "boundary": "本文不声称同金额或同计算量优势；如提出该结论须另做"
+    },
+    {
+      "id": "C03",
+      "family": 3,
+      "name": "B 一致性与固定PA/PB复用",
+      "status": "PASS",
+      "evidence": "core.py; tests/test_core.py; frozen-core-v2.json",
+      "boundary": "完整结构一致；不证明任意SQL语义等价"
+    },
+    {
+      "id": "C04",
+      "family": 4,
+      "name": "自审、单向和双向审查",
+      "status": "NEGATIVE_RESULT",
+      "evidence": "output/group-table.csv; output/review-table.csv",
+      "boundary": "核心B/C/D公开正确执行及错误执行相同；结论限定该题表/时段"
+    },
+    {
+      "id": "C04-extension",
+      "family": 4,
+      "name": "后窗口及新组合题的审查增益",
+      "status": "NEGATIVE_RESULT",
+      "evidence": "extension/results/core/evaluation-v2/; extension/output/group-table.csv",
+      "boundary": "B/D未增加正确查询；新旧分层，不能用新题不同难度解释成时间效应"
+    },
+    {
+      "id": "C05",
+      "family": 5,
+      "name": "协议格式与语义目标分账",
+      "status": "PASS",
+      "evidence": "output/proposal-ledger.csv; output/model-table.csv; output/examples.json",
+      "boundary": "declaredNonNullTargetMatch仅匹配显式非空目标，不补字段、不证明完整原意"
+    },
+    {
+      "id": "C05-normalize",
+      "family": 5,
+      "name": "规范化不补答案、不删条件",
+      "status": "PASS",
+      "evidence": "core.py; tests/test_core.py",
+      "boundary": "只比较原完整字段；两个schema不强行统一"
+    },
+    {
+      "id": "C06",
+      "family": 6,
+      "name": "本地权限与固定只读执行",
+      "status": "PASS",
+      "evidence": "results/core/native-v2/; results/engineering-qingye.txt; results/engineering-library.txt",
+      "boundary": "H2及已有角色/确认测试；无生产MySQL、多节点证明"
+    },
+    {
+      "id": "C06-scope",
+      "family": 6,
+      "name": "范围确认机制与实际读查询",
+      "status": "PASS",
+      "evidence": "native/*.java; results/core/native-v2/",
+      "boundary": "未确认零开放个人查询；模拟接受不等于真人理解"
+    },
+    {
+      "id": "C06-human",
+      "family": 6,
+      "name": "真人能识别/纠正范围遗漏",
+      "status": "NOT_RUN",
+      "evidence": "output/paper.md limitations",
+      "boundary": "需要独立真人交互研究；本文不提出这种收益结论"
+    },
+    {
+      "id": "C06-entry",
+      "family": 6,
+      "name": "第一门实际处置",
+      "status": "NEGATIVE_RESULT",
+      "evidence": "output/proposal-ledger.csv; output/examples.json",
+      "boundary": "设备题语义预期CLARIFY却入口REJECT；未按模型错误处理、不修产品"
+    },
+    {
+      "id": "C07",
+      "family": 7,
+      "name": "两业务系统分别执行与读回",
+      "status": "PASS",
+      "evidence": "output/group-table.csv (qingye/library); results/core/native-v2/",
+      "boundary": "同开发者同仓库，非独立组织复现"
+    },
+    {
+      "id": "C07-isolate",
+      "family": 7,
+      "name": "单独归因业务域而非协议复杂度",
+      "status": "CONFOUNDED",
+      "evidence": "plan.json; prompts/; output/model-table.csv",
+      "boundary": "业务域、能力、字段数和输出上限耦合；本文不作纯域效应归因"
+    },
+    {
+      "id": "C08-history",
+      "family": 8,
+      "name": "133+65历史保留题转入当前原生链路",
+      "status": "PASS",
+      "evidence": "history/manifest.json; history/native-*.jsonl",
+      "boundary": "396题/厂商对；固定当前actor/fixture，不是原历史环境完整复刻"
+    },
+    {
+      "id": "C08-supplement",
+      "family": 8,
+      "name": "历史两道补充题的原条件重放",
+      "status": "NEEDS_REPEAT",
+      "evidence": "history/manifest.json unpreservedSupplementCoordinates",
+      "boundary": "两个输入×两厂商缺原文，留四个坐标；不根据摘要猜原题"
+    },
+    {
+      "id": "C08-holdout",
+      "family": 8,
+      "name": "16道前瞻语法组合留出题",
+      "status": "PASS",
+      "evidence": "extension/cases.json; extension/CONTRACT.md; extension/results/core/",
+      "boundary": "核心结果后设计、调用前冻结；模型看不到标签，执行者不是盲标者"
+    },
+    {
+      "id": "C08-independent",
+      "family": 8,
+      "name": "独立标注者未知题族盲评",
+      "status": "NOT_RUN",
+      "evidence": "extension/CONTRACT.md",
+      "boundary": "不能凭作者自建题升级为独立泛化；需要另一个独立标注/评阅过程"
+    },
+    {
+      "id": "C08-repeat",
+      "family": 8,
+      "name": "核心三次配对重复",
+      "status": "PASS",
+      "evidence": "results/core/blocks.jsonl",
+      "boundary": "重复同题不增加独立用户数；temperature=0不等于确定性"
+    },
+    {
+      "id": "C08-window",
+      "family": 8,
+      "name": "原48题后采集窗口",
+      "status": "PASS",
+      "evidence": "extension/results/core/calls.jsonl; extension/CONTRACT.md",
+      "boundary": "短间隔重复，顺序重平衡；不归因纯时间、不证明跨日稳定"
+    },
+    {
+      "id": "C08-days",
+      "family": 8,
+      "name": "跨日/模型修订长期稳定",
+      "status": "NEEDS_REPEAT",
+      "evidence": "model aliases and recorded timestamps",
+      "boundary": "别名底层权重未冻结；本轮不提出长期稳定结论"
+    }
+  ],
+  "claims": [
+    {
+      "id": "K1",
+      "text": "核心已知表中，D相较B未增加最终查询质量且增加逻辑成本/时延",
+      "requires": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "status": "QUALIFIED_WITH_BOUNDARY",
+      "scope": "144核心块；非所有任务"
+    },
+    {
+      "id": "K2",
+      "text": "本轮原生回放未观察到表改变或未确认开放个人读取",
+      "requires": [
+        "C06",
+        "C06-scope"
+      ],
+      "status": "QUALIFIED_WITH_BOUNDARY",
+      "scope": "固定H2及负控制；不是普遍安全证明"
+    },
+    {
+      "id": "K3",
+      "text": "跨模型审查有稳定、独立、可泛化增益",
+      "requires": [
+        "C01",
+        "C02",
+        "C03",
+        "C04-extension",
+        "C05",
+        "C06",
+        "C07",
+        "C08-holdout",
+        "C08-independent",
+        "C08-window",
+        "C08-days"
+      ],
+      "status": "NOT_QUALIFIED",
+      "scope": "核心结果未支持增益；独立标注和长期窗口未完成"
+    },
+    {
+      "id": "K4",
+      "text": "范围确认一定能让真实用户发现遗漏条件",
+      "requires": [
+        "C06-scope",
+        "C06-human"
+      ],
+      "status": "NOT_QUALIFIED",
+      "scope": "未做真人研究"
+    },
+    {
+      "id": "K5",
+      "text": "一厂商普遍优于另一厂商",
+      "requires": [
+        "C01",
+        "C07-isolate",
+        "C08-independent",
+        "C08-days"
+      ],
+      "status": "NOT_QUALIFIED",
+      "scope": "题表选择、协议及别名混杂未消除"
+    }
+  ],
+  "stopLine": "Declared experiment cells completed or explicitly classified; no Cartesian-product expansion. New claims require newly frozen evidence."
+}

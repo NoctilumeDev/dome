@@ -1,0 +1,8 @@
+{
+  "authorizedBy": "user message in current task",
+  "deepseekLimitCny": 20,
+  "qwenLimitCny": 20,
+  "combinedLimitCny": 40,
+  "currentCoreConservativeLimitCny": 10,
+  "actualDebitVerification": "NOT_VERIFIED; conservative public-list-price estimator"
+}
