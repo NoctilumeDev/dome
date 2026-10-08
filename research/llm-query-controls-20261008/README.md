@@ -15,3 +15,5 @@ python -X utf8 -B research/llm-query-controls-20261008/verify.py
 结果区分模型结构、原生资格、事前规则、返回ID与事实、主体读取、范围确认及资源使用。支持或未识别均不冒充真人纠错或学习适配，实际现金与促销抵扣未知时不填零。全局每家¥20预算仍有效。
 
 评分v1因计划title/夹具name映射失败，首败见diagnostics/measurement-v1-failure.json。原脚本不改，v2只修映射并输出到[output-v2/RESULTS.md](output-v2/RESULTS.md)，版本绑定见measurement-v2.json。原始234调用和474原生记录未重跑；可运行verify_measurement_v2.py核对v2来源及计数。
+
+全提案审查已完成：468次新审查复用234原提案，见[REVIEW_CONTRACT.md](REVIEW_CONTRACT.md)、[审查结果](review-output/RESULTS.md)及[观察边界](OBSERVATIONS.md)。原生表/指标/首败不回写。[42题表](CASE_TABLE.md)与[CLOSEOUT.md](CLOSEOUT.md)给出覆盖和资源归属，唯一截图为output-v2/final-summary.jpg。额外只读入口：`python -X utf8 -B research/llm-query-controls-20261008/review_verify.py`。

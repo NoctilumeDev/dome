@@ -1,0 +1,81 @@
+{
+  "pairedBlocks": 117,
+  "uniqueQuestions": 39,
+  "proposalRequestIdentities": 234,
+  "reviewRequestIdentities": 468,
+  "structuralAgreementBlocks": 46,
+  "admissibleAgreementBlocks": 45,
+  "BresidualWrongOpportunities": 7,
+  "BcorrectQueryOrScope": 31,
+  "strategies": {
+    "B": {
+      "blocks": 117,
+      "admissibleCandidates": 45,
+      "correctQueryOrScopePassed": 31,
+      "wrongQueryOrScopePassed": 7,
+      "incrementalWrongQueryOrScopeBlocked": 0,
+      "incrementalCorrectQueryOrScopeBlocked": 0,
+      "correctClarifyVetoed": 0,
+      "publicCorrectAutomaticExecution": 16,
+      "wrongPublicAutomaticQuery": 4,
+      "logicalSerialLatencyMedianMs": 2422.0,
+      "logicalMeanListPriceEstimateCny": 0.002122994871794872
+    },
+    "C:a": {
+      "blocks": 117,
+      "admissibleCandidates": 37,
+      "correctQueryOrScopePassed": 31,
+      "wrongQueryOrScopePassed": 6,
+      "incrementalWrongQueryOrScopeBlocked": 1,
+      "incrementalCorrectQueryOrScopeBlocked": 0,
+      "correctClarifyVetoed": 0,
+      "publicCorrectAutomaticExecution": 16,
+      "wrongPublicAutomaticQuery": 3,
+      "logicalSerialLatencyMedianMs": 3610.0,
+      "logicalMeanListPriceEstimateCny": 0.002794659829059829
+    },
+    "C:b": {
+      "blocks": 117,
+      "admissibleCandidates": 42,
+      "correctQueryOrScopePassed": 31,
+      "wrongQueryOrScopePassed": 4,
+      "incrementalWrongQueryOrScopeBlocked": 3,
+      "incrementalCorrectQueryOrScopeBlocked": 0,
+      "correctClarifyVetoed": 0,
+      "publicCorrectAutomaticExecution": 16,
+      "wrongPublicAutomaticQuery": 1,
+      "logicalSerialLatencyMedianMs": 3157.0,
+      "logicalMeanListPriceEstimateCny": 0.004026345299145299
+    },
+    "D": {
+      "blocks": 117,
+      "admissibleCandidates": 34,
+      "correctQueryOrScopePassed": 31,
+      "wrongQueryOrScopePassed": 3,
+      "incrementalWrongQueryOrScopeBlocked": 4,
+      "incrementalCorrectQueryOrScopeBlocked": 0,
+      "correctClarifyVetoed": 0,
+      "publicCorrectAutomaticExecution": 16,
+      "wrongPublicAutomaticQuery": 0,
+      "logicalSerialLatencyMedianMs": 4329.0,
+      "logicalMeanListPriceEstimateCny": 0.004698010256410257
+    }
+  },
+  "selfReview": {
+    "deepseek": {
+      "candidates": 117,
+      "wrongQueryOrScopeBaseline": 21,
+      "correctQueryOrScopeBaseline": 55,
+      "wrongQueryOrScopeBlocked": 10,
+      "correctQueryOrScopeBlocked": 2
+    },
+    "qwen": {
+      "candidates": 117,
+      "wrongQueryOrScopeBaseline": 16,
+      "correctQueryOrScopeBaseline": 51,
+      "wrongQueryOrScopeBlocked": 7,
+      "correctQueryOrScopeBlocked": 0
+    }
+  },
+  "scope": "Exploratory add-on on all retained new questions, sealed after proposal collection; clustered repeated blocks, veto-only review, no deployment utility or independent blind evaluation"
+}

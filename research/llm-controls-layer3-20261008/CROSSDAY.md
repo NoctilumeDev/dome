@@ -19,3 +19,5 @@ day1结束后先停止模型调用并等待相关调用窗口的账单明细更�
 后续入口顺序为 `collect.py day1 --keys-stdin` → `replay_all.py --phase day1 --output results/native-day1` → `day1_report.py`。报告入口再次校验真实间隔、上海日期、逐请求payload与顺序、冻结文件、原生控制及快照、累计预算；输出到独立的 `output-day1`，拒绝覆盖旧坐标。输入Key只经非回显控制台，不写进脚本、环境文件或调度提示。
 
 本窗口结束后清除内存凭据、退出自己的进程、收束自己的可重建target/helper；保留Git、唯一原始response、首败与最终记录。自动删除若被拒，不改用另一条命令绕过，给出精确人工路径。真人部分继续PENDING_HUMAN_STUDY。
+
+新查询包已完成当日本窗，详见../llm-query-controls-20261008/OBSERVATIONS.md；它不改本day1题/72请求，也不从本day1继承所有新题的跨日资格。执行前核对新包physical-resources.json及保守累计，当前DeepSeek¥8.362573、千问¥2.94543705；旧plan估价字段不回写。每家¥20及第三层自身新增¥7两个停止线分别保留。

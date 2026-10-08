@@ -1,0 +1,13 @@
+{
+  "byStrategy": {
+    "B": {},
+    "C:a": {
+      "correctREJECTVetoed": 7
+    },
+    "C:b": {},
+    "D": {
+      "correctREJECTVetoed": 7
+    }
+  },
+  "definition": "Review REJECT denies the candidate, not automatically an ACCEPT of a correct REJECT plan; no weighted utility implied."
+}

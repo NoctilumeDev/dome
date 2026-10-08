@@ -1,0 +1,37 @@
+{
+  "scope": "QC4 proposal plus all-proposal review; physical collection, not logical strategy sums",
+  "providers": {
+    "deepseek": {
+      "clientRequestIdentities": 351,
+      "proposalRequests": 117,
+      "reviewRequests": 234,
+      "transport": {
+        "SUCCESS": 351
+      },
+      "knownInputTokens": 251040,
+      "knownOutputTokens": 16019,
+      "usageMissing": 0,
+      "singleApiMixedRoleP50Ms": 734.0,
+      "singleApiMixedRoleP95Ms": 1078.0,
+      "conservativeNewEstimateCny": 0.630232,
+      "conservativeCumulativeCny": 8.362573,
+      "actualCash": "NOT_VERIFIED"
+    },
+    "qwen": {
+      "clientRequestIdentities": 351,
+      "proposalRequests": 117,
+      "reviewRequests": 234,
+      "transport": {
+        "SUCCESS": 351
+      },
+      "knownInputTokens": 237921,
+      "knownOutputTokens": 14966,
+      "usageMissing": 0,
+      "singleApiMixedRoleP50Ms": 1250.0,
+      "singleApiMixedRoleP95Ms": 1828.0,
+      "conservativeNewEstimateCny": 0.22026880000000001,
+      "conservativeCumulativeCny": 2.94543705,
+      "actualCash": "NOT_VERIFIED"
+    }
+  }
+}

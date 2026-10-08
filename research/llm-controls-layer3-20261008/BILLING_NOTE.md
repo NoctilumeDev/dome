@@ -60,3 +60,7 @@ DeepSeek[计费规则](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)
 `Research development cost` 记录所有真实发生的研究调用，包括pilot、失败、控制和恢复；`Final reproducible run cost` 单列最终冻结复刻。后一项不能替代前一项。策略级主要报告token/请求、题、正确公开执行及额外审查的token和延迟；金额比值只作辅助。新增拦错为零时，token或金额/新增拦错均不定义，不能捏造比值。逻辑策略核算与整轮实际付费调用也分别记账，复用的PA/PB不能重复算成实际扣款。
 
 现有保守估价仍用于停止线。复刻方案需先核对累计剩余预算；赠送额度或新复刻阶段都不自动扩大每家 ¥20 上限。
+
+## 新查询控制包预算记录
+
+新包234提案加468审查，保守新增DeepSeek¥0.630232、千问¥0.2202688，合计¥0.8505008，低于其事前¥2累计上限。历史保守累计更新为DeepSeek¥8.362573、千问¥2.94543705；这只是追加预算账，不回写旧封印/表格，也不是现金扣款。物理请求/token角色拆分见../llm-query-controls-20261008/output-v2/physical-resources.json；账户截图是更早观察，不能由差额归因赠送抵扣。
