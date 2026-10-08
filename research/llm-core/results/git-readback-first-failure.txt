@@ -1,0 +1,40 @@
+TEST_OR_HARNESS_FAIL: first independent LF checkout failed verify.py at cases.json.
+Frozen inputs were staged before byte-preserving attributes; Git index retained newline-converted blobs.
+Do not change frozen hashes or question content. Re-index exact retained bytes, then use a new independent checkout.
+[
+  {
+    "file": "cases.json",
+    "workingMatchesFrozen": true,
+    "gitBlobMatchesFrozen": false,
+    "workingCrLf": 1048,
+    "gitCrLf": 0
+  },
+  {
+    "file": "plan.json",
+    "workingMatchesFrozen": true,
+    "gitBlobMatchesFrozen": false,
+    "workingCrLf": 56,
+    "gitCrLf": 0
+  },
+  {
+    "file": "prompts/library.txt",
+    "workingMatchesFrozen": true,
+    "gitBlobMatchesFrozen": false,
+    "workingCrLf": 2,
+    "gitCrLf": 0
+  },
+  {
+    "file": "prompts/qingye.txt",
+    "workingMatchesFrozen": true,
+    "gitBlobMatchesFrozen": false,
+    "workingCrLf": 16,
+    "gitCrLf": 0
+  },
+  {
+    "file": "prompts/review.txt",
+    "workingMatchesFrozen": true,
+    "gitBlobMatchesFrozen": false,
+    "workingCrLf": 1,
+    "gitCrLf": 0
+  }
+]

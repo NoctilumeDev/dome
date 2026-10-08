@@ -319,3 +319,5 @@ Structured Uncertainty [8] 在工具参数空间区分规格不确定与模型�
 cases.json、plan.json、prompts/ 为原冻结输入；frozen-core.json 和 frozen-core-v2.json 分别绑定停止前和修订后工具。results/core/calls.jsonl 为请求/最终响应，request-journal.jsonl 为发出账本，blocks.jsonl 为配对块完成记录；native-v2/ 为实际原生结果与快照；evaluation-v2/ 为评分与题族区间；output/ 为逐题账本、汇总表、截图和论文。Git 删除记录无需另造永久清理清单。
 
 本轮产品源码未改。历史架构反例来自 qingye/docs/semantic-repair-20261008.md 与 coursework/library-management-system/docs/semantic-repair-20261008.md；历史数字不进入正式模型分母。extension/ 分开保存新题与后窗口；history/ 保留原输入来源、缺失坐标及转移见证；CURRENT.md 为唯一维护入口。研究目录通过 .gitattributes 保留证据字节，source-portability.json 另外绑定原 Git 源树的 LF 哈希，仅容许 checkout 的 CRLF/LF 差异，原始 Windows 字节哈希仍保留。复现需要 Python 标准库、JDK 17、Maven、原项目测试依赖；真实调用另需新凭据及新费用授权，旧响应的离线重评不需凭据。
+
+首次独立检出曾发现 Git 索引转换研究输入换行而击穿原冻结哈希，首败保留在 git-readback-first-failure.txt。修复保存原字节而非改旧哈希；保存资格须经新的独立检出通过，旧失败提交不升级。

@@ -49,4 +49,6 @@ python -B control_ledger.py
 
 `README.md` 是原冻结合同，不滚动改写。`MEASUREMENT_V2.md` 与 `results/scorer-first-failure.txt` 记录一次评分器错误及原条件修复；原 v1 工具和证据保留。旧核心论文首次版本保存在 Git 提交历史，不额外复制“最终-final”文件。
 
+首次独立 LF checkout 的核对曾因 Git 索引在 byte-preserving 属性生效前转换换行而失败，见 `results/git-readback-first-failure.txt`。修复只重新索引原保留字节，不修改冻结哈希、题目或提示；原失败提交保留在 Git 历史中，资格只授予重新检出后实际通过的候选。
+
 留存原始响应/发出账本、冻结输入、首败、最终原生见证、最终表/论文和关键截图。临时记录浏览器、服务器及本轮 JVM 已退出。临时 Maven target、渲染 QA 图片、复制 helper 的批量删除命令被自动审批拒绝，未执行；用户随后指定先保留，待最后一轮集中清理。这些材料不提交，恢复普通测试前先移除复制 helper。共享 Maven、MySQL、Redis 和用户其他工作树不属于本轮清理权。Git diff 自身保存文档修订，不再制造清理 SHA 大清单。
