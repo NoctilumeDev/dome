@@ -62,7 +62,7 @@ def main():
  out.mkdir();write(out/'paired-ledger.json',paired);write(out/'metrics.json',dict(status='COMPLETE_ACTUAL_NEXT_DAY',gapSeconds=(start-finish).total_seconds(),summary=summary,costs=totals,human='PENDING_HUMAN_STUDY',reporterSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()))
  text='# 真实跨日配对结果\n\n72个配对观测来自12道题、6个题族；重复不是独立用户。输入payload、模型alias、顺序、业务Clock和H2快照一致。实际间隔 '+str(round((start-finish).total_seconds()))+' 秒，上海日期不同。\n\n| 模型槽位 | 题数 | 配对数 | day0严格匹配 | day1严格匹配 | day0原生合格 | day1原生合格 |\n|---|---|---|---|---|---|---|\n'
  for s in summary:text+='| '+ ' | '.join(str(v) for v in [s['slot'],s['questions'],s['pairedObservations'],s['day0']['match'],s['day1']['match'],s['day0']['qualified'],s['day1']['qualified']])+' |\n'
- text+='\n仅说明两个真实服务窗口的观察。alias未冻结权重；严格计划不匹配不等于错误事实。真人收益和独立盲标仍待测，实际账单未核。今天及历史结果未覆盖。\n'
+ text+='\n仅说明两个真实服务窗口的观察。alias未冻结权重；严格计划不匹配不等于错误事实。真人收益和独立盲标仍待测，实际账单未核。千问账号具有新用户赠送额度，费用数字为未抵扣赠送额度的理论估价；详见 ../BILLING_NOTE.md。今天及历史结果未覆盖。\n'
  (out/'RESULTS.md').write_bytes(text.encode());print('DAY1 VERIFY PASS: exact payload/order, real gap, frozen files, native controls, snapshots and budget; 72 paired observations')
 
 if __name__=='__main__':main()
