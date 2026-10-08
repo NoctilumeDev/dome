@@ -1,0 +1,13 @@
+{
+  "phase": "pilot",
+  "startedAt": "2026-10-08T00:05:43.742703+00:00",
+  "finishedAt": "2026-10-08T00:07:27.794488+00:00",
+  "completedBlocks": 8,
+  "plannedBlocks": 8,
+  "callCount": 96,
+  "estimatedCostCny": 0.13746879999999997,
+  "unknownCostCalls": 0,
+  "stop": null,
+  "raw": "calls.jsonl",
+  "budgetCny": 1.0
+}

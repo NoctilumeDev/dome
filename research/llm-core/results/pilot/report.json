@@ -1,0 +1,1040 @@
+{
+  "phase": "pilot",
+  "pairedBlocks": 8,
+  "groups": [
+    {
+      "system": "qingye",
+      "group": "A:a",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 2,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "A:b",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "B",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "C:a",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "C:b",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 0,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "D",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 0,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "E:a",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "E:b",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "F2:a",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 2,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "F2:b",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "F3:a",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 2,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "F3:b",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "F4:a",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 2,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "qingye",
+      "group": "F4:b",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "library",
+      "group": "A:a",
+      "n": 4,
+      "semanticPlanCorrect": 4,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "A:b",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "B",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "C:a",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "C:b",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "D",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "E:a",
+      "n": 4,
+      "semanticPlanCorrect": 4,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "E:b",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "F2:a",
+      "n": 4,
+      "semanticPlanCorrect": 4,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "F2:b",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "F3:a",
+      "n": 4,
+      "semanticPlanCorrect": 4,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "F3:b",
+      "n": 4,
+      "semanticPlanCorrect": 3,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "F4:a",
+      "n": 4,
+      "semanticPlanCorrect": 4,
+      "handlingCorrect": 4,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "library",
+      "group": "F4:b",
+      "n": 4,
+      "semanticPlanCorrect": 2,
+      "handlingCorrect": 3,
+      "publicCompletedCorrect": 2,
+      "pendingScope": 0,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    },
+    {
+      "system": "both",
+      "group": "A:a",
+      "n": 8,
+      "semanticPlanCorrect": 6,
+      "handlingCorrect": 6,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 3,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "A:b",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 6,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "B",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 7,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "C:a",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 7,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "C:b",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 8,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "D",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 8,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "E:a",
+      "n": 8,
+      "semanticPlanCorrect": 6,
+      "handlingCorrect": 7,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "E:b",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 7,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "F2:a",
+      "n": 8,
+      "semanticPlanCorrect": 6,
+      "handlingCorrect": 6,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 3,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "F2:b",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 7,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "F3:a",
+      "n": 8,
+      "semanticPlanCorrect": 6,
+      "handlingCorrect": 6,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 3,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "F3:b",
+      "n": 8,
+      "semanticPlanCorrect": 5,
+      "handlingCorrect": 7,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 2,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "F4:a",
+      "n": 8,
+      "semanticPlanCorrect": 6,
+      "handlingCorrect": 6,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 3,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 1
+    },
+    {
+      "system": "both",
+      "group": "F4:b",
+      "n": 8,
+      "semanticPlanCorrect": 4,
+      "handlingCorrect": 6,
+      "publicCompletedCorrect": 4,
+      "pendingScope": 1,
+      "wrongAutomaticExecution": 0,
+      "simulatedPersonalCompletedCorrect": 0
+    }
+  ],
+  "review": [
+    {
+      "block": "qingye-02-1-r0",
+      "system": "qingye",
+      "family": "history",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-02-1-r0",
+      "system": "qingye",
+      "family": "history",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-02-1-r0",
+      "system": "qingye",
+      "family": "history",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-02-1-r0",
+      "system": "qingye",
+      "family": "history",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-08-1-r0",
+      "system": "qingye",
+      "family": "capability_difference",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": false,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": true
+    },
+    {
+      "block": "qingye-08-1-r0",
+      "system": "qingye",
+      "family": "capability_difference",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "REJECT",
+      "proposalCorrect": false,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-08-1-r0",
+      "system": "qingye",
+      "family": "capability_difference",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": false,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": true
+    },
+    {
+      "block": "qingye-08-1-r0",
+      "system": "qingye",
+      "family": "capability_difference",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": false,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": true
+    },
+    {
+      "block": "library-06-1-r0",
+      "system": "library",
+      "family": "unsupported_date",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-06-1-r0",
+      "system": "library",
+      "family": "unsupported_date",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "CLARIFY",
+      "proposalCorrect": false,
+      "nativeQualified": false,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-06-1-r0",
+      "system": "library",
+      "family": "unsupported_date",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "CLARIFY",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": true,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-06-1-r0",
+      "system": "library",
+      "family": "unsupported_date",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "CLARIFY",
+      "proposalCorrect": false,
+      "nativeQualified": false,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-08-1-r0",
+      "system": "library",
+      "family": "capability_difference",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-08-1-r0",
+      "system": "library",
+      "family": "capability_difference",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-08-1-r0",
+      "system": "library",
+      "family": "capability_difference",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-08-1-r0",
+      "system": "library",
+      "family": "capability_difference",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-01-1-r0",
+      "system": "library",
+      "family": "baseline",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-01-1-r0",
+      "system": "library",
+      "family": "baseline",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-01-1-r0",
+      "system": "library",
+      "family": "baseline",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-01-1-r0",
+      "system": "library",
+      "family": "baseline",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-02-1-r0",
+      "system": "library",
+      "family": "history",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-02-1-r0",
+      "system": "library",
+      "family": "history",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-02-1-r0",
+      "system": "library",
+      "family": "history",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "library-02-1-r0",
+      "system": "library",
+      "family": "history",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-01-1-r0",
+      "system": "qingye",
+      "family": "baseline",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-01-1-r0",
+      "system": "qingye",
+      "family": "baseline",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-01-1-r0",
+      "system": "qingye",
+      "family": "baseline",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-01-1-r0",
+      "system": "qingye",
+      "family": "baseline",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "ACCEPT",
+      "proposalCorrect": true,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-06-1-r0",
+      "system": "qingye",
+      "family": "unsupported_date",
+      "reviewer": "a",
+      "proposer": "a",
+      "verdict": "REJECT",
+      "proposalCorrect": false,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-06-1-r0",
+      "system": "qingye",
+      "family": "unsupported_date",
+      "reviewer": "a",
+      "proposer": "b",
+      "verdict": "REJECT",
+      "proposalCorrect": false,
+      "nativeQualified": false,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-06-1-r0",
+      "system": "qingye",
+      "family": "unsupported_date",
+      "reviewer": "b",
+      "proposer": "a",
+      "verdict": "CLARIFY",
+      "proposalCorrect": false,
+      "nativeQualified": true,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    },
+    {
+      "block": "qingye-06-1-r0",
+      "system": "qingye",
+      "family": "unsupported_date",
+      "reviewer": "b",
+      "proposer": "b",
+      "verdict": "REJECT",
+      "proposalCorrect": false,
+      "nativeQualified": false,
+      "falseKill": false,
+      "reviewUnavailableCorrect": false,
+      "missedError": false
+    }
+  ],
+  "pairedExploratoryIntervals": {
+    "B minus A:a": {
+      "families": 4,
+      "difference": 0.125,
+      "familyBootstrap95": [
+        0.0,
+        0.375
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "B minus A:b": {
+      "families": 4,
+      "difference": 0.125,
+      "familyBootstrap95": [
+        0.0,
+        0.375
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "C:a minus B": {
+      "families": 4,
+      "difference": 0.0,
+      "familyBootstrap95": [
+        0.0,
+        0.0
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "C:b minus B": {
+      "families": 4,
+      "difference": 0.125,
+      "familyBootstrap95": [
+        0.0,
+        0.375
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "D minus B": {
+      "families": 4,
+      "difference": 0.125,
+      "familyBootstrap95": [
+        0.0,
+        0.375
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "E:a minus A:a": {
+      "families": 4,
+      "difference": 0.125,
+      "familyBootstrap95": [
+        0.0,
+        0.375
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "E:b minus A:b": {
+      "families": 4,
+      "difference": 0.125,
+      "familyBootstrap95": [
+        0.0,
+        0.375
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "F2:a minus E:a": {
+      "families": 4,
+      "difference": -0.125,
+      "familyBootstrap95": [
+        -0.375,
+        0.0
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "F2:b minus E:b": {
+      "families": 4,
+      "difference": 0.0,
+      "familyBootstrap95": [
+        0.0,
+        0.0
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "F3:a minus C:a": {
+      "families": 4,
+      "difference": -0.125,
+      "familyBootstrap95": [
+        -0.375,
+        0.0
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "F3:b minus C:b": {
+      "families": 4,
+      "difference": -0.125,
+      "familyBootstrap95": [
+        -0.375,
+        0.0
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "F4:a minus D": {
+      "families": 4,
+      "difference": -0.25,
+      "familyBootstrap95": [
+        -0.5,
+        0.0
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    },
+    "F4:b minus D": {
+      "families": 4,
+      "difference": -0.25,
+      "familyBootstrap95": [
+        -0.75,
+        0.0
+      ],
+      "interpretation": "known mechanism families, executor labels, exploratory paired interval; no independent user population claim"
+    }
+  },
+  "collection": {
+    "phase": "pilot",
+    "startedAt": "2026-10-08T00:05:43.742703+00:00",
+    "finishedAt": "2026-10-08T00:07:27.794488+00:00",
+    "completedBlocks": 8,
+    "plannedBlocks": 8,
+    "callCount": 96,
+    "estimatedCostCny": 0.13746879999999997,
+    "unknownCostCalls": 0,
+    "stop": null,
+    "raw": "calls.jsonl",
+    "budgetCny": 1.0
+  },
+  "latency": {
+    "deepseek": {
+      "n": 48,
+      "medianMs": 875.0,
+      "p95Ms": 1031.0,
+      "scope": "individual HTTP calls including failures; not reused-plan end-to-end"
+    },
+    "qwen": {
+      "n": 48,
+      "medianMs": 1094.0,
+      "p95Ms": 1797.0,
+      "scope": "individual HTTP calls including failures; not reused-plan end-to-end"
+    }
+  },
+  "nativeControlsPassed": true,
+  "allSnapshotsUnchanged": true,
+  "limitations": [
+    "Known families, no independent human oracle",
+    "No human correction observed",
+    "No online multi-model deployment measured",
+    "No production MySQL or WeChat device"
+  ]
+}

@@ -1,0 +1,1432 @@
+[
+  {
+    "id": "qingye-01-1",
+    "system": "qingye",
+    "family": "baseline",
+    "variant": 1,
+    "question": "请帮忙看看相机当前的库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-01-2",
+    "system": "qingye",
+    "family": "baseline",
+    "variant": 2,
+    "question": "麻烦查询现在相机是否有库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-01-1",
+    "system": "library",
+    "family": "baseline",
+    "variant": 1,
+    "question": "请帮忙看看《三体》所在的书架位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-01-2",
+    "system": "library",
+    "family": "baseline",
+    "variant": 2,
+    "question": "麻烦查询《三体》在馆内什么位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-02-1",
+    "system": "qingye",
+    "family": "history",
+    "variant": 1,
+    "question": "我昨天借过相机，今天只查询投影仪的当前库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-02-2",
+    "system": "qingye",
+    "family": "history",
+    "variant": 2,
+    "question": "之前归还了摄像机，现在要查看投影仪库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-02-1",
+    "system": "library",
+    "family": "history",
+    "variant": 1,
+    "question": "我以前借过《三体》，现在只查询《Java入门》放在哪里",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-02-2",
+    "system": "library",
+    "family": "history",
+    "variant": 2,
+    "question": "昨天还了《三体》，现在想看看《Java入门》的馆藏位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-03-1",
+    "system": "qingye",
+    "family": "negation",
+    "variant": 1,
+    "question": "不要查相机，我要看摄像机的当前库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "摄像机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-03-2",
+    "system": "qingye",
+    "family": "negation",
+    "variant": 2,
+    "question": "相机不用管，请只查询摄像机库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "摄像机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-03-1",
+    "system": "library",
+    "family": "negation",
+    "variant": 1,
+    "question": "《Java入门》不用查，请只看《三体》的位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-03-2",
+    "system": "library",
+    "family": "negation",
+    "variant": 2,
+    "question": "不要查询《Java入门》，我要了解《三体》放在哪里",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-04-1",
+    "system": "qingye",
+    "family": "supersession",
+    "variant": 1,
+    "question": "先查我的借用记录，算了，记录不要了，只查投影仪当前库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-04-2",
+    "system": "qingye",
+    "family": "supersession",
+    "variant": 2,
+    "question": "想查我的报名，但改主意了，只看看投影仪库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-04-1",
+    "system": "library",
+    "family": "supersession",
+    "variant": 1,
+    "question": "先查我的借阅记录，算了，不查记录，只查《三体》的位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-04-2",
+    "system": "library",
+    "family": "supersession",
+    "variant": 2,
+    "question": "本来要看自己的反馈，改成只查《三体》放在哪里",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-05-1",
+    "system": "qingye",
+    "family": "multiple",
+    "variant": 1,
+    "question": "请同时查相机库存和我的借用记录，两项都需要",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-05-2",
+    "system": "qingye",
+    "family": "multiple",
+    "variant": 2,
+    "question": "相机库存与我报名了什么都查一下",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-05-1",
+    "system": "library",
+    "family": "multiple",
+    "variant": 1,
+    "question": "请同时查《三体》的位置和我的借阅，两项都需要",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-05-2",
+    "system": "library",
+    "family": "multiple",
+    "variant": 2,
+    "question": "馆藏位置和我个人反馈都查一下",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-06-1",
+    "system": "qingye",
+    "family": "unsupported_date",
+    "variant": 1,
+    "question": "请只查我今天借用的器材记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-06-2",
+    "system": "qingye",
+    "family": "unsupported_date",
+    "variant": 2,
+    "question": "仅看昨天我的借用记录，不要全部历史",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-06-1",
+    "system": "library",
+    "family": "unsupported_date",
+    "variant": 1,
+    "question": "请只查我今天借阅的图书记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-06-2",
+    "system": "library",
+    "family": "unsupported_date",
+    "variant": 2,
+    "question": "仅看昨天我的借阅记录，不要全部历史",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-07-1",
+    "system": "qingye",
+    "family": "personal_scope",
+    "variant": 1,
+    "question": "请帮我查看当前账号所有借用记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_LOANS",
+          "entity": null,
+          "category": null,
+          "timeOption": "ANY",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-07-2",
+    "system": "qingye",
+    "family": "personal_scope",
+    "variant": 2,
+    "question": "麻烦列出我自己的全部借用记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_LOANS",
+          "entity": null,
+          "category": null,
+          "timeOption": "ANY",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-07-1",
+    "system": "library",
+    "family": "personal_scope",
+    "variant": 1,
+    "question": "请帮我查看当前账号所有借阅记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_BORROWS",
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-07-2",
+    "system": "library",
+    "family": "personal_scope",
+    "variant": 2,
+    "question": "麻烦列出我自己的全部借阅记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_BORROWS",
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-08-1",
+    "system": "qingye",
+    "family": "capability_difference",
+    "variant": 1,
+    "question": "请只看我尚未归还的相机借用记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-08-2",
+    "system": "qingye",
+    "family": "capability_difference",
+    "variant": 2,
+    "question": "我的相机借用，仅查询未归还的",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-08-1",
+    "system": "library",
+    "family": "capability_difference",
+    "variant": 1,
+    "question": "请只看我尚未归还的《Java入门》借阅记录",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_BORROWS",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": true,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-08-2",
+    "system": "library",
+    "family": "capability_difference",
+    "variant": 2,
+    "question": "我的《Java入门》借阅，仅查询未归还的",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_BORROWS",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": true,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-09-1",
+    "system": "qingye",
+    "family": "ambiguous_reference",
+    "variant": 1,
+    "question": "那个器材的库存帮我查一下，我没有说具体是哪件",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-09-2",
+    "system": "qingye",
+    "family": "ambiguous_reference",
+    "variant": 2,
+    "question": "帮我看看那个设备，没有具体名称",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-09-1",
+    "system": "library",
+    "family": "ambiguous_reference",
+    "variant": 1,
+    "question": "那本书放哪里，我没有提供书名",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-09-2",
+    "system": "library",
+    "family": "ambiguous_reference",
+    "variant": 2,
+    "question": "帮我查那个图书的位置，没有说是哪一本",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-10-1",
+    "system": "qingye",
+    "family": "greeting",
+    "variant": 1,
+    "question": "hello你好，你能帮我做什么？顺便帮我查相机当前库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-10-2",
+    "system": "qingye",
+    "family": "greeting",
+    "variant": 2,
+    "question": "你好呀，你是什么模型？我的业务请求是查相机库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-10-1",
+    "system": "library",
+    "family": "greeting",
+    "variant": 1,
+    "question": "hello你好，你能帮我做什么？顺便帮我查《三体》的位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-10-2",
+    "system": "library",
+    "family": "greeting",
+    "variant": 2,
+    "question": "你好呀，你是什么模型？我的业务请求是查《三体》在哪里",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-11-1",
+    "system": "qingye",
+    "family": "time_option",
+    "variant": 1,
+    "question": "请看看明天相机能否借用",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "TOMORROW",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-11-2",
+    "system": "qingye",
+    "family": "time_option",
+    "variant": 2,
+    "question": "我要了解明天的相机可借数量",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "TOMORROW",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-11-1",
+    "system": "library",
+    "family": "time_option",
+    "variant": 1,
+    "question": "请看看我未来三天内未归还且到期的借阅",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_DUE_SOON",
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "DUE_WITHIN",
+          "days": 3,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-11-2",
+    "system": "library",
+    "family": "time_option",
+    "variant": 2,
+    "question": "我要了解我未来三天需要还的图书",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_DUE_SOON",
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "DUE_WITHIN",
+          "days": 3,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-12-1",
+    "system": "qingye",
+    "family": "business_noise",
+    "variant": 1,
+    "question": "器材库存、摄影活动、归还记录都讨论过了，我本次唯一请求是看手机当前库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "手机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-12-2",
+    "system": "qingye",
+    "family": "business_noise",
+    "variant": 2,
+    "question": "摄像机和相机借过又还了，这些是背景；现在唯一要查的是手机库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "手机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-12-1",
+    "system": "library",
+    "family": "business_noise",
+    "variant": 1,
+    "question": "借阅、还书、书架都讨论过了，我本次唯一请求是看《三体》在哪里",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "library-12-2",
+    "system": "library",
+    "family": "business_noise",
+    "variant": 2,
+    "question": "《Java入门》借过又还了，这是背景；现在唯一要查的是《三体》的馆藏位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "annotation": "executor-specified from frozen capability contract; not independent human label",
+    "split": "known-mechanism-evaluation",
+    "stratum": "same frozen core question, later window"
+  },
+  {
+    "id": "qingye-H01-1",
+    "system": "qingye",
+    "family": "quoted_request",
+    "variant": 1,
+    "question": "有人刚说“查我的借用记录”，那是引用，不是我的请求。我只查询投影仪当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H01-1",
+    "system": "library",
+    "family": "quoted_request",
+    "variant": 1,
+    "question": "有人刚说“查我的借阅记录”，那是引用，不是我的请求。我只查询《Java入门》的位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "qingye-H01-2",
+    "system": "qingye",
+    "family": "quoted_request",
+    "variant": 2,
+    "question": "历史问句“相机借用了吗”不要执行；我本次唯一需求是投影仪库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H01-2",
+    "system": "library",
+    "family": "quoted_request",
+    "variant": 2,
+    "question": "历史问句“三体借阅了吗”不要执行；我本次唯一需求是《Java入门》在哪里。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "qingye-H02-1",
+    "system": "qingye",
+    "family": "ordinal_reference",
+    "variant": 1,
+    "question": "清单第1项相机，第2项投影仪；请只查询第2项当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H02-1",
+    "system": "library",
+    "family": "ordinal_reference",
+    "variant": 1,
+    "question": "清单第1项《三体》，第2项《Java入门》；请只查询第2项的位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "qingye-H02-2",
+    "system": "qingye",
+    "family": "ordinal_reference",
+    "variant": 2,
+    "question": "清单第1项投影仪，第2项相机；请只查询第1项当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H02-2",
+    "system": "library",
+    "family": "ordinal_reference",
+    "variant": 2,
+    "question": "清单第1项《Java入门》，第2项《三体》；请只查询第1项的位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "qingye-H03-1",
+    "system": "qingye",
+    "family": "conditional_plan",
+    "variant": 1,
+    "question": "先查询相机库存；如果不能借，再查询投影仪库存，需要按这个条件完成两步。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H03-1",
+    "system": "library",
+    "family": "conditional_plan",
+    "variant": 1,
+    "question": "先查询《三体》的位置；如果找不到，再查询《Java入门》的位置，需要按这个条件完成两步。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "qingye-H03-2",
+    "system": "qingye",
+    "family": "conditional_plan",
+    "variant": 2,
+    "question": "如果手机没库存就查投影仪，有库存就查我的借用；帮我按这个分支办理查询。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H03-2",
+    "system": "library",
+    "family": "conditional_plan",
+    "variant": 2,
+    "question": "如果找不到《三体》就查《Java入门》的位置，找得到就查我的借阅；帮我按这个分支办理查询。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "qingye-H04-1",
+    "system": "qingye",
+    "family": "structured_list",
+    "variant": 1,
+    "question": "器材背景清单：\n相机：过去借过\n摄像机：不查\n投影仪：本次唯一要查当前库存",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H04-1",
+    "system": "library",
+    "family": "structured_list",
+    "variant": 1,
+    "question": "图书背景清单：\n三体：过去借过\nJava入门：本次唯一要查馆藏位置",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "qingye-H04-2",
+    "system": "qingye",
+    "family": "structured_list",
+    "variant": 2,
+    "question": "相机|历史背景；摄像机|不查询；投影仪|本次唯一请求：当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  },
+  {
+    "id": "library-H04-2",
+    "system": "library",
+    "family": "structured_list",
+    "variant": 2,
+    "question": "三体|历史背景；Java入门|本次唯一请求：馆藏位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective-held-out-from-core; executor labels, no independent human blindness"
+  }
+]

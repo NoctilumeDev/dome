@@ -1,0 +1,85 @@
+﻿stratum,system,group,n,handlingCorrect,expectedQueries,queryHandlingCorrect,publicCompletedCorrect,pendingScope,wrongAutomaticExecution,policyAbstentions,meanLogicalCostCny,medianLogicalSerialMs
+"same frozen core question, later window",qingye,A:a,24,20,16,16,14,5,0,0,0.0017511,679.5
+"same frozen core question, later window",qingye,A:b,24,19,16,16,14,4,1,0,0.0006447,1047.0
+"same frozen core question, later window",qingye,B,24,21,16,16,14,4,0,2,0.0023958,1781.5
+"same frozen core question, later window",qingye,C:a,24,21,16,16,14,4,0,4,0.0031962,2813.0
+"same frozen core question, later window",qingye,C:b,24,21,16,16,14,4,0,2,0.0045787,2547.5
+"same frozen core question, later window",qingye,D,24,21,16,16,14,4,0,4,0.0053791,3695.5
+"same frozen core question, later window",qingye,E:a,24,21,16,16,14,4,0,1,0.0039455,1571.0
+"same frozen core question, later window",qingye,E:b,24,21,16,16,14,4,0,4,0.0014443,2147.5
+"same frozen core question, later window",qingye,F2:a,24,20,16,16,14,5,0,0,0.0035022,1516.0
+"same frozen core question, later window",qingye,F3:a,24,20,16,16,14,5,0,0,0.0052533,2243.0
+"same frozen core question, later window",qingye,F4:a,24,20,16,16,14,5,0,0,0.0070043,2891.0
+"same frozen core question, later window",qingye,F2:b,24,20,16,16,14,4,1,1,0.0012908,2116.5
+"same frozen core question, later window",qingye,F3:b,24,20,16,16,14,4,1,1,0.0019355,3132.5
+"same frozen core question, later window",qingye,F4:b,24,20,16,16,14,4,1,1,0.0025802,4179.5
+"same frozen core question, later window",library,A:a,24,24,18,18,12,6,0,0,0.0021972,742.5
+"same frozen core question, later window",library,A:b,24,18,18,18,12,6,0,0,0.0008034,1757.5
+"same frozen core question, later window",library,B,24,24,18,18,12,6,0,6,0.0030006,2547.5
+"same frozen core question, later window",library,C:a,24,24,18,18,12,6,0,6,0.0039304,3790.0
+"same frozen core question, later window",library,C:b,24,24,18,18,12,6,0,6,0.0054688,3382.5
+"same frozen core question, later window",library,D,24,24,18,18,12,6,0,6,0.0063986,4570.5
+"same frozen core question, later window",library,E:a,24,24,18,18,12,6,0,0,0.004685,1608.5
+"same frozen core question, later window",library,E:b,24,24,18,18,12,6,0,6,0.0017348,2930.0
+"same frozen core question, later window",library,F2:a,24,23,18,17,11,6,0,1,0.0043953,1609.5
+"same frozen core question, later window",library,F3:a,24,23,18,17,11,6,0,0,0.0065935,2414.5
+"same frozen core question, later window",library,F4:a,24,23,18,17,11,6,0,1,0.0087907,3227.5
+"same frozen core question, later window",library,F2:b,24,24,18,18,12,6,0,6,0.001607,3554.5
+"same frozen core question, later window",library,F3:b,24,24,18,18,12,6,0,6,0.0024105,5359.0
+"same frozen core question, later window",library,F4:b,24,24,18,18,12,6,0,6,0.0032138,7110.0
+"same frozen core question, later window",both,A:a,48,44,34,34,26,11,0,0,0.0019741,734.5
+"same frozen core question, later window",both,A:b,48,37,34,34,26,10,1,0,0.000724,1649.0
+"same frozen core question, later window",both,B,48,45,34,34,26,10,0,8,0.0026982,2196.0
+"same frozen core question, later window",both,C:a,48,45,34,34,26,10,0,10,0.0035633,3406.0
+"same frozen core question, later window",both,C:b,48,45,34,34,26,10,0,8,0.0050238,2984.0
+"same frozen core question, later window",both,D,48,45,34,34,26,10,0,10,0.0058888,4148.5
+"same frozen core question, later window",both,E:a,48,45,34,34,26,10,0,1,0.0043152,1593.5
+"same frozen core question, later window",both,E:b,48,45,34,34,26,10,0,10,0.0015895,2757.5
+"same frozen core question, later window",both,F2:a,48,43,34,33,25,11,0,1,0.0039488,1547.0
+"same frozen core question, later window",both,F3:a,48,43,34,33,25,11,0,0,0.0059234,2312.0
+"same frozen core question, later window",both,F4:a,48,43,34,33,25,11,0,1,0.0078975,3063.0
+"same frozen core question, later window",both,F2:b,48,44,34,34,26,10,1,7,0.0014489,3109.0
+"same frozen core question, later window",both,F3:b,48,44,34,34,26,10,1,7,0.002173,4515.0
+"same frozen core question, later window",both,F4:b,48,44,34,34,26,10,1,7,0.002897,5867.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,A:a,8,8,6,6,6,0,0,0,0.0017813,820.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,A:b,8,8,6,6,6,0,0,0,0.0006544,1047.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,B,8,8,6,6,6,0,0,0,0.0024357,1867.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,C:a,8,8,6,6,6,0,0,2,0.0032406,2757.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,C:b,8,8,6,6,6,0,0,0,0.0046419,2662.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,D,8,8,6,6,6,0,0,2,0.0054468,3601.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,E:a,8,8,6,6,6,0,0,0,0.0039995,1547.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,E:b,8,8,6,6,6,0,0,2,0.001461,2062.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,F2:a,8,8,6,6,6,0,0,0,0.0035625,1523.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,F3:a,8,8,6,6,6,0,0,0,0.0053438,2258.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,F4:a,8,8,6,6,6,0,0,0,0.007125,2882.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,F2:b,8,8,6,6,6,0,0,1,0.0013088,2116.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,F3:b,8,8,6,6,6,0,0,0,0.0019632,3147.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",qingye,F4:b,8,8,6,6,6,0,0,1,0.0026176,4163.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,A:a,8,7,6,5,5,0,0,0,0.002218,750.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,A:b,8,5,6,5,5,0,2,0,0.0008098,1703.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,B,8,7,6,5,5,0,0,3,0.0030278,2477.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,C:a,8,7,6,5,5,0,0,3,0.0039647,3672.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,C:b,8,7,6,5,5,0,0,3,0.0055335,3249.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,D,8,7,6,5,5,0,0,3,0.0064704,4367.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,E:a,8,7,6,5,5,0,0,0,0.0047187,1664.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,E:b,8,7,6,5,5,0,0,3,0.0017524,2843.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,F2:a,8,7,6,5,5,0,0,0,0.004436,1577.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,F3:a,8,7,6,5,5,0,0,0,0.006651,2499.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,F4:a,8,7,6,5,5,0,0,1,0.008866,3179.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,F2:b,8,6,6,5,5,0,2,1,0.0016178,3453.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,F3:b,8,6,6,5,5,0,2,1,0.0024335,5212.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",library,F4:b,8,6,6,5,5,0,2,1,0.0032465,6906.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,A:a,16,15,12,11,11,0,0,0,0.0019996,773.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,A:b,16,13,12,11,11,0,2,0,0.0007321,1374.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,B,16,15,12,11,11,0,0,3,0.0027317,2078.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,C:a,16,15,12,11,11,0,0,5,0.0036026,3172.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,C:b,16,15,12,11,11,0,0,3,0.0050877,2913.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,D,16,15,12,11,11,0,0,5,0.0059586,3999.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,E:a,16,15,12,11,11,0,0,0,0.0043591,1586.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,E:b,16,15,12,11,11,0,0,5,0.0016067,2531.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,F2:a,16,15,12,11,11,0,0,0,0.0039993,1554.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,F3:a,16,15,12,11,11,0,0,0,0.0059974,2297.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,F4:a,16,15,12,11,11,0,0,1,0.0079955,2999.5
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,F2:b,16,14,12,11,11,0,2,2,0.0014633,2742.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,F3:b,16,14,12,11,11,0,2,1,0.0021983,4117.0
+"prospective-held-out-from-core; executor labels, no independent human blindness",both,F4:b,16,14,12,11,11,0,2,2,0.0029321,5515.5

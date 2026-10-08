@@ -1,0 +1,15 @@
+{
+  "phase": "core",
+  "startedAt": "2026-10-08T00:18:25.530270+00:00",
+  "finishedAt": "2026-10-08T00:30:50.489646+00:00",
+  "completedBlocks": 59,
+  "plannedBlocks": 144,
+  "callCount": 711,
+  "estimatedCostCny": 1.0122052000000001,
+  "unknownCostCalls": 0,
+  "stop": "MEASUREMENT_FAILURE_INTERRUPTED",
+  "raw": "calls.jsonl",
+  "budgetCny": 10.0,
+  "unresolvedAttempt": "library-02-1-r2/p/b/3",
+  "actualBilling": "NOT_VERIFIED"
+}

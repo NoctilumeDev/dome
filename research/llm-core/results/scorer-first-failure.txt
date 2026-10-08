@@ -1,0 +1,4 @@
+Original frozen analyze.py handling predicate
+semanticPlanCorrect=True; expectedDecline=True; nativeStatus=REJECT
+observed handlingCorrect=True; expected=False
+Classification: TEST_OR_HARNESS_FAIL. Native source and provider proposal facts unaffected.
