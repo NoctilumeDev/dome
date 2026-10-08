@@ -33,6 +33,48 @@ def make_figure(groups):
  d.add(String(0,-4,'上条：处置符合；下条：公开正确执行。弃权和待确认不是查询完成。',fontName=FONT,fontSize=8,fillColor=INK))
  return d
 
+def extended_sections():
+ m=json.loads((ROOT/'extension/output/metrics.json').read_text(encoding='utf-8'))
+ rows=[g for g in m['groups'] if g['system']=='both']
+ strata=list(m['strata'])
+ fields=['group','n','queryHandlingCorrect','publicCompletedCorrect','pendingScope','wrongAutomaticExecution','policyAbstentions']
+ later=[g for g in rows if g['stratum']==strata[0]]
+ new=[g for g in rows if g['stratum']==strata[1]]
+ cost=sum(c['estimatedCostCny'] for c in m['cumulativeCosts'])
+ return f'''## 5.5 后窗口与前瞻组合题：分层补充
+
+核心结果冻结后另建扩展合同，保持相同源码、提示、协议、Clock、H2 夹具与 v2 评分器。原四十八题各一次后窗口重测，另有十六题、四种语法组合：引用旧请求、序号指代、条件分支、结构化列表。扩展前冻结原文和标签；标签由同一执行者制定，模型不可见标签，不能称独立盲评。总计六十四块、768 次调用，全部 HTTP 200。
+
+表四仅为原四十八题后窗口，应可查询分母为 34。它与核心三次重复作逐题描述性配对，原表见 paired-window.csv；时间和重平衡顺序共同改变，不能把差异归于纯时间或权重变化。
+
+{mdtable(later,fields)}
+
+表五仅为十六道前瞻组合题，应可查询分母为 12。它与旧题难度不同，不能与核心 144 块混成一个总准确率。
+
+{mdtable(new,fields)}
+
+这两层中 B 与 D 公开正确执行分别同为 26 和 11，错误自动执行均为零。D 再增加的弃权均未增加正确查询；这延续核心观察，但不提升为长期或独立人群结论。
+
+新题出现两个新的千问公开错误坐标：library-H03-1 把“先查三体，找不到再查 Java入门”缩成一次 FIND_LOCATION/三体；library-H04-2 把“三体是背景，Java入门才是本次唯一请求”也查成三体。它们属于条件遗漏和目标误读，不是越权。H04-2 中 DeepSeek 同样未成功，却给 CLARIFY/MULTIPLE_ACTIONS；B 因分歧弃权，挡错但没有恢复应有的 Java入门查询。这说明安全收束与任务可用性仍需分账。
+
+后窗口 DeepSeek 的 F2/F3/F4 比主提案少一次正确公开执行，多次采样不是单调改进。原个人条件遗漏仍可进入 CONFIRM_SCOPE；不存在确认前个人读取，不代表遗漏消失。两个后窗口阶段都没有继续修改业务代码或根据新失败调整旧题答案。
+
+## 5.6 历史保留题转移回放
+
+历史青野 133 题和图书馆 65 题的两家保留提案，共 396 个题/厂商对，另加十个原生负控制，在当前固定 actor、目录、Clock 和 H2 中回放，共 406 条见证。相关历史产品的 src/main 与当前冻结业务树相同；所有快照保持不变。这个结果证明这些保留计划经过当前原生边界的实际处置，不是历史完整环境复刻，也不重新评分其语义或混入本次模型调用分母。
+
+历史报告还有 X01/X02 两个补充题，但原冻结 133 题表没有保存其原文。四个厂商/题坐标明确保留为 NOT_PROVEN_INPUT，不从报告摘要猜题补齐。它们若要重放，需要恢复原输入及原合同。缺口不会因为其余 396 对已执行而消失。
+
+## 5.7 控制总账与全轮费用
+
+八个控制族以二十一行总账管理：单模型、调用预算、一致性、审查、协议、本地执行、业务系统、泛化与时间。声明范围内的批次已执行或归类；PASS 只表示该项核对完成。独立盲标、真人识别范围和跨日稳定仍未做；同金额/同 token 的收益不在本文主张内；纯业务域效应仍与协议/能力/输出长度混杂。CONTROL_LEDGER.md 反向列出每个结论依赖，不能因表已填完就宣称全部结论合格。
+
+先导 96 + 核心 1,728 + 扩展 768，共 2,592 个请求身份，2,591 次 HTTP 200、一次中断未知。累计保守估算约 ¥{cost:.4f}，未知调用另留 ¥0.01 余量，实际扣费未验证。
+
+{mdtable(m['cumulativeCosts'],['provider','attempts','http200','estimatedCostCny','unknownUsage','authorizedCeilingCny','actualDebit'])}
+
+'''
+
 def main():
  m=json.loads((OUT/'metrics.json').read_text(encoding='utf-8'));groups=[g for g in m['groups'] if g['system']=='both'];G={g['group']:g for g in groups}
  cost=sum(c['estimatedCostCny'] for c in m['costs']);unknown=sum(c['unknownUsage'] for c in m['costs'])
@@ -41,7 +83,7 @@ def main():
  modelrows=m['models'];examples=json.loads((OUT/'examples.json').read_text(encoding='utf-8'))
  text=f'''# 开放语言与有限执行权：两个校园只读助手的受控消融研究
 
-版本：核心实验 v1，测量修订 v2；2026-10-08。研究记录稿，未投稿，作者署名待确定。
+版本：核心实验 v1，测量修订 v2，补充控制批次 v1；2026-10-08。研究记录稿，未投稿，作者署名待确定。
 
 ## 摘要
 
@@ -108,7 +150,7 @@ B/C/D 复用同一 PA/PB；F 各预算共享同一厂商的独立采样池。这
 
 {mdtable(modelrows,['system','provider','n','httpSuccess','protocolValid','semanticCorrect','primaryN','primarySemanticCorrect','entryGateRejected'])}
 
-格式不合格不等于完全没有理解，语义核心看似正确也不取得执行资格。本文完整计划评分对缺字段直接不合格，不通过自动补字段取得语义满分。历史图书馆实验的 12/41 Qwen 格式失败仅作背景，不能继承到本轮不同题表和时段。
+格式不合格不等于完全没有理解，语义核心看似正确也不取得执行资格。本文完整计划评分对缺字段直接不合格，不通过自动补字段取得语义满分。核心有一条完整 HTTP 响应协议不合格、但显式非空目标与标签相符，另列 protocolInvalidTargetMatch；这只说明声明的部分目标匹配，不证明条件完整或原意完全正确。历史图书馆实验的 12/41 Qwen 格式失败仅作背景，不能继承到本轮不同题表和时段。
 
 ### 5.2 决策覆盖、弃权与执行
 
@@ -136,7 +178,7 @@ B 仍有六次错误个人范围待确认，均来自两家同时把“相机且
 
 {mdtable(m['costs'],['provider','attempts','http200','estimatedCostCny','unknownUsage','authorizedCeilingCny','actualDebit'])}
 
-费用按官方峰值输入缓存未命中单价保守估算，正式采集采用 ¥10 总上限，用户授权硬上限为每家 ¥20。未知调用另留 ¥0.01 预算余量；实际扣费未读取。单次 HTTP 中位与 p95 是实测，包含一般失败；未知中断不虚构时长。各组串行求和的逻辑时延和成本在 group-table.csv 中，因复用原始调用不等于线上部署时延，组费用不能再次合计。
+此表仅包含先导与核心批次。费用按官方峰值输入缓存未命中单价保守估算，正式采集采用 ¥10 总上限，用户授权硬上限为每家 ¥20。未知调用另留 ¥0.01 预算余量；实际扣费未读取。单次 HTTP 中位与 p95 是实测，包含一般失败；未知中断不虚构时长。各组串行求和的逻辑时延和成本在 group-table.csv 中，因复用原始调用不等于线上部署时延，组费用不能再次合计。
 
 区间按十二个题族整体重采样，保留两系统、两变体和重复，4,000 次探索性 bootstrap。配对差异及区间在 evaluation-v2/report.json；没有独立用户总体、未作确认性假设检验，也未按多重比较作显著性声明。因此不使用“显著优于”或面向所有中文请求的概率保证。
 
@@ -144,9 +186,14 @@ B 仍有六次错误个人范围待确认，均来自两家同时把“相机且
 
 下列反例由公开脚本按预定义类别取首个见证，使用真实记录身份，不伪造旧版页面。记录查看器截图只作旁证，原始 JSONL 和原生见证才是主体。
 '''
+ text=text.replace('## 6 代表性反例',extended_sections()+'## 6 代表性反例')
+ text=text.replace('计费保守估算合计约', '先导与核心批次计费保守估算合计约')
+ text=text.replace('关键词：结构化计划', '另完成原四十八题后窗口与十六道前瞻组合题的 768 次扩展调用，以及 396 个历史题/厂商对的原生转移回放，结果分层报告，不混入核心分母。独立盲标、真人识别收益和跨日稳定仍未证明。\n\n关键词：结构化计划')
  for i,e in enumerate(examples,1):
   text+=f"\n### 6.{i} {e['label']}\n\n输入：{e['question']}。记录：{e['callId']}。原生状态：{e['native']['response']['status']}。\n\n模型最终内容：\n\n```json\n{e['modelContent']}\n```\n"
-  if 'review' in e:text+=f"\n审查最终内容：\n\n```json\n{e['review']}\n```\n"
+  if 'review' in e:
+   text+=f"\n审查最终内容：\n\n```json\n{e['review']}\n```\n"
+   text+='\n此例是 MY_DUE_SOON/3 天；原生 BookQueryRepository 的这个 intent 已固定约束 br.status=0 及到期日期范围，BookPlanPolicy 不要求该 intent 额外带 unreturnedOnly。审查者将 MY_BORROWS 的筛选要求错误套到 MY_DUE_SOON，要求补 unreturnedOnly=true，反而会产生该 intent 不支持的参数。故这里有源码与原生见证支持“正确查询被阻断”，而非只凭人工印象给审查定罪。\n'
  text+='''
 ## 7 讨论：可以从结果提出什么
 
@@ -172,9 +219,9 @@ Structured Uncertainty [8] 在工具参数空间区分规格不确定与模型�
 
 ## 9 局限性
 
-两个系统来自同一开发者和同一仓库，不能称两个独立组织的外部复现。题表集中已知机制，只有四十八道输入、三个重复，部分题族正确答案只有 CLARIFY 动作而未核验 reason 的细粒度语义。模型格式失败可能受十三字段长度与输出上限影响，本文没有预算长度消融，不能归因于厂商能力本身。
+两个系统来自同一开发者和同一仓库，不能称两个独立组织的外部复现。核心表只有四十八道已知机制输入、三个重复；十六道扩展题仍由同一执行者在核心后设计，不能消除选择偏差。部分题族正确答案只有 CLARIFY 动作而未核验 reason 的细粒度语义。模型格式失败可能受十三字段长度与输出上限影响，本文没有预算长度消融，不能归因于厂商能力本身。
 
-组件调用发生在一个时段，源时钟固定而供应商时钟不固定；模型别名和底层权重不可冻结。审查提示、保守结构一致与严格多数只是一个明确策略族，不覆盖最优策略。中断的一条未知请求影响其配对预算组，保留为不可用而不做插补；少量个案不能稳定估计长尾概率。
+组件调用发生在同一天的相邻窗口，源时钟固定而供应商时钟不固定；模型别名和底层权重不可冻结，后窗口不证明跨日稳定。审查提示、保守结构一致与严格多数只是一个明确策略族，不覆盖最优策略。中断的一条未知请求影响其配对预算组，保留为不可用而不做插补；少量个案不能稳定估计长尾概率。
 
 原生 H2 回放不证明生产 MySQL、多节点、微信真机、外部身份撤销或容量。确认在产品中为单实例短期状态，既有会话/重放/到期测试是机制证据，没有真人读懂率。对公开正确执行的判断依赖计划匹配及固定链路资格，不是对所有返回字段的独立人工验真；由此不能宣称完整业务正确率。
 
@@ -210,7 +257,7 @@ Structured Uncertainty [8] 在工具参数空间区分规格不确定与模型�
 
 cases.json、plan.json、prompts/ 为原冻结输入；frozen-core.json 和 frozen-core-v2.json 分别绑定停止前和修订后工具。results/core/calls.jsonl 为请求/最终响应，request-journal.jsonl 为发出账本，blocks.jsonl 为配对块完成记录；native-v2/ 为实际原生结果与快照；evaluation-v2/ 为评分与题族区间；output/ 为逐题账本、汇总表、截图和论文。Git 删除记录无需另造永久清理清单。
 
-本轮产品源码未改。历史架构反例来自 qingye/docs/semantic-repair-20261008.md 与 coursework/library-management-system/docs/semantic-repair-20261008.md；历史数字不进入正式分母。复现需要 Python 标准库、JDK 17、Maven、原项目测试依赖；真实调用另需新凭据及新费用授权，旧响应的离线重评不需凭据。
+本轮产品源码未改。历史架构反例来自 qingye/docs/semantic-repair-20261008.md 与 coursework/library-management-system/docs/semantic-repair-20261008.md；历史数字不进入正式模型分母。extension/ 分开保存新题与后窗口；history/ 保留原输入来源、缺失坐标及转移见证；CURRENT.md 为唯一维护入口。研究目录通过 .gitattributes 保留证据字节，source-portability.json 另外绑定原 Git 源树的 LF 哈希，仅容许 checkout 的 CRLF/LF 差异，原始 Windows 字节哈希仍保留。复现需要 Python 标准库、JDK 17、Maven、原项目测试依赖；真实调用另需新凭据及新费用授权，旧响应的离线重评不需凭据。
 '''
  OUT.mkdir(exist_ok=True);PDF.mkdir(exist_ok=True)
  (OUT/'paper.md').write_text(text,encoding='utf-8')

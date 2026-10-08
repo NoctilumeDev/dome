@@ -1,5 +1,5 @@
 """Stratify the frozen extension; never pool new questions with the original table."""
-import csv,json,statistics,sys
+import csv,html,json,statistics,sys
 from collections import Counter
 from pathlib import Path
 E=Path(__file__).resolve().parent;R=E.parent
@@ -90,5 +90,19 @@ def main():
  for f in failures:md+=f"- {f['stratum']} / {f['caseId']} / {f['group']}：{f['question']} → {f['actualStatus']}；错误自动执行={f['wrongAutomatic']}。原计划及冻结标签见 failures.json。\n"
  md+='\n后窗口只对原题作描述性配对，采集时间与重平衡顺序共同变化，不能识别纯时间因果。新题由同一执行者在核心后设计、扩展前冻结，模型不可见标签，执行者不是独立盲标者。历史回放仅转移既有计划，不重新归入模型语义分母。各组共享调用，错误数不能横向累加为独立事件。\n'
  (out/'RESULTS.md').write_text(md,encoding='utf-8')
+ controls=json.loads((R/'CONTROL_LEDGER.json').read_text(encoding='utf-8'))['controls']
+ def htmltable(rows,fields,labels):
+  return '<table><thead><tr>'+''.join('<th>'+html.escape(x)+'</th>' for x in labels)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+html.escape(str(row[k]))+'</td>' for k in fields)+'</tr>' for row in rows)+'</tbody></table>'
+ coremetrics=json.loads((R/'output/metrics.json').read_text(encoding='utf-8'))
+ show=('A:a','A:b','B','D','E:a','E:b','F2:a','F2:b','F4:a','F4:b')
+ f=['group','n','queryHandlingCorrect','publicCompletedCorrect','pendingScope','wrongAutomaticExecution','policyAbstentions']
+ labels=['组','配对块','正确查询/范围','公开正确执行','待范围确认','错误自动执行','策略弃权']
+ page='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>双系统 · 控制变量总账</title><style>body{margin:0;background:#f2f5f1;color:#243c43;font:15px/1.6 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1160px;margin:32px auto;padding:0 28px}h1{font-size:34px;margin:4px 0}h2{font-size:20px;margin-top:28px}p{margin:10px 0}.meta{color:#526969}.stats{display:flex;gap:18px;margin:24px 0}.stats div{background:white;border:1px solid #d4ded6;border-radius:10px;padding:14px 24px;flex:1}.stats strong{display:block;font-size:30px}section{background:white;border:1px solid #d4ded6;border-radius:12px;padding:20px;margin:18px 0}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;border-bottom:1px solid #dde5df;padding:7px 10px}th{background:#e6eeea}.note{border-left:4px solid #986a4e;background:#f5eee8;padding:12px 18px}.end{font-size:12px;color:#617672}</style><main><div class="meta">冻结记录查看器 · 2026-10-08 · a=DeepSeek / b=Qwen</div><h1>双系统 · 控制变量总账</h1><p>核心、后窗口、新组合题分开报告。测量完成 ≠ 结论普遍成立。</p>'
+ page+=f'<div class="stats"><div>全部请求身份<strong>2,592</strong>1 次中断未知保留</div><div>核心 + 补充配对块<strong>144 + 64</strong>另有 8 块先导</div><div>控制族 / 总账项<strong>8 / 21</strong>未证明项仍有坐标</div><div>累计保守估算<strong>¥{sum(c["estimatedCostCny"] for c in costs):.4f}</strong>实际扣费未核对</div></div>'
+ page+='<p class="note">本轮三层表中，B 与 D 的正确公开执行相同；双向审查未增加查询收益。保守弃权能挡错，不能当成恢复答案。独立盲标、真人识别与跨日稳定未证明。</p>'
+ allparts=[('核心已知题 · 48 题 × 3 次',[g for g in coremetrics['groups'] if g['system']=='both'])]+[(('原 48 题 · 后窗口' if i==0 else '16 道前瞻组合题 · 扩展前冻结'),[g for g in groups if g['system']=='both' and g['stratum']==stratum]) for i,stratum in enumerate(strata)]
+ for label,part in allparts:page+='<section><h2>'+label+'</h2>'+htmltable([g for g in part if g['group'] in show],f,labels)+'</section>'
+ page+='<section><h2>控制族逐项状态</h2>'+htmltable(controls,['id','family','name','status'],['ID','族','控制项','状态'])+'</section><p class="end">只读离线记录展示；不是产品现场。源 SHA dbb32160a811fd06c826a8d9eafbc660a0548219。H2 原生见证、原始 JSONL、CSV 与冻结合同负责证据；截图仅为旁证。</p></main></html>'
+ (R/'output/control-dashboard.html').write_text(page,encoding='utf-8')
  print('Extension strata summarized; broad generalization remains NOT_QUALIFIED')
 if __name__=='__main__':main()

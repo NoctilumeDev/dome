@@ -12,7 +12,7 @@ def main():
  row('C02-money',2,'同金额/同token因果对照','NOT_APPLICABLE','plan.json; output/group-table.csv','本文不声称同金额或同计算量优势；如提出该结论须另做')
  row('C03',3,'B 一致性与固定PA/PB复用','PASS','core.py; tests/test_core.py; frozen-core-v2.json','完整结构一致；不证明任意SQL语义等价')
  row('C04',4,'自审、单向和双向审查','NEGATIVE_RESULT','output/group-table.csv; output/review-table.csv','核心B/C/D公开正确执行及错误执行相同；结论限定该题表/时段')
- row('C04-extension',4,'后窗口及新组合题的审查增益',ext_status,'extension/results/core/evaluation-v2/','新旧分层，不能用新题不同难度解释成时间效应')
+ row('C04-extension',4,'后窗口及新组合题的审查增益','NEGATIVE_RESULT' if done else ext_status,'extension/results/core/evaluation-v2/; extension/output/group-table.csv','B/D未增加正确查询；新旧分层，不能用新题不同难度解释成时间效应')
  row('C05',5,'协议格式与语义目标分账','PASS','output/proposal-ledger.csv; output/model-table.csv; output/examples.json','declaredNonNullTargetMatch仅匹配显式非空目标，不补字段、不证明完整原意')
  row('C05-normalize',5,'规范化不补答案、不删条件','PASS','core.py; tests/test_core.py','只比较原完整字段；两个schema不强行统一')
  row('C06',6,'本地权限与固定只读执行','PASS','results/core/native-v2/; results/engineering-qingye.txt; results/engineering-library.txt','H2及已有角色/确认测试；无生产MySQL、多节点证明')

@@ -46,9 +46,9 @@
       "id": "C04-extension",
       "family": 4,
       "name": "后窗口及新组合题的审查增益",
-      "status": "PASS",
-      "evidence": "extension/results/core/evaluation-v2/",
-      "boundary": "新旧分层，不能用新题不同难度解释成时间效应"
+      "status": "NEGATIVE_RESULT",
+      "evidence": "extension/results/core/evaluation-v2/; extension/output/group-table.csv",
+      "boundary": "B/D未增加正确查询；新旧分层，不能用新题不同难度解释成时间效应"
     },
     {
       "id": "C05",
