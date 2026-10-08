@@ -1,0 +1,456 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.kmbeast:library-management-api >-----------------
+[INFO] Building library-management-api 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ library-management-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] Copying 45 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ library-management-api ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 83 source files with javac [debug target 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ library-management-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ library-management-api ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 7 source files with javac [debug target 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ library-management-api ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running cn.kmbeast.LibraryResearchReplayTest
+10:29:13.940 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [CREATE TABLE bookshelf(id INT PRIMARY KEY,name VARCHAR(64),location VARCHAR(64))]
+10:29:13.953 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.118 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [CREATE TABLE book(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(64),author VARCHAR(64),isbn VARCHAR(64),publisher VARCHAR(64),category VARCHAR(64),total_count INT,available_count INT,cover VARCHAR(64),description VARCHAR(64),create_time TIMESTAMP,bookshelf_id INT)]
+10:29:14.118 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.123 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [CREATE TABLE user(id INT PRIMARY KEY,user_account VARCHAR(64),user_name VARCHAR(64),user_role INT,is_login BOOLEAN,create_time TIMESTAMP)]
+10:29:14.123 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.124 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [CREATE TABLE borrow_record(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT,book_id INT,borrow_time TIMESTAMP,due_date TIMESTAMP,return_time TIMESTAMP,status INT,fine_amount DECIMAL)]
+10:29:14.124 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.125 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [CREATE TABLE feedback(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT,content VARCHAR(100),reply VARCHAR(100),status INT,create_time TIMESTAMP,reply_time TIMESTAMP)]
+10:29:14.125 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.126 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [CREATE TABLE book_review(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT,book_id INT,rating INT,content VARCHAR(100),create_time TIMESTAMP,update_time TIMESTAMP)]
+10:29:14.126 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.126 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO user(id,user_account,user_name,user_role,is_login) VALUES(1,'admin','管理员',1,FALSE),(2,'zhangsan','张三',2,FALSE),(3,'lisi','李四',2,FALSE)]
+10:29:14.127 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.128 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO bookshelf VALUES(1,'一号','一层'),(2,'二号','二层'),(3,'空书架','三层')]
+10:29:14.129 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.130 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.131 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.131 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.138 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.138 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.138 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.140 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.140 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.140 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.140 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.140 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.140 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.141 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.141 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.141 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.143 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.143 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.143 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.143 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.143 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.143 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.144 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.144 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.144 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.145 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.145 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.145 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.145 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.145 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.145 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.146 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.146 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.146 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.146 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.146 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.146 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.147 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.147 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.147 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.147 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.147 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.147 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.148 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.148 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.148 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.149 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.149 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.149 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.149 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.149 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.149 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.150 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.150 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.150 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.150 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.150 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.150 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.151 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.151 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.151 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.151 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.151 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.151 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.152 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.152 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.152 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.152 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.152 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.152 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.154 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.154 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.154 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.154 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.154 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.154 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.154 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.155 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.155 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.155 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.155 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.155 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.155 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.155 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.155 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.156 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.156 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.156 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.156 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.156 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.156 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.157 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.157 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.157 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.157 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.157 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.158 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.158 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.158 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.158 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.158 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.158 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.158 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.159 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.159 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.159 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.160 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.160 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.160 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.160 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.160 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.160 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.160 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.160 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.160 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.161 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.161 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.161 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.162 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.162 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.162 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.162 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.162 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.162 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.162 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.162 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.162 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.163 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.163 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.163 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.163 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.163 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.163 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.164 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.164 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.164 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.164 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.164 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.164 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.164 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.164 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.164 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.165 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.165 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.165 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.165 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.165 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.165 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.166 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.166 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.166 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.169 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.169 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.169 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.169 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.169 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.170 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.170 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.170 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.170 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.170 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.170 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.170 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.171 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.171 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [INSERT INTO book(id,name,author,category,total_count,available_count,bookshelf_id) VALUES(?,?,?,?,?,?,?)]
+10:29:14.171 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.171 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,status) VALUES(2,1,NOW(),DATEADD('DAY',2,NOW()),0),(3,2,NOW(),DATEADD('DAY',2,NOW()),0)]
+10:29:14.171 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.179 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.179 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.179 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.179 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.180 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.180 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.180 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.180 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.181 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.181 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.181 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.181 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.182 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.182 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.182 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.182 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.183 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.183 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.183 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.183 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.184 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.184 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.184 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO borrow_record(user_id,book_id,borrow_time,due_date,return_time,status) VALUES(3,2,NOW(),DATEADD('DAY',2,NOW()),NOW(),1)]
+10:29:14.184 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.184 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [INSERT INTO feedback(user_id,content,status) VALUES(2,'张三自己的反馈',0),(3,'PRIVATE_LISI_CANARY',0)]
+10:29:14.184 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.639 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'dataSource' of type [null] on target object [cn.kmbeast.service.assistant.BookQueryRepository$MockitoMock$xlmJzzmF@30d25c03] or target class [class cn.kmbeast.service.assistant.BookQueryRepository$MockitoMock$xlmJzzmF] to value [ds0: url=jdbc:h2:mem:fefd791e-559a-48b8-8ffc-3f1de9ec22a4;MODE=MySQL;DATABASE_TO_UPPER=FALSE;NON_KEYWORDS=USER;DB_CLOSE_DELAY=-1 user=]
+10:29:14.743 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'scopeGuard' of type [null] on target object [cn.kmbeast.service.assistant.DeepSeekBookQueryPlanner@74dbb1ee] or target class [class cn.kmbeast.service.assistant.DeepSeekBookQueryPlanner] to value [cn.kmbeast.service.assistant.BookScopeGuard@70f822e]
+10:29:14.744 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'apiKey' of type [null] on target object [cn.kmbeast.service.assistant.DeepSeekBookQueryPlanner@74dbb1ee] or target class [class cn.kmbeast.service.assistant.DeepSeekBookQueryPlanner] to value []
+10:29:14.745 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'scopeGuard' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [cn.kmbeast.service.assistant.BookScopeGuard@70f822e]
+10:29:14.745 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'consents' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [cn.kmbeast.service.assistant.BookScopeConsents@3531f3ca]
+10:29:14.746 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [cn.kmbeast.service.assistant.DeepSeekBookQueryPlanner@74dbb1ee]
+10:29:14.746 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryRepository' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [cn.kmbeast.service.assistant.BookQueryRepository$MockitoMock$xlmJzzmF@30d25c03]
+10:29:14.746 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'answerBuilder' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [cn.kmbeast.service.assistant.BookAnswerBuilder@4867ab9f]
+10:29:14.748 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'clock' of type [null] on target object [cn.kmbeast.service.assistant.BookQueryRepository$MockitoMock$xlmJzzmF@30d25c03] or target class [class cn.kmbeast.service.assistant.BookQueryRepository$MockitoMock$xlmJzzmF] to value [FixedClock[2026-10-07T17:00:00Z,Asia/Shanghai]]
+10:29:14.748 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Getting field 'consents' from target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl]
+10:29:14.748 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'clock' of type [null] on target object [cn.kmbeast.service.assistant.BookScopeConsents@3531f3ca] or target class [class cn.kmbeast.service.assistant.BookScopeConsents] to value [FixedClock[2026-10-07T17:00:00Z,Asia/Shanghai]]
+10:29:14.748 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+10:29:14.748 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE borrow_record SET borrow_time=?,due_date=?,return_time=CASE WHEN status=1 THEN ? ELSE NULL END]
+10:29:14.748 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.755 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [UPDATE book SET available_count=1 WHERE id=1]
+10:29:14.755 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.756 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update [UPDATE book SET total_count=7,available_count=4,bookshelf_id=2 WHERE id=2]
+10:29:14.756 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.758 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.758 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.769 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.769 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.770 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.770 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.770 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.770 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.773 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.773 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.773 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.773 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.820 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'objectMapper' of type [null] on target object [cn.kmbeast.service.assistant.DeepSeekBookQueryPlanner@304d0259] or target class [class cn.kmbeast.service.assistant.DeepSeekBookQueryPlanner] to value [com.fasterxml.jackson.databind.ObjectMapper@1d23ff23]
+10:29:14.832 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 265939934]
+10:29:14.912 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.912 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.913 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.913 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.913 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.913 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.914 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.914 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.914 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.914 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.915 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.915 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.917 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 172299409]
+10:29:14.918 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.918 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.919 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.919 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.919 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.921 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.921 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.921 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.922 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.922 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.922 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.922 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.924 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 1825071442]
+10:29:14.924 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.924 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.925 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.925 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.925 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.925 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.926 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.926 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.926 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.926 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.926 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.926 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.929 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 1378612814]
+10:29:14.930 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.930 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.931 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.931 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.931 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.931 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.931 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.931 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.932 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.932 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.933 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.933 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.936 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 778484786]
+10:29:14.962 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.962 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.963 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.963 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.963 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.963 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.964 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.964 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.964 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.964 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.965 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.965 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.967 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 1290358063]
+10:29:14.970 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.970 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.970 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.970 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.970 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.970 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.971 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.971 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.971 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.971 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.971 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.971 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.975 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 159190022]
+10:29:14.978 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.978 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.978 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.978 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.978 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.978 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.979 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.979 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.979 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.979 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.979 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.979 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.986 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 797539755]
+10:29:14.987 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.987 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.988 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.988 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.988 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.988 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.988 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.988 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.989 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.989 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.989 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.989 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.990 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 595556720]
+10:29:14.992 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.992 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.993 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.993 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.993 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:14.993 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.993 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:14.993 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.993 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:14.993 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.994 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:14.994 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.996 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 1780298277]
+10:29:14.999 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:14.999 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:14.999 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:14.999 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.001 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:15.001 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.001 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:15.001 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.001 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:15.001 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.001 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:15.001 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.003 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 708222484]
+10:29:15.006 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:15.006 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.006 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:15.006 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.010 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:15.010 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.010 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:15.010 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.010 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:15.010 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.010 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:15.010 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.012 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 925672150]
+10:29:15.014 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:15.014 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.015 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:15.015 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.015 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:15.015 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.015 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:15.015 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.015 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:15.015 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.015 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:15.015 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.017 [main] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'queryPlanner' of type [null] on target object [cn.kmbeast.service.impl.BookAssistantServiceImpl@618ad2aa] or target class [class cn.kmbeast.service.impl.BookAssistantServiceImpl] to value [Mock for DeepSeekBookQueryPlanner, hashCode: 2066770847]
+10:29:15.018 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book ORDER BY id]
+10:29:15.019 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.019 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM bookshelf ORDER BY id]
+10:29:15.019 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.019 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM user ORDER BY id]
+10:29:15.019 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.019 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM borrow_record ORDER BY id]
+10:29:15.019 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.020 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM feedback ORDER BY id]
+10:29:15.020 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.020 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT * FROM book_review ORDER BY id]
+10:29:15.020 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+10:29:15.023 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [DROP ALL OBJECTS]
+10:29:15.024 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.381 s - in cn.kmbeast.LibraryResearchReplayTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.221 s
+[INFO] Finished at: 2026-10-08T10:29:15+08:00
+[INFO] ------------------------------------------------------------------------

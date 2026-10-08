@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/SUDA-LA/SeSQL",
+  "commit": "1b1836329df4946c363fb63b8fb34b29789e71bb",
+  "inputs": [
+    {
+      "path": "single_round_examples.json",
+      "url": "https://raw.githubusercontent.com/SUDA-LA/SeSQL/1b1836329df4946c363fb63b8fb34b29789e71bb/data/example/single_round_examples.json",
+      "sha256": "30fcbefabb215308779a1da8ca97bcae9831befc398b0b13c183ae83f5a418b8",
+      "bytes": 35897
+    },
+    {
+      "path": "session_level_examples.json",
+      "url": "https://raw.githubusercontent.com/SUDA-LA/SeSQL/1b1836329df4946c363fb63b8fb34b29789e71bb/data/example/session_level_examples.json",
+      "sha256": "71e7aa0872ab116302d6c31cea394b87c46efb054ea5ba7832061822356a4aac",
+      "bytes": 70814
+    },
+    {
+      "path": "SeSQL-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/SUDA-LA/SeSQL/1b1836329df4946c363fb63b8fb34b29789e71bb/LICENSE",
+      "sha256": "3eece4ba25e1492072768e9a80ad773a088ad6b35173ff989e963ef4a8e16b68",
+      "bytes": 1064
+    }
+  ]
+}

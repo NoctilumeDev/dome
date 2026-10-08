@@ -1,0 +1,19 @@
+{
+  "window": "bounded-recovery-1",
+  "retainedPrior": 12,
+  "unknownPrior": 6,
+  "phase": "core",
+  "manifest": "frozen-core-v2.json",
+  "startedAt": "2026-10-08T02:31:03.582297+00:00",
+  "finishedAt": "2026-10-08T02:59:01.525412+00:00",
+  "completedBlocks": 128,
+  "plannedBlocks": 128,
+  "callCount": 1536,
+  "estimatedCostCny": 2.254136000000002,
+  "unknownCostReserveCny": 0.06,
+  "unknownCostCalls": 6,
+  "actualBilling": "NOT_VERIFIED",
+  "stop": null,
+  "raw": "calls.jsonl",
+  "budgetCny": 5.0
+}

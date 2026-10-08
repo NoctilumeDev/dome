@@ -1,0 +1,2 @@
+Pre-call infrastructure failure: ModuleNotFoundError: No module named core
+No credential input or provider request occurred. Versioned import-path repair only.

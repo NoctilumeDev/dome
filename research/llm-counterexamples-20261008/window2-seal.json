@@ -1,0 +1,13 @@
+{
+  "window": "bounded-recovery-1",
+  "files": {
+    "run-window2.py": "5e4bd83e7e335d441dc32b065fadde261dd08ed27f6470ad95af0ad5583d429d",
+    "WINDOW2.md": "ed299243d19bad999df5a5c02f3611328b60abf93eb4bb59f012f55ae6857d7c",
+    "frozen-core-v2.json": "31a14db11f412837a72117facf6a83bb3a946f59e0d511b2e82927cfa0f6a527",
+    "results\\core\\collection-summary-window1.json": "4264058eeaa846daa537c3ccbf165d33a4205cf053b0c6e936317438da5c1e8f",
+    "diagnostics\\transport.py": "aed86d2520d5763fcbad8941ca6c721084971786304feee70d2528fcdc0883c0",
+    "diagnostics\\transport-result.json": "645957b46ece4bdedcd334dd6bf2cd284a5bffa31e6892a02123245fd5059a52"
+  },
+  "formerSha": "ae0d410",
+  "automaticThirdWindow": false
+}
