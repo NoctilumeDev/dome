@@ -1,0 +1,418 @@
+[
+  {
+    "caseId": "qingye-R3-pilot-01-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-pilot-02-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-pilot-03-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-pilot-04-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-pilot-05-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-pilot-06-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-pilot-01-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-pilot-02-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-pilot-03-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-pilot-04-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-pilot-05-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-pilot-06-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-01-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-01-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-02-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-02-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-03-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-03-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-04-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-04-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-05-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-05-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-06-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "qingye-R3-formal-06-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-01-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-01-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-02-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-02-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-03-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-03-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-04-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-04-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-05-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-05-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-06-1",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "library-R3-formal-06-2",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CONFIRM_SCOPE",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid002464",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid002464",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid001628",
+    "reachable": false,
+    "statusWithFrozenCandidate": "REJECT",
+    "nativeQualified": false,
+    "oracleAction": "REJECT",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid001628",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid000460",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid000460",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid001332",
+    "reachable": true,
+    "statusWithFrozenCandidate": "CLARIFY",
+    "nativeQualified": true,
+    "oracleAction": "CLARIFY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid001332",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid000757",
+    "reachable": false,
+    "statusWithFrozenCandidate": "REJECT",
+    "nativeQualified": false,
+    "oracleAction": "REJECT",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid000757",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid000228",
+    "reachable": false,
+    "statusWithFrozenCandidate": "REJECT",
+    "nativeQualified": false,
+    "oracleAction": "REJECT",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid000228",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid001404",
+    "reachable": false,
+    "statusWithFrozenCandidate": "REJECT",
+    "nativeQualified": false,
+    "oracleAction": "REJECT",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid001404",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-boundary-qid000728",
+    "reachable": false,
+    "statusWithFrozenCandidate": "REJECT",
+    "nativeQualified": false,
+    "oracleAction": "REJECT",
+    "scope": "pre-model deterministic replay; not independent human review"
+  },
+  {
+    "caseId": "R3-adapted-qid000728",
+    "reachable": true,
+    "statusWithFrozenCandidate": "QUERY",
+    "nativeQualified": true,
+    "oracleAction": "QUERY",
+    "scope": "pre-model deterministic replay; not independent human review"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "source": "DuSQL development / 教材辅助参考书",
+  "url": "https://dataset-bj.cdn.bcebos.com/qianyan/DuSQL.zip",
+  "paper": "https://aclanthology.org/2020.emnlp-main.562/",
+  "originalDataSha256": "5033c54318d5221a2532bc7c7388245e14ce1979ae9c79e928d4e21ec245c860",
+  "originalBoundaryCount": 8,
+  "adaptedCompatibleCount": 8,
+  "unadaptedCompatibleClaim": "NOT_ESTABLISHED",
+  "licenseBoundary": "Research source retained in old local cache; full corpus not redistributed. Tiny cited excerpts only.",
+  "blindLabels": false
+}
