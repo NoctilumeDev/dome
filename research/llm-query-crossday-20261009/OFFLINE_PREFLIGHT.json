@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-10-09T15:55:04.058853+00:00",
+  "paidCalls": 0,
+  "identicalCopies": {
+    "plan.json": "a2bdb791302f519bf2e4f3d1584d9a3ea200b395ed56924f65a47b42889828d8",
+    "cases.json": "b6ee22948236020863acab1d43d5351042f277a2ebe1bd2001f31024a861a44c",
+    "fixtures.json": "c192cf1e6390638379968de0d55a1b6cb3959838bd7c2b41dc0a21fb54c4a9d7",
+    "preflight-labels.json": "c9ab3e4741f398484a4a2dd82f2ce70ff7a8b672e926a6d5446abe25ecf79143",
+    "native.py": "9897a06030f9c58f63c5c528170dce779c51d1139f4e672c3bf6ff8ef30de7bc",
+    "measure_v2.py": "18ac2eab0865a3b72ad6df27c29a2a931af5485c4d2ef86ea324a6821987a7b5",
+    "review_measure.py": "a74b0f8737b30ea5b630e2edcd00c32832519c1027cb6448d015858fc03feb44",
+    "prompts/library.txt": "7638b8c59175c5aff40551250f7a3582085e9ad3d06cda6739f90283520cdec5",
+    "prompts/qingye.txt": "596c615c359ffadf0aeeb939dc04fc6c3915b01a265b1eef83470bcba6386c31",
+    "prompts/review.txt": "ce2fa7cb2c48037fa318f82aa15727c28e490f681182a7eae4c4b738f90c1e47",
+    "native/LibraryQueryControlsReplayTest.java": "4999c07959757f2eef2976fb0f689742ed9c973e22eb3f3b43fd1ed4c02d95cc",
+    "native/QingyeQueryControlsReplayTest.java": "3a9b626e4a0eaf654a025cbaebac486fba117d02f85e0762541c9fa277c90ab7"
+  },
+  "proposalPayloadAndOrder": 234,
+  "reviewOrderAndPromptReconstruction": 468,
+  "budgetBeforeFirstCall": {
+    "new": {
+      "deepseek": 0,
+      "qwen": 0
+    },
+    "globalCumulative": {
+      "deepseek": 8.437669,
+      "qwen": 2.97314145
+    },
+    "firstAndRepeat": 0.8505008000000001
+  },
+  "credentialStorage": "No keys in files/environment/scheduler"
+}
