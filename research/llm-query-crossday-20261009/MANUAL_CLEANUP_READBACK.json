@@ -1,0 +1,44 @@
+{
+  "observedAt": "2026-10-10T00:21:01.8864185+08:00",
+  "paths": [
+    {
+      "path": "C:\\Users\\lenovo\\Desktop\\GitHubProjects\\tmp\\dome-llm-controls-layer3-20261008\\qingye\\backend\\target",
+      "exists": false
+    },
+    {
+      "path": "C:\\Users\\lenovo\\Desktop\\GitHubProjects\\tmp\\dome-llm-controls-layer3-20261008\\coursework\\library-management-system\\backend\\target",
+      "exists": false
+    },
+    {
+      "path": "C:\\Users\\lenovo\\Desktop\\GitHubProjects\\tmp\\dome-llm-controls-layer3-20261008\\qingye\\backend\\src\\test\\java\\cn\\qingye\\QingyeResearchReplayTest.java",
+      "exists": false
+    },
+    {
+      "path": "C:\\Users\\lenovo\\Desktop\\GitHubProjects\\tmp\\dome-llm-controls-layer3-20261008\\coursework\\library-management-system\\backend\\src\\test\\java\\cn\\kmbeast\\LibraryResearchReplayTest.java",
+      "exists": false
+    },
+    {
+      "path": "C:\\Users\\lenovo\\Desktop\\GitHubProjects\\tmp\\dome-llm-controls-layer3-20261008\\qingye\\backend\\src\\test\\java\\cn\\qingye\\QingyeQueryControlsReplayTest.java",
+      "exists": false
+    },
+    {
+      "path": "C:\\Users\\lenovo\\Desktop\\GitHubProjects\\tmp\\dome-llm-controls-layer3-20261008\\coursework\\library-management-system\\backend\\src\\test\\java\\cn\\kmbeast\\LibraryQueryControlsReplayTest.java",
+      "exists": false
+    }
+  ],
+  "javaProcesses": [],
+  "listeners": [
+    {
+      "LocalPort": 33060,
+      "OwningProcess": 7408
+    },
+    {
+      "LocalPort": 3306,
+      "OwningProcess": 7408
+    },
+    {
+      "LocalPort": 6379,
+      "OwningProcess": 3392
+    }
+  ]
+}

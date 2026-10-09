@@ -1,0 +1,251 @@
+{
+  "status": "COMPLETE_ACTUAL_CROSSDAY_PIPELINE",
+  "questions": 42,
+  "modelReachableQuestions": 39,
+  "pairedProposalObservations": 234,
+  "pairedBlocks": 117,
+  "families": 4,
+  "gapSeconds": {
+    "proposal": 88743.824157,
+    "review": 87933.825196
+  },
+  "windows": {
+    "day0": {
+      "strategies": {
+        "B": {
+          "remainingWrongPublic": 4,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 0,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 0,
+          "logicalSerialMedianMs": 2422.0,
+          "logicalMeanEstimatedCny": 0.002122994871794872
+        },
+        "C:a": {
+          "remainingWrongPublic": 3,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 1,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 7,
+          "logicalSerialMedianMs": 3610.0,
+          "logicalMeanEstimatedCny": 0.002794659829059829
+        },
+        "C:b": {
+          "remainingWrongPublic": 1,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 3,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 0,
+          "logicalSerialMedianMs": 3157.0,
+          "logicalMeanEstimatedCny": 0.004026345299145299
+        },
+        "D": {
+          "remainingWrongPublic": 0,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 4,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 7,
+          "logicalSerialMedianMs": 4329.0,
+          "logicalMeanEstimatedCny": 0.004698010256410257
+        }
+      },
+      "resources": {
+        "deepseek": {
+          "requests": 351,
+          "transport": {
+            "SUCCESS": 351
+          },
+          "usageMissing": 0,
+          "inputTokens": 251040,
+          "outputTokens": 16019,
+          "apiMedianMs": 734.0,
+          "responseModels": [
+            "deepseek-flash"
+          ],
+          "estimatedNewCny": 0.630232
+        },
+        "qwen": {
+          "requests": 351,
+          "transport": {
+            "SUCCESS": 351
+          },
+          "usageMissing": 0,
+          "inputTokens": 237921,
+          "outputTokens": 14966,
+          "apiMedianMs": 1250.0,
+          "responseModels": [
+            "qwen-plus"
+          ],
+          "estimatedNewCny": 0.22026880000000001
+        }
+      },
+      "primaryPlanMatches": {
+        "deepseek": 86,
+        "qwen": 64
+      },
+      "nativeQualifiedProposals": {
+        "deepseek": 114,
+        "qwen": 79
+      },
+      "reviewerFormats": {
+        "ACCEPT": 313,
+        "CLARIFY": 77,
+        "REJECT": 78
+      },
+      "proposalSummary": {
+        "startedAt": "2026-10-08T15:12:10.082086+00:00",
+        "finishedAt": "2026-10-08T15:16:59.283206+00:00",
+        "requestIdentities": 234,
+        "plannedRequestIdentities": 234,
+        "excludedBeforeModel": 3,
+        "stop": null,
+        "conservativeNewCny": {
+          "deepseek": 0.18578,
+          "qwen": 0.06261039999999998
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "reviewSummary": {
+        "startedAt": "2026-10-08T15:29:19.891511+00:00",
+        "finishedAt": "2026-10-08T15:37:34.246813+00:00",
+        "requestIdentities": 468,
+        "plannedRequestIdentities": 468,
+        "stop": null,
+        "reviewConservativeCny": {
+          "deepseek": 0.44445199999999996,
+          "qwen": 0.1576584000000001
+        },
+        "actualCash": "NOT_VERIFIED"
+      }
+    },
+    "day1": {
+      "strategies": {
+        "B": {
+          "remainingWrongPublic": 5,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 0,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 0,
+          "logicalSerialMedianMs": 2421.0,
+          "logicalMeanEstimatedCny": 0.0021218837606837605
+        },
+        "C:a": {
+          "remainingWrongPublic": 3,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 2,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 6,
+          "logicalSerialMedianMs": 3608.0,
+          "logicalMeanEstimatedCny": 0.002795165811965812
+        },
+        "C:b": {
+          "remainingWrongPublic": 2,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 3,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 0,
+          "logicalSerialMedianMs": 3110.0,
+          "logicalMeanEstimatedCny": 0.004023165811965812
+        },
+        "D": {
+          "remainingWrongPublic": 0,
+          "remainingWrongPrivateScope": 3,
+          "newWrongBlocked": 5,
+          "newCorrectQueryOrScopeBlocked": 0,
+          "correctClarifyRevetoed": 0,
+          "correctRejectRevetoed": 6,
+          "logicalSerialMedianMs": 4358.0,
+          "logicalMeanEstimatedCny": 0.004696447863247863
+        }
+      },
+      "resources": {
+        "deepseek": {
+          "requests": 351,
+          "transport": {
+            "SUCCESS": 351
+          },
+          "usageMissing": 0,
+          "inputTokens": 250967,
+          "outputTokens": 15973,
+          "apiMedianMs": 703.0,
+          "responseModels": [
+            "deepseek-flash"
+          ],
+          "estimatedNewCny": 0.629718
+        },
+        "qwen": {
+          "requests": 351,
+          "transport": {
+            "SUCCESS": 351
+          },
+          "usageMissing": 0,
+          "inputTokens": 237821,
+          "outputTokens": 15089,
+          "apiMedianMs": 1297.0,
+          "responseModels": [
+            "qwen-plus"
+          ],
+          "estimatedNewCny": 0.22043480000000001
+        }
+      },
+      "primaryPlanMatches": {
+        "deepseek": 87,
+        "qwen": 64
+      },
+      "nativeQualifiedProposals": {
+        "deepseek": 114,
+        "qwen": 80
+      },
+      "reviewerFormats": {
+        "ACCEPT": 307,
+        "CLARIFY": 89,
+        "REJECT": 72
+      },
+      "proposalSummary": {
+        "startedAt": "2026-10-09T15:56:03.107363+00:00",
+        "finishedAt": "2026-10-09T16:00:57.673416+00:00",
+        "requestIdentities": 234,
+        "plannedRequestIdentities": 234,
+        "excludedBeforeModel": 3,
+        "stop": null,
+        "conservativeNewCny": {
+          "deepseek": 0.18578799999999998,
+          "qwen": 0.06247239999999998
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "reviewSummary": {
+        "startedAt": "2026-10-09T16:03:08.072009+00:00",
+        "finishedAt": "2026-10-09T16:11:34.646686+00:00",
+        "requestIdentities": 468,
+        "plannedRequestIdentities": 468,
+        "stop": null,
+        "reviewConservativeCny": {
+          "deepseek": 0.4439299999999998,
+          "qwen": 0.15796240000000014
+        },
+        "actualCash": "NOT_VERIFIED"
+      }
+    }
+  },
+  "budget": {
+    "new": {
+      "deepseek": 0.629718,
+      "qwen": 0.22043480000000001
+    },
+    "globalCumulative": {
+      "deepseek": 9.067387,
+      "qwen": 3.19357625
+    },
+    "firstAndRepeat": 1.7006536
+  },
+  "human": "PENDING_HUMAN_STUDY",
+  "scope": "Whole-pipeline service-window comparison, same cases/prompts/parameters; changed new proposals prevent isolating reviewer-time effects"
+}

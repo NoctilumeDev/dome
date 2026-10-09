@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "records": 86,
+  "extraIdentityFieldControls": 4,
+  "controlStatus": "All REJECT with no queries",
+  "entryLabels": "42 source labels agree",
+  "snapshot": "identical to original preflight",
+  "timingQualification": "Post-proposal control replay of original fixed artificial plans; not the pre-paid API-free adapter preflight, not fresh model samples"
+}

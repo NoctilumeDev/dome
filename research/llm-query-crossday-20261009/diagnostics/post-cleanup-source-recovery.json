@@ -1,0 +1,25 @@
+{
+  "status": "RESTORED_BOUND_TRACKED_TESTS",
+  "observedAt": "2026-10-09T16:29:17.799095+00:00",
+  "sourceHead": "43a22e457dacf059d055d0e825507399477d3a3c",
+  "restoredCount": 13,
+  "restoredPaths": [
+    "coursework/library-management-system/backend/src/test/java/cn/kmbeast/AssistantBoundaryTest.java",
+    "coursework/library-management-system/backend/src/test/java/cn/kmbeast/AssistantConsentTest.java",
+    "coursework/library-management-system/backend/src/test/java/cn/kmbeast/AssistantFactsTest.java",
+    "coursework/library-management-system/backend/src/test/java/cn/kmbeast/AssistantHttpConsentTest.java",
+    "coursework/library-management-system/backend/src/test/java/cn/kmbeast/BookInventoryTest.java",
+    "coursework/library-management-system/backend/src/test/java/cn/kmbeast/RouteAuthorizationTest.java",
+    "qingye/backend/src/test/java/cn/qingye/AssistantBoundaryTest.java",
+    "qingye/backend/src/test/java/cn/qingye/AssistantDecisionTest.java",
+    "qingye/backend/src/test/java/cn/qingye/AuthorityRevocationTest.java",
+    "qingye/backend/src/test/java/cn/qingye/BusinessIntegrationTest.java",
+    "qingye/backend/src/test/java/cn/qingye/CapacityScanTest.java",
+    "qingye/backend/src/test/java/cn/qingye/IntegrationBoundaryTest.java",
+    "qingye/backend/src/test/java/cn/qingye/SchemaUpgradeTest.java"
+  ],
+  "bytes": "Exact Git checkout-filtered bytes; bound import and expiry-test hashes match",
+  "originalFailureRetained": "post-cleanup-missing-sources.json",
+  "newModelCalls": 0,
+  "temporaryHelperAndTargetCleanup": "Six requested items remain absent"
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "Only this repeated window: 234 fresh proposals + 468 fresh reviews; actual physical calls",
+  "moneyQualification": "Conservative peak uncached list-price estimate; NOT actual cash or promotional allocation",
+  "providers": {
+    "deepseek": {
+      "requests": 351,
+      "transport": {
+        "SUCCESS": 351
+      },
+      "usageMissing": 0,
+      "inputTokens": 250967,
+      "outputTokens": 15973,
+      "apiMedianMs": 703.0,
+      "responseModels": [
+        "deepseek-flash"
+      ],
+      "estimatedNewCny": 0.629718,
+      "p95NearestRankMs": 1031.0,
+      "globalConservativeCumulativeCny": 9.067387,
+      "actualCash": "NOT_VERIFIED"
+    },
+    "qwen": {
+      "requests": 351,
+      "transport": {
+        "SUCCESS": 351
+      },
+      "usageMissing": 0,
+      "inputTokens": 237821,
+      "outputTokens": 15089,
+      "apiMedianMs": 1297.0,
+      "responseModels": [
+        "qwen-plus"
+      ],
+      "estimatedNewCny": 0.22043480000000001,
+      "p95NearestRankMs": 1843.0,
+      "globalConservativeCumulativeCny": 3.19357625,
+      "actualCash": "NOT_VERIFIED"
+    }
+  },
+  "firstAndRepeatEstimatedCny": 1.7006536,
+  "firstAndRepeatCapCny": 2
+}

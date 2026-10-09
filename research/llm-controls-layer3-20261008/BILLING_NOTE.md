@@ -66,3 +66,5 @@ DeepSeek[计费规则](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)
 ## 新查询控制包预算记录
 
 新包234提案加468审查，保守新增DeepSeek¥0.630232、千问¥0.2202688，合计¥0.8505008，低于其事前¥2累计上限。历史保守累计更新为DeepSeek¥8.362573、千问¥2.94543705；这只是追加预算账，不回写旧封印/表格，也不是现金扣款。物理请求/token角色拆分见../llm-query-controls-20261008/output-v2/physical-resources.json；账户截图是更早观察，不能由差额归因赠送抵扣。
+
+2026-10-09/10新查询跨日重复新增702物理请求：DeepSeek input250967/output15973，Qwen input237821/output15089，usage缺失0；新保守估价0.629718/0.2204348元，追加全局为9.067387/3.19357625元。原查询首窗及重复合计1.7006536元低于原2元，原每家20元累计不重置。公开价/促销/实际现金资格仍按旧口径，不能由本token账推赠送余额或现金扣款。详见../llm-query-crossday-20261009/comparison/physical-resources.json。
