@@ -1,0 +1,16 @@
+{
+  "preparedAt": "2026-10-09T11:10:31.046317+00:00",
+  "paidCallsAtPreparation": 0,
+  "originalCollectorSha256": "b52d547c31799c58da14af1686b4bb4f9fa4fb787978a6d7a75e67d55f405823",
+  "guardSha256": "51c55b1a5169a6762eb7e189e2dca5ebbd7a819a4310de1b03c517193dbd21de",
+  "parentSealSha256": "d9d80a8ef7b1d5f7aafb6bbeb1926e1f0f2358daef05687c104e3a529921c830",
+  "globalBaselineSource": "../llm-query-controls-20261008/output-v2/physical-resources.json",
+  "globalBaselineSha256": "985dcda82f6938032eb2331199bcba010084faa23b5549d28d07783256fa1b5f",
+  "adaptation": "Only add global budget accounting for later query evidence and Shanghai date guard; original collector/payload/order/model/native/scorer unchanged",
+  "requestScope": "day1 + original callId; separate observation and journal coordinate",
+  "hostBaseline": {
+    "mysqlListenerPid": 7408,
+    "redisListenerPid": 3392,
+    "port8771Listening": false
+  }
+}
