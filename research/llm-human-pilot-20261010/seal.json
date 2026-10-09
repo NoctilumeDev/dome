@@ -1,0 +1,16 @@
+{
+  "version": "human-pilot-v1",
+  "participant": "P01",
+  "n": 1,
+  "tasks": 12,
+  "orderSeed": 20261010,
+  "files": {
+    "tasks.json": "78896c1e79ad5db10cac3e7d20bd10e76eda58ef0f1f22afd8255db6aea57b65",
+    "CONTRACT.md": "ff159ac5b0c5907c84e83819392ef909e3f75960dcc807e8248b6204dc81b2d9",
+    "prepare.py": "b8ded014e3814c6e557dfda5d08938dfeb3a025d2deafc6cc25ed7ce29cd6953",
+    "server.py": "ebc4c7c64a378cd8510a2b3fa1abdf05289a425637a84bfc9c4b595d6cc7c018",
+    "index.html": "7e7b79de6491b79a77df129d2abea831f22e6d9a2cdb6d8164e8c06b17d8e1f7"
+  },
+  "independentHumanStudy": false,
+  "realDbOrApiAccess": false
+}

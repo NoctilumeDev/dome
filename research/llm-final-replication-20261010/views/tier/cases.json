@@ -1,0 +1,920 @@
+[
+  {
+    "id": "qingye-R3-pilot-01-1",
+    "system": "qingye",
+    "family": "nested_negation",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "不是不查手机，是不查摄像机；请查询前者的器材库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "手机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-pilot-02-1",
+    "system": "qingye",
+    "family": "reference_binding",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "甲设备是手机，乙设备是摄像机。乙先不查，只查甲的器材库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "手机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-pilot-03-1",
+    "system": "qingye",
+    "family": "conditional_branch",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "先查询手机的器材库存，若没有，再查询摄像机的器材库存；两个条件步骤都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "MULTIPLE_REQUESTS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-pilot-04-1",
+    "system": "qingye",
+    "family": "cancel_retained",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "先查手机的器材库存，再查我的全部借用记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "MULTIPLE_REQUESTS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-pilot-05-1",
+    "system": "qingye",
+    "family": "long_business_list",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "015项：本次唯一保留的查询是手机的器材库存。\n001 项：此前借用过摄像机，这是历史，不执行。\n002 项：此前借用过摄像机，这是历史，不执行。\n003 项：此前借用过摄像机，这是历史，不执行。\n004 项：此前借用过摄像机，这是历史，不执行。\n005 项：此前借用过摄像机，这是历史，不执行。\n006 项：此前借用过摄像机，这是历史，不执行。\n007 项：此前借用过摄像机，这是历史，不执行。\n008 项：此前借用过摄像机，这是历史，不执行。\n009 项：此前借用过摄像机，这是历史，不执行。\n010 项：此前借用过摄像机，这是历史，不执行。\n011 项：此前借用过摄像机，这是历史，不执行。\n012 项：此前借用过摄像机，这是历史，不执行。\n013 项：此前借用过摄像机，这是历史，不执行。\n014 项：此前借用过摄像机，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "手机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-pilot-06-1",
+    "system": "qingye",
+    "family": "constraint_composition",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "请查手机的器材库存，并且只保留价格低于100元的结果；价格条件不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "UNSUPPORTED_FILTER"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-pilot-01-1",
+    "system": "library",
+    "family": "nested_negation",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "不是不查馆藏3，是不查馆藏4；请查询前者的馆藏搜索。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "馆藏3",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-pilot-02-1",
+    "system": "library",
+    "family": "reference_binding",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "甲书是《馆藏3》，乙书是《馆藏4》。乙先不查，只查甲的馆藏搜索。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "馆藏3",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-pilot-03-1",
+    "system": "library",
+    "family": "conditional_branch",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "先查询馆藏3的馆藏搜索，若没有，再查询馆藏4的馆藏搜索；两个条件步骤都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": "MULTIPLE_ACTIONS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-pilot-04-1",
+    "system": "library",
+    "family": "cancel_retained",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "先查馆藏3的馆藏搜索，再查我的全部借阅记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": "MULTIPLE_ACTIONS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-pilot-05-1",
+    "system": "library",
+    "family": "long_business_list",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "015项：本次唯一保留的查询是馆藏3的馆藏搜索。\n001 项：此前借阅过馆藏4，这是历史，不执行。\n002 项：此前借阅过馆藏4，这是历史，不执行。\n003 项：此前借阅过馆藏4，这是历史，不执行。\n004 项：此前借阅过馆藏4，这是历史，不执行。\n005 项：此前借阅过馆藏4，这是历史，不执行。\n006 项：此前借阅过馆藏4，这是历史，不执行。\n007 项：此前借阅过馆藏4，这是历史，不执行。\n008 项：此前借阅过馆藏4，这是历史，不执行。\n009 项：此前借阅过馆藏4，这是历史，不执行。\n010 项：此前借阅过馆藏4，这是历史，不执行。\n011 项：此前借阅过馆藏4，这是历史，不执行。\n012 项：此前借阅过馆藏4，这是历史，不执行。\n013 项：此前借阅过馆藏4，这是历史，不执行。\n014 项：此前借阅过馆藏4，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "馆藏3",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-pilot-06-1",
+    "system": "library",
+    "family": "constraint_composition",
+    "variant": 1,
+    "stage": "pilot",
+    "stratum": "prospective_executor_labels",
+    "question": "请查馆藏3的馆藏搜索，并且只保留价格低于100元的结果；价格条件不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": "UNSUPPORTED_FILTER"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-01-1",
+    "system": "qingye",
+    "family": "nested_negation",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "不是不查相机，是不查投影仪；请查询前者的器材库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-01-2",
+    "system": "qingye",
+    "family": "nested_negation",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "我没有说“不要查询相机”，不要查询的是投影仪；本次只查相机的器材库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-02-1",
+    "system": "qingye",
+    "family": "reference_binding",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "甲设备是相机，乙设备是投影仪。乙先不查，只查甲的器材库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-02-2",
+    "system": "qingye",
+    "family": "reference_binding",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "第一项相机，第二项投影仪；我说的“它”明确指第一项。第二项是背景，请查它的器材库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-03-1",
+    "system": "qingye",
+    "family": "conditional_branch",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "先查询相机的器材库存，若没有，再查询投影仪的器材库存；两个条件步骤都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "MULTIPLE_REQUESTS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-03-2",
+    "system": "qingye",
+    "family": "conditional_branch",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "如果我借用过相机就查它的器材库存，否则查询投影仪的器材库存；目前我没有提供该条件的真假。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "MULTIPLE_REQUESTS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-04-1",
+    "system": "qingye",
+    "family": "cancel_retained",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "先查相机的器材库存，再查我的全部借用记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "MULTIPLE_REQUESTS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-04-2",
+    "system": "qingye",
+    "family": "cancel_retained",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "先查相机的器材库存，再查我的全部借用记录；第二项已经撤销，第一项未撤销，现在只执行第一项。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-05-1",
+    "system": "qingye",
+    "family": "long_business_list",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "015项：本次唯一保留的查询是相机的器材库存。\n001 项：此前借用过投影仪，这是历史，不执行。\n002 项：此前借用过投影仪，这是历史，不执行。\n003 项：此前借用过投影仪，这是历史，不执行。\n004 项：此前借用过投影仪，这是历史，不执行。\n005 项：此前借用过投影仪，这是历史，不执行。\n006 项：此前借用过投影仪，这是历史，不执行。\n007 项：此前借用过投影仪，这是历史，不执行。\n008 项：此前借用过投影仪，这是历史，不执行。\n009 项：此前借用过投影仪，这是历史，不执行。\n010 项：此前借用过投影仪，这是历史，不执行。\n011 项：此前借用过投影仪，这是历史，不执行。\n012 项：此前借用过投影仪，这是历史，不执行。\n013 项：此前借用过投影仪，这是历史，不执行。\n014 项：此前借用过投影仪，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-05-2",
+    "system": "qingye",
+    "family": "long_business_list",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "001 项：此前借用过投影仪，这是历史，不执行。\n002 项：此前借用过投影仪，这是历史，不执行。\n003 项：此前借用过投影仪，这是历史，不执行。\n004 项：此前借用过投影仪，这是历史，不执行。\n005 项：此前借用过投影仪，这是历史，不执行。\n006 项：此前借用过投影仪，这是历史，不执行。\n007 项：此前借用过投影仪，这是历史，不执行。\n015项：本次唯一保留的查询是相机的器材库存。\n008 项：此前借用过投影仪，这是历史，不执行。\n009 项：此前借用过投影仪，这是历史，不执行。\n010 项：此前借用过投影仪，这是历史，不执行。\n011 项：此前借用过投影仪，这是历史，不执行。\n012 项：此前借用过投影仪，这是历史，不执行。\n013 项：此前借用过投影仪，这是历史，不执行。\n014 项：此前借用过投影仪，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "相机",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-06-1",
+    "system": "qingye",
+    "family": "constraint_composition",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "请查相机的器材库存，并且只保留价格低于100元的结果；价格条件不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "UNSUPPORTED_FILTER"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "qingye-R3-formal-06-2",
+    "system": "qingye",
+    "family": "constraint_composition",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "请查我借用相机的未归还记录，器材和未归还条件都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "entity": null,
+          "category": null,
+          "timeOption": null,
+          "reason": "UNSUPPORTED_FILTER"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-01-1",
+    "system": "library",
+    "family": "nested_negation",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "不是不查三体，是不查Java入门；请查询前者的馆藏搜索。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-01-2",
+    "system": "library",
+    "family": "nested_negation",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "我没有说“不要查询三体”，不要查询的是Java入门；本次只查三体的馆藏搜索。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-02-1",
+    "system": "library",
+    "family": "reference_binding",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "甲书是《三体》，乙书是《Java入门》。乙先不查，只查甲的馆藏搜索。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-02-2",
+    "system": "library",
+    "family": "reference_binding",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "第一项《三体》，第二项《Java入门》；“它”明确指第一项，第二项只是背景，请查它的馆藏搜索。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-03-1",
+    "system": "library",
+    "family": "conditional_branch",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "先查询三体的馆藏搜索，若没有，再查询Java入门的馆藏搜索；两个条件步骤都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": "MULTIPLE_ACTIONS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-03-2",
+    "system": "library",
+    "family": "conditional_branch",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "如果我借阅过三体就查它的馆藏搜索，否则查询Java入门的馆藏搜索；目前我没有提供该条件的真假。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": "MULTIPLE_ACTIONS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-04-1",
+    "system": "library",
+    "family": "cancel_retained",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "先查三体的馆藏搜索，再查我的全部借阅记录。我撤销的只是“撤销第二项”这句话，不是第二个查询，两项查询仍然都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": "MULTIPLE_ACTIONS"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-04-2",
+    "system": "library",
+    "family": "cancel_retained",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "先查三体的馆藏搜索，再查我的全部借阅记录；第二项已经撤销，第一项未撤销，现在只执行第一项。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-05-1",
+    "system": "library",
+    "family": "long_business_list",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "015项：本次唯一保留的查询是三体的馆藏搜索。\n001 项：此前借阅过Java入门，这是历史，不执行。\n002 项：此前借阅过Java入门，这是历史，不执行。\n003 项：此前借阅过Java入门，这是历史，不执行。\n004 项：此前借阅过Java入门，这是历史，不执行。\n005 项：此前借阅过Java入门，这是历史，不执行。\n006 项：此前借阅过Java入门，这是历史，不执行。\n007 项：此前借阅过Java入门，这是历史，不执行。\n008 项：此前借阅过Java入门，这是历史，不执行。\n009 项：此前借阅过Java入门，这是历史，不执行。\n010 项：此前借阅过Java入门，这是历史，不执行。\n011 项：此前借阅过Java入门，这是历史，不执行。\n012 项：此前借阅过Java入门，这是历史，不执行。\n013 项：此前借阅过Java入门，这是历史，不执行。\n014 项：此前借阅过Java入门，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-05-2",
+    "system": "library",
+    "family": "long_business_list",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "001 项：此前借阅过Java入门，这是历史，不执行。\n002 项：此前借阅过Java入门，这是历史，不执行。\n003 项：此前借阅过Java入门，这是历史，不执行。\n004 项：此前借阅过Java入门，这是历史，不执行。\n005 项：此前借阅过Java入门，这是历史，不执行。\n006 项：此前借阅过Java入门，这是历史，不执行。\n007 项：此前借阅过Java入门，这是历史，不执行。\n015项：本次唯一保留的查询是三体的馆藏搜索。\n008 项：此前借阅过Java入门，这是历史，不执行。\n009 项：此前借阅过Java入门，这是历史，不执行。\n010 项：此前借阅过Java入门，这是历史，不执行。\n011 项：此前借阅过Java入门，这是历史，不执行。\n012 项：此前借阅过Java入门，这是历史，不执行。\n013 项：此前借阅过Java入门，这是历史，不执行。\n014 项：此前借阅过Java入门，这是历史，不执行。\n以上各项按“是否执行”解释，不按出现先后覆盖。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "SEARCH_BOOK",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-06-1",
+    "system": "library",
+    "family": "constraint_composition",
+    "variant": 1,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "请查三体的馆藏搜索，并且只保留价格低于100元的结果；价格条件不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY",
+          "intent": null,
+          "title": null,
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": "UNSUPPORTED_FILTER"
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  },
+  {
+    "id": "library-R3-formal-06-2",
+    "system": "library",
+    "family": "constraint_composition",
+    "variant": 2,
+    "stage": "formal",
+    "stratum": "prospective_executor_labels",
+    "question": "请查我借阅《三体》的未归还记录，书名和未归还条件都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_BORROWS",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": true,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "labelScope": "executor rule-generated; no independent human labels"
+  }
+]

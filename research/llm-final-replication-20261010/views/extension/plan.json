@@ -1,0 +1,55 @@
+{
+  "version": "extension-v1",
+  "baseSha": "dbb32160a811fd06c826a8d9eafbc660a0548219",
+  "seed": 20261008,
+  "clock": "2026-10-08T01:00:00+08:00",
+  "providers": {
+    "a": {
+      "name": "deepseek",
+      "model": "deepseek-flash",
+      "url": "https://api.deepseek.com/chat/completions",
+      "inputCnyPerMillion": 2,
+      "outputCnyPerMillion": 8
+    },
+    "b": {
+      "name": "qwen",
+      "model": "qwen-plus",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "inputCnyPerMillion": 0.8,
+      "outputCnyPerMillion": 2
+    }
+  },
+  "deadlineMs": 5000,
+  "reviewMaxTokens": 250,
+  "maxTokens": {
+    "qingye": 300,
+    "library": 500
+  },
+  "temperature": 0,
+  "thinking": "disabled",
+  "automaticRetries": 0,
+  "repetitions": 1,
+  "pilotFamilies": [
+    "baseline",
+    "history",
+    "unsupported_date",
+    "capability_difference"
+  ],
+  "pilotVariant": 1,
+  "coreBlocks": 64,
+  "coreMaximumCalls": 768,
+  "oraclesAreIndependentHumanLabels": false,
+  "proofScope": "real provider components + native Java/H2 replay, not online deployment or human experiment",
+  "priceSources": [
+    "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "https://help.aliyun.com/zh/model-studio/qwen-plus"
+  ],
+  "inputHashes": {
+    "cases.json": "a101cb9416a42337b61f3691411dcba0610aec567606c150bd720bfd03dbc1bb",
+    "CONTRACT.md": "47304966d095c96d4d4b8c87e7f2f9ef84d9ed8ca36e3657ad7a7bf682f9517f",
+    "../core.py": "98ced4e2d197694248c23399aed29a12d3e96c4e9ab4b9231f432c4394cda354",
+    "../prompts/qingye.txt": "13ddd0989139ad282b702360f0da25f632125d40fd14e739f1f1bc65f2e1f6cb",
+    "../prompts/library.txt": "4d083988504fccd0505e0bc79a4d5c2ad2e9ff076f3716b27e1a027684d049f0",
+    "../prompts/review.txt": "ce2fa7cb2c48037fa318f82aa15727c28e490f681182a7eae4c4b738f90c1e47"
+  }
+}

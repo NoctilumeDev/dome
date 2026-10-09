@@ -1,0 +1,232 @@
+{
+  "version": "final-replication-v1",
+  "boundSourceSha": "d5fecb05cda3c0a443cbfd5020059a096e98ff23",
+  "suites": [
+    {
+      "id": "core",
+      "sourceFolder": "llm-core",
+      "sourceRaw": "results/core/calls.jsonl",
+      "kind": "paired",
+      "requests": 1728,
+      "sourceSha256": "ee8dbd89fc5b42ce9448a7b8665a1d64405189b93c60e9dfa8bee7f98c4447ea",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 1727,
+        "UNKNOWN_INTERRUPTED": 1
+      }
+    },
+    {
+      "id": "extension",
+      "sourceFolder": "llm-core/extension",
+      "sourceRaw": "results/core/calls.jsonl",
+      "kind": "paired",
+      "requests": 768,
+      "sourceSha256": "4d772b3b6033c485035d433a81eb0af6f06b2776c5844f5f9edcef3f2850f66b",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 768
+      }
+    },
+    {
+      "id": "counterexamples",
+      "sourceFolder": "llm-counterexamples-20261008",
+      "sourceRaw": "results/core/calls.jsonl",
+      "kind": "paired",
+      "requests": 1536,
+      "sourceSha256": "5e1772b53ce084d9dc6a6c7223456f31a0abdd0e7833b294bbcb8c9d6e0e9d4e",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "TIMEOUT": 6,
+        "SUCCESS": 1530
+      }
+    },
+    {
+      "id": "challenge",
+      "sourceFolder": "llm-counterexamples-20261008",
+      "sourceRaw": "results/challenge/calls.jsonl",
+      "kind": "fixed_review",
+      "requests": 96,
+      "sourceSha256": "c188031ac31cf9ae79eef639dcaf7246baa0f8b1d28bd7cc77a2b58dea67037f",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 96
+      }
+    },
+    {
+      "id": "formal",
+      "sourceFolder": "llm-controls-layer3-20261008",
+      "sourceRaw": "results/formal/calls.jsonl",
+      "kind": "paired",
+      "requests": 2304,
+      "sourceSha256": "051fb5cd7341ca76a79f20ef648e4421484508cbe228932a4674f00802db3a99",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 2304
+      }
+    },
+    {
+      "id": "external",
+      "sourceFolder": "llm-controls-layer3-20261008",
+      "sourceRaw": "results/external/calls.jsonl",
+      "kind": "proposal",
+      "requests": 96,
+      "sourceSha256": "9b0a2b898934769e9e1cfee0e56e45d63ecff66cb077d01e934383d1d9dcc05d",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 96
+      }
+    },
+    {
+      "id": "tier",
+      "sourceFolder": "llm-controls-layer3-20261008",
+      "sourceRaw": "results/tier/calls.jsonl",
+      "kind": "proposal",
+      "requests": 144,
+      "sourceSha256": "6b03ac3fd2d3d940c1090357d17121975c49070e0e4863090ce7f8ab6101d607",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 144
+      }
+    },
+    {
+      "id": "time-day0",
+      "sourceFolder": "llm-controls-layer3-20261008",
+      "sourceRaw": "results/day0/calls.jsonl",
+      "kind": "proposal",
+      "requests": 72,
+      "sourceSha256": "12984ea266a6c7a59a3a44283d61e5a66bcd60df65c07e1b1af037cbe6398d83",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 72
+      }
+    },
+    {
+      "id": "query-day0",
+      "sourceFolder": "llm-query-controls-20261008",
+      "sourceRaw": "results/calls.jsonl",
+      "kind": "proposal",
+      "requests": 234,
+      "sourceSha256": "5af6d865dcc6ed206a9b078bf76a47e6b6cef8567163371299aad6f132556111",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 234
+      }
+    },
+    {
+      "id": "query-review-day0",
+      "sourceFolder": "llm-query-controls-20261008",
+      "sourceRaw": "review-results/calls.jsonl",
+      "kind": "pool_review",
+      "requests": 468,
+      "sourceSha256": "69f783f49c007c4dc0cd38a131b9b4881d6e5f5171575d63b9c6a835be8bb450",
+      "guardAfterFinishedSuite": null,
+      "minimumGapSeconds": 0,
+      "sourceTransportCounts": {
+        "SUCCESS": 468
+      }
+    },
+    {
+      "id": "time-day1",
+      "sourceFolder": "llm-controls-layer3-20261008",
+      "sourceRaw": "results/day1/calls.jsonl",
+      "kind": "proposal",
+      "requests": 72,
+      "sourceSha256": "a79527534e5ba24f050927c9fb80233ad71147e64336ca33470c3da708f5e095",
+      "guardAfterFinishedSuite": "time-day0",
+      "minimumGapSeconds": 86400,
+      "sourceTransportCounts": {
+        "SUCCESS": 72
+      }
+    },
+    {
+      "id": "query-day1",
+      "sourceFolder": "llm-query-crossday-20261009",
+      "sourceRaw": "results/calls.jsonl",
+      "kind": "proposal",
+      "requests": 234,
+      "sourceSha256": "c68bcdb533cbd88dbce366d8de0c4df6b07ffe1c253fdb9772b50896024b06b5",
+      "guardAfterFinishedSuite": "query-day0",
+      "minimumGapSeconds": 86400,
+      "sourceTransportCounts": {
+        "SUCCESS": 234
+      }
+    },
+    {
+      "id": "query-review-day1",
+      "sourceFolder": "llm-query-crossday-20261009",
+      "sourceRaw": "review-results/calls.jsonl",
+      "kind": "pool_review",
+      "requests": 468,
+      "sourceSha256": "cbfc870cbe0aca667b74fed33c3db16f8de2e635ca66bcba75593620deeebf22",
+      "guardAfterFinishedSuite": "query-review-day0",
+      "minimumGapSeconds": 86400,
+      "sourceTransportCounts": {
+        "SUCCESS": 468
+      }
+    }
+  ],
+  "physicalRequests": 8220,
+  "providerRequests": {
+    "qwen": 4110,
+    "deepseek": 4110
+  },
+  "historicalConservativeCny": {
+    "deepseek": 9.067387,
+    "qwen": 3.19357625
+  },
+  "hardCumulativePerProviderCny": 20,
+  "forecastFromOriginalObservedCny": {
+    "qwen": 3.128041450000013,
+    "deepseek": 8.84496499999991
+  },
+  "forecastWith15PercentMarginCny": {
+    "qwen": 3.5972476675000147,
+    "deepseek": 10.171709749999895
+  },
+  "reserveBeforeEachRequestCny": 0.1,
+  "unknownUsageReserveCny": 0.05,
+  "maximumMissingUsageBeforeStop": 3,
+  "transportStopMinimum": 5,
+  "transportStopFraction": 0.2,
+  "authenticationStopStatuses": [
+    401,
+    403
+  ],
+  "automaticRetries": 0,
+  "human": "PENDING_HUMAN_STUDY",
+  "aliasWeightsFrozen": false,
+  "exclusions": [
+    {
+      "item": "pilot and transport diagnostics",
+      "reason": "Exploration/setup, not final hypothesis comparisons; retained in development workload"
+    },
+    {
+      "item": "historical X01/X02 four provider coordinates",
+      "reason": "Original input unavailable; NOT_PROVEN_INPUT, no reconstruction from summaries"
+    },
+    {
+      "item": "human participants / independent human labels",
+      "reason": "PENDING_HUMAN_STUDY"
+    },
+    {
+      "item": "IR / CRUD / distributed execution",
+      "reason": "Unimplemented future work"
+    }
+  ],
+  "offlineHistoryTransfer": {
+    "source": "research/llm-core/history/native-input.json",
+    "records": 396,
+    "notFreshApiCalls": true
+  },
+  "moneyQualification": "Frozen 2026-10-08 conservative rates; auxiliary budget estimates, not current tariff/cash/promotional allocation",
+  "resources": "Requests, transport/usage missing, input/output tokens and measured API latency separately from logical reuse strategies"
+}

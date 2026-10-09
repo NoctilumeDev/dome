@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Q-camera-omitted",
+    "family": "Q-camera",
+    "system": "青野",
+    "question": "只查当前账号相机的借用记录，最多10条。",
+    "interpretation": "我的全部借用记录",
+    "scope": "当前账号的全部借用记录，最多展示10条。不会按器材、日期或状态筛选。",
+    "oracle": "CORRECT",
+    "condition": "omitted"
+  },
+  {
+    "id": "L-title-omitted",
+    "family": "L-title",
+    "system": "图书馆",
+    "question": "只查当前账号《程序基础》的借阅记录，最多20条。",
+    "interpretation": "我的借阅记录",
+    "scope": "当前账号的借阅记录 · 全部日期 · 全部图书 · 全部归还状态 · 最多20条",
+    "oracle": "CORRECT",
+    "condition": "omitted"
+  },
+  {
+    "id": "L-unreturned-preserved",
+    "family": "L-unreturned",
+    "system": "图书馆",
+    "question": "查当前账号的借阅记录，不限书名、日期或归还状态，最多20条。",
+    "interpretation": "我的借阅记录",
+    "scope": "当前账号的借阅记录 · 全部日期 · 全部图书 · 全部归还状态 · 最多20条",
+    "oracle": "ACCEPT",
+    "condition": "preserved"
+  },
+  {
+    "id": "L-title-preserved",
+    "family": "L-title",
+    "system": "图书馆",
+    "question": "查当前账号所有图书的借阅记录，不限日期或归还状态，最多20条。",
+    "interpretation": "我的借阅记录",
+    "scope": "当前账号的借阅记录 · 全部日期 · 全部图书 · 全部归还状态 · 最多20条",
+    "oracle": "ACCEPT",
+    "condition": "preserved"
+  },
+  {
+    "id": "L-unreturned-omitted",
+    "family": "L-unreturned",
+    "system": "图书馆",
+    "question": "只查当前账号尚未归还的借阅记录，最多20条。",
+    "interpretation": "我的借阅记录",
+    "scope": "当前账号的借阅记录 · 全部日期 · 全部图书 · 全部归还状态 · 最多20条",
+    "oracle": "CORRECT",
+    "condition": "omitted"
+  },
+  {
+    "id": "Q-today-preserved",
+    "family": "Q-today",
+    "system": "青野",
+    "question": "请查当前账号最多10条借用记录，所有日期和器材都包含。",
+    "interpretation": "我的全部借用记录",
+    "scope": "当前账号的全部借用记录，最多展示10条。不会按器材、日期或状态筛选。",
+    "oracle": "ACCEPT",
+    "condition": "preserved"
+  },
+  {
+    "id": "L-date-preserved",
+    "family": "L-date",
+    "system": "图书馆",
+    "question": "查当前账号的借阅记录，各日期都包含，不限书名或归还状态，最多20条。",
+    "interpretation": "我的借阅记录",
+    "scope": "当前账号的借阅记录 · 全部日期 · 全部图书 · 全部归还状态 · 最多20条",
+    "oracle": "ACCEPT",
+    "condition": "preserved"
+  },
+  {
+    "id": "L-date-omitted",
+    "family": "L-date",
+    "system": "图书馆",
+    "question": "只查当前账号今天的借阅记录，最多20条。",
+    "interpretation": "我的借阅记录",
+    "scope": "当前账号的借阅记录 · 全部日期 · 全部图书 · 全部归还状态 · 最多20条",
+    "oracle": "CORRECT",
+    "condition": "omitted"
+  },
+  {
+    "id": "Q-cancel-preserved",
+    "family": "Q-cancel",
+    "system": "青野",
+    "question": "请查当前账号未取消的报名记录，最多10条，不需要额外筛选。",
+    "interpretation": "我的未取消报名记录",
+    "scope": "当前账号未取消的报名记录，最多展示10条。不接受额外的活动名称、日期或状态筛选。",
+    "oracle": "ACCEPT",
+    "condition": "preserved"
+  },
+  {
+    "id": "Q-camera-preserved",
+    "family": "Q-camera",
+    "system": "青野",
+    "question": "请查当前账号最多10条借用记录，不按器材、日期或状态筛选。",
+    "interpretation": "我的全部借用记录",
+    "scope": "当前账号的全部借用记录，最多展示10条。不会按器材、日期或状态筛选。",
+    "oracle": "ACCEPT",
+    "condition": "preserved"
+  },
+  {
+    "id": "Q-today-omitted",
+    "family": "Q-today",
+    "system": "青野",
+    "question": "只查当前账号今天的借用记录，最多10条。",
+    "interpretation": "我的全部借用记录",
+    "scope": "当前账号的全部借用记录，最多展示10条。不会按器材、日期或状态筛选。",
+    "oracle": "CORRECT",
+    "condition": "omitted"
+  },
+  {
+    "id": "Q-cancel-omitted",
+    "family": "Q-cancel",
+    "system": "青野",
+    "question": "只查当前账号已经取消的报名记录，最多10条。",
+    "interpretation": "我的未取消报名记录",
+    "scope": "当前账号未取消的报名记录，最多展示10条。不接受额外的活动名称、日期或状态筛选。",
+    "oracle": "CORRECT",
+    "condition": "omitted"
+  }
+]

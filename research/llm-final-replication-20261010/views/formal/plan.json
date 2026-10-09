@@ -1,0 +1,68 @@
+{
+  "version": "layer3-v1",
+  "parentSha": "e3e4934a10b0284b3c7d4deb6c0eeb8a101fb082",
+  "productSha": "dbb32160a811fd06c826a8d9eafbc660a0548219",
+  "seed": 2026100803,
+  "clock": "2026-10-08T01:00:00+08:00",
+  "providers": {
+    "a": {
+      "name": "deepseek",
+      "model": "deepseek-flash",
+      "url": "https://api.deepseek.com/chat/completions",
+      "inputCnyPerMillion": 2,
+      "outputCnyPerMillion": 8
+    },
+    "b": {
+      "name": "qwen",
+      "model": "qwen-plus",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "inputCnyPerMillion": 0.8,
+      "outputCnyPerMillion": 2
+    },
+    "ds_pro": {
+      "name": "deepseek",
+      "model": "deepseek-v4-pro",
+      "url": "https://api.deepseek.com/chat/completions",
+      "inputCnyPerMillion": 9,
+      "outputCnyPerMillion": 27
+    },
+    "q_flash": {
+      "name": "qwen",
+      "model": "qwen-flash",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "inputCnyPerMillion": 0.15,
+      "outputCnyPerMillion": 1.5
+    }
+  },
+  "deadlineMs": 5000,
+  "temperature": 0,
+  "thinking": "disabled",
+  "automaticRetries": 0,
+  "maxTokens": {
+    "qingye": 300,
+    "library": 500
+  },
+  "reviewMaxTokens": 250,
+  "repetitions": {
+    "pilot": 2,
+    "formal": 8,
+    "external": 3,
+    "tier": 3,
+    "day0": 3,
+    "day1": 3
+  },
+  "newBudgetCny": 7,
+  "hardCumulativePerProviderCny": 20,
+  "priorConservativeCny": {
+    "deepseek": 4.54327,
+    "qwen": 1.6633456
+  },
+  "unknownReserveCny": 0.05,
+  "priceSources": [
+    "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "https://help.aliyun.com/zh/model-studio/qwen-plus",
+    "https://help.aliyun.com/zh/model-studio/qwen-flash"
+  ],
+  "priceAsOf": "2026-10-08",
+  "human": "PENDING_HUMAN_STUDY"
+}

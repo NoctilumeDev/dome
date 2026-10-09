@@ -1,0 +1,72 @@
+[
+  {
+    "callId": "CONTROL/qingye/positive",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/foreign-user",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/missing-field",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\"}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/transport",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/library/positive",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/foreign-user",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/missing-field",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/transport",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/qingye/omitted-private-filter",
+    "system": "qingye",
+    "question": "请只查我今天借的相机",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_LOANS\", \"entity\": null, \"category\": null, \"timeOption\": \"ANY\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/omitted-private-filter",
+    "system": "library",
+    "question": "请只查我今天借的图书",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_BORROWS\", \"title\": null, \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  }
+]
