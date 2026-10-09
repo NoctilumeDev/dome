@@ -1,0 +1,8 @@
+{
+  "recordedAt": "2026-10-09T15:59:36.931442+00:00",
+  "credentialRotation": "User supplied fresh provider keys in this wakeup after volatile credentials were unavailable; no key values retained",
+  "providerEndpointAndRequestedModel": "Frozen unchanged",
+  "sameAccountProjectAndProvisioning": "NOT_VERIFIED",
+  "budget": "Original cumulative provider cap continues across keys; no reset",
+  "inferenceBoundary": "Descriptive whole-pipeline service-window comparison. Neither key/account context nor alias weights is a proven invariant; do not causally attribute all differences to calendar time."
+}
