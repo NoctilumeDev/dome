@@ -1,0 +1,34 @@
+{
+  "status": "OFFLINE_PREFLIGHT_PASS_NEEDS_CREDENTIALS",
+  "observedAt": "2026-10-09T15:46:11.762621+00:00",
+  "scheduledWakeup": "2026-10-09T23:40:00+08:00",
+  "credentialAvailability": "VOLATILE_STORE_UNAVAILABLE",
+  "newPaidRequests": 0,
+  "plannedNewProposals": 234,
+  "plannedNewReviews": 468,
+  "questions": 42,
+  "plannerReachableQuestions": 39,
+  "sourceFactSha": "23de83a017f387d7c49f5462b5e5707398d9bb8b",
+  "originalSealSha256": "917b59b6264ce542460e2d66cfa62e3b6f154082373f4b00dfac355d7ad12fad",
+  "measurementV2Sha256": "87da08681e0998620c87afabce6516d5eb378a6486c897b814a2b5c2c0826202",
+  "reviewSealSha256": "fd315652f38604b0a88169eb59770ea36f2a33c52ebe306c729919505b062814",
+  "timeGapsSeconds": {
+    "proposal": 88152.479415,
+    "review": 86917.515808
+  },
+  "originalProposalPayloadAndOrder": "234/234 MATCH",
+  "originalReviewOrder": "468/468 MATCH",
+  "oldMeasurementV2AndReviewVerification": "PASS",
+  "original72Day1Verification": "PASS",
+  "globalConservativeBeforeRepeatCny": {
+    "deepseek": 8.437669,
+    "qwen": 2.97314145
+  },
+  "aggregateFirstWindowCny": 0.8505008000000001,
+  "aggregateFirstAndRepeatCapCny": 2,
+  "remainingAggregateBudgetCny": 1.1494992,
+  "actualCash": "NOT_VERIFIED",
+  "sourceAndCollectorAdapterStatus": "Original frozen bytes verified; new adapter not yet created or sealed",
+  "resources": "No own Java/JVM or 8771 listener; shared MySQL PID7408 and Redis PID3392 retained",
+  "continuation": "On user key reply, recheck actual time, existing output, seals and budgets, create/verify/seal/commit adapters before first paid request"
+}

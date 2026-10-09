@@ -1,0 +1,12 @@
+{
+  "startedAt": "2026-10-09T16:03:08.072009+00:00",
+  "finishedAt": "2026-10-09T16:11:34.646686+00:00",
+  "requestIdentities": 468,
+  "plannedRequestIdentities": 468,
+  "stop": null,
+  "reviewConservativeCny": {
+    "deepseek": 0.4439299999999998,
+    "qwen": 0.15796240000000014
+  },
+  "actualCash": "NOT_VERIFIED"
+}

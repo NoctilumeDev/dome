@@ -1,0 +1,61 @@
+--- research\llm-query-controls-20261008\collect.py
++++ research\llm-query-crossday-20261009\collect.py
+@@ -1,11 +1,11 @@
+ """One frozen new window, no retries or output overwrites; non-echo keys only."""
+ import getpass, random, sys, warnings
+ from datetime import datetime, timezone
+-from common import R, read, write, lines, hash_file, check, digest, net
++from common import R, read, write, lines, hash_file, check, digest, net, budget_boundary, stage_time, review_input_check
+ 
+ def main():
+     sys.stdout.reconfigure(encoding='utf-8');check();plan=read(R/'plan.json');cases=read(R/'cases.json')
+-    labels=read(R/'preflight-labels.json');eligible={x['caseId'] for x in labels if x['plannerReachable']}
++    stage_time('proposal');labels=read(R/'preflight-labels.json');eligible={x['caseId'] for x in labels if x['plannerReachable']}
+     out=R/'results'
+     if out.exists():raise SystemExit('Collection coordinate already exists; no implicit retry')
+     if not sys.stdin.isatty():raise SystemExit('Non-echo credential console required')
+@@ -19,11 +19,11 @@
+             for slot in models:
+                 check();provider=plan['providers'][slot];name=provider['name']
+                 # Reserve before every request; includes separately reserved day1 budget.
+-                if sum(spent.values())+.10>plan['newBudgetCny'] or spent[name]+plan['priorConservativeCny'][name]+plan['reservedLayer3Day1CnyPerProvider']+.10>plan['hardCumulativePerProviderCny']:raise RuntimeError('BUDGET_BOUNDARY')
++                if budget_boundary(name,'proposal'):raise RuntimeError('BUDGET_BOUNDARY')
+                 if unknown>=3:raise RuntimeError('USAGE_UNAVAILABLE')
+                 if bad>=max(5,count//5):raise RuntimeError('TRANSPORT_BOUNDARY')
+                 body=net.payload(provider,(R/f'prompts/{c["system"]}.txt').read_text(encoding='utf-8'),c['question'],plan['maxTokens'][c['system']])
+-                cid=f'QC4/{c["id"]}/r{repeat}/{slot}'
++                cid=f'QC4-DAY1/{c["id"]}/r{repeat}/{slot}'
+                 net.append(out/'request-journal.jsonl',dict(callId=cid,state='STARTED',requestHash=digest(body),startedAt=datetime.now(timezone.utc).isoformat()))
+                 obs=net.request(provider['url'],keys[name],body,plan['deadlineMs'])
+                 record=dict(callId=cid,caseId=c['id'],repeat=repeat,system=c['system'],provider=name,requestedModel=provider['model'],requestHash=digest(body),request=body,collectorSha256=hash_file(R/'collect.py'),observedAt=datetime.now(timezone.utc).isoformat(),**obs)
+--- research\llm-query-controls-20261008\review_collect.py
++++ research\llm-query-crossday-20261009\review_collect.py
+@@ -1,11 +1,10 @@
+ """Review every retained paired proposal; never resample or repair a candidate."""
+ import getpass, random, sys, warnings
+ from datetime import datetime, timezone
+-from common import R, read, write, lines, hash_file, check, digest, net
++from common import R, read, write, lines, hash_file, check, digest, net, budget_boundary, stage_time, review_input_check
+ 
+ def review_check():
+-    check();seal=read(R/'review-seal.json')
+-    for name,h in seal['files'].items():assert hash_file(R/name)==h,'Frozen review input differs: '+name
++    review_input_check();stage_time('review')
+ 
+ def main():
+     sys.stdout.reconfigure(encoding='utf-8');review_check();plan=read(R/'review-plan.json');source=lines(R/'results/calls.jsonl');cases={c['id']:c for c in read(R/'cases.json')}
+@@ -18,12 +17,12 @@
+     try:
+         for job in schedule:
+             review_check();slot=job['reviewer'];provider=plan['providers'][slot];name=provider['name'];candidate=by_id[job['candidateCallId']];case=cases[candidate['caseId']]
+-            if sum(spent.values())+plan['proposalBudgetUsedCny']+.10>plan['aggregateNewBudgetCny'] or spent[name]+plan['cumulativeBeforeReviewCny'][name]+plan['reservedDay1CnyPerProvider']+.10>20:raise RuntimeError('BUDGET_BOUNDARY')
++            if budget_boundary(name,'review'):raise RuntimeError('BUDGET_BOUNDARY')
+             if unknown>=3:raise RuntimeError('USAGE_UNAVAILABLE')
+             if bad>=max(5,count//5):raise RuntimeError('TRANSPORT_BOUNDARY')
+             prompt=(R/'prompts/review.txt').read_text(encoding='utf-8')+'\n被审系统协议：\n'+(R/f'prompts/{case["system"]}.txt').read_text(encoding='utf-8')
+             text=__import__('json').dumps({'question':case['question'],'candidate':candidate['rawContent']},ensure_ascii=False)
+-            body=net.payload(provider,prompt,text,250);cid='QC4-REVIEW/'+job['candidateCallId']+'/'+slot
++            body=net.payload(provider,prompt,text,250);cid='QC4-DAY1-REVIEW/'+job['candidateCallId']+'/'+slot
+             net.append(out/'request-journal.jsonl',dict(callId=cid,state='STARTED',requestHash=digest(body),startedAt=datetime.now(timezone.utc).isoformat()))
+             obs=net.request(provider['url'],keys[name],body,5000)
+             record=dict(callId=cid,candidateCallId=candidate['callId'],caseId=case['id'],repeat=candidate['repeat'],system=case['system'],provider=name,reviewer=slot,requestedModel=provider['model'],requestHash=digest(body),request=body,collectorSha256=hash_file(R/'review_collect.py'),observedAt=datetime.now(timezone.utc).isoformat(),**obs)

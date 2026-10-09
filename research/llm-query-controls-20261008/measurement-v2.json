@@ -1,0 +1,11 @@
+{
+  "version": "measurement-v2",
+  "parentSealSha256": "917b59b6264ce542460e2d66cfa62e3b6f154082373f4b00dfac355d7ad12fad",
+  "files": {
+    "measure_v2.py": "18ac2eab0865a3b72ad6df27c29a2a931af5485c4d2ef86ea324a6821987a7b5",
+    "tests/test_measure_v2.py": "17f5d8e6ae6d24b18bb7b42efcfeaab33da85a66efbf3ecf672ff8b6710d298a",
+    "diagnostics/measurement-v1-failure.json": "1397f6506a4c3a96bbac528a4c3d01ccae1a861628497ddb2c79dc34a593c564"
+  },
+  "scope": "Post-collection measurement repair only; new output-v2; original scorer and all inputs remain sealed",
+  "APIresubmissions": 0
+}

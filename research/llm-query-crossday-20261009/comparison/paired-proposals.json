@@ -1,0 +1,3512 @@
+[
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 2,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 2,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 0,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "INVALID_FIELDS",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 0,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": true,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 1,
+    "provider": "deepseek",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": true
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 1,
+    "provider": "qwen",
+    "day0": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    },
+    "day1": {
+      "primaryPlanMatch": false,
+      "structure": "STRUCTURE_VALID",
+      "qualified": false
+    }
+  }
+]

@@ -1,0 +1,4 @@
+Tool preflight failure: Credential residue research\llm-controls-layer3-20261008\verify.py
+The prefix-only checker matches its own source literals. No actual key found or exposed. Raw data and the sealed scorer are untouched.
+Second preflight: Windows native log is not UTF-8: diagnostics\native-pilot\native-library.txt; 'utf-8' codec can't decode byte 0xb9 in position 4099: invalid start byte
+Scan ASCII token bytes without altering log encoding.

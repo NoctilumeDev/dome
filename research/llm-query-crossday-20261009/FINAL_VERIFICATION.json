@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "verifiedAt": "2026-10-09T16:30:35.768746+00:00",
+  "checks": {
+    "research/llm-query-crossday-20261009/verify.py": "{\"status\": \"PASS\", \"proposalRequests\": 234, \"nativeRecords\": 474, \"reviews\": 468, \"journalOnlyUnknown\": 0, \"budget\": {\"new\": {\"deepseek\": 0.629718, \"qwen\": 0.22043480000000001}, \"globalCumulative\": {\"deepseek\": 9.067387, \"qwen\": 3.19357625}, \"firstAndRepeat\": 1.7006536}}",
+    "research/llm-controls-layer3-20261008/verify_day1.py": "{\n  \"status\": \"PASS\",\n  \"verifiedAt\": \"2026-10-09T16:30:34.522947+00:00\",\n  \"requests\": 72,\n  \"nativeRecords\": 82,\n  \"gapSeconds\": 87014.339059,\n  \"checks\": [\n    \"frozen source/tools\",\n    \"pre-call guard provenance\",\n    \"payload/order/date\",\n    \"raw/native/scorer correspondence\",\n    \"price failure actual disposition\",\n    \"negative controls and snapshots\",\n    \"usage and global budgets\",\n    \"secret residues\"\n  ]\n}",
+    "research/llm-query-controls-20261008/verify_measurement_v2.py": "Measurement v2 PASS; original failure/scorer retained, raw/native correspondence and request/usage counts verified",
+    "research/llm-query-controls-20261008/review_verify.py": "{\"status\": \"PASS\", \"reviewRequests\": 468, \"journalOnlyUnknown\": 0, \"reviewFormats\": {\"ACCEPT\": 313, \"CLARIFY\": 77, \"REJECT\": 78}, \"newReviewEstimateCny\": {\"deepseek\": 0.444452, \"qwen\": 0.1576584}, \"proposalResubmissions\": 0}"
+  },
+  "physicalIdentityJournalAndResponse": "234 + 468 match; no journal-only unknowns",
+  "secretResidues": "NONE",
+  "oldProductPaperLayers": "UNCHANGED",
+  "manualCleanup": "Six disposable paths absent; 13 accidentally deleted tracked tests recovered exactly from bound Git; first failure retained",
+  "budget": {
+    "new": {
+      "deepseek": 0.629718,
+      "qwen": 0.22043480000000001
+    },
+    "globalCumulative": {
+      "deepseek": 9.067387,
+      "qwen": 3.19357625
+    },
+    "firstAndRepeat": 1.7006536
+  },
+  "screenshotSha256": "627a8c47c5125c78a70fe66fcf117dff2b2981cbea09514883e421cd79e17f27"
+}

@@ -1,0 +1,8 @@
+2026-10-08 / before any credentials or API request
+freeze.py first candidate b5ae47e: AssertionError Product differs coursework/library-management-system/backend/src/main/java/cn/kmbeast/BookManageSysApplication.java
+Readback: 148 exact-byte mismatches; zero mismatches after CRLF -> LF; git diff e3e4934 product src/main empty.
+The preparation shell continued to git commit despite freeze failure. This is a preparation candidate, not a qualified sealed run.
+An attempted collector startup failed FileNotFoundError seal.json before credential input. No request journal, no paid calls.
+Minimal instrumentation repair: verify parent LF source against Git, bind current local bytes separately. No product / case / prompt / oracle / measurement edits.
+Second pre-call candidate incorrectly normalized a binary font which already matched its parent hash. Freeze stopped at element-icons.f1a45d74.ttf; collector again refused absent seal before credentials.
+Final rule: exact bytes take precedence; CRLF-to-LF fallback only for a differing file whose result matches both expected hash and Git source. Binary matching bytes remain exact.

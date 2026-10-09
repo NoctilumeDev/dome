@@ -1,0 +1,3980 @@
+[
+  {
+    "caseId": "E01",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E01/r0/a/a": "ACCEPT",
+      "QC4-DAY1/E01/r0/a/b": "ACCEPT",
+      "QC4-DAY1/E01/r0/b/a": "ACCEPT",
+      "QC4-DAY1/E01/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E01/r1/a/a": "ACCEPT",
+      "QC4-DAY1/E01/r1/a/b": "ACCEPT",
+      "QC4-DAY1/E01/r1/b/a": "ACCEPT",
+      "QC4-DAY1/E01/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E01",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E01/r2/a/a": "ACCEPT",
+      "QC4-DAY1/E01/r2/a/b": "ACCEPT",
+      "QC4-DAY1/E01/r2/b/a": "ACCEPT",
+      "QC4-DAY1/E01/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E01_EXACT/r0/a/a": "REJECT",
+      "QC4-DAY1/E01_EXACT/r0/a/b": "ACCEPT",
+      "QC4-DAY1/E01_EXACT/r0/b/a": "REJECT",
+      "QC4-DAY1/E01_EXACT/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E01_EXACT/r1/a/a": "REJECT",
+      "QC4-DAY1/E01_EXACT/r1/a/b": "ACCEPT",
+      "QC4-DAY1/E01_EXACT/r1/b/a": "REJECT",
+      "QC4-DAY1/E01_EXACT/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E01_EXACT",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E01_EXACT/r2/a/a": "REJECT",
+      "QC4-DAY1/E01_EXACT/r2/a/b": "ACCEPT",
+      "QC4-DAY1/E01_EXACT/r2/b/a": "REJECT",
+      "QC4-DAY1/E01_EXACT/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E02/r0/a/a": "ACCEPT",
+      "QC4-DAY1/E02/r0/a/b": "CLARIFY",
+      "QC4-DAY1/E02/r0/b/a": "CLARIFY",
+      "QC4-DAY1/E02/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E02/r1/a/a": "ACCEPT",
+      "QC4-DAY1/E02/r1/a/b": "CLARIFY",
+      "QC4-DAY1/E02/r1/b/a": "CLARIFY",
+      "QC4-DAY1/E02/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E02",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E02/r2/a/a": "ACCEPT",
+      "QC4-DAY1/E02/r2/a/b": "CLARIFY",
+      "QC4-DAY1/E02/r2/b/a": "CLARIFY",
+      "QC4-DAY1/E02/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E03/r0/a/a": "ACCEPT",
+      "QC4-DAY1/E03/r0/a/b": "ACCEPT",
+      "QC4-DAY1/E03/r0/b/a": "ACCEPT",
+      "QC4-DAY1/E03/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E03/r1/a/a": "ACCEPT",
+      "QC4-DAY1/E03/r1/a/b": "ACCEPT",
+      "QC4-DAY1/E03/r1/b/a": "ACCEPT",
+      "QC4-DAY1/E03/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E03",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E03/r2/a/a": "ACCEPT",
+      "QC4-DAY1/E03/r2/a/b": "ACCEPT",
+      "QC4-DAY1/E03/r2/b/a": "ACCEPT",
+      "QC4-DAY1/E03/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E04/r0/a/a": "ACCEPT",
+      "QC4-DAY1/E04/r0/a/b": "ACCEPT",
+      "QC4-DAY1/E04/r0/b/a": "ACCEPT",
+      "QC4-DAY1/E04/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E04/r1/a/a": "ACCEPT",
+      "QC4-DAY1/E04/r1/a/b": "ACCEPT",
+      "QC4-DAY1/E04/r1/b/a": "ACCEPT",
+      "QC4-DAY1/E04/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E04",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E04/r2/a/a": "ACCEPT",
+      "QC4-DAY1/E04/r2/a/b": "ACCEPT",
+      "QC4-DAY1/E04/r2/b/a": "ACCEPT",
+      "QC4-DAY1/E04/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E05/r0/a/a": "ACCEPT",
+      "QC4-DAY1/E05/r0/a/b": "ACCEPT",
+      "QC4-DAY1/E05/r0/b/a": "ACCEPT",
+      "QC4-DAY1/E05/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E05/r1/a/a": "ACCEPT",
+      "QC4-DAY1/E05/r1/a/b": "ACCEPT",
+      "QC4-DAY1/E05/r1/b/a": "ACCEPT",
+      "QC4-DAY1/E05/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E05",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E05/r2/a/a": "ACCEPT",
+      "QC4-DAY1/E05/r2/a/b": "ACCEPT",
+      "QC4-DAY1/E05/r2/b/a": "ACCEPT",
+      "QC4-DAY1/E05/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E06/r0/a/a": "ACCEPT",
+      "QC4-DAY1/E06/r0/a/b": "ACCEPT",
+      "QC4-DAY1/E06/r0/b/a": "ACCEPT",
+      "QC4-DAY1/E06/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E06/r1/a/a": "ACCEPT",
+      "QC4-DAY1/E06/r1/a/b": "ACCEPT",
+      "QC4-DAY1/E06/r1/b/a": "ACCEPT",
+      "QC4-DAY1/E06/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E06",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E06/r2/a/a": "ACCEPT",
+      "QC4-DAY1/E06/r2/a/b": "ACCEPT",
+      "QC4-DAY1/E06/r2/b/a": "ACCEPT",
+      "QC4-DAY1/E06/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E07/r0/a/a": "CLARIFY",
+      "QC4-DAY1/E07/r0/a/b": "CLARIFY",
+      "QC4-DAY1/E07/r0/b/a": "CLARIFY",
+      "QC4-DAY1/E07/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E07/r1/a/a": "CLARIFY",
+      "QC4-DAY1/E07/r1/a/b": "CLARIFY",
+      "QC4-DAY1/E07/r1/b/a": "CLARIFY",
+      "QC4-DAY1/E07/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "E07",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/E07/r2/a/a": "CLARIFY",
+      "QC4-DAY1/E07/r2/a/b": "CLARIFY",
+      "QC4-DAY1/E07/r2/b/a": "CLARIFY",
+      "QC4-DAY1/E07/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G01_ARITH/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r0/b/a": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G01_ARITH/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r1/a/b": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r1/b/a": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G01_ARITH",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G01_ARITH/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G01_ARITH/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G01_MATH/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r0/b/a": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G01_MATH/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r1/a/b": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r1/b/a": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G01_MATH",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G01_MATH/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G01_MATH/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G02_ADULT/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G02_ADULT/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G02_ADULT/r0/b/a": "CLARIFY",
+      "QC4-DAY1/G02_ADULT/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G02_ADULT/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G02_ADULT/r1/a/b": "ACCEPT",
+      "QC4-DAY1/G02_ADULT/r1/b/a": "CLARIFY",
+      "QC4-DAY1/G02_ADULT/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G02_ADULT",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G02_ADULT/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G02_ADULT/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G02_ADULT/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G02_ADULT/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G02_UNKNOWN/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r0/b/a": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G02_UNKNOWN/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r1/a/b": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r1/b/a": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G02_UNKNOWN/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G02_UNKNOWN/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G03/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G03/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G03/r0/b/a": "ACCEPT",
+      "QC4-DAY1/G03/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G03/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G03/r1/a/b": "ACCEPT",
+      "QC4-DAY1/G03/r1/b/a": "ACCEPT",
+      "QC4-DAY1/G03/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G03",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G03/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G03/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G03/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G03/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G04_TEXT/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r0/b/a": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G04_TEXT/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r1/a/b": "CLARIFY",
+      "QC4-DAY1/G04_TEXT/r1/b/a": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G04_TEXT",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G04_TEXT/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G04_TEXT/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G04_WORK/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r0/b/a": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G04_WORK/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r1/a/b": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r1/b/a": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G04_WORK",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G04_WORK/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G04_WORK/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G05/r0/a/a": "ACCEPT",
+      "QC4-DAY1/G05/r0/a/b": "ACCEPT",
+      "QC4-DAY1/G05/r0/b/a": "ACCEPT",
+      "QC4-DAY1/G05/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G05/r1/a/a": "ACCEPT",
+      "QC4-DAY1/G05/r1/a/b": "ACCEPT",
+      "QC4-DAY1/G05/r1/b/a": "ACCEPT",
+      "QC4-DAY1/G05/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "G05",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/G05/r2/a/a": "ACCEPT",
+      "QC4-DAY1/G05/r2/a/b": "ACCEPT",
+      "QC4-DAY1/G05/r2/b/a": "ACCEPT",
+      "QC4-DAY1/G05/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I01_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I01_library/r0/a/b": "ACCEPT",
+      "QC4-DAY1/I01_library/r0/b/a": "ACCEPT",
+      "QC4-DAY1/I01_library/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I01_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I01_library/r1/a/b": "ACCEPT",
+      "QC4-DAY1/I01_library/r1/b/a": "ACCEPT",
+      "QC4-DAY1/I01_library/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I01_library",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I01_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I01_library/r2/a/b": "ACCEPT",
+      "QC4-DAY1/I01_library/r2/b/a": "ACCEPT",
+      "QC4-DAY1/I01_library/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I01_qingye/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r0/a/b": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r0/b/a": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I01_qingye/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r1/a/b": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r1/b/a": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I01_qingye",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I01_qingye/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r2/a/b": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r2/b/a": "ACCEPT",
+      "QC4-DAY1/I01_qingye/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_ADMIN_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_library/r0/a/b": "REJECT",
+      "QC4-DAY1/I04_ADMIN_library/r0/b/a": "REJECT",
+      "QC4-DAY1/I04_ADMIN_library/r0/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_ADMIN_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_library/r1/a/b": "REJECT",
+      "QC4-DAY1/I04_ADMIN_library/r1/b/a": "REJECT",
+      "QC4-DAY1/I04_ADMIN_library/r1/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_ADMIN_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_library/r2/a/b": "REJECT",
+      "QC4-DAY1/I04_ADMIN_library/r2/b/a": "REJECT",
+      "QC4-DAY1/I04_ADMIN_library/r2/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_ADMIN_qingye/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_qingye/r0/a/b": "REJECT",
+      "QC4-DAY1/I04_ADMIN_qingye/r0/b/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_qingye/r0/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_ADMIN_qingye/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_qingye/r1/a/b": "REJECT",
+      "QC4-DAY1/I04_ADMIN_qingye/r1/b/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_qingye/r1/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_ADMIN_qingye/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_qingye/r2/a/b": "REJECT",
+      "QC4-DAY1/I04_ADMIN_qingye/r2/b/a": "ACCEPT",
+      "QC4-DAY1/I04_ADMIN_qingye/r2/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_OTHER_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_library/r0/a/b": "REJECT",
+      "QC4-DAY1/I04_OTHER_library/r0/b/a": "REJECT",
+      "QC4-DAY1/I04_OTHER_library/r0/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_OTHER_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_library/r1/a/b": "REJECT",
+      "QC4-DAY1/I04_OTHER_library/r1/b/a": "REJECT",
+      "QC4-DAY1/I04_OTHER_library/r1/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_OTHER_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_library/r2/a/b": "REJECT",
+      "QC4-DAY1/I04_OTHER_library/r2/b/a": "REJECT",
+      "QC4-DAY1/I04_OTHER_library/r2/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_OTHER_qingye/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_qingye/r0/a/b": "REJECT",
+      "QC4-DAY1/I04_OTHER_qingye/r0/b/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_qingye/r0/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_OTHER_qingye/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_qingye/r1/a/b": "REJECT",
+      "QC4-DAY1/I04_OTHER_qingye/r1/b/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_qingye/r1/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_OTHER_qingye/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_qingye/r2/a/b": "REJECT",
+      "QC4-DAY1/I04_OTHER_qingye/r2/b/a": "ACCEPT",
+      "QC4-DAY1/I04_OTHER_qingye/r2/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_SELF_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r0/a/b": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r0/b/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_SELF_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r1/a/b": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r1/b/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_SELF_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r2/a/b": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r2/b/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_library/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_SELF_qingye/r0/a/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r0/a/b": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r0/b/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_SELF_qingye/r1/a/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r1/a/b": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r1/b/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/I04_SELF_qingye/r2/a/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r2/a/b": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r2/b/a": "ACCEPT",
+      "QC4-DAY1/I04_SELF_qingye/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T01/r0/a/a": "REJECT",
+      "QC4-DAY1/T01/r0/a/b": "REJECT",
+      "QC4-DAY1/T01/r0/b/a": "CLARIFY",
+      "QC4-DAY1/T01/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T01/r1/a/a": "REJECT",
+      "QC4-DAY1/T01/r1/a/b": "REJECT",
+      "QC4-DAY1/T01/r1/b/a": "CLARIFY",
+      "QC4-DAY1/T01/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T01",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T01/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T01/r2/a/b": "REJECT",
+      "QC4-DAY1/T01/r2/b/a": "CLARIFY",
+      "QC4-DAY1/T01/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T02_FUTURE/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T02_FUTURE/r0/a/b": "REJECT",
+      "QC4-DAY1/T02_FUTURE/r0/b/a": "CLARIFY",
+      "QC4-DAY1/T02_FUTURE/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T02_FUTURE/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T02_FUTURE/r1/a/b": "REJECT",
+      "QC4-DAY1/T02_FUTURE/r1/b/a": "REJECT",
+      "QC4-DAY1/T02_FUTURE/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T02_FUTURE/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T02_FUTURE/r2/a/b": "REJECT",
+      "QC4-DAY1/T02_FUTURE/r2/b/a": "CLARIFY",
+      "QC4-DAY1/T02_FUTURE/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T02_ORDER/r0/a/a": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r0/a/b": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r0/b/a": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T02_ORDER/r1/a/a": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r1/a/b": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r1/b/a": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T02_ORDER",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T02_ORDER/r2/a/a": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r2/a/b": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r2/b/a": "CLARIFY",
+      "QC4-DAY1/T02_ORDER/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_EARLIEST/r0/a/a": "REJECT",
+      "QC4-DAY1/T03_EARLIEST/r0/a/b": "CLARIFY",
+      "QC4-DAY1/T03_EARLIEST/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T03_EARLIEST/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_EARLIEST/r1/a/a": "REJECT",
+      "QC4-DAY1/T03_EARLIEST/r1/a/b": "CLARIFY",
+      "QC4-DAY1/T03_EARLIEST/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T03_EARLIEST/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_EARLIEST/r2/a/a": "REJECT",
+      "QC4-DAY1/T03_EARLIEST/r2/a/b": "CLARIFY",
+      "QC4-DAY1/T03_EARLIEST/r2/b/a": "REJECT",
+      "QC4-DAY1/T03_EARLIEST/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_NOW/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r0/a/b": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_NOW/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r1/a/b": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_NOW",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_NOW/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r2/a/b": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r2/b/a": "ACCEPT",
+      "QC4-DAY1/T03_NOW/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_TOMORROW/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r0/a/b": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_TOMORROW/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r1/a/b": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T03_TOMORROW/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r2/a/b": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r2/b/a": "ACCEPT",
+      "QC4-DAY1/T03_TOMORROW/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T04_LIBRARY/r0/a/a": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r0/a/b": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r0/b/a": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T04_LIBRARY/r1/a/a": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r1/a/b": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r1/b/a": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T04_LIBRARY/r2/a/a": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r2/a/b": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r2/b/a": "REJECT",
+      "QC4-DAY1/T04_LIBRARY/r2/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T04_QINGYE/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T04_QINGYE/r0/a/b": "CLARIFY",
+      "QC4-DAY1/T04_QINGYE/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T04_QINGYE/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T04_QINGYE/r1/a/a": "REJECT",
+      "QC4-DAY1/T04_QINGYE/r1/a/b": "REJECT",
+      "QC4-DAY1/T04_QINGYE/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T04_QINGYE/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T04_QINGYE/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T04_QINGYE/r2/a/b": "REJECT",
+      "QC4-DAY1/T04_QINGYE/r2/b/a": "ACCEPT",
+      "QC4-DAY1/T04_QINGYE/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T05_HISTORY/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T05_HISTORY/r0/a/b": "CLARIFY",
+      "QC4-DAY1/T05_HISTORY/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T05_HISTORY/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T05_HISTORY/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T05_HISTORY/r1/a/b": "CLARIFY",
+      "QC4-DAY1/T05_HISTORY/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T05_HISTORY/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": true
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T05_HISTORY/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T05_HISTORY/r2/a/b": "CLARIFY",
+      "QC4-DAY1/T05_HISTORY/r2/b/a": "CLARIFY",
+      "QC4-DAY1/T05_HISTORY/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T05_NEVER/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T05_NEVER/r0/a/b": "REJECT",
+      "QC4-DAY1/T05_NEVER/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T05_NEVER/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T05_NEVER/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T05_NEVER/r1/a/b": "REJECT",
+      "QC4-DAY1/T05_NEVER/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T05_NEVER/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T05_NEVER",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T05_NEVER/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T05_NEVER/r2/a/b": "REJECT",
+      "QC4-DAY1/T05_NEVER/r2/b/a": "ACCEPT",
+      "QC4-DAY1/T05_NEVER/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_GLOBAL_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T06_GLOBAL_library/r0/a/b": "REJECT",
+      "QC4-DAY1/T06_GLOBAL_library/r0/b/a": "REJECT",
+      "QC4-DAY1/T06_GLOBAL_library/r0/b/b": "REJECT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_GLOBAL_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T06_GLOBAL_library/r1/a/b": "REJECT",
+      "QC4-DAY1/T06_GLOBAL_library/r1/b/a": "REJECT",
+      "QC4-DAY1/T06_GLOBAL_library/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_GLOBAL_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T06_GLOBAL_library/r2/a/b": "REJECT",
+      "QC4-DAY1/T06_GLOBAL_library/r2/b/a": "REJECT",
+      "QC4-DAY1/T06_GLOBAL_library/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_MINE_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r0/a/b": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_MINE_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r1/a/b": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": true,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_MINE_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r2/a/b": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r2/b/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_library/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 0,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_MINE_qingye/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r0/a/b": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r0/b/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r0/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 1,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_MINE_qingye/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r1/a/b": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r1/b/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r1/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "repeat": 2,
+    "structuralAgreement": true,
+    "nativeAdmissibleAgreement": true,
+    "BqueryOpportunity": true,
+    "BwrongQueryOrScopeOpportunity": true,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T06_MINE_qingye/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r2/a/b": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r2/b/a": "ACCEPT",
+      "QC4-DAY1/T06_MINE_qingye/r2/b/b": "ACCEPT"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": true,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": true,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T07_PAST_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T07_PAST_library/r0/a/b": "CLARIFY",
+      "QC4-DAY1/T07_PAST_library/r0/b/a": "CLARIFY",
+      "QC4-DAY1/T07_PAST_library/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T07_PAST_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T07_PAST_library/r1/a/b": "CLARIFY",
+      "QC4-DAY1/T07_PAST_library/r1/b/a": "CLARIFY",
+      "QC4-DAY1/T07_PAST_library/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T07_PAST_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T07_PAST_library/r2/a/b": "CLARIFY",
+      "QC4-DAY1/T07_PAST_library/r2/b/a": "CLARIFY",
+      "QC4-DAY1/T07_PAST_library/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 0,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T07_WAIT_library/r0/a/a": "ACCEPT",
+      "QC4-DAY1/T07_WAIT_library/r0/a/b": "CLARIFY",
+      "QC4-DAY1/T07_WAIT_library/r0/b/a": "CLARIFY",
+      "QC4-DAY1/T07_WAIT_library/r0/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 1,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T07_WAIT_library/r1/a/a": "ACCEPT",
+      "QC4-DAY1/T07_WAIT_library/r1/a/b": "CLARIFY",
+      "QC4-DAY1/T07_WAIT_library/r1/b/a": "CLARIFY",
+      "QC4-DAY1/T07_WAIT_library/r1/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "repeat": 2,
+    "structuralAgreement": false,
+    "nativeAdmissibleAgreement": false,
+    "BqueryOpportunity": false,
+    "BwrongQueryOrScopeOpportunity": false,
+    "BcorrectQueryOrScope": false,
+    "BcorrectClarify": false,
+    "reviewDecisions": {
+      "QC4-DAY1/T07_WAIT_library/r2/a/a": "ACCEPT",
+      "QC4-DAY1/T07_WAIT_library/r2/a/b": "CLARIFY",
+      "QC4-DAY1/T07_WAIT_library/r2/b/a": "CLARIFY",
+      "QC4-DAY1/T07_WAIT_library/r2/b/b": "CLARIFY"
+    },
+    "strategies": {
+      "C:a": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "C:b": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "D": {
+        "allowed": false,
+        "incrementalVeto": false
+      },
+      "B": {
+        "allowed": false,
+        "incrementalVeto": false
+      }
+    }
+  }
+]

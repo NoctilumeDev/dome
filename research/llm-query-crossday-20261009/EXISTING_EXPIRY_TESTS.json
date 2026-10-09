@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-09T15:59:36.904471+00:00",
+  "kind": "Existing product expiry controls, separate from frozen 474-record query replay",
+  "newModelRequests": 0,
+  "sourceAndLog": [
+    {
+      "system": "qingye",
+      "source": "qingye/backend/src/test/java/cn/qingye/AssistantDecisionTest.java",
+      "method": "scopeConfirmationExpiresOnServerTimeWithoutQueryingRecords",
+      "sourceSha256": "cba1fa03a59697e5f5bf11b8c3cd9a7f1b1df8bebe7649c16a9d5dbfdde1efc8",
+      "log": "qingye-existing-expiry.log",
+      "logSha256": "c522b5c72583679778fff2e9867dd5b86ec53ff59330bbe54137aecf835f7d05",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "system": "library",
+      "source": "coursework/library-management-system/backend/src/test/java/cn/kmbeast/AssistantConsentTest.java",
+      "method": "snapshotExpirySessionAndRequestGenerationStayBound",
+      "sourceSha256": "02cf401e384c929e53b25b40ce239e158408035c50efd55ccbb4fb2044719bbf",
+      "log": "library-existing-expiry.log",
+      "logSha256": "7de4f592b675d7ff21b24ca61ea56018dde5a0150ce584ecf3116bbf9bb590d6",
+      "tests": 1,
+      "failures": 0
+    }
+  ]
+}

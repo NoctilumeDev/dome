@@ -1,0 +1,14 @@
+{
+  "status": "POST_CLEANUP_SOURCE_READBACK_FAIL",
+  "firstObservedError": "FileNotFoundError: coursework/library-management-system/backend/src/test/java/cn/kmbeast/AssistantFactsTest.java",
+  "missingFrozenFiles": [
+    {
+      "seal": "research/llm-query-controls-20261008/seal.json",
+      "group": "imports",
+      "path": "coursework/library-management-system/backend/src/test/java/cn/kmbeast/AssistantFactsTest.java",
+      "expectedSha256": "2acc7a728dd3a1b98d24f6e724816b5597ad5f087d9f0ac25867912393f7f675"
+    }
+  ],
+  "modelResubmissions": 0,
+  "action": "Recover only missing bound tracked source from Git after exact hash checks; preserve this failure"
+}

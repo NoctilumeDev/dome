@@ -1,0 +1,1902 @@
+{
+  "version": "query-review-v1",
+  "proposalCoordinate": "2ccf88a",
+  "seed": 2026100805,
+  "providers": {
+    "a": {
+      "name": "deepseek",
+      "model": "deepseek-flash",
+      "url": "https://api.deepseek.com/chat/completions",
+      "inputCnyPerMillion": 2,
+      "outputCnyPerMillion": 8
+    },
+    "b": {
+      "name": "qwen",
+      "model": "qwen-plus",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "inputCnyPerMillion": 0.8,
+      "outputCnyPerMillion": 2
+    }
+  },
+  "proposalBudgetUsedCny": 0.24839039999999998,
+  "aggregateNewBudgetCny": 2,
+  "cumulativeBeforeReviewCny": {
+    "deepseek": 7.918121,
+    "qwen": 2.78777865
+  },
+  "reservedDay1CnyPerProvider": 0.36,
+  "jobs": [
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E05/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E05/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E05/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E05/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T01/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T01/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T01/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T01/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E05/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E05/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E05/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E05/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G05/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G05/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G05/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G05/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E02/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E02/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E02/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E02/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E06/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E06/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E06/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E06/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E04/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E04/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E04/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E04/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G05/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G05/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G05/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G05/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G03/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G03/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G03/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G03/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E06/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E06/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E06/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E06/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G03/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G03/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G03/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G03/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_qingye/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I01_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_LIBRARY/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E05/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E05/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E05/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E05/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_TEXT/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_EARLIEST/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G05/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G05/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G05/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G05/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E02/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E02/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E02/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E02/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E03/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E03/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E03/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E03/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E04/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E04/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E04/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E04/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E04/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E04/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E04/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E04/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_TOMORROW/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_WAIT_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_ADULT/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E02/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E02/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E02/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E02/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T07_PAST_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01_EXACT/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E03/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E03/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E03/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E03/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_qingye/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_OTHER_qingye/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T01/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T01/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T01/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T01/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_library/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E01/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E01/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_SELF_qingye/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T01/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T01/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T01/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T01/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G02_UNKNOWN/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_MINE_qingye/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T03_NOW/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E07/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E07/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E07/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E07/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E06/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E06/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E06/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E06/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T06_GLOBAL_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T04_QINGYE/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_ARITH/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_HISTORY/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r2/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r2/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r2/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G01_MATH/r2/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_ORDER/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G04_WORK/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E07/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E07/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E07/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E07/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E03/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E03/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E03/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E03/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E07/r0/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E07/r0/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/E07/r0/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/E07/r0/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T05_NEVER/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/I04_ADMIN_library/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G03/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G03/r1/b",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/G03/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/G03/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r1/a",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r1/a",
+      "reviewer": "b"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r1/b",
+      "reviewer": "a"
+    },
+    {
+      "candidateCallId": "QC4/T02_FUTURE/r1/b",
+      "reviewer": "b"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# 标签代理指标的已知限制
+
+本层在输出前冻结完整计划oracle，不事后改分。正式采集期间观察到：conditional_branch的第二变体尚不知道条件真假；模型CLARIFY/MISSING_INFO（图书馆AMBIGUOUS）与冻结CLARIFY/MULTIPLE_REQUESTS（图书馆MULTIPLE_ACTIONS）可能只是澄清原因选择不同。
+
+该差异应继续算严格计划不匹配，但不能直接称为错误查询/错误事实。联合误差的0/1端点也是严格计划标签的匹配，不是独立人工确认的用户任务失败。是否属于错误oracle子原因需独立标注，当前NOT_RUN/PENDING_HUMAN_STUDY。
+
+自然B后主端点仅计合法放行的错误QUERY/CONFIRM_SCOPE；上述CLARIFY标签差异不进入错误查询机会。输入未知条件、多步骤无法表达时，拒绝执行可能正确，原因标签仍可与冻结标签不同。
+
+该备注不改oracle、不删题、不调整原分母，也不充当新的独立盲标。

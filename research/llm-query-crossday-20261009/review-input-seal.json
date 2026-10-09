@@ -1,0 +1,18 @@
+{
+  "version": "QC4-DAY1-REVIEW-v1",
+  "frozenAt": "2026-10-09T16:02:09.340475+00:00",
+  "proposals": 234,
+  "reviewsAtSeal": 0,
+  "selectedAllFrozenQuestions": true,
+  "files": {
+    "results/calls.jsonl": "c68bcdb533cbd88dbce366d8de0c4df6b07ffe1c253fdb9772b50896024b06b5",
+    "results/summary.json": "c879caa6974b4e381f5353738daab0155056692b158a86bc8d4d82e4465a339e",
+    "results/native/input.json": "1e982fb129f03e22876eff2812f58836b0c9ecba23e285c16e696d6bbb5e109d",
+    "results/native/native-library.jsonl": "381ba2ac4050da048071b142551a364cb265fcef887574e992e282fcdd76ccb2",
+    "results/native/native-qingye.jsonl": "68d2c751141b3dac0e16777044eba041c619701941d0eefbdc97a009b2078532",
+    "results/native/snapshot-library.json": "7615ecc6707723c4f4fef13a24afd380c83d3d1d6347abcbf95bb3ade1bcf4b6",
+    "results/native/snapshot-qingye.json": "95cc09d6a77cda552477c39f1df08aac2c59071d3c1b0af1ac3ae2d031fc0e1f",
+    "output-v2/details.json": "955cd2c9185cb0d1c992f8b458d9600f195dd797e04d760af74aaf72a297668e",
+    "output-v2/metrics.json": "c4e10bd17526e65d24e0be2a1d117ee31645587a7ccb14f0bc23dcabdca3bfbe"
+  }
+}

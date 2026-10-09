@@ -1,0 +1,14 @@
+{
+  "phase": "formal",
+  "startedAt": "2026-10-08T10:06:44.424690+00:00",
+  "finishedAt": "2026-10-08T10:52:16.241406+00:00",
+  "completedBlocks": 192,
+  "plannedBlocks": 192,
+  "requestIdentities": 2304,
+  "stop": null,
+  "estimatedAllNew": {
+    "deepseek": 2.5885,
+    "qwen": 0.9602304
+  },
+  "actualBilling": "NOT_VERIFIED"
+}

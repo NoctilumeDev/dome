@@ -1,0 +1,8 @@
+{
+  "recordedAt": "2026-10-09T16:22:58.526354+00:00",
+  "event": "Automatic approval rejected helper/target removal before execution",
+  "reasonReturned": "blocked by policy; no more detailed reason",
+  "bypass": "NONE",
+  "resolution": "User manually deleted the six named paths; MANUAL_CLEANUP_READBACK.json verifies all absent",
+  "evidenceEffect": "Resource closeout only; model/native/oracle/scorer results unchanged"
+}
