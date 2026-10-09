@@ -1,0 +1,512 @@
+[
+  {
+    "caseId": "E01",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础"
+      },
+      "requireNoOtherFilters": true
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "E03",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "publisher": "出版社甲"
+      },
+      "requireNoOtherFilters": true
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "E04",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "author": "作者甲"
+      },
+      "requireNoOtherFilters": true
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "E05",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "author": "作者甲",
+        "publisher": "出版社乙"
+      },
+      "requireNoOtherFilters": true
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "E06",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "author": "作者乙",
+        "publisher": "出版社乙"
+      },
+      "requireNoOtherFilters": true
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "E07",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK",
+        "FIND_LOCATION"
+      ],
+      "required": {
+        "title": "程序基础"
+      },
+      "requireNoOtherFilters": true
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "E01_EXACT",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported"
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "E02",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported"
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I01_library",
+    "plannerReachable": true,
+    "entryStatus": "CONFIRM_SCOPE",
+    "oracleRule": {
+      "kind": "personal",
+      "intent": "MY_BORROWS"
+    },
+    "scenarios": 16,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I04_SELF_library",
+    "plannerReachable": true,
+    "entryStatus": "CONFIRM_SCOPE",
+    "oracleRule": {
+      "kind": "personal",
+      "intent": "MY_BORROWS"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I04_OTHER_library",
+    "plannerReachable": true,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "forbidden"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I04_ADMIN_library",
+    "plannerReachable": true,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "forbidden"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I01_qingye",
+    "plannerReachable": true,
+    "entryStatus": "CONFIRM_SCOPE",
+    "oracleRule": {
+      "kind": "personal",
+      "intent": "MY_LOANS"
+    },
+    "scenarios": 16,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I04_SELF_qingye",
+    "plannerReachable": true,
+    "entryStatus": "CONFIRM_SCOPE",
+    "oracleRule": {
+      "kind": "personal",
+      "intent": "MY_LOANS"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I04_OTHER_qingye",
+    "plannerReachable": true,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "forbidden"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "I04_ADMIN_qingye",
+    "plannerReachable": true,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "forbidden"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G01_ARITH",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G01_MATH",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "mathematics"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G02_UNKNOWN",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G02_ADULT",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "arithmetic",
+      "unsupportedSuitability": true
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G03",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G04_TEXT",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "arithmetic",
+      "material": "textbook"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G04_WORK",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "arithmetic",
+      "material": "workbook"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "G05",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T01",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "scenarios": 2,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T02_FUTURE",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T02_ORDER",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T04_LIBRARY",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T05_HISTORY",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "past"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T05_NEVER",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "past"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T03_NOW",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "EQUIPMENT"
+      ],
+      "required": {
+        "entity": "相机",
+        "timeOption": "CURRENT"
+      }
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T03_TOMORROW",
+    "plannerReachable": true,
+    "entryStatus": "QUERY",
+    "oracleRule": {
+      "kind": "fields",
+      "intents": [
+        "EQUIPMENT"
+      ],
+      "required": {
+        "entity": "相机",
+        "timeOption": "TOMORROW"
+      }
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T03_EARLIEST",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T04_QINGYE",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T06_GLOBAL_library",
+    "plannerReachable": true,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "forbidden"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T06_MINE_library",
+    "plannerReachable": true,
+    "entryStatus": "CONFIRM_SCOPE",
+    "oracleRule": {
+      "kind": "personal",
+      "intent": "MY_BORROWS",
+      "required": {
+        "title": "程序基础"
+      }
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T07_PAST_library",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "missing"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T07_WAIT_library",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "missing"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T06_GLOBAL_qingye",
+    "plannerReachable": false,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "forbidden"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T06_MINE_qingye",
+    "plannerReachable": true,
+    "entryStatus": "CLARIFY",
+    "oracleRule": {
+      "kind": "unsupported"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T07_PAST_qingye",
+    "plannerReachable": false,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "missing"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  },
+  {
+    "caseId": "T07_WAIT_qingye",
+    "plannerReachable": false,
+    "entryStatus": "REJECT",
+    "oracleRule": {
+      "kind": "missing"
+    },
+    "scenarios": 1,
+    "labelOwner": "same executor, source-grounded; not independent blind annotation"
+  }
+]

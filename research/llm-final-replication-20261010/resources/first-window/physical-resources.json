@@ -1,0 +1,583 @@
+{
+  "version": "resource-receipt-v1",
+  "window": "first-window",
+  "generatedAt": "2026-10-09T19:37:43.060007+00:00",
+  "total": {
+    "requestIdentities": 7446,
+    "transport": {
+      "SUCCESS": 7446
+    },
+    "usageRecords": 7446,
+    "usageMissing": 0,
+    "inputTokenRecords": 7446,
+    "outputTokenRecords": 7446,
+    "totalTokenRecords": 7446,
+    "observedInputTokens": 6491759,
+    "observedOutputTokens": 327987,
+    "observedTotalTokens": 6819746,
+    "tokenCoverageComplete": true,
+    "apiLatencyRecords": 7446,
+    "apiLatencyP50Ms": 953.0,
+    "apiLatencyP95Ms": 1812.0,
+    "requestedModels": [
+      "deepseek-flash",
+      "deepseek-v4-pro",
+      "qwen-flash",
+      "qwen-plus"
+    ],
+    "responseModels": [
+      "deepseek-flash",
+      "deepseek-v4-pro",
+      "qwen-flash",
+      "qwen-plus"
+    ],
+    "estimatedBudgetCny": 11.03089185,
+    "priceEstimateMissing": 0
+  },
+  "providers": {
+    "deepseek": {
+      "requestIdentities": 3723,
+      "transport": {
+        "SUCCESS": 3723
+      },
+      "usageRecords": 3723,
+      "usageMissing": 0,
+      "inputTokenRecords": 3723,
+      "outputTokenRecords": 3723,
+      "totalTokenRecords": 3723,
+      "observedInputTokens": 3254298,
+      "observedOutputTokens": 172387,
+      "observedTotalTokens": 3426685,
+      "tokenCoverageComplete": true,
+      "apiLatencyRecords": 3723,
+      "apiLatencyP50Ms": 703.0,
+      "apiLatencyP95Ms": 1000.0,
+      "requestedModels": [
+        "deepseek-flash",
+        "deepseek-v4-pro"
+      ],
+      "responseModels": [
+        "deepseek-flash",
+        "deepseek-v4-pro"
+      ],
+      "estimatedBudgetCny": 8.150549,
+      "priceEstimateMissing": 0
+    },
+    "qwen": {
+      "requestIdentities": 3723,
+      "transport": {
+        "SUCCESS": 3723
+      },
+      "usageRecords": 3723,
+      "usageMissing": 0,
+      "inputTokenRecords": 3723,
+      "outputTokenRecords": 3723,
+      "totalTokenRecords": 3723,
+      "observedInputTokens": 3237461,
+      "observedOutputTokens": 155600,
+      "observedTotalTokens": 3393061,
+      "tokenCoverageComplete": true,
+      "apiLatencyRecords": 3723,
+      "apiLatencyP50Ms": 1172.0,
+      "apiLatencyP95Ms": 1859.0,
+      "requestedModels": [
+        "qwen-flash",
+        "qwen-plus"
+      ],
+      "responseModels": [
+        "qwen-flash",
+        "qwen-plus"
+      ],
+      "estimatedBudgetCny": 2.8803428500000003,
+      "priceEstimateMissing": 0
+    }
+  },
+  "suites": [
+    {
+      "suite": "core",
+      "summary": {
+        "suite": "core",
+        "startedAt": "2026-10-09T17:13:20.347471+00:00",
+        "finishedAt": "2026-10-09T17:45:14.777738+00:00",
+        "requests": 1728,
+        "plannedRequests": 1728,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 10.876816999999958,
+          "qwen": 3.8601850500000148
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 1728,
+        "transport": {
+          "SUCCESS": 1728
+        },
+        "usageRecords": 1728,
+        "usageMissing": 0,
+        "inputTokenRecords": 1728,
+        "outputTokenRecords": 1728,
+        "totalTokenRecords": 1728,
+        "observedInputTokens": 1493412,
+        "observedOutputTokens": 74392,
+        "observedTotalTokens": 1567804,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 1728,
+        "apiLatencyP50Ms": 953.0,
+        "apiLatencyP95Ms": 1813.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 2.4760388,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "4870bf1865c16dd49ded083c4b05ec8e1c50c52a32f2d670423aab305e00f77e",
+      "journalSha256": "c27bc02385f69bfb4ef7137cd9551b1ad38145c63e540979a2b3deaa15f1c83b"
+    },
+    {
+      "suite": "extension",
+      "summary": {
+        "suite": "extension",
+        "startedAt": "2026-10-09T17:45:35.577529+00:00",
+        "finishedAt": "2026-10-09T17:59:41.092541+00:00",
+        "requests": 768,
+        "plannedRequests": 768,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 11.683708999999954,
+          "qwen": 4.157207850000018
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 768,
+        "transport": {
+          "SUCCESS": 768
+        },
+        "usageRecords": 768,
+        "usageMissing": 0,
+        "inputTokenRecords": 768,
+        "outputTokenRecords": 768,
+        "totalTokenRecords": 768,
+        "observedInputTokens": 665796,
+        "observedOutputTokens": 33108,
+        "observedTotalTokens": 698904,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 768,
+        "apiLatencyP50Ms": 953.0,
+        "apiLatencyP95Ms": 1797.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 1.1039148,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "285d25a2437d77bd757fdbc184f65f7fa102eef6b36033266e3ecae277e8c432",
+      "journalSha256": "78cef358a5841eb84365dcce902793e1b50b1416f880822bb3eb757a7e8754e2"
+    },
+    {
+      "suite": "counterexamples",
+      "summary": {
+        "suite": "counterexamples",
+        "startedAt": "2026-10-09T18:00:00.639603+00:00",
+        "finishedAt": "2026-10-09T18:29:14.909173+00:00",
+        "requests": 1536,
+        "plannedRequests": 1536,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 13.337630999999917,
+          "qwen": 4.768173450000039
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 1536,
+        "transport": {
+          "SUCCESS": 1536
+        },
+        "usageRecords": 1536,
+        "usageMissing": 0,
+        "inputTokenRecords": 1536,
+        "outputTokenRecords": 1536,
+        "totalTokenRecords": 1536,
+        "observedInputTokens": 1360195,
+        "observedOutputTokens": 70189,
+        "observedTotalTokens": 1430384,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 1536,
+        "apiLatencyP50Ms": 969.0,
+        "apiLatencyP95Ms": 1844.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 2.2648876000000002,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "0e033b8297adeb016a7bb52f0f6b0bcd447e9741954434bf5eb7020baa3828a9",
+      "journalSha256": "d01e5aad1421145a0dcdafd82f3bd4723c0374277714325cc901b09baa416c84"
+    },
+    {
+      "suite": "challenge",
+      "summary": {
+        "suite": "challenge",
+        "startedAt": "2026-10-09T18:29:38.245073+00:00",
+        "finishedAt": "2026-10-09T18:31:12.876687+00:00",
+        "requests": 96,
+        "plannedRequests": 96,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 13.44973099999991,
+          "qwen": 4.810243050000032
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 96,
+        "transport": {
+          "SUCCESS": 96
+        },
+        "usageRecords": 96,
+        "usageMissing": 0,
+        "inputTokenRecords": 96,
+        "outputTokenRecords": 96,
+        "totalTokenRecords": 96,
+        "observedInputTokens": 98220,
+        "observedOutputTokens": 3133,
+        "observedTotalTokens": 101353,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 96,
+        "apiLatencyP50Ms": 906.0,
+        "apiLatencyP95Ms": 1297.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 0.1541696,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "8a6a4f43a50ec6d57db2df0336ed4bfb6c28652edf3aabd271e9bbd2a67fb2f8",
+      "journalSha256": "389af767bbdaa576d689c1075189b30f95f21c4dc68b4fffd10dc1921ad5af73"
+    },
+    {
+      "suite": "formal",
+      "summary": {
+        "suite": "formal",
+        "startedAt": "2026-10-09T18:31:14.293991+00:00",
+        "finishedAt": "2026-10-09T19:12:58.606649+00:00",
+        "requests": 2304,
+        "plannedRequests": 2304,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 15.988078999999935,
+          "qwen": 5.752018250000085
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 2304,
+        "transport": {
+          "SUCCESS": 2304
+        },
+        "usageRecords": 2304,
+        "usageMissing": 0,
+        "inputTokenRecords": 2304,
+        "outputTokenRecords": 2304,
+        "totalTokenRecords": 2304,
+        "observedInputTokens": 2121245,
+        "observedOutputTokens": 98741,
+        "observedTotalTokens": 2219986,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 2304,
+        "apiLatencyP50Ms": 938.0,
+        "apiLatencyP95Ms": 1797.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 3.4801232,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "a010327f094e1cc5fe46af60b6a41151cd641b9a7a478defc75c63b3c159329d",
+      "journalSha256": "8930daed8fa07be919ed490795b6411da4f7bdaa178cdd05b8981f95f26d97f5"
+    },
+    {
+      "suite": "external",
+      "summary": {
+        "suite": "external",
+        "startedAt": "2026-10-09T19:13:21.276232+00:00",
+        "finishedAt": "2026-10-09T19:15:28.700879+00:00",
+        "requests": 96,
+        "plannedRequests": 96,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 16.093624999999932,
+          "qwen": 5.7906582500000825
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 96,
+        "transport": {
+          "SUCCESS": 96
+        },
+        "usageRecords": 96,
+        "usageMissing": 0,
+        "inputTokenRecords": 96,
+        "outputTokenRecords": 96,
+        "totalTokenRecords": 96,
+        "observedInputTokens": 81162,
+        "observedOutputTokens": 6078,
+        "observedTotalTokens": 87240,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 96,
+        "apiLatencyP50Ms": 1141.0,
+        "apiLatencyP95Ms": 1875.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 0.144186,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "1b8d90fd74a96af97c69d72651cddbb7023a77bef009b17b483f252f16740e38",
+      "journalSha256": "5c47042f2735a8c647403806faf031d154c7cd1fd7701faccbce11d5b98108c5"
+    },
+    {
+      "suite": "tier",
+      "summary": {
+        "suite": "tier",
+        "startedAt": "2026-10-09T19:15:47.757153+00:00",
+        "finishedAt": "2026-10-09T19:18:20.346757+00:00",
+        "requests": 144,
+        "plannedRequests": 144,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 16.51355399999993,
+          "qwen": 5.8258331000000885
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 144,
+        "transport": {
+          "SUCCESS": 144
+        },
+        "usageRecords": 144,
+        "usageMissing": 0,
+        "inputTokenRecords": 144,
+        "outputTokenRecords": 144,
+        "totalTokenRecords": 144,
+        "observedInputTokens": 121806,
+        "observedOutputTokens": 8011,
+        "observedTotalTokens": 129817,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 144,
+        "apiLatencyP50Ms": 953.0,
+        "apiLatencyP95Ms": 1765.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "deepseek-v4-pro",
+          "qwen-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "deepseek-v4-pro",
+          "qwen-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 0.45510385000000003,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "7e592ed1eac7f0070dff4606e8d10b8f2dc2b0663a8cee5f0d104098f539e66a",
+      "journalSha256": "bf14faf81655c6c5c5ece4c5e002f59b96c8e1f5f7362049ef1c47a9e534b8ac"
+    },
+    {
+      "suite": "time-day0",
+      "summary": {
+        "suite": "time-day0",
+        "startedAt": "2026-10-09T19:18:39.220039+00:00",
+        "finishedAt": "2026-10-09T19:20:00.880625+00:00",
+        "requests": 72,
+        "plannedRequests": 72,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 16.588681999999924,
+          "qwen": 5.853541500000091
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 72,
+        "transport": {
+          "SUCCESS": 72
+        },
+        "usageRecords": 72,
+        "usageMissing": 0,
+        "inputTokenRecords": 72,
+        "outputTokenRecords": 72,
+        "totalTokenRecords": 72,
+        "observedInputTokens": 60921,
+        "observedOutputTokens": 3429,
+        "observedTotalTokens": 64350,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 72,
+        "apiLatencyP50Ms": 968.0,
+        "apiLatencyP95Ms": 1797.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 0.1028364,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "cf8c01d75fefe93af2e5b47f2f4b92aac2c284f37d544ef0c2e716a1a95a8c08",
+      "journalSha256": "7edb889f7b6d097f7b133269c128cbeb0602fae15218cf83a31f6b867b82ce72"
+    },
+    {
+      "suite": "query-day0",
+      "summary": {
+        "suite": "query-day0",
+        "startedAt": "2026-10-09T19:20:19.658782+00:00",
+        "finishedAt": "2026-10-09T19:25:11.315323+00:00",
+        "requests": 234,
+        "plannedRequests": 234,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 16.774477999999927,
+          "qwen": 5.916175900000087
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 234,
+        "transport": {
+          "SUCCESS": 234
+        },
+        "usageRecords": 234,
+        "usageMissing": 0,
+        "inputTokenRecords": 234,
+        "outputTokenRecords": 234,
+        "totalTokenRecords": 234,
+        "observedInputTokens": 127662,
+        "observedOutputTokens": 13286,
+        "observedTotalTokens": 140948,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 234,
+        "apiLatencyP50Ms": 969.0,
+        "apiLatencyP95Ms": 1844.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 0.2484304,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "6c409f0daabcc9ceef629da621b7a382fe0f2f900fd9db946e07ce9afa665fd1",
+      "journalSha256": "2860df53cf1fa432ad5d6579b3585f811a9ed51503aedbbfb9aad99cf482d413"
+    },
+    {
+      "suite": "query-review-day0",
+      "summary": {
+        "suite": "query-review-day0",
+        "startedAt": "2026-10-09T19:25:32.428020+00:00",
+        "finishedAt": "2026-10-09T19:33:55.087610+00:00",
+        "requests": 468,
+        "plannedRequests": 468,
+        "stop": null,
+        "gap": null,
+        "globalConservativeCny": {
+          "deepseek": 17.217935999999977,
+          "qwen": 6.0739191000000865
+        },
+        "actualCash": "NOT_VERIFIED"
+      },
+      "resources": {
+        "requestIdentities": 468,
+        "transport": {
+          "SUCCESS": 468
+        },
+        "usageRecords": 468,
+        "usageMissing": 0,
+        "inputTokenRecords": 468,
+        "outputTokenRecords": 468,
+        "totalTokenRecords": 468,
+        "observedInputTokens": 361340,
+        "observedOutputTokens": 17620,
+        "observedTotalTokens": 378960,
+        "tokenCoverageComplete": true,
+        "apiLatencyRecords": 468,
+        "apiLatencyP50Ms": 969.0,
+        "apiLatencyP95Ms": 1438.0,
+        "requestedModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "responseModels": [
+          "deepseek-flash",
+          "qwen-plus"
+        ],
+        "estimatedBudgetCny": 0.6012012,
+        "priceEstimateMissing": 0
+      },
+      "callsSha256": "49f1f63a2bba98f99a64263d346b728d07b9bab7ad001b13cc3521e957ef5169",
+      "journalSha256": "bd1b81d6a8fea79abc7a26f693868aa1d601d403b4f09acd26ff208095c4fa67"
+    }
+  ],
+  "historicalConservativeCny": {
+    "deepseek": 9.067387,
+    "qwen": 3.19357625
+  },
+  "qualification": [
+    "Fresh physical request identities, not independent users or statistically independent errors",
+    "Observed usage totals exclude missing usage; unknown billed workload is not zero",
+    "Tokens describe API workload and are not FLOPs or cross-model compute equivalence",
+    "Latency is individual observed HTTP call latency including failures, not UI end-to-end latency",
+    "Budget estimate uses frozen price assumptions; cash charge and promotional offsets are NOT_VERIFIED",
+    "No semantic, safety, or patent qualification is established by this resource receipt"
+  ]
+}

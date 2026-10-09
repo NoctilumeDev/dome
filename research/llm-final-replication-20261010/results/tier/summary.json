@@ -1,0 +1,14 @@
+{
+  "suite": "tier",
+  "startedAt": "2026-10-09T19:15:47.757153+00:00",
+  "finishedAt": "2026-10-09T19:18:20.346757+00:00",
+  "requests": 144,
+  "plannedRequests": 144,
+  "stop": null,
+  "gap": null,
+  "globalConservativeCny": {
+    "deepseek": 16.51355399999993,
+    "qwen": 5.8258331000000885
+  },
+  "actualCash": "NOT_VERIFIED"
+}

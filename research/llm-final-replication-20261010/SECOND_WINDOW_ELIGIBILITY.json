@@ -1,0 +1,31 @@
+{
+  "version": "fresh-second-window-eligibility-v1",
+  "sources": [
+    {
+      "suite": "time-day1",
+      "sourceSuite": "time-day0",
+      "sourceFinishedAt": "2026-10-09T19:20:00.880625+00:00",
+      "earliestUtc": "2026-10-10T19:20:00.880625+00:00",
+      "earliestShanghai": "2026-10-11T03:20:00.880625+08:00"
+    },
+    {
+      "suite": "query-day1",
+      "sourceSuite": "query-day0",
+      "sourceFinishedAt": "2026-10-09T19:25:11.315323+00:00",
+      "earliestUtc": "2026-10-10T19:25:11.315323+00:00",
+      "earliestShanghai": "2026-10-11T03:25:11.315323+08:00"
+    },
+    {
+      "suite": "query-review-day1",
+      "sourceSuite": "query-review-day0",
+      "sourceFinishedAt": "2026-10-09T19:33:55.087610+00:00",
+      "earliestUtc": "2026-10-10T19:33:55.087610+00:00",
+      "earliestShanghai": "2026-10-11T03:33:55.087610+08:00"
+    }
+  ],
+  "earliestAllGuardsUtc": "2026-10-10T19:33:55.087610+00:00",
+  "earliestAllGuardsShanghai": "2026-10-11T03:33:55.087610+08:00",
+  "scheduledWakeShanghai": "2026-10-11T03:35:00+08:00",
+  "remainingPhysicalRequests": 774,
+  "paymentRequiresRuntimeRecheck": true
+}

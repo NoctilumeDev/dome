@@ -1,0 +1,100 @@
+{
+  "version": "replication-provenance-receipt-v1",
+  "window": "first-window",
+  "requests": 7446,
+  "observedAt": "2026-10-09T19:37:37.414203+00:00",
+  "frozenInputs": "PASS",
+  "suites": [
+    {
+      "suite": "core",
+      "requests": 1728,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "4870bf1865c16dd49ded083c4b05ec8e1c50c52a32f2d670423aab305e00f77e",
+      "journalSha256": "c27bc02385f69bfb4ef7137cd9551b1ad38145c63e540979a2b3deaa15f1c83b"
+    },
+    {
+      "suite": "extension",
+      "requests": 768,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "285d25a2437d77bd757fdbc184f65f7fa102eef6b36033266e3ecae277e8c432",
+      "journalSha256": "78cef358a5841eb84365dcce902793e1b50b1416f880822bb3eb757a7e8754e2"
+    },
+    {
+      "suite": "counterexamples",
+      "requests": 1536,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "0e033b8297adeb016a7bb52f0f6b0bcd447e9741954434bf5eb7020baa3828a9",
+      "journalSha256": "d01e5aad1421145a0dcdafd82f3bd4723c0374277714325cc901b09baa416c84"
+    },
+    {
+      "suite": "challenge",
+      "requests": 96,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "8a6a4f43a50ec6d57db2df0336ed4bfb6c28652edf3aabd271e9bbd2a67fb2f8",
+      "journalSha256": "389af767bbdaa576d689c1075189b30f95f21c4dc68b4fffd10dc1921ad5af73"
+    },
+    {
+      "suite": "formal",
+      "requests": 2304,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "a010327f094e1cc5fe46af60b6a41151cd641b9a7a478defc75c63b3c159329d",
+      "journalSha256": "8930daed8fa07be919ed490795b6411da4f7bdaa178cdd05b8981f95f26d97f5"
+    },
+    {
+      "suite": "external",
+      "requests": 96,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "1b8d90fd74a96af97c69d72651cddbb7023a77bef009b17b483f252f16740e38",
+      "journalSha256": "5c47042f2735a8c647403806faf031d154c7cd1fd7701faccbce11d5b98108c5"
+    },
+    {
+      "suite": "tier",
+      "requests": 144,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "7e592ed1eac7f0070dff4606e8d10b8f2dc2b0663a8cee5f0d104098f539e66a",
+      "journalSha256": "bf14faf81655c6c5c5ece4c5e002f59b96c8e1f5f7362049ef1c47a9e534b8ac"
+    },
+    {
+      "suite": "time-day0",
+      "requests": 72,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "cf8c01d75fefe93af2e5b47f2f4b92aac2c284f37d544ef0c2e716a1a95a8c08",
+      "journalSha256": "7edb889f7b6d097f7b133269c128cbeb0602fae15218cf83a31f6b867b82ce72"
+    },
+    {
+      "suite": "query-day0",
+      "requests": 234,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "6c409f0daabcc9ceef629da621b7a382fe0f2f900fd9db946e07ce9afa665fd1",
+      "journalSha256": "2860df53cf1fa432ad5d6579b3585f811a9ed51503aedbbfb9aad99cf482d413"
+    },
+    {
+      "suite": "query-review-day0",
+      "requests": 468,
+      "freshIdentityOrder": "PASS",
+      "payloadBinding": "PASS",
+      "reviewCandidateBinding": "PASS",
+      "callsSha256": "49f1f63a2bba98f99a64263d346b728d07b9bab7ad001b13cc3521e957ef5169",
+      "journalSha256": "bd1b81d6a8fea79abc7a26f693868aa1d601d403b4f09acd26ff208095c4fa67"
+    }
+  ],
+  "qualification": "Identity, order and payload provenance only; semantic/native qualification comes from unchanged scorers and retained witnesses"
+}

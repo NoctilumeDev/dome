@@ -1,0 +1,13 @@
+﻿phase,stratum,slot,n,questions,match,valid,public,wrongPublicPlan,scope,entryBlocked,medianLatencyMs,estimatedCny
+day0,prospective_executor_labels,a,36,12,35,36,19,1,0,0,703.0,0.075128
+day0,prospective_executor_labels,b,36,12,22,36,23,5,0,0,1406.0,0.0277084
+external,external_adapted_compatible,a,24,8,24,24,24,0,0,0,640.5,0.052836
+external,external_adapted_compatible,b,24,8,24,24,24,0,0,0,1695.5,0.0192048
+external,external_original_boundary,a,24,8,15,24,0,0,0,15,703.0,0.05271
+external,external_original_boundary,b,24,8,6,19,0,0,0,15,1773.5,0.0194352
+formal,prospective_executor_labels,a,768,24,681,768,465,23,32,0,672.0,1.59952
+formal,prospective_executor_labels,b,768,24,553,768,484,36,34,0,1625.0,0.5910888000000001
+tier,prospective_executor_labels,a,36,12,34,36,20,2,0,0,648.5,0.075112
+tier,prospective_executor_labels,b,36,12,24,36,21,3,0,0,1539.0,0.0277284
+tier,prospective_executor_labels,ds_pro,36,12,30,30,18,0,0,0,1125.0,0.344817
+tier,prospective_executor_labels,q_flash,36,12,20,35,30,12,0,0,664.5,0.007446449999999999

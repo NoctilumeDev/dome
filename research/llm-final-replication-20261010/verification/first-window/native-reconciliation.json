@@ -1,0 +1,100 @@
+{
+  "version": "first-window-native-reconciliation-v1",
+  "observedAt": "2026-10-09T19:40:22.042856+00:00",
+  "status": "PASS",
+  "primaryNativeRows": 5096,
+  "scopeConfirmationRows": 664,
+  "returnedPrivateRowsChecked": 621,
+  "checks": [
+    "All retained primary native snapshots unchanged",
+    "No retained mutationAttempt",
+    "No private repository query before modeled confirmation",
+    "Returned private rows bound to fixed fixture/session actor",
+    "Query-fixture confirmations reject other actor/session and reuse",
+    "Query-fixture repository plan equals qualified stored plan; no replanning",
+    "Expiry/generation lifecycle covered by existing frozen baseline tests, not a new human study"
+  ],
+  "files": [
+    {
+      "file": "views\\core\\results\\core\\native-v2\\native-library.jsonl",
+      "nativeRows": 581,
+      "sha256": "760a4a3d6b1624b6802848acd93b915c6ab67157a58050c79245de9c878a1cea"
+    },
+    {
+      "file": "views\\core\\results\\core\\native-v2\\native-qingye.jsonl",
+      "nativeRows": 581,
+      "sha256": "e0d708b085eff0d646dae4f03da6468dc043d3f987c6ae8cd69c09b56f546ee2"
+    },
+    {
+      "file": "views\\extension\\results\\core\\native-v2\\native-library.jsonl",
+      "nativeRows": 261,
+      "sha256": "e7be37af7cfd1d61a5e9a3e3c30c8bf28112a0464c8d024fbc0a345eb0125307"
+    },
+    {
+      "file": "views\\extension\\results\\core\\native-v2\\native-qingye.jsonl",
+      "nativeRows": 261,
+      "sha256": "e1a19677c4cdc2a6c2dfd8991919dc03ea36e6457be6b96321ab11fd94436111"
+    },
+    {
+      "file": "views\\counterexamples\\results\\core\\native-v2\\native-library.jsonl",
+      "nativeRows": 653,
+      "sha256": "a9c6a11b464aeb0760b7226e708b0b4a1e7950da603d2e962cfca4d4eee9918a"
+    },
+    {
+      "file": "views\\counterexamples\\results\\core\\native-v2\\native-qingye.jsonl",
+      "nativeRows": 397,
+      "sha256": "de11019bc13cfd0e74b43f01b32fe1c053deca9e7684597662f553abab7ffd04"
+    },
+    {
+      "file": "views\\layer3\\native\\formal\\native-library.jsonl",
+      "nativeRows": 773,
+      "sha256": "d0e5afe9c6cd481924aeab6f8f38a44b8cc9f12311c3dc2d84e4a56a23907929"
+    },
+    {
+      "file": "views\\layer3\\native\\formal\\native-qingye.jsonl",
+      "nativeRows": 773,
+      "sha256": "416ec8bfbb1377cff0440a9fb10000439f172c55ac30010813f80dfe12385b31"
+    },
+    {
+      "file": "views\\layer3\\native\\external\\native-library.jsonl",
+      "nativeRows": 101,
+      "sha256": "513ed609a81d51ceb862093caafe8bcd0ac298e4584b5eba8017fc257ba5a4d9"
+    },
+    {
+      "file": "views\\layer3\\native\\external\\native-qingye.jsonl",
+      "nativeRows": 5,
+      "sha256": "87985657446efb0018bf64e1a0cf2a7c3e0c5c6952da4749591e8af009fbc57c"
+    },
+    {
+      "file": "views\\layer3\\native\\tier\\native-library.jsonl",
+      "nativeRows": 77,
+      "sha256": "edf84ecb447c351078a00d208c49c9f3cf8921726d2ffb156f54ccb6a62f14d6"
+    },
+    {
+      "file": "views\\layer3\\native\\tier\\native-qingye.jsonl",
+      "nativeRows": 77,
+      "sha256": "50906b64eafbae834a5af806b6e20fe3b671cf384e2a46699ea908a438deb3e4"
+    },
+    {
+      "file": "views\\layer3\\native\\time-day0\\native-library.jsonl",
+      "nativeRows": 41,
+      "sha256": "7816dd1814bb85af4dbda3a074dd3fdcae7e58fc311fb6a0c57e7b48b2be2c7f"
+    },
+    {
+      "file": "views\\layer3\\native\\time-day0\\native-qingye.jsonl",
+      "nativeRows": 41,
+      "sha256": "bd5cfd52d04807fca90cfc50c375b4bcd2fb706172a19439e2436968a36d4091"
+    },
+    {
+      "file": "views\\query-day0\\results\\native\\native-library.jsonl",
+      "nativeRows": 330,
+      "sha256": "7531f59a7637936f487552c4e1b04871dc890c42749bf7e13e424c384ac03d52"
+    },
+    {
+      "file": "views\\query-day0\\results\\native\\native-qingye.jsonl",
+      "nativeRows": 144,
+      "sha256": "8eae8a674e20e1000fac961fe37e449ceedfbfbb27daef70c960dcff37cb17d1"
+    }
+  ],
+  "qualification": "No additional model call; fixture rows and simulations are not independent users or human confirmation evidence"
+}

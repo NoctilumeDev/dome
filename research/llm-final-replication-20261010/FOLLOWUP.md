@@ -2,7 +2,15 @@
 
 This is the user's already authorized final replication. Do not add cases, models, parameters, strategies or product changes. Source base is d5fecb05cda3c0a443cbfd5020059a096e98ff23; qualified precall execution head is fd388b24c62d8b707706cec913bf9617f693dc95. Draft PR 11: https://github.com/NoctilumeDev/dome/pull/11, base research/llm-controls-layer3-20261008. Retain the unqualified c8a0565 commit and its byte-gate recovery diagnostics.
 
-## Running first window
+## Current state after first-window closeout
+
+The first-window pipeline PTY11149 exited 0 after all ten suites and 7,446 calls. WINDOW_STATUS.json is WAIT_FOR_NEW_24H_WINDOW, credentialsCleared=true. Provenance/resource/native-reconciliation receipts have been written once and passed. Read FIRST_WINDOW_RESULTS.md and CLOSEOUT.md for this new window. No collector is active. Do not restart pipeline.py or rerun the completed receipt commands.
+
+SECOND_WINDOW_ELIGIBILITY.json binds the three fresh actual deadlines. The latest is 2026-10-10T19:33:55.087610+00:00 / Shanghai 2026-10-11T03:33:55.087610+08:00. Automation-2 now wakes at Shanghai 03:35, replacing the ten-minute first-window patrol. Before starting second_window.py, check live UTC, all three 86,400-second guards, Shanghai date change, adapter seal and anonymous remote bytes. Fresh user keys are required; previous process and thread credentials are cleared. No API preflight. Only the already declared 774 second-window calls remain.
+
+The former running-window instructions below are retained as the original runbook; they are historical now. Counterexample prospective analysis is complete in views/counterexamples/output. Its first import setup failure is retained under diagnostics; only invocation sys.path was corrected. Never rerun it over its original output receipt.
+
+## Running first window (historical)
 
 The single existing PTY session is 11149, running pipeline.py. It holds the credentials in process memory only. The thread credential store was cleared after non-echo delivery. Never obtain keys from files, terminal output, logs, conversation history, process inspection or debugging. Do not launch another collector while this one is active; do not resubmit any existing request identity or suite.
 

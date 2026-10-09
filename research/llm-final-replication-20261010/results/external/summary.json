@@ -1,0 +1,14 @@
+{
+  "suite": "external",
+  "startedAt": "2026-10-09T19:13:21.276232+00:00",
+  "finishedAt": "2026-10-09T19:15:28.700879+00:00",
+  "requests": 96,
+  "plannedRequests": 96,
+  "stop": null,
+  "gap": null,
+  "globalConservativeCny": {
+    "deepseek": 16.093624999999932,
+    "qwen": 5.7906582500000825
+  },
+  "actualCash": "NOT_VERIFIED"
+}

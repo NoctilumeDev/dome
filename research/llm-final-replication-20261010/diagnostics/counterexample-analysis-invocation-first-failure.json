@@ -1,0 +1,9 @@
+{
+  "status": "INVOCATION_SETUP_FAILURE",
+  "paidRequests": 0,
+  "scope": "Derived post-collection analysis only",
+  "observedAt": "2026-10-09T19:38:21.958397+00:00",
+  "error": "ModuleNotFoundError: No module named stats",
+  "reason": "Import-by-file did not place unchanged analysis.py directory on sys.path",
+  "resolution": "Add original llm-counterexamples-20261008 directory to this process sys.path; no source, scorer, input, or API change"
+}
