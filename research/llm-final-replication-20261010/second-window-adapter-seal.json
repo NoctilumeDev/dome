@@ -1,0 +1,9 @@
+{
+  "version": "day1-orchestration-adapter-v1",
+  "createdAt": "2026-10-09T17:54:04.252955+00:00",
+  "originalFinalSealSha256": "37131e7c834ed71396618a935a305a08477b3ae3df3e4b61dc5ded2dd676e5e3",
+  "files": {
+    "second_window.py": "40203eca25b54db255ea2c2ae6cd445391bdd4dc58de9fcf50123c4b95c9d7fe"
+  },
+  "scope": "Orchestration only; original matrix, collector, transport, semantic/native/scoring code and first seal unchanged; checks all three fresh 24h guards before credential input"
+}
