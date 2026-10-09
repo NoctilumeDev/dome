@@ -1,0 +1,34 @@
+{
+  "scope": "Only the 72 day1 physical API requests; global baseline already includes the earlier query package",
+  "percentileDefinition": "nearest rank ceil(p*n)",
+  "unknownReserveCny": 0.05,
+  "moneyQualification": "Conservative list-price estimate, not actual cash charge",
+  "providers": {
+    "deepseek": {
+      "requests": 36,
+      "transportSuccess": 36,
+      "knownInputTokens": 30348,
+      "knownOutputTokens": 1800,
+      "usageMissing": 0,
+      "p50Ms": 633.0,
+      "p95Ms": 1156.0,
+      "conservativeNewCny": 0.075096,
+      "baselineConservativeCumulativeCny": 8.362573,
+      "conservativeGlobalCumulativeCny": 8.437669,
+      "actualCash": "NOT_VERIFIED"
+    },
+    "qwen": {
+      "requests": 36,
+      "transportSuccess": 36,
+      "knownInputTokens": 30573,
+      "knownOutputTokens": 1623,
+      "usageMissing": 0,
+      "p50Ms": 1664.0,
+      "p95Ms": 2313.0,
+      "conservativeNewCny": 0.0277044,
+      "baselineConservativeCumulativeCny": 2.94543705,
+      "conservativeGlobalCumulativeCny": 2.97314145,
+      "actualCash": "NOT_VERIFIED"
+    }
+  }
+}

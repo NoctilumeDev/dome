@@ -1,0 +1,95 @@
+{
+  "status": "COMPLETE_ACTUAL_NEXT_DAY",
+  "gapSeconds": 87014.339059,
+  "summary": [
+    {
+      "slot": "a",
+      "pairedObservations": 36,
+      "questions": 12,
+      "transitions": {
+        "(True, True)": 33,
+        "(False, False)": 3
+      },
+      "day0": {
+        "match": 33,
+        "qualified": 36,
+        "transportSuccess": 36,
+        "medianLatencyMs": 726.5,
+        "responseModels": [
+          "deepseek-flash"
+        ],
+        "statuses": {
+          "QUERY": 21,
+          "CLARIFY": 15
+        }
+      },
+      "day1": {
+        "match": 33,
+        "qualified": 36,
+        "transportSuccess": 36,
+        "medianLatencyMs": 633.0,
+        "responseModels": [
+          "deepseek-flash"
+        ],
+        "statuses": {
+          "QUERY": 21,
+          "CLARIFY": 15
+        }
+      }
+    },
+    {
+      "slot": "b",
+      "pairedObservations": 36,
+      "questions": 12,
+      "transitions": {
+        "(True, True)": 24,
+        "(False, False)": 11,
+        "(False, True)": 1
+      },
+      "day0": {
+        "match": 24,
+        "qualified": 27,
+        "transportSuccess": 36,
+        "medianLatencyMs": 1460.5,
+        "responseModels": [
+          "qwen-plus"
+        ],
+        "statuses": {
+          "QUERY": 21,
+          "CLARIFY": 6,
+          "REJECT": 9
+        }
+      },
+      "day1": {
+        "match": 25,
+        "qualified": 28,
+        "transportSuccess": 36,
+        "medianLatencyMs": 1664.0,
+        "responseModels": [
+          "qwen-plus"
+        ],
+        "statuses": {
+          "QUERY": 21,
+          "CLARIFY": 7,
+          "REJECT": 8
+        }
+      }
+    }
+  ],
+  "costs": [
+    {
+      "provider": "deepseek",
+      "newConservative": 3.264167,
+      "cumulativeConservative": 7.807437,
+      "unknownUsage": 0
+    },
+    {
+      "provider": "qwen",
+      "newConservative": 1.08952705,
+      "cumulativeConservative": 2.75287265,
+      "unknownUsage": 0
+    }
+  ],
+  "human": "PENDING_HUMAN_STUDY",
+  "reporterSha256": "1b41990fe428b7937b2ee2f10c863e85d1beda2930d30fa71d7e0e8680e137b3"
+}

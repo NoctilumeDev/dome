@@ -1,0 +1,2018 @@
+[
+  {
+    "callId": "library-R3-formal-01-1-r2/p/a/0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 703.0,
+      "cost": 0.002208
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 1110.0,
+      "cost": 0.002208
+    }
+  },
+  {
+    "callId": "library-R3-formal-01-1-r2/p/b/0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1641.0,
+      "cost": 0.0008028000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1781.0,
+      "cost": 0.0008028000000000001
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-06-1-r0/p/b/0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1062.0,
+      "cost": 0.000656
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1078.0,
+      "cost": 0.000656
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-06-1-r0/p/a/0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 563.0,
+      "cost": 0.001796
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 609.0,
+      "cost": 0.001796
+    }
+  },
+  {
+    "callId": "library-R3-formal-01-1-r0/p/b/0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 2297.0,
+      "cost": 0.0008028000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1797.0,
+      "cost": 0.0008028000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-01-1-r0/p/a/0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 766.0,
+      "cost": 0.002208
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 563.0,
+      "cost": 0.002208
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-01-1-r2/p/b/0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1031.0,
+      "cost": 0.000648
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1078.0,
+      "cost": 0.000648
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-01-1-r2/p/a/0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 671.0,
+      "cost": 0.001756
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 391.0,
+      "cost": 0.001756
+    }
+  },
+  {
+    "callId": "library-R3-formal-02-1-r0/p/a/0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 672.0,
+      "cost": 0.002222
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 844.0,
+      "cost": 0.002222
+    }
+  },
+  {
+    "callId": "library-R3-formal-02-1-r0/p/b/0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1703.0,
+      "cost": 0.0008092
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1828.0,
+      "cost": 0.0008092
+    }
+  },
+  {
+    "callId": "library-R3-formal-02-1-r2/p/b/0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1953.0,
+      "cost": 0.0008092
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1703.0,
+      "cost": 0.0008092
+    }
+  },
+  {
+    "callId": "library-R3-formal-02-1-r2/p/a/0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 937.0,
+      "cost": 0.002222
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 594.0,
+      "cost": 0.002222
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-05-1-r2/p/b/0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 984.0,
+      "cost": 0.00086
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1015.0,
+      "cost": 0.00086
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-05-1-r2/p/a/0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 515.0,
+      "cost": 0.002228
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 656.0,
+      "cost": 0.002228
+    }
+  },
+  {
+    "callId": "library-R3-formal-04-1-r2/p/b/0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1860.0,
+      "cost": 0.0008292000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1875.0,
+      "cost": 0.0008292000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-04-1-r2/p/a/0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 906.0,
+      "cost": 0.00226
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 563.0,
+      "cost": 0.00226
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-03-1-r2/p/a/0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 500.0,
+      "cost": 0.001808
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 391.0,
+      "cost": 0.001808
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-03-1-r2/p/b/0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1032.0,
+      "cost": 0.0006588000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1094.0,
+      "cost": 0.0006588000000000001
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-05-1-r1/p/a/0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 766.0,
+      "cost": 0.002228
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 625.0,
+      "cost": 0.002228
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-05-1-r1/p/b/0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1141.0,
+      "cost": 0.00086
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1016.0,
+      "cost": 0.00086
+    }
+  },
+  {
+    "callId": "library-R3-formal-03-1-r2/p/a/0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 906.0,
+      "cost": 0.002238
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 1156.0,
+      "cost": 0.002238
+    }
+  },
+  {
+    "callId": "library-R3-formal-03-1-r2/p/b/0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1890.0,
+      "cost": 0.0008204000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1844.0,
+      "cost": 0.0008204000000000001
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-03-1-r1/p/b/0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1188.0,
+      "cost": 0.0006588000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1156.0,
+      "cost": 0.0006588000000000001
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-03-1-r1/p/a/0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 546.0,
+      "cost": 0.001808
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 890.0,
+      "cost": 0.001808
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-03-1-r0/p/a/0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 579.0,
+      "cost": 0.001808
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 484.0,
+      "cost": 0.001808
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-03-1-r0/p/b/0",
+    "caseId": "qingye-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1125.0,
+      "cost": 0.0006588000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1078.0,
+      "cost": 0.0006588000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-06-1-r2/p/a/0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 703.0,
+      "cost": 0.002214
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 875.0,
+      "cost": 0.002214
+    }
+  },
+  {
+    "callId": "library-R3-formal-06-1-r2/p/b/0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1844.0,
+      "cost": 0.0008188000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1828.0,
+      "cost": 0.0008188000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-05-1-r0/p/b/0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1609.0,
+      "cost": 0.001026
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 2313.0,
+      "cost": 0.001026
+    }
+  },
+  {
+    "callId": "library-R3-formal-05-1-r0/p/a/0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 782.0,
+      "cost": 0.002704
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 406.0,
+      "cost": 0.002704
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-04-1-r0/p/b/0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1312.0,
+      "cost": 0.0006956
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1140.0,
+      "cost": 0.0006616
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-04-1-r0/p/a/0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 906.0,
+      "cost": 0.001832
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 359.0,
+      "cost": 0.001832
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-04-1-r2/p/a/0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 891.0,
+      "cost": 0.001832
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 891.0,
+      "cost": 0.001832
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-04-1-r2/p/b/0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1031.0,
+      "cost": 0.0006616
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1219.0,
+      "cost": 0.0006616
+    }
+  },
+  {
+    "callId": "library-R3-formal-02-1-r1/p/b/0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1672.0,
+      "cost": 0.0008092
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1828.0,
+      "cost": 0.0008092
+    }
+  },
+  {
+    "callId": "library-R3-formal-02-1-r1/p/a/0",
+    "caseId": "library-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 719.0,
+      "cost": 0.002222
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 610.0,
+      "cost": 0.002222
+    }
+  },
+  {
+    "callId": "library-R3-formal-01-1-r1/p/b/0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1672.0,
+      "cost": 0.0008028000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1906.0,
+      "cost": 0.0008028000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-01-1-r1/p/a/0",
+    "caseId": "library-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 922.0,
+      "cost": 0.002208
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 625.0,
+      "cost": 0.002208
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-02-1-r1/p/a/0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 656.0,
+      "cost": 0.001766
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 547.0,
+      "cost": 0.001766
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-02-1-r1/p/b/0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 984.0,
+      "cost": 0.000652
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1625.0,
+      "cost": 0.000652
+    }
+  },
+  {
+    "callId": "library-R3-formal-06-1-r0/p/a/0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 766.0,
+      "cost": 0.002214
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 703.0,
+      "cost": 0.002214
+    }
+  },
+  {
+    "callId": "library-R3-formal-06-1-r0/p/b/0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1797.0,
+      "cost": 0.0008188000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1891.0,
+      "cost": 0.0008188000000000001
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-04-1-r1/p/b/0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 985.0,
+      "cost": 0.0006616
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1015.0,
+      "cost": 0.0006616
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-04-1-r1/p/a/0",
+    "caseId": "qingye-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 984.0,
+      "cost": 0.001832
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 766.0,
+      "cost": 0.001832
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-01-1-r1/p/b/0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1047.0,
+      "cost": 0.000648
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1000.0,
+      "cost": 0.000648
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-01-1-r1/p/a/0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 781.0,
+      "cost": 0.001756
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 516.0,
+      "cost": 0.001756
+    }
+  },
+  {
+    "callId": "library-R3-formal-03-1-r1/p/a/0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 688.0,
+      "cost": 0.002238
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 1156.0,
+      "cost": 0.002238
+    }
+  },
+  {
+    "callId": "library-R3-formal-03-1-r1/p/b/0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1797.0,
+      "cost": 0.0008204000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1782.0,
+      "cost": 0.0008124000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-04-1-r0/p/b/0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1766.0,
+      "cost": 0.0008292000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1766.0,
+      "cost": 0.0008212
+    }
+  },
+  {
+    "callId": "library-R3-formal-04-1-r0/p/a/0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 734.0,
+      "cost": 0.00226
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 734.0,
+      "cost": 0.00226
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-02-1-r2/p/b/0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 937.0,
+      "cost": 0.000652
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1125.0,
+      "cost": 0.000652
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-02-1-r2/p/a/0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 516.0,
+      "cost": 0.001766
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 422.0,
+      "cost": 0.001766
+    }
+  },
+  {
+    "callId": "library-R3-formal-03-1-r0/p/a/0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 781.0,
+      "cost": 0.002238
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 828.0,
+      "cost": 0.002238
+    }
+  },
+  {
+    "callId": "library-R3-formal-03-1-r0/p/b/0",
+    "caseId": "library-R3-formal-03-1",
+    "family": "conditional_branch",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1797.0,
+      "cost": 0.0008204000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 2500.0,
+      "cost": 0.0008204000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-04-1-r1/p/a/0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 703.0,
+      "cost": 0.00226
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 516.0,
+      "cost": 0.00226
+    }
+  },
+  {
+    "callId": "library-R3-formal-04-1-r1/p/b/0",
+    "caseId": "library-R3-formal-04-1",
+    "family": "cancel_retained",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1891.0,
+      "cost": 0.0008292000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1859.0,
+      "cost": 0.0008212
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-01-1-r0/p/b/0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1000.0,
+      "cost": 0.000648
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1360.0,
+      "cost": 0.000648
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-01-1-r0/p/a/0",
+    "caseId": "qingye-R3-formal-01-1",
+    "family": "nested_negation",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 844.0,
+      "cost": 0.001756
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 859.0,
+      "cost": 0.001756
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-06-1-r2/p/a/0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 922.0,
+      "cost": 0.001796
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 641.0,
+      "cost": 0.001796
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-06-1-r2/p/b/0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1219.0,
+      "cost": 0.000656
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1109.0,
+      "cost": 0.000656
+    }
+  },
+  {
+    "callId": "library-R3-formal-06-1-r1/p/a/0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 922.0,
+      "cost": 0.002214
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 765.0,
+      "cost": 0.002214
+    }
+  },
+  {
+    "callId": "library-R3-formal-06-1-r1/p/b/0",
+    "caseId": "library-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 2657.0,
+      "cost": 0.0008188000000000001
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": false,
+      "nativeQualified": false,
+      "entryReachable": true,
+      "status": "REJECT",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1844.0,
+      "cost": 0.0008188000000000001
+    }
+  },
+  {
+    "callId": "library-R3-formal-05-1-r2/p/b/0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1734.0,
+      "cost": 0.001026
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1719.0,
+      "cost": 0.001026
+    }
+  },
+  {
+    "callId": "library-R3-formal-05-1-r2/p/a/0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 687.0,
+      "cost": 0.002704
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 719.0,
+      "cost": 0.002704
+    }
+  },
+  {
+    "callId": "library-R3-formal-05-1-r1/p/b/0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1812.0,
+      "cost": 0.001026
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1906.0,
+      "cost": 0.001026
+    }
+  },
+  {
+    "callId": "library-R3-formal-05-1-r1/p/a/0",
+    "caseId": "library-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 703.0,
+      "cost": 0.002704
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 687.0,
+      "cost": 0.002704
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-06-1-r1/p/b/0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1015.0,
+      "cost": 0.000656
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1109.0,
+      "cost": 0.000656
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-06-1-r1/p/a/0",
+    "caseId": "qingye-R3-formal-06-1",
+    "family": "constraint_composition",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 562.0,
+      "cost": 0.001796
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "CLARIFY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 422.0,
+      "cost": 0.001796
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-05-1-r0/p/a/0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 641.0,
+      "cost": 0.002228
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 438.0,
+      "cost": 0.002228
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-05-1-r0/p/b/0",
+    "caseId": "qingye-R3-formal-05-1",
+    "family": "long_business_list",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 969.0,
+      "cost": 0.00086
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1203.0,
+      "cost": 0.00086
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-02-1-r0/p/b/0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "b",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 984.0,
+      "cost": 0.000652
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "qwen-plus",
+      "latencyMs": 1157.0,
+      "cost": 0.000652
+    }
+  },
+  {
+    "callId": "qingye-R3-formal-02-1-r0/p/a/0",
+    "caseId": "qingye-R3-formal-02-1",
+    "family": "reference_binding",
+    "slot": "a",
+    "day0": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 1062.0,
+      "cost": 0.001766
+    },
+    "day1": {
+      "transport": "SUCCESS",
+      "structure": "STRUCTURE_VALID",
+      "match": true,
+      "nativeQualified": true,
+      "entryReachable": true,
+      "status": "QUERY",
+      "responseModel": "deepseek-flash",
+      "latencyMs": 782.0,
+      "cost": 0.001766
+    }
+  }
+]

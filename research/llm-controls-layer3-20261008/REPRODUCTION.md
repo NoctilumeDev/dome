@@ -87,12 +87,12 @@ python -X utf8 -B research/llm-controls-layer3-20261008/verify.py
 
 新查询控制与全提案审查是第一阶段的后续探索：[OBSERVATIONS.md](../llm-query-controls-20261008/OBSERVATIONS.md)给出反例与结论边界，[CASE_TABLE.md](../llm-query-controls-20261008/CASE_TABLE.md)给出42题表。输入封印8cc76dc、原提案/原生证据2ccf88a、全提案审查封印23fd332；评分v1的title/name工具错误保留，v2不改oracle、不重发调用。它给B后审查带来新机会，既有零机会观察不改写。
 
-## 尚未完成的部分
+## 控制矩阵当前状态
 
 | 部分 | 当前状态 |
 |---|---|
-| 真实跨日 | [CROSSDAY.md](CROSSDAY.md)中的一次day1待跑；至少真实24小时且上海日期不同，输入/Clock不变 |
-| 新对象、主体、目标及时间控制 | [新包](../llm-query-controls-20261008/README.md)本窗已运行；含反例与评分首败，不称全PASS或跨日稳定 |
+| 原12题真实跨日 | 2026-10-09 day1已完成72请求与82原生回放；实际间隔87014.339059秒，payload/顺序/Clock/H2快照一致；见[观察](output-day1/OBSERVATIONS.md)与[逐题表](output-day1/CASE_TABLE.md) |
+| 新对象、主体、目标及时间控制 | [新包](../llm-query-controls-20261008/README.md)首窗已运行；用户另授权10月9日23:40以后重复，见[独立安排](../llm-query-controls-20261008/CROSSDAY_PLAN.md)，当前尚未执行，不继承原12题跨日资格 |
 | 真人确认收益与独立真人盲标 | `PENDING_HUMAN_STUDY`；模拟确认只证明执行控制 |
 | 分布式、中间件一致性、多节点确认 | 本轮不实验，只作未验证的局限与未来工作 |
 | 最终冻结复刻及完整经济账 | `PLANNED_NOT_SEALED`，待计划内实验收口后执行 |

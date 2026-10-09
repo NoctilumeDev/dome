@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "verifiedAt": "2026-10-09T11:34:45.016783+00:00",
+  "requests": 72,
+  "nativeRecords": 82,
+  "gapSeconds": 87014.339059,
+  "checks": [
+    "frozen source/tools",
+    "pre-call guard provenance",
+    "payload/order/date",
+    "raw/native/scorer correspondence",
+    "price failure actual disposition",
+    "negative controls and snapshots",
+    "usage and global budgets",
+    "secret residues"
+  ]
+}

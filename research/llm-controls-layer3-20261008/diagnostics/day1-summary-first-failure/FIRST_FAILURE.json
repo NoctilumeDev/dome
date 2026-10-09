@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-09T11:33:08.518099+00:00",
+  "classification": "DERIVED_SUMMARY_ATTRIBUTION_FAIL",
+  "incorrectClaim": "Both providers executed unfiltered SEARCH_BOOK on the price-filter question",
+  "sourceReadback": "DeepSeek QUERY with one repository call; Qwen QUERY plus CLARIFY reason rejected as INVALID_PLAN with zero repository calls. Three repeats each; same distinction in day0 and day1.",
+  "affected": [
+    "OBSERVATIONS.md",
+    "summary.html",
+    "day1-summary.jpg"
+  ],
+  "unchanged": [
+    "raw responses",
+    "native replay",
+    "oracle",
+    "scorer",
+    "paired ledger",
+    "numeric metrics"
+  ],
+  "firstArtifacts": {
+    "day1-summary.jpg": "0c20b8715d3248ad9c07a6e4b12729c31923e61795b04ca3f0df1b132776c292",
+    "OBSERVATIONS.md": "5b251da5e967a5eb6430b3a33cced8b2bf90f436af2f332126da45fa8900a1cf",
+    "summary.html": "396e4dd2584f90f091241b79d454883546d19befe08e8c12a8c3497326dd9374"
+  }
+}
