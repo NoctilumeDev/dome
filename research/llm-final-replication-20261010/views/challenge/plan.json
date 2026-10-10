@@ -1,0 +1,60 @@
+{
+  "version": "counterexample-layer-v1",
+  "baseSha": "dbb32160a811fd06c826a8d9eafbc660a0548219",
+  "seed": 2026100802,
+  "clock": "2026-10-08T01:00:00+08:00",
+  "providers": {
+    "a": {
+      "name": "deepseek",
+      "model": "deepseek-flash",
+      "url": "https://api.deepseek.com/chat/completions",
+      "inputCnyPerMillion": 2,
+      "outputCnyPerMillion": 8
+    },
+    "b": {
+      "name": "qwen",
+      "model": "qwen-plus",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "inputCnyPerMillion": 0.8,
+      "outputCnyPerMillion": 2
+    }
+  },
+  "deadlineMs": 5000,
+  "reviewMaxTokens": 250,
+  "maxTokens": {
+    "qingye": 300,
+    "library": 500
+  },
+  "temperature": 0,
+  "thinking": "disabled",
+  "automaticRetries": 0,
+  "repetitions": 4,
+  "pilotFamilies": [],
+  "pilotVariant": 1,
+  "coreBlocks": 128,
+  "coreMaximumCalls": 1536,
+  "oraclesAreIndependentHumanLabels": false,
+  "proofScope": "real provider components + native Java/H2 replay, not online deployment or human experiment",
+  "priceSources": [
+    "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "https://help.aliyun.com/zh/model-studio/qwen-plus"
+  ],
+  "inputHashes": {
+    "cases.json": "5750866a29d1caef634c24e9e2af9a8454f06ae8999e7d02ab9c15213544e41c",
+    "challenge-plans.json": "3bafe6e6930b9fcd4d64c3a3a70fa2f51119f2e883248a815935b685c1c85ee8",
+    "CONTRACT.md": "9a87a1715963dc78991c04bcf66be06edbbe9e919ec40345c6e84d04dd3b4297",
+    "prompts/qingye.txt": "13ddd0989139ad282b702360f0da25f632125d40fd14e739f1f1bc65f2e1f6cb",
+    "prompts/library.txt": "4d083988504fccd0505e0bc79a4d5c2ad2e9ff076f3716b27e1a027684d049f0",
+    "prompts/review.txt": "ce2fa7cb2c48037fa318f82aa15727c28e490f681182a7eae4c4b738f90c1e47"
+  },
+  "parentSha": "60cd5d4ea1fed388609170fe5b72136c49edfab1",
+  "challengeRepetitions": 3,
+  "challengeMaximumCalls": 96,
+  "budgetCny": 6.0,
+  "priorEstimatedCny": {
+    "deepseek": 2.716516,
+    "qwen": 0.99963
+  },
+  "priorUnknownReserveCny": 0.01,
+  "hardCumulativePerProviderCny": 20
+}

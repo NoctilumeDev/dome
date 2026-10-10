@@ -1,0 +1,11 @@
+{
+  "completedSuites": [
+    "time-day1",
+    "query-day1",
+    "query-review-day1"
+  ],
+  "stop": null,
+  "credentialsCleared": true,
+  "fullMatrixComplete": true,
+  "human": "PENDING_HUMAN_STUDY"
+}

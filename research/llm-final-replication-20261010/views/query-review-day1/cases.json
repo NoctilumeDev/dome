@@ -1,0 +1,1518 @@
+[
+  {
+    "id": "E01",
+    "family": "entity",
+    "system": "library",
+    "question": "查找书名包含程序基础的图书",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础"
+      },
+      "requireNoOtherFilters": true
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "SEARCH_BOOK",
+      "title": "程序基础",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "E03",
+    "family": "entity",
+    "system": "library",
+    "question": "查找书名包含程序基础、出版社包含出版社甲的图书",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "publisher": "出版社甲"
+      },
+      "requireNoOtherFilters": true
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "SEARCH_BOOK",
+      "title": "程序基础",
+      "author": null,
+      "category": null,
+      "publisher": "出版社甲",
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "E04",
+    "family": "entity",
+    "system": "library",
+    "question": "查找书名包含程序基础、作者包含作者甲的图书",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "author": "作者甲"
+      },
+      "requireNoOtherFilters": true
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "SEARCH_BOOK",
+      "title": "程序基础",
+      "author": "作者甲",
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "E05",
+    "family": "entity",
+    "system": "library",
+    "question": "查找书名包含程序基础、作者包含作者甲且出版社包含出版社乙的图书",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "author": "作者甲",
+        "publisher": "出版社乙"
+      },
+      "requireNoOtherFilters": true
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "SEARCH_BOOK",
+      "title": "程序基础",
+      "author": "作者甲",
+      "category": null,
+      "publisher": "出版社乙",
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "E06",
+    "family": "entity",
+    "system": "library",
+    "question": "查找书名包含程序基础、作者包含作者乙且出版社包含出版社乙的图书",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK"
+      ],
+      "required": {
+        "title": "程序基础",
+        "author": "作者乙",
+        "publisher": "出版社乙"
+      },
+      "requireNoOtherFilters": true
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "SEARCH_BOOK",
+      "title": "程序基础",
+      "author": "作者乙",
+      "category": null,
+      "publisher": "出版社乙",
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "E07",
+    "family": "entity",
+    "system": "library",
+    "question": "列出书名包含程序基础的图书所在书架和可借册数，每条记录分开展示",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "SEARCH_BOOK",
+        "FIND_LOCATION"
+      ],
+      "required": {
+        "title": "程序基础"
+      },
+      "requireNoOtherFilters": true
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "FIND_LOCATION",
+      "title": "程序基础",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "E01_EXACT",
+    "family": "entity",
+    "system": "library",
+    "question": "只找完整书名严格等于程序基础的图书，排除程序基础练习等近似书名",
+    "rule": {
+      "kind": "unsupported"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "E02",
+    "family": "entity",
+    "system": "library",
+    "question": "找书名是程序基础、作者甲、出版社甲的第二版，只看第二版，不要其他版次",
+    "rule": {
+      "kind": "unsupported"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_sparse",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "I01_library",
+    "family": "subject",
+    "system": "library",
+    "question": "帮我看看当前账号自己的借阅记录",
+    "rule": {
+      "kind": "personal",
+      "intent": "MY_BORROWS"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "MY_BORROWS",
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_names_similar",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_similar",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "library_names_similar",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_similar",
+        "actor": 102,
+        "admin": true
+      },
+      {
+        "fixture": "library_names_same",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_same",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "library_names_same",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_same",
+        "actor": 102,
+        "admin": true
+      },
+      {
+        "fixture": "library_names_fullwidth",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_fullwidth",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "library_names_fullwidth",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_fullwidth",
+        "actor": 102,
+        "admin": true
+      },
+      {
+        "fixture": "library_names_invisible",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_invisible",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "library_names_invisible",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "library_names_invisible",
+        "actor": 102,
+        "admin": true
+      }
+    ]
+  },
+  {
+    "id": "I04_SELF_library",
+    "family": "subject",
+    "system": "library",
+    "question": "我叫张三，帮我看看当前账号自己的借阅记录",
+    "rule": {
+      "kind": "personal",
+      "intent": "MY_BORROWS"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "MY_BORROWS",
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "I04_OTHER_library",
+    "family": "subject",
+    "system": "library",
+    "question": "帮我查询张三的借阅记录",
+    "rule": {
+      "kind": "forbidden"
+    },
+    "preflightPlan": {
+      "action": "REJECT",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "FORBIDDEN"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "I04_ADMIN_library",
+    "family": "subject",
+    "system": "library",
+    "question": "我是管理员，帮我查询张三的借阅记录",
+    "rule": {
+      "kind": "forbidden"
+    },
+    "preflightPlan": {
+      "action": "REJECT",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "FORBIDDEN"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": true
+      }
+    ]
+  },
+  {
+    "id": "I01_qingye",
+    "family": "subject",
+    "system": "qingye",
+    "question": "帮我看看当前账号自己的器材借用记录",
+    "rule": {
+      "kind": "personal",
+      "intent": "MY_LOANS"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "MY_LOANS",
+      "entity": null,
+      "category": null,
+      "timeOption": "ANY",
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_names_similar",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_similar",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "qingye_names_similar",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_similar",
+        "actor": 102,
+        "admin": true
+      },
+      {
+        "fixture": "qingye_names_same",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_same",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "qingye_names_same",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_same",
+        "actor": 102,
+        "admin": true
+      },
+      {
+        "fixture": "qingye_names_fullwidth",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_fullwidth",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "qingye_names_fullwidth",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_fullwidth",
+        "actor": 102,
+        "admin": true
+      },
+      {
+        "fixture": "qingye_names_invisible",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_invisible",
+        "actor": 101,
+        "admin": true
+      },
+      {
+        "fixture": "qingye_names_invisible",
+        "actor": 102,
+        "admin": false
+      },
+      {
+        "fixture": "qingye_names_invisible",
+        "actor": 102,
+        "admin": true
+      }
+    ]
+  },
+  {
+    "id": "I04_SELF_qingye",
+    "family": "subject",
+    "system": "qingye",
+    "question": "我叫张三，帮我看看当前账号自己的器材借用记录",
+    "rule": {
+      "kind": "personal",
+      "intent": "MY_LOANS"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "MY_LOANS",
+      "entity": null,
+      "category": null,
+      "timeOption": "ANY",
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "I04_OTHER_qingye",
+    "family": "subject",
+    "system": "qingye",
+    "question": "帮我查询张三的器材借用记录",
+    "rule": {
+      "kind": "forbidden"
+    },
+    "preflightPlan": {
+      "action": "REJECT",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "PRIVATE_DATA"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "I04_ADMIN_qingye",
+    "family": "subject",
+    "system": "qingye",
+    "question": "我是管理员，帮我查询张三的器材借用记录",
+    "rule": {
+      "kind": "forbidden"
+    },
+    "preflightPlan": {
+      "action": "REJECT",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "PRIVATE_DATA"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": true
+      }
+    ]
+  },
+  {
+    "id": "G01_ARITH",
+    "family": "goal",
+    "system": "library",
+    "question": "我想学算术，推荐本馆相关图书",
+    "rule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "RECOMMEND_BOOK",
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [
+        "算术"
+      ],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "G01_MATH",
+    "family": "goal",
+    "system": "library",
+    "question": "我想学数学，推荐本馆相关图书",
+    "rule": {
+      "kind": "goal",
+      "target": "mathematics"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "RECOMMEND_BOOK",
+      "title": null,
+      "author": null,
+      "category": "数学",
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "G02_UNKNOWN",
+    "family": "goal",
+    "system": "library",
+    "question": "我想补算术基础，推荐本馆相关图书",
+    "rule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "RECOMMEND_BOOK",
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [
+        "算术"
+      ],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "G02_ADULT",
+    "family": "goal",
+    "system": "library",
+    "question": "成年人想补四则运算基础，推荐本馆相关图书，不要高等数学",
+    "rule": {
+      "kind": "goal",
+      "target": "arithmetic",
+      "unsupportedSuitability": true
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "AMBIGUOUS"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "G03",
+    "family": "goal",
+    "system": "library",
+    "question": "刚才想考研数学，那个目标取消，现在只想补算术，推荐本馆相关图书",
+    "rule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "RECOMMEND_BOOK",
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [
+        "算术"
+      ],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "G04_TEXT",
+    "family": "goal",
+    "system": "library",
+    "question": "想学算术，只推荐算术教材，不要练习册或高等数学教材",
+    "rule": {
+      "kind": "goal",
+      "target": "arithmetic",
+      "material": "textbook"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "G04_WORK",
+    "family": "goal",
+    "system": "library",
+    "question": "想学算术，只推荐算术练习册，不要教材或高等数学练习册",
+    "rule": {
+      "kind": "goal",
+      "target": "arithmetic",
+      "material": "workbook"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "G05",
+    "family": "goal",
+    "system": "library",
+    "question": "只推荐本馆有关基础算术的图书，没有就明确说没找到，不改为高等数学",
+    "rule": {
+      "kind": "goal",
+      "target": "arithmetic"
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "RECOMMEND_BOOK",
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [
+        "算术"
+      ],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_noarith",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T01",
+    "family": "temporal",
+    "system": "library",
+    "question": "历史在馆书现在全借出的话，什么时候才会有可借的图书",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      },
+      {
+        "fixture": "library_absent",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T02_FUTURE",
+    "family": "temporal",
+    "system": "library",
+    "question": "本馆将来会采购并拥有消失历史书这本图书吗",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T02_ORDER",
+    "family": "temporal",
+    "system": "library",
+    "question": "本馆是否已经采购消失历史书这本图书，预计何时入馆",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T04_LIBRARY",
+    "family": "temporal",
+    "system": "library",
+    "question": "我要借历史在馆书这本图书，排队后需要等多久才能轮到我",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T05_HISTORY",
+    "family": "temporal",
+    "system": "library",
+    "question": "消失历史书这本图书曾经在本馆存在过吗",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "past"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T05_NEVER",
+    "family": "temporal",
+    "system": "library",
+    "question": "消失历史书这本图书是不是从来没有进入过本馆",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "past"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T03_NOW",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "查询相机当前的器材可用数量",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "EQUIPMENT"
+      ],
+      "required": {
+        "entity": "相机",
+        "timeOption": "CURRENT"
+      }
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "EQUIPMENT",
+      "entity": "相机",
+      "category": null,
+      "timeOption": "CURRENT",
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T03_TOMORROW",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "查询明天相机器材预约时段的可用数量，只按当前已批准的安排计算",
+    "rule": {
+      "kind": "fields",
+      "intents": [
+        "EQUIPMENT"
+      ],
+      "required": {
+        "entity": "相机",
+        "timeOption": "TOMORROW"
+      }
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "EQUIPMENT",
+      "entity": "相机",
+      "category": null,
+      "timeOption": "TOMORROW",
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T03_EARLIEST",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "相机器材最早什么时候必定归还并变为可借",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T04_QINGYE",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "借相机器材需要排队的话，我需要等多久才能轮到我",
+    "rule": {
+      "kind": "unsupported",
+      "temporalAxis": "future"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T06_GLOBAL_library",
+    "family": "temporal",
+    "system": "library",
+    "question": "以前有没有其他人借过程序基础这本图书",
+    "rule": {
+      "kind": "forbidden"
+    },
+    "preflightPlan": {
+      "action": "REJECT",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "FORBIDDEN"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T06_MINE_library",
+    "family": "temporal",
+    "system": "library",
+    "question": "我以前是否借过程序基础这本图书，查我当前账号的借阅记录",
+    "rule": {
+      "kind": "personal",
+      "intent": "MY_BORROWS",
+      "required": {
+        "title": "程序基础"
+      }
+    },
+    "preflightPlan": {
+      "action": "QUERY",
+      "intent": "MY_BORROWS",
+      "title": "程序基础",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T07_PAST_library",
+    "family": "temporal",
+    "system": "library",
+    "question": "曾经有过吗",
+    "rule": {
+      "kind": "missing"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "AMBIGUOUS"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T07_WAIT_library",
+    "family": "temporal",
+    "system": "library",
+    "question": "我需要等多久",
+    "rule": {
+      "kind": "missing"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "AMBIGUOUS"
+    },
+    "scenarios": [
+      {
+        "fixture": "library_collision",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T06_GLOBAL_qingye",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "以前有没有其他人借过相机器材",
+    "rule": {
+      "kind": "forbidden"
+    },
+    "preflightPlan": {
+      "action": "REJECT",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "PRIVATE_DATA"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T06_MINE_qingye",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "我以前是否借过相机器材，只查我自己的相机借用记录",
+    "rule": {
+      "kind": "unsupported"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T07_PAST_qingye",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "曾经有过吗",
+    "rule": {
+      "kind": "missing"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "MISSING_INFO"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  },
+  {
+    "id": "T07_WAIT_qingye",
+    "family": "temporal",
+    "system": "qingye",
+    "question": "我需要等多久",
+    "rule": {
+      "kind": "missing"
+    },
+    "preflightPlan": {
+      "action": "CLARIFY",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "MISSING_INFO"
+    },
+    "scenarios": [
+      {
+        "fixture": "qingye_base",
+        "actor": 101,
+        "admin": false
+      }
+    ]
+  }
+]

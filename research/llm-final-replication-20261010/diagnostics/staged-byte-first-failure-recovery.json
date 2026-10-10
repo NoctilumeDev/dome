@@ -1,0 +1,9 @@
+{
+  "status": "PASS_AFTER_REPRESENTATION_RECOVERY",
+  "firstUnqualifiedCommit": "c8a0565",
+  "paidRequests": 0,
+  "reason": "Index retained earlier normalized blobs after late scoped -text attributes; an initial failed check was incorrectly followed by commit",
+  "resolution": "Renormalize only the two new research directories with their scoped -text attributes, keeping working bytes and old seal unchanged",
+  "stagedSealedFiles": 47,
+  "originalSemanticFilesChanged": false
+}

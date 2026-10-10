@@ -1,0 +1,6 @@
+{
+  "status": "SETUP_FAILURE",
+  "paidRequests": 0,
+  "reason": "Fresh clone did not inherit original repository-local Git author identity",
+  "resolution": "Copy only existing user.name/user.email into this clone local config; no global configuration changed"
+}

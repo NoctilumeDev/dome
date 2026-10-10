@@ -1,0 +1,686 @@
+[
+  {
+    "id": "qingye-R2-01-1",
+    "system": "qingye",
+    "family": "current_scope",
+    "variant": 1,
+    "question": "我前天借用过相机，那只是背景；这次请求是投影仪当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-01-2",
+    "system": "qingye",
+    "family": "current_scope",
+    "variant": 2,
+    "question": "之前的相机借用不查，本次请查询投影仪现在的库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-01-1",
+    "system": "library",
+    "family": "current_scope",
+    "variant": 1,
+    "question": "我前天借阅过《三体》，那只是背景；这次请求是《Java入门》的馆藏位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-01-2",
+    "system": "library",
+    "family": "current_scope",
+    "variant": 2,
+    "question": "之前的《三体》借阅不查，本次请查询《Java入门》在馆内的位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-02-1",
+    "system": "qingye",
+    "family": "exclusion",
+    "variant": 1,
+    "question": "相机和手机都排除，本次唯一目标为投影仪当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-02-2",
+    "system": "qingye",
+    "family": "exclusion",
+    "variant": 2,
+    "question": "要查询的是投影仪的当前库存；相机、手机不是我的查询对象。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-02-1",
+    "system": "library",
+    "family": "exclusion",
+    "variant": 1,
+    "question": "《三体》的位置排除，本次唯一目标为《Java入门》的馆藏位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-02-2",
+    "system": "library",
+    "family": "exclusion",
+    "variant": 2,
+    "question": "要查询的是《Java入门》的馆藏位置；《三体》不是我的查询对象。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-03-1",
+    "system": "qingye",
+    "family": "quotation",
+    "variant": 1,
+    "question": "我举一个历史例句：“帮我查相机”。这个例句不执行；实际请求为投影仪当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-03-2",
+    "system": "qingye",
+    "family": "quotation",
+    "variant": 2,
+    "question": "“我借了相机”只是转述。请执行的唯一查询是投影仪现在的库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-03-1",
+    "system": "library",
+    "family": "quotation",
+    "variant": 1,
+    "question": "我举一个历史例句：“帮我查三体”。这个例句不执行；实际请求为《Java入门》的馆藏位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-03-2",
+    "system": "library",
+    "family": "quotation",
+    "variant": 2,
+    "question": "“我借了三体”只是转述。请执行的唯一查询是《Java入门》的馆藏位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-04-1",
+    "system": "qingye",
+    "family": "field_list",
+    "variant": 1,
+    "question": "器材备注：相机=此前借用；手机=背景；投影仪=本次唯一查询，当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-04-2",
+    "system": "qingye",
+    "family": "field_list",
+    "variant": 2,
+    "question": "记录字段如下：过去借用相机；当前目标投影仪；执行内容查询当前库存。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "EQUIPMENT",
+          "entity": "投影仪",
+          "category": null,
+          "timeOption": "CURRENT",
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-04-1",
+    "system": "library",
+    "family": "field_list",
+    "variant": 1,
+    "question": "图书备注：三体=此前借阅；Java入门=本次唯一查询，馆藏位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-04-2",
+    "system": "library",
+    "family": "field_list",
+    "variant": 2,
+    "question": "记录字段如下：过去借阅三体；当前目标Java入门；执行内容查询馆藏位置。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "FIND_LOCATION",
+          "title": "Java入门",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": null,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-05-1",
+    "system": "qingye",
+    "family": "retained_actions",
+    "variant": 1,
+    "question": "先查投影仪当前库存，然后查我的全部借用记录；两件事都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-05-2",
+    "system": "qingye",
+    "family": "retained_actions",
+    "variant": 2,
+    "question": "投影仪库存与我的全部报名记录均需查询，不是改口。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-05-1",
+    "system": "library",
+    "family": "retained_actions",
+    "variant": 1,
+    "question": "先查《Java入门》的馆藏位置，然后查我的全部借阅记录；两件事都保留。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-05-2",
+    "system": "library",
+    "family": "retained_actions",
+    "variant": 2,
+    "question": "《Java入门》的馆藏位置与我的全部反馈均需查询，不是改口。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-06-1",
+    "system": "qingye",
+    "family": "private_constraints",
+    "variant": 1,
+    "question": "请查询我借用相机的未归还记录，器材和归还状态都不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "qingye-R2-06-2",
+    "system": "qingye",
+    "family": "private_constraints",
+    "variant": 2,
+    "question": "仅查询今天我借用的相机记录，日期和器材都不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-06-1",
+    "system": "library",
+    "family": "private_constraints",
+    "variant": 1,
+    "question": "请查询我借阅《三体》的未归还记录，书名和归还状态都不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "QUERY",
+          "intent": "MY_BORROWS",
+          "title": "三体",
+          "author": null,
+          "category": null,
+          "publisher": null,
+          "keywords": [],
+          "availableOnly": null,
+          "unreturnedOnly": true,
+          "timeOption": "ALL",
+          "days": null,
+          "limit": 20,
+          "reason": null
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-R2-06-2",
+    "system": "library",
+    "family": "private_constraints",
+    "variant": 2,
+    "question": "仅查询今天我借阅的《三体》记录，日期和书名都不能省。",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "prospective_executor_labels",
+    "labelScope": "current finite contract, not independent human labeling"
+  },
+  {
+    "id": "library-DuSQL-qid002464",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "哪个类型的参考书最少，以及参考书平均适用多少年级",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid002464",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "select 类型 , avg ( 适用年级 ) from 参考书 group by 类型 order by count ( * ) asc limit 1",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  },
+  {
+    "id": "library-DuSQL-qid001628",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "给出每种参数书类型，最高适用几年级",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid001628",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "select 类型 , max ( 适用年级 ) from 参考书 group by 类型",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  },
+  {
+    "id": "library-DuSQL-qid000460",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "在试卷类参考书籍中，给出参考试卷的数量最少时参考书的名称和参考书的类型",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid000460",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "select T2.名称 , T2.类型 from 参考试卷 as T1 join 参考书 as T2 on 参考试卷.试卷id == 参考书.词条id group by T1.试卷id order by count ( * ) asc limit 1",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  },
+  {
+    "id": "library-DuSQL-qid001332",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "类型非出版书或适用于3年级以下的参考书按价格升序排列给出前3的参考书的名称及类型",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid001332",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "select 名称 , 类型 from 参考书 where 类型 != '出版书' or 适用年级 < 3 order by 价格 asc limit 3",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  },
+  {
+    "id": "library-DuSQL-qid000757",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "给出适用年级最低的3本参考书，除了99块以上的参考书",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid000757",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "( select 名称 from 参考书 order by 适用年级 asc limit 3 ) except ( select 名称 from 参考书 where 价格 > 99 )",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  },
+  {
+    "id": "library-DuSQL-qid000228",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "适用年级大于3年级的参考书中，哪5本参考书的参考试卷最多？并给出它们的类型",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid000228",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "select T2.名称 , T2.类型 from 参考试卷 as T1 join 参考书 as T2 on 参考试卷.试卷id == 参考书.词条id where T2.适用年级 > 3 group by T1.试卷id order by count ( * ) desc limit 5",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  },
+  {
+    "id": "library-DuSQL-qid001404",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "适用年级不是1到3年级时，参考书最多的类型",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid001404",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "select 类型 from 参考书 where 适用年级 != '1-3' group by 类型 order by count ( * ) desc limit 1",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  },
+  {
+    "id": "library-DuSQL-qid000728",
+    "system": "library",
+    "family": "external_unsupported_sql",
+    "variant": 1,
+    "question": "哪些参考书的适用年级倒数前3，同时价格却是正数前5",
+    "oracle": {
+      "allowed": [
+        {
+          "action": "CLARIFY"
+        }
+      ]
+    },
+    "stratum": "external_verbatim_capability_boundary",
+    "sourceId": "qid000728",
+    "sourceDb": "教材辅助参考书",
+    "sourceQuery": "( select 名称 from 参考书 order by 适用年级 desc limit 3 ) intersect ( select 名称 from 参考书 order by 价格 asc limit 5 )",
+    "labelScope": "external original question/SQL; executable-plan label mapped by executor because original SQL needs unsupported fields/operators; not independent human blind label"
+  }
+]

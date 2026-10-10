@@ -1,0 +1,7 @@
+﻿stratum,group,newWrongQueryablePlansVetoed,newCorrectQueriesBlocked,netCountUnweighted,correctClarifyRejudged,newAbstentions,wrongAutomaticAvoided
+prospective_executor_labels,C:a,0,0,0,3,3,0
+prospective_executor_labels,C:b,0,0,0,0,0,0
+prospective_executor_labels,D,0,0,0,3,3,0
+external_verbatim_capability_boundary,C:a,0,0,0,0,3,0
+external_verbatim_capability_boundary,C:b,0,0,0,0,1,0
+external_verbatim_capability_boundary,D,0,0,0,0,3,0

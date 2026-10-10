@@ -1,0 +1,314 @@
+[
+  {
+    "id": "qingye-R2-01-1/correct",
+    "caseId": "qingye-R2-01-1",
+    "system": "qingye",
+    "question": "我前天借用过相机，那只是背景；这次请求是投影仪当前库存。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "EQUIPMENT",
+      "entity": "投影仪",
+      "category": null,
+      "timeOption": "CURRENT",
+      "reason": null
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "qingye-R2-01-1/wrong",
+    "caseId": "qingye-R2-01-1",
+    "system": "qingye",
+    "question": "我前天借用过相机，那只是背景；这次请求是投影仪当前库存。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "EQUIPMENT",
+      "entity": "相机",
+      "category": null,
+      "timeOption": "CURRENT",
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "qingye-R2-05-1/correct",
+    "caseId": "qingye-R2-05-1",
+    "system": "qingye",
+    "question": "先查投影仪当前库存，然后查我的全部借用记录；两件事都保留。",
+    "candidate": {
+      "action": "CLARIFY",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "MULTIPLE_REQUESTS"
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "qingye-R2-05-1/wrong",
+    "caseId": "qingye-R2-05-1",
+    "system": "qingye",
+    "question": "先查投影仪当前库存，然后查我的全部借用记录；两件事都保留。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "EQUIPMENT",
+      "entity": "投影仪",
+      "category": null,
+      "timeOption": "CURRENT",
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "qingye-R2-06-1/correct",
+    "caseId": "qingye-R2-06-1",
+    "system": "qingye",
+    "question": "请查询我借用相机的未归还记录，器材和归还状态都不能省。",
+    "candidate": {
+      "action": "CLARIFY",
+      "intent": null,
+      "entity": null,
+      "category": null,
+      "timeOption": null,
+      "reason": "UNSUPPORTED_FILTER"
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "qingye-R2-06-1/wrong",
+    "caseId": "qingye-R2-06-1",
+    "system": "qingye",
+    "question": "请查询我借用相机的未归还记录，器材和归还状态都不能省。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "MY_LOANS",
+      "entity": null,
+      "category": null,
+      "timeOption": "ANY",
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "qingye-R2-02-1/correct",
+    "caseId": "qingye-R2-02-1",
+    "system": "qingye",
+    "question": "相机和手机都排除，本次唯一目标为投影仪当前库存。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "EQUIPMENT",
+      "entity": "投影仪",
+      "category": null,
+      "timeOption": "CURRENT",
+      "reason": null
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "qingye-R2-02-1/wrong",
+    "caseId": "qingye-R2-02-1",
+    "system": "qingye",
+    "question": "相机和手机都排除，本次唯一目标为投影仪当前库存。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "EQUIPMENT",
+      "entity": "相机",
+      "category": null,
+      "timeOption": "CURRENT",
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-01-1/correct",
+    "caseId": "library-R2-01-1",
+    "system": "library",
+    "question": "我前天借阅过《三体》，那只是背景；这次请求是《Java入门》的馆藏位置。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "FIND_LOCATION",
+      "title": "Java入门",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-01-1/wrong",
+    "caseId": "library-R2-01-1",
+    "system": "library",
+    "question": "我前天借阅过《三体》，那只是背景；这次请求是《Java入门》的馆藏位置。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "FIND_LOCATION",
+      "title": "三体",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-05-1/correct",
+    "caseId": "library-R2-05-1",
+    "system": "library",
+    "question": "先查《Java入门》的馆藏位置，然后查我的全部借阅记录；两件事都保留。",
+    "candidate": {
+      "action": "CLARIFY",
+      "intent": null,
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": "MULTIPLE_ACTIONS"
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-05-1/wrong",
+    "caseId": "library-R2-05-1",
+    "system": "library",
+    "question": "先查《Java入门》的馆藏位置，然后查我的全部借阅记录；两件事都保留。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "FIND_LOCATION",
+      "title": "Java入门",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-06-1/correct",
+    "caseId": "library-R2-06-1",
+    "system": "library",
+    "question": "请查询我借阅《三体》的未归还记录，书名和归还状态都不能省。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "MY_BORROWS",
+      "title": "三体",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": true,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-06-1/wrong",
+    "caseId": "library-R2-06-1",
+    "system": "library",
+    "question": "请查询我借阅《三体》的未归还记录，书名和归还状态都不能省。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "MY_BORROWS",
+      "title": null,
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-02-1/correct",
+    "caseId": "library-R2-02-1",
+    "system": "library",
+    "question": "《三体》的位置排除，本次唯一目标为《Java入门》的馆藏位置。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "FIND_LOCATION",
+      "title": "Java入门",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "injectedLabel": "correct",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  },
+  {
+    "id": "library-R2-02-1/wrong",
+    "caseId": "library-R2-02-1",
+    "system": "library",
+    "question": "《三体》的位置排除，本次唯一目标为《Java入门》的馆藏位置。",
+    "candidate": {
+      "action": "QUERY",
+      "intent": "FIND_LOCATION",
+      "title": "三体",
+      "author": null,
+      "category": null,
+      "publisher": null,
+      "keywords": [],
+      "availableOnly": null,
+      "unreturnedOnly": null,
+      "timeOption": "ALL",
+      "days": null,
+      "limit": 20,
+      "reason": null
+    },
+    "injectedLabel": "wrong",
+    "source": "synthetic predeclared identical PA=PB; not natural model agreement"
+  }
+]

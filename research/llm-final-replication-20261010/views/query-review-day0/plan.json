@@ -1,0 +1,42 @@
+{
+  "version": "query-controls-v1",
+  "parentDocumentationSha": "1c5356a328b5662c9df487f257b4bf64fdeef147",
+  "productSha": "dbb32160a811fd06c826a8d9eafbc660a0548219",
+  "seed": 2026100804,
+  "clock": "2026-10-08T01:00:00+08:00",
+  "providers": {
+    "a": {
+      "name": "deepseek",
+      "model": "deepseek-flash",
+      "url": "https://api.deepseek.com/chat/completions",
+      "inputCnyPerMillion": 2,
+      "outputCnyPerMillion": 8
+    },
+    "b": {
+      "name": "qwen",
+      "model": "qwen-plus",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "inputCnyPerMillion": 0.8,
+      "outputCnyPerMillion": 2
+    }
+  },
+  "repetitions": 3,
+  "deadlineMs": 5000,
+  "temperature": 0,
+  "thinking": "disabled",
+  "automaticRetries": 0,
+  "maxTokens": {
+    "qingye": 300,
+    "library": 500
+  },
+  "newBudgetCny": 2,
+  "hardCumulativePerProviderCny": 20,
+  "priorConservativeCny": {
+    "deepseek": 7.732341,
+    "qwen": 2.72516825
+  },
+  "reservedLayer3Day1CnyPerProvider": 0.36,
+  "unknownReserveCny": 0.05,
+  "human": "PENDING_HUMAN_STUDY",
+  "samplingUnit": "case/family; repeats and fixture reuse are not independent samples"
+}

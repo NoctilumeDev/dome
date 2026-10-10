@@ -1,0 +1,19 @@
+{
+  "suite": "counterexamples",
+  "startedAt": "2026-10-09T18:00:00.639603+00:00",
+  "finishedAt": "2026-10-09T18:29:14.909173+00:00",
+  "requests": 1536,
+  "plannedRequests": 1536,
+  "stop": null,
+  "gap": null,
+  "globalConservativeCny": {
+    "deepseek": 13.337630999999917,
+    "qwen": 4.768173450000039
+  },
+  "actualCash": "NOT_VERIFIED",
+  "callCount": 1536,
+  "phase": "core",
+  "completedBlocks": 128,
+  "plannedBlocks": 128,
+  "identityQualification": "Legacy callId is only an evaluator namespace; physicalCallId binds new attempts"
+}

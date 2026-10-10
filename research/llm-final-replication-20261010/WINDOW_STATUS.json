@@ -1,0 +1,18 @@
+{
+  "completedSuites": [
+    "core",
+    "extension",
+    "counterexamples",
+    "challenge",
+    "formal",
+    "external",
+    "tier",
+    "time-day0",
+    "query-day0",
+    "query-review-day0"
+  ],
+  "stop": "WAIT_FOR_NEW_24H_WINDOW",
+  "credentialsCleared": true,
+  "fullMatrixComplete": false,
+  "human": "PENDING_HUMAN_STUDY"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "paidRequests": 0,
+  "requests": 8220,
+  "allSourcePayloadsAndOrderPreserved": true,
+  "allReviewDependenciesBound": true,
+  "noProtocolRepair": true,
+  "sourceRowsIncludeOriginalFailures": true,
+  "forecast": {
+    "qwen": 3.5972476675000147,
+    "deepseek": 10.171709749999895
+  }
+}

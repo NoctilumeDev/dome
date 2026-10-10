@@ -1,0 +1,18 @@
+{
+  "version": "day1-non-echo-preload-orchestration-v1",
+  "createdAt": "2026-10-10T16:38:17.295588+00:00",
+  "files": {
+    "wait_second_window.py": "40b0a760594106e955ff4a5aa20d564223790976a9efe5ce93278453565ea09d",
+    "WAIT_LAUNCHER.md": "6775b8f1a4a6da8577dae11e172b8c5c3c9658f70e724f90c1f5212604556eda",
+    "second_window.py": "40203eca25b54db255ea2c2ae6cd445391bdd4dc58de9fcf50123c4b95c9d7fe",
+    "second-window-adapter-seal.json": "21367d9857746f27ba490a507e6cd141236748a2e6070befd07a5815f43808c0",
+    "seal.json": "37131e7c834ed71396618a935a305a08477b3ae3df3e4b61dc5ded2dd676e5e3",
+    "matrix.json": "ee1a01ac49279f5abbd8dd86e7107499275d8c16d53c2b88b8a34ff9dede0f47",
+    "SECOND_WINDOW_ELIGIBILITY.json": "63f6fb8ddcc4d6f2658428e8e449573082c7acd036c77d6c478fbc0efd47007a",
+    "WINDOW_STATUS.json": "c6e5e5e2f4b402c335ab765adcaced3dc41a43c06eaaa32599cafe8e7af86ab9",
+    "results/time-day0/summary.json": "2990f64a57a1f656c8705c6b5d0dd10a308cef5cce4c51deaed3187f7a9da5f0",
+    "results/query-day0/summary.json": "16f7c3277cdcc8c4e6947d684ad4ba9a1a9bbf2971a14f24600883d8d9930eae",
+    "results/query-review-day0/summary.json": "999e75943a73eebb1ffad93a91b85f20b6821fec6dbc029c351418d855f720ef"
+  },
+  "scope": "Timing and credential input only; original second-window bytecode, payloads, identities, transport, native replay, scorer, and original seals unchanged; zero model requests before all guards."
+}

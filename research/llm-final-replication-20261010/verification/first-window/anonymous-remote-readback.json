@@ -1,0 +1,52 @@
+{
+  "version": "anonymous-remote-readback-v1",
+  "headSha": "d18494eb19389ce25d680a2a45dbf3a380baa011",
+  "pullRequest": 11,
+  "draft": true,
+  "state": "open",
+  "merged": false,
+  "authenticated": false,
+  "exactByteFiles": [
+    {
+      "path": "research/llm-final-replication-20261010/FIRST_WINDOW_RESULTS.md",
+      "sha256": "7b3eb90112b411f21d737cdf866245c102501b89f0759f4e3c1c44555a589fe4"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/CLOSEOUT.md",
+      "sha256": "ecafb017b42b8ee81e4124be2a27e0f0a9c09d6586d4fb7fc8e9fee6d024de14"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/SECOND_WINDOW_ELIGIBILITY.json",
+      "sha256": "63f6fb8ddcc4d6f2658428e8e449573082c7acd036c77d6c478fbc0efd47007a"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/WINDOW_STATUS.json",
+      "sha256": "c6e5e5e2f4b402c335ab765adcaced3dc41a43c06eaaa32599cafe8e7af86ab9"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/seal.json",
+      "sha256": "37131e7c834ed71396618a935a305a08477b3ae3df3e4b61dc5ded2dd676e5e3"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/second-window-adapter-seal.json",
+      "sha256": "21367d9857746f27ba490a507e6cd141236748a2e6070befd07a5815f43808c0"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/second_window.py",
+      "sha256": "40203eca25b54db255ea2c2ae6cd445391bdd4dc58de9fcf50123c4b95c9d7fe"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/collect.py",
+      "sha256": "66dfc1ee32311be27940efbda2329be50eaaf6e0fb3aef9563d9974e44d69ec8"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/verification/first-window/provenance.json",
+      "sha256": "c2b08a0edb380b790f331a70c3cc8aafd7d517c00eaaecbd2f11d567dcf7e59c"
+    },
+    {
+      "path": "research/llm-final-replication-20261010/resources/first-window/physical-resources.json",
+      "sha256": "332737b9b8bf86415497b1e81834fee98f6e6fdf50b4e6a9ff57e77a68e46ecd"
+    }
+  ],
+  "qualification": "Public exact-SHA byte readback; execution qualification is separately bound to original seal and precall head"
+}

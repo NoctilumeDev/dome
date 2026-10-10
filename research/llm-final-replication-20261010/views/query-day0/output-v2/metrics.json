@@ -1,0 +1,112 @@
+{
+  "requestIdentities": 234,
+  "uniqueModelQuestions": 39,
+  "plannedQuestionRows": 42,
+  "nativeObservedRecords": 474,
+  "excludedBeforeModel": [
+    "T06_GLOBAL_qingye",
+    "T07_PAST_qingye",
+    "T07_WAIT_qingye"
+  ],
+  "resources": {
+    "deepseek": {
+      "clientRequestIdentities": 117,
+      "transport": {
+        "SUCCESS": 117
+      },
+      "usageKnown": 117,
+      "usageMissing": 0,
+      "knownInputTokens": 65394,
+      "knownOutputTokens": 6876,
+      "singleApiLatencyP50Ms": 719.0,
+      "singleApiLatencyP95Ms": 954.0,
+      "conservativeNewEstimateCny": 0.185796,
+      "actualCash": "NOT_VERIFIED"
+    },
+    "qwen": {
+      "clientRequestIdentities": 117,
+      "transport": {
+        "SUCCESS": 117
+      },
+      "usageKnown": 117,
+      "usageMissing": 0,
+      "knownInputTokens": 62268,
+      "knownOutputTokens": 6410,
+      "singleApiLatencyP50Ms": 1719.0,
+      "singleApiLatencyP95Ms": 1891.0,
+      "conservativeNewEstimateCny": 0.0626344,
+      "actualCash": "NOT_VERIFIED"
+    }
+  },
+  "byFamily": [
+    {
+      "family": "entity",
+      "provider": "deepseek",
+      "requests": 24,
+      "structureValid": 24,
+      "primaryPlanMatch": 21,
+      "nativeQualified": 24
+    },
+    {
+      "family": "entity",
+      "provider": "qwen",
+      "requests": 24,
+      "structureValid": 16,
+      "primaryPlanMatch": 13,
+      "nativeQualified": 16
+    },
+    {
+      "family": "goal",
+      "provider": "deepseek",
+      "requests": 24,
+      "structureValid": 24,
+      "primaryPlanMatch": 21,
+      "nativeQualified": 24
+    },
+    {
+      "family": "goal",
+      "provider": "qwen",
+      "requests": 24,
+      "structureValid": 24,
+      "primaryPlanMatch": 21,
+      "nativeQualified": 24
+    },
+    {
+      "family": "subject",
+      "provider": "deepseek",
+      "requests": 24,
+      "structureValid": 24,
+      "primaryPlanMatch": 24,
+      "nativeQualified": 24
+    },
+    {
+      "family": "subject",
+      "provider": "qwen",
+      "requests": 24,
+      "structureValid": 24,
+      "primaryPlanMatch": 18,
+      "nativeQualified": 18
+    },
+    {
+      "family": "temporal",
+      "provider": "deepseek",
+      "requests": 45,
+      "structureValid": 45,
+      "primaryPlanMatch": 21,
+      "nativeQualified": 43
+    },
+    {
+      "family": "temporal",
+      "provider": "qwen",
+      "requests": 45,
+      "structureValid": 45,
+      "primaryPlanMatch": 15,
+      "nativeQualified": 24
+    }
+  ],
+  "wrongSubjectReads": 0,
+  "temporalSubstitutionNativeRecords": 15,
+  "goalConstraintMismatchNativeRecords": 5,
+  "scopeConfirmationRecords": 216,
+  "interpretationScope": "exploratory representative mechanisms; no educational suitability or human correction qualification"
+}

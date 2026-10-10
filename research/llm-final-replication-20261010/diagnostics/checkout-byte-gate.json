@@ -1,0 +1,6 @@
+{
+  "status": "CLASSIFIED",
+  "paidRequests": 0,
+  "firstWhitespaceGate": "CRLF in exact source byte copies treated as trailing CR after scoped -text pinning",
+  "resolution": "Keep original source bytes; command-local cr-at-eol recognizes CRLF while retaining other whitespace checks; no global setting or source rewrite"
+}

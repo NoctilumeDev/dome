@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "paidRequests": 0,
+  "backends": [
+    {
+      "system": "qingye",
+      "tests": 71,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "logSha256": "139b565ffbffc89bd181d09a1c0849cc27c7d0c127e1e05bb3df5091d7e41cc3"
+    },
+    {
+      "system": "library",
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "logSha256": "91d3abcb52c966725a7db5827663cb5d47804d8aca81f63dff8d54bb0d69033d"
+    }
+  ],
+  "semanticUnitTests": {
+    "core": 13,
+    "query": 4
+  }
+}

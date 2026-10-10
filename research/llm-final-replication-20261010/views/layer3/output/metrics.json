@@ -1,0 +1,630 @@
+{
+  "risk": {
+    "blocks": 192,
+    "questions": 24,
+    "families": 6,
+    "agreement": 147,
+    "agreementBothMatch": 139,
+    "agreementBothWrong": 8,
+    "bothMatch": 139,
+    "aOnly": 32,
+    "bOnly": 1,
+    "bothWrong": 20
+  },
+  "dependence": {
+    "status": "NOT_IDENTIFIABLE",
+    "minimumRule": ">=4 questions in >=2 families, >=6 valid repeats and both models have within-case 0/1 variation",
+    "variableCases": [],
+    "caseRates": {
+      "qingye-R3-formal-03-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-06-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-06-1": {
+        "n": 8,
+        "pA": 0.5,
+        "pB": 1.0,
+        "observedJoint": 0.5,
+        "independentMarginalProduct": 0.5,
+        "excess": 0.0
+      },
+      "library-R3-formal-05-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-02-2": {
+        "n": 8,
+        "pA": 0.125,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-03-2": {
+        "n": 8,
+        "pA": 1.0,
+        "pB": 1.0,
+        "observedJoint": 1.0,
+        "independentMarginalProduct": 1.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-01-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-05-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-04-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 1.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-06-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.5,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-02-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-05-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-03-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 1.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-03-2": {
+        "n": 8,
+        "pA": 1.0,
+        "pB": 1.0,
+        "observedJoint": 1.0,
+        "independentMarginalProduct": 1.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-06-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-02-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-01-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-04-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 1.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-04-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-04-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-02-2": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-05-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "qingye-R3-formal-01-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      },
+      "library-R3-formal-01-1": {
+        "n": 8,
+        "pA": 0.0,
+        "pB": 0.0,
+        "observedJoint": 0.0,
+        "independentMarginalProduct": 0.0,
+        "excess": 0.0
+      }
+    },
+    "caseConditionedExcess": 0.0,
+    "permutation": {
+      "observedExcess": 0.0,
+      "nullMean": 0.0,
+      "oneSidedExploratoryP": 1.0,
+      "iterations": 4000,
+      "scope": "within-question shuffle of four repeats; not causal dependence or independent-user inference"
+    },
+    "familyBootstrap": {
+      "low": 0.0,
+      "high": 0.0,
+      "unit": "whole family, all cases and repetitions",
+      "iterations": 4000,
+      "exploratory": true
+    },
+    "note": "Null/constant data never proves error independence; repeats are clustered observations"
+  },
+  "reviewNet": [
+    {
+      "group": "C:a",
+      "bWrongQueryableOpportunity": 0,
+      "explicitNewErrorCatch": 0,
+      "onlyUnavailableDrop": 0,
+      "correctQueryBlocked": 0,
+      "correctClarifyRejudged": 20,
+      "additionalAbstention": 28,
+      "status": "NOT_IDENTIFIABLE_ON_THIS_DISTRIBUTION"
+    },
+    {
+      "group": "C:b",
+      "bWrongQueryableOpportunity": 0,
+      "explicitNewErrorCatch": 0,
+      "onlyUnavailableDrop": 0,
+      "correctQueryBlocked": 0,
+      "correctClarifyRejudged": 0,
+      "additionalAbstention": 0,
+      "status": "NOT_IDENTIFIABLE_ON_THIS_DISTRIBUTION"
+    },
+    {
+      "group": "D",
+      "bWrongQueryableOpportunity": 0,
+      "explicitNewErrorCatch": 0,
+      "onlyUnavailableDrop": 0,
+      "correctQueryBlocked": 0,
+      "correctClarifyRejudged": 20,
+      "additionalAbstention": 28,
+      "status": "NOT_IDENTIFIABLE_ON_THIS_DISTRIBUTION"
+    }
+  ],
+  "groups": [
+    {
+      "group": "A:a",
+      "n": 192,
+      "match": 171,
+      "publicCorrect": 111,
+      "wrongPublicPlan": 5,
+      "scope": 8,
+      "abstain": 0
+    },
+    {
+      "group": "A:b",
+      "n": 192,
+      "match": 140,
+      "publicCorrect": 112,
+      "wrongPublicPlan": 8,
+      "scope": 8,
+      "abstain": 36
+    },
+    {
+      "group": "B",
+      "n": 192,
+      "match": 139,
+      "publicCorrect": 111,
+      "wrongPublicPlan": 0,
+      "scope": 8,
+      "abstain": 45
+    },
+    {
+      "group": "C:a",
+      "n": 192,
+      "match": 119,
+      "publicCorrect": 111,
+      "wrongPublicPlan": 0,
+      "scope": 8,
+      "abstain": 73
+    },
+    {
+      "group": "C:b",
+      "n": 192,
+      "match": 139,
+      "publicCorrect": 111,
+      "wrongPublicPlan": 0,
+      "scope": 8,
+      "abstain": 45
+    },
+    {
+      "group": "D",
+      "n": 192,
+      "match": 119,
+      "publicCorrect": 111,
+      "wrongPublicPlan": 0,
+      "scope": 8,
+      "abstain": 73
+    },
+    {
+      "group": "E:a",
+      "n": 192,
+      "match": 165,
+      "publicCorrect": 111,
+      "wrongPublicPlan": 0,
+      "scope": 8,
+      "abstain": 11
+    },
+    {
+      "group": "E:b",
+      "n": 192,
+      "match": 120,
+      "publicCorrect": 112,
+      "wrongPublicPlan": 0,
+      "scope": 8,
+      "abstain": 72
+    },
+    {
+      "group": "F2:a",
+      "n": 192,
+      "match": 166,
+      "publicCorrect": 108,
+      "wrongPublicPlan": 2,
+      "scope": 8,
+      "abstain": 8
+    },
+    {
+      "group": "F2:b",
+      "n": 192,
+      "match": 137,
+      "publicCorrect": 112,
+      "wrongPublicPlan": 8,
+      "scope": 8,
+      "abstain": 39
+    },
+    {
+      "group": "F3:a",
+      "n": 192,
+      "match": 171,
+      "publicCorrect": 111,
+      "wrongPublicPlan": 5,
+      "scope": 8,
+      "abstain": 0
+    },
+    {
+      "group": "F3:b",
+      "n": 192,
+      "match": 137,
+      "publicCorrect": 112,
+      "wrongPublicPlan": 9,
+      "scope": 8,
+      "abstain": 38
+    },
+    {
+      "group": "F4:a",
+      "n": 192,
+      "match": 169,
+      "publicCorrect": 110,
+      "wrongPublicPlan": 4,
+      "scope": 8,
+      "abstain": 3
+    },
+    {
+      "group": "F4:b",
+      "n": 192,
+      "match": 137,
+      "publicCorrect": 112,
+      "wrongPublicPlan": 9,
+      "scope": 8,
+      "abstain": 38
+    }
+  ],
+  "summary": [
+    {
+      "phase": "day0",
+      "stratum": "prospective_executor_labels",
+      "slot": "a",
+      "n": 36,
+      "questions": 12,
+      "match": 35,
+      "valid": 36,
+      "public": 19,
+      "wrongPublicPlan": 1,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 703.0,
+      "estimatedCny": 0.075128
+    },
+    {
+      "phase": "day0",
+      "stratum": "prospective_executor_labels",
+      "slot": "b",
+      "n": 36,
+      "questions": 12,
+      "match": 22,
+      "valid": 36,
+      "public": 23,
+      "wrongPublicPlan": 5,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 1406.0,
+      "estimatedCny": 0.0277084
+    },
+    {
+      "phase": "day1",
+      "stratum": "prospective_executor_labels",
+      "slot": "a",
+      "n": 36,
+      "questions": 12,
+      "match": 34,
+      "valid": 36,
+      "public": 20,
+      "wrongPublicPlan": 2,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 727.0,
+      "estimatedCny": 0.075112
+    },
+    {
+      "phase": "day1",
+      "stratum": "prospective_executor_labels",
+      "slot": "b",
+      "n": 36,
+      "questions": 12,
+      "match": 24,
+      "valid": 36,
+      "public": 21,
+      "wrongPublicPlan": 3,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 1601.5,
+      "estimatedCny": 0.0277284
+    },
+    {
+      "phase": "external",
+      "stratum": "external_adapted_compatible",
+      "slot": "a",
+      "n": 24,
+      "questions": 8,
+      "match": 24,
+      "valid": 24,
+      "public": 24,
+      "wrongPublicPlan": 0,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 640.5,
+      "estimatedCny": 0.052836
+    },
+    {
+      "phase": "external",
+      "stratum": "external_adapted_compatible",
+      "slot": "b",
+      "n": 24,
+      "questions": 8,
+      "match": 24,
+      "valid": 24,
+      "public": 24,
+      "wrongPublicPlan": 0,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 1695.5,
+      "estimatedCny": 0.0192048
+    },
+    {
+      "phase": "external",
+      "stratum": "external_original_boundary",
+      "slot": "a",
+      "n": 24,
+      "questions": 8,
+      "match": 15,
+      "valid": 24,
+      "public": 0,
+      "wrongPublicPlan": 0,
+      "scope": 0,
+      "entryBlocked": 15,
+      "medianLatencyMs": 703.0,
+      "estimatedCny": 0.05271
+    },
+    {
+      "phase": "external",
+      "stratum": "external_original_boundary",
+      "slot": "b",
+      "n": 24,
+      "questions": 8,
+      "match": 6,
+      "valid": 19,
+      "public": 0,
+      "wrongPublicPlan": 0,
+      "scope": 0,
+      "entryBlocked": 15,
+      "medianLatencyMs": 1773.5,
+      "estimatedCny": 0.0194352
+    },
+    {
+      "phase": "formal",
+      "stratum": "prospective_executor_labels",
+      "slot": "a",
+      "n": 768,
+      "questions": 24,
+      "match": 681,
+      "valid": 768,
+      "public": 465,
+      "wrongPublicPlan": 23,
+      "scope": 32,
+      "entryBlocked": 0,
+      "medianLatencyMs": 672.0,
+      "estimatedCny": 1.59952
+    },
+    {
+      "phase": "formal",
+      "stratum": "prospective_executor_labels",
+      "slot": "b",
+      "n": 768,
+      "questions": 24,
+      "match": 553,
+      "valid": 768,
+      "public": 484,
+      "wrongPublicPlan": 36,
+      "scope": 34,
+      "entryBlocked": 0,
+      "medianLatencyMs": 1625.0,
+      "estimatedCny": 0.5910888000000001
+    },
+    {
+      "phase": "tier",
+      "stratum": "prospective_executor_labels",
+      "slot": "a",
+      "n": 36,
+      "questions": 12,
+      "match": 34,
+      "valid": 36,
+      "public": 20,
+      "wrongPublicPlan": 2,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 648.5,
+      "estimatedCny": 0.075112
+    },
+    {
+      "phase": "tier",
+      "stratum": "prospective_executor_labels",
+      "slot": "b",
+      "n": 36,
+      "questions": 12,
+      "match": 24,
+      "valid": 36,
+      "public": 21,
+      "wrongPublicPlan": 3,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 1539.0,
+      "estimatedCny": 0.0277284
+    },
+    {
+      "phase": "tier",
+      "stratum": "prospective_executor_labels",
+      "slot": "ds_pro",
+      "n": 36,
+      "questions": 12,
+      "match": 30,
+      "valid": 30,
+      "public": 18,
+      "wrongPublicPlan": 0,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 1125.0,
+      "estimatedCny": 0.344817
+    },
+    {
+      "phase": "tier",
+      "stratum": "prospective_executor_labels",
+      "slot": "q_flash",
+      "n": 36,
+      "questions": 12,
+      "match": 20,
+      "valid": 35,
+      "public": 30,
+      "wrongPublicPlan": 12,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 664.5,
+      "estimatedCny": 0.007446449999999999
+    }
+  ],
+  "costs": [
+    {
+      "provider": "deepseek",
+      "requestIdentities": 1344,
+      "knownEstimate": 3.214063,
+      "unknown": 0,
+      "reserve": 0.0,
+      "cumulativeConservative": 7.757332999999999,
+      "ceiling": 20,
+      "actualBilling": "NOT_VERIFIED"
+    },
+    {
+      "provider": "qwen",
+      "requestIdentities": 1344,
+      "knownEstimate": 1.07102685,
+      "unknown": 0,
+      "reserve": 0.0,
+      "cumulativeConservative": 2.73437245,
+      "ceiling": 20,
+      "actualBilling": "NOT_VERIFIED"
+    }
+  ],
+  "unrun": [
+    "cross-day day1",
+    "independent blind labels",
+    "real human confirmation"
+  ],
+  "human": "PENDING_HUMAN_STUDY",
+  "source": "Frozen strict plans and Java/H2 component witnesses. No product edits."
+}

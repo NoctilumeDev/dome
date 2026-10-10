@@ -1,0 +1,840 @@
+[
+  {
+    "callId": "external/R3-boundary-qid000757-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000757-r2/p/a/0",
+    "system": "library",
+    "question": "给出适用年级最低的3本参考书，除了99块以上的参考书",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000757-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000757-r2/p/b/0",
+    "system": "library",
+    "question": "给出适用年级最低的3本参考书，除了99块以上的参考书",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001628-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001628-r1/p/b/0",
+    "system": "library",
+    "question": "给出每种参数书类型，最高适用几年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001628-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001628-r1/p/a/0",
+    "system": "library",
+    "question": "给出每种参数书类型，最高适用几年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001404-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001404-r0/p/a/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001404-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001404-r0/p/b/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001332-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001332-r2/p/b/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001332-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001332-r2/p/a/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000728-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000728-r2/p/b/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000728-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000728-r2/p/a/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000228-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000228-r1/p/a/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000228-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000228-r1/p/b/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000228-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000228-r0/p/b/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000228-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000228-r0/p/a/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000757-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000757-r2/p/b/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000757-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000757-r2/p/a/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000757-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000757-r1/p/b/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000757-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000757-r1/p/a/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid002464-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid002464-r2/p/b/0",
+    "system": "library",
+    "question": "哪个类型的参考书最少，以及参考书平均适用多少年级",
+    "rawContent": "{\"action\":\"REJECT/OUT_OF_SCOPE\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid002464-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid002464-r2/p/a/0",
+    "system": "library",
+    "question": "哪个类型的参考书最少，以及参考书平均适用多少年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000757-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000757-r1/p/b/0",
+    "system": "library",
+    "question": "给出适用年级最低的3本参考书，除了99块以上的参考书",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000757-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000757-r1/p/a/0",
+    "system": "library",
+    "question": "给出适用年级最低的3本参考书，除了99块以上的参考书",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001404-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001404-r0/p/a/0",
+    "system": "library",
+    "question": "适用年级不是1到3年级时，参考书最多的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001404-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001404-r0/p/b/0",
+    "system": "library",
+    "question": "适用年级不是1到3年级时，参考书最多的类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"RECOMMEND_BOOK\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid002464-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid002464-r1/p/a/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid002464-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid002464-r1/p/b/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000460-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000460-r0/p/b/0",
+    "system": "library",
+    "question": "在试卷类参考书籍中，给出参考试卷的数量最少时参考书的名称和参考书的类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":\"试卷类参考书籍\",\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000460-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000460-r0/p/a/0",
+    "system": "library",
+    "question": "在试卷类参考书籍中，给出参考试卷的数量最少时参考书的名称和参考书的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001404-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001404-r1/p/b/0",
+    "system": "library",
+    "question": "适用年级不是1到3年级时，参考书最多的类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"LIST_CATALOG\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001404-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001404-r1/p/a/0",
+    "system": "library",
+    "question": "适用年级不是1到3年级时，参考书最多的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001628-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001628-r2/p/a/0",
+    "system": "library",
+    "question": "给出每种参数书类型，最高适用几年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001628-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001628-r2/p/b/0",
+    "system": "library",
+    "question": "给出每种参数书类型，最高适用几年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001332-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001332-r1/p/a/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001332-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001332-r1/p/b/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001628-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001628-r0/p/a/0",
+    "system": "library",
+    "question": "给出每种参数书类型，最高适用几年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001628-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001628-r0/p/b/0",
+    "system": "library",
+    "question": "给出每种参数书类型，最高适用几年级",
+    "rawContent": "{\"action\":\"REJECT/OUT_OF_SCOPE\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000228-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000228-r0/p/a/0",
+    "system": "library",
+    "question": "适用年级大于3年级的参考书中，哪5本参考书的参考试卷最多？并给出它们的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000228-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000228-r0/p/b/0",
+    "system": "library",
+    "question": "适用年级大于3年级的参考书中，哪5本参考书的参考试卷最多？并给出它们的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000460-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000460-r0/p/a/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000460-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000460-r0/p/b/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001332-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001332-r0/p/a/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001332-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001332-r0/p/b/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001628-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001628-r1/p/a/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001628-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001628-r1/p/b/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000728-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000728-r1/p/a/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000728-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000728-r1/p/b/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000460-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000460-r2/p/b/0",
+    "system": "library",
+    "question": "在试卷类参考书籍中，给出参考试卷的数量最少时参考书的名称和参考书的类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":\"试卷类参考书籍\",\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000460-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000460-r2/p/a/0",
+    "system": "library",
+    "question": "在试卷类参考书籍中，给出参考试卷的数量最少时参考书的名称和参考书的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001332-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001332-r1/p/a/0",
+    "system": "library",
+    "question": "类型非出版书或适用于3年级以下的参考书按价格升序排列给出前3的参考书的名称及类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001332-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001332-r1/p/b/0",
+    "system": "library",
+    "question": "类型非出版书或适用于3年级以下的参考书按价格升序排列给出前3的参考书的名称及类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"LIST_CATALOG\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000228-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000228-r2/p/b/0",
+    "system": "library",
+    "question": "适用年级大于3年级的参考书中，哪5本参考书的参考试卷最多？并给出它们的类型",
+    "rawContent": "{\"action\":\"REJECT/OUT_OF_SCOPE\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000228-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000228-r2/p/a/0",
+    "system": "library",
+    "question": "适用年级大于3年级的参考书中，哪5本参考书的参考试卷最多？并给出它们的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001332-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001332-r2/p/a/0",
+    "system": "library",
+    "question": "类型非出版书或适用于3年级以下的参考书按价格升序排列给出前3的参考书的名称及类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001332-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001332-r2/p/b/0",
+    "system": "library",
+    "question": "类型非出版书或适用于3年级以下的参考书按价格升序排列给出前3的参考书的名称及类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"LIST_CATALOG\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000757-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000757-r0/p/a/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000757-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000757-r0/p/b/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid002464-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid002464-r0/p/a/0",
+    "system": "library",
+    "question": "哪个类型的参考书最少，以及参考书平均适用多少年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid002464-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid002464-r0/p/b/0",
+    "system": "library",
+    "question": "哪个类型的参考书最少，以及参考书平均适用多少年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001332-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001332-r0/p/a/0",
+    "system": "library",
+    "question": "类型非出版书或适用于3年级以下的参考书按价格升序排列给出前3的参考书的名称及类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001332-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001332-r0/p/b/0",
+    "system": "library",
+    "question": "类型非出版书或适用于3年级以下的参考书按价格升序排列给出前3的参考书的名称及类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid002464-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid002464-r2/p/a/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid002464-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid002464-r2/p/b/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000728-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000728-r1/p/a/0",
+    "system": "library",
+    "question": "哪些参考书的适用年级倒数前3，同时价格却是正数前5",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000728-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000728-r1/p/b/0",
+    "system": "library",
+    "question": "哪些参考书的适用年级倒数前3，同时价格却是正数前5",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000728-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000728-r2/p/a/0",
+    "system": "library",
+    "question": "哪些参考书的适用年级倒数前3，同时价格却是正数前5",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000728-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000728-r2/p/b/0",
+    "system": "library",
+    "question": "哪些参考书的适用年级倒数前3，同时价格却是正数前5",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001628-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001628-r0/p/b/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001628-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001628-r0/p/a/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000228-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000228-r2/p/a/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000228-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000228-r2/p/b/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000728-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000728-r0/p/a/0",
+    "system": "library",
+    "question": "哪些参考书的适用年级倒数前3，同时价格却是正数前5",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000728-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000728-r0/p/b/0",
+    "system": "library",
+    "question": "哪些参考书的适用年级倒数前3，同时价格却是正数前5",
+    "rawContent": "{\"action\":\"REJECT/OUT_OF_SCOPE\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid002464-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid002464-r0/p/a/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid002464-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid002464-r0/p/b/0",
+    "system": "library",
+    "question": "给出书名包含“Java入门”的馆藏图书及其分类。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001404-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001404-r2/p/a/0",
+    "system": "library",
+    "question": "适用年级不是1到3年级时，参考书最多的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid001404-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid001404-r2/p/b/0",
+    "system": "library",
+    "question": "适用年级不是1到3年级时，参考书最多的类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"LIST_CATALOG\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001628-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001628-r2/p/a/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001628-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001628-r2/p/b/0",
+    "system": "library",
+    "question": "哪些馆藏图书的书名包含“三体”？只按该书名条件搜索。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid002464-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid002464-r1/p/b/0",
+    "system": "library",
+    "question": "哪个类型的参考书最少，以及参考书平均适用多少年级",
+    "rawContent": "{\"action\":\"REJECT/OUT_OF_SCOPE\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid002464-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid002464-r1/p/a/0",
+    "system": "library",
+    "question": "哪个类型的参考书最少，以及参考书平均适用多少年级",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000460-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000460-r1/p/a/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000460-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000460-r1/p/b/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000460-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000460-r2/p/b/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000460-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000460-r2/p/a/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001404-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001404-r1/p/b/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001404-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001404-r1/p/a/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000460-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000460-r1/p/b/0",
+    "system": "library",
+    "question": "在试卷类参考书籍中，给出参考试卷的数量最少时参考书的名称和参考书的类型",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":\"试卷类参考书籍\",\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"CLARIFY/UNSUPPORTED_FILTER\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000460-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000460-r1/p/a/0",
+    "system": "library",
+    "question": "在试卷类参考书籍中，给出参考试卷的数量最少时参考书的名称和参考书的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001404-r2/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001404-r2/p/a/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid001404-r2/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid001404-r2/p/b/0",
+    "system": "library",
+    "question": "在馆藏图书中，给出书名包含“Java入门”的图书。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"Java入门\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000757-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000757-r0/p/b/0",
+    "system": "library",
+    "question": "给出适用年级最低的3本参考书，除了99块以上的参考书",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"REJECT/OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000757-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000757-r0/p/a/0",
+    "system": "library",
+    "question": "给出适用年级最低的3本参考书，除了99块以上的参考书",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000728-r0/p/a/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000728-r0/p/a/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-adapted-qid000728-r0/p/b/0",
+    "physicalCallId": "FR1/external/R3-adapted-qid000728-r0/p/b/0",
+    "system": "library",
+    "question": "找到书名包含“三体”的馆藏图书并给出书名。",
+    "rawContent": "{\"action\":\"QUERY\",\"intent\":\"SEARCH_BOOK\",\"title\":\"三体\",\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":null}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000228-r1/p/b/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000228-r1/p/b/0",
+    "system": "library",
+    "question": "适用年级大于3年级的参考书中，哪5本参考书的参考试卷最多？并给出它们的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "external/R3-boundary-qid000228-r1/p/a/0",
+    "physicalCallId": "FR1/external/R3-boundary-qid000228-r1/p/a/0",
+    "system": "library",
+    "question": "适用年级大于3年级的参考书中，哪5本参考书的参考试卷最多？并给出它们的类型",
+    "rawContent": "{\"action\":\"REJECT\",\"intent\":null,\"title\":null,\"author\":null,\"category\":null,\"publisher\":null,\"keywords\":[],\"availableOnly\":null,\"unreturnedOnly\":null,\"timeOption\":\"ALL\",\"days\":null,\"limit\":20,\"reason\":\"OUT_OF_SCOPE\"}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/positive",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/foreign-user",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\", \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/missing-field",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"EQUIPMENT\", \"entity\": \"相机\", \"category\": null, \"timeOption\": \"CURRENT\"}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/qingye/transport",
+    "system": "qingye",
+    "question": "请帮忙看看相机当前的库存",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/library/positive",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/foreign-user",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null, \"userId\": 3}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/missing-field",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"FIND_LOCATION\", \"title\": \"三体\", \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/transport",
+    "system": "library",
+    "question": "请帮忙看看《三体》的馆藏位置",
+    "rawContent": "",
+    "complete": false
+  },
+  {
+    "callId": "CONTROL/qingye/omitted-private-filter",
+    "system": "qingye",
+    "question": "请只查我今天借的相机",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_LOANS\", \"entity\": null, \"category\": null, \"timeOption\": \"ANY\", \"reason\": null}",
+    "complete": true
+  },
+  {
+    "callId": "CONTROL/library/omitted-private-filter",
+    "system": "library",
+    "question": "请只查我今天借的图书",
+    "rawContent": "{\"action\": \"QUERY\", \"intent\": \"MY_BORROWS\", \"title\": null, \"author\": null, \"category\": null, \"publisher\": null, \"keywords\": [], \"availableOnly\": null, \"unreturnedOnly\": null, \"timeOption\": \"ALL\", \"days\": null, \"limit\": 20, \"reason\": null}",
+    "complete": true
+  }
+]

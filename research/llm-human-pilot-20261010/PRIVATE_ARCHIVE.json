@@ -1,0 +1,12 @@
+{
+  "status": "PRIVATE_ARCHIVE_COMPLETE",
+  "path": "D:\\ResearchEvidence\\llm-human-pilot\\2026-10-10\\P01",
+  "files": {
+    "details.json": "87561b17cb96a03eba5a7df596dc33384549a00058e6674016af4612b89b887c",
+    "metrics-v2.json": "6498dec757eb64d8772129b9b406484f5ad957f4b92ebd24d218594aebb02677",
+    "metrics.json": "896ab2fdc200b097ce296fc3f9b541047e4f09850b20221355d53e951b7e1bca",
+    "responses.jsonl": "e02ef66c1c3ae77e494657dfa08a05cb3021f2cf4c3e64a0bd52b6b8e8e33214"
+  },
+  "noApiCredentials": true,
+  "rawClicksNotCommitted": true
+}

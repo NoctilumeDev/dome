@@ -1,0 +1,7 @@
+{
+  "status": "COMPLETE",
+  "semanticScorerUnchanged": true,
+  "identityProjectionOnly": true,
+  "notIndependentExternalValidation": true,
+  "legacyNarrativeAndCostScopesNotPromoted": true
+}
