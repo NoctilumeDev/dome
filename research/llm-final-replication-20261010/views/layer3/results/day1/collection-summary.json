@@ -1,0 +1,24 @@
+{
+  "suite": "time-day1",
+  "startedAt": "2026-10-10T19:35:01.537951+00:00",
+  "finishedAt": "2026-10-10T19:36:25.666037+00:00",
+  "requests": 72,
+  "plannedRequests": 72,
+  "stop": null,
+  "gap": {
+    "predecessor": "time-day0",
+    "finishedAt": "2026-10-09T19:20:00.880625+00:00",
+    "observedAt": "2026-10-10T19:35:01.050367+00:00",
+    "gapSeconds": 87300.169742
+  },
+  "globalConservativeCny": {
+    "deepseek": 17.293047999999967,
+    "qwen": 6.101647500000089
+  },
+  "actualCash": "NOT_VERIFIED",
+  "callCount": 72,
+  "phase": "day1",
+  "completedBlocks": 36,
+  "plannedBlocks": 36,
+  "identityQualification": "Legacy callId is only an evaluator namespace; physicalCallId binds new attempts"
+}

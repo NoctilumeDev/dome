@@ -1,0 +1,19 @@
+{
+  "suite": "query-review-day1",
+  "startedAt": "2026-10-10T19:42:37.896692+00:00",
+  "finishedAt": "2026-10-10T19:51:00.661082+00:00",
+  "requests": 468,
+  "plannedRequests": 468,
+  "stop": null,
+  "gap": {
+    "predecessor": "query-review-day0",
+    "finishedAt": "2026-10-09T19:33:55.087610+00:00",
+    "observedAt": "2026-10-10T19:42:37.380874+00:00",
+    "gapSeconds": 86922.293264
+  },
+  "globalConservativeCny": {
+    "deepseek": 17.922906,
+    "qwen": 6.321897900000092
+  },
+  "actualCash": "NOT_VERIFIED"
+}

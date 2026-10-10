@@ -1,6 +1,8 @@
 ﻿phase,stratum,slot,n,questions,match,valid,public,wrongPublicPlan,scope,entryBlocked,medianLatencyMs,estimatedCny
 day0,prospective_executor_labels,a,36,12,35,36,19,1,0,0,703.0,0.075128
 day0,prospective_executor_labels,b,36,12,22,36,23,5,0,0,1406.0,0.0277084
+day1,prospective_executor_labels,a,36,12,34,36,20,2,0,0,727.0,0.075112
+day1,prospective_executor_labels,b,36,12,24,36,21,3,0,0,1601.5,0.0277284
 external,external_adapted_compatible,a,24,8,24,24,24,0,0,0,640.5,0.052836
 external,external_adapted_compatible,b,24,8,24,24,24,0,0,0,1695.5,0.0192048
 external,external_original_boundary,a,24,8,15,24,0,0,0,15,703.0,0.05271

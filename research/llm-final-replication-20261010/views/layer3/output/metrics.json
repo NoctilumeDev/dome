@@ -418,6 +418,36 @@
       "estimatedCny": 0.0277084
     },
     {
+      "phase": "day1",
+      "stratum": "prospective_executor_labels",
+      "slot": "a",
+      "n": 36,
+      "questions": 12,
+      "match": 34,
+      "valid": 36,
+      "public": 20,
+      "wrongPublicPlan": 2,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 727.0,
+      "estimatedCny": 0.075112
+    },
+    {
+      "phase": "day1",
+      "stratum": "prospective_executor_labels",
+      "slot": "b",
+      "n": 36,
+      "questions": 12,
+      "match": 24,
+      "valid": 36,
+      "public": 21,
+      "wrongPublicPlan": 3,
+      "scope": 0,
+      "entryBlocked": 0,
+      "medianLatencyMs": 1601.5,
+      "estimatedCny": 0.0277284
+    },
+    {
       "phase": "external",
       "stratum": "external_adapted_compatible",
       "slot": "a",
@@ -571,21 +601,21 @@
   "costs": [
     {
       "provider": "deepseek",
-      "requestIdentities": 1308,
-      "knownEstimate": 3.138951,
+      "requestIdentities": 1344,
+      "knownEstimate": 3.214063,
       "unknown": 0,
       "reserve": 0.0,
-      "cumulativeConservative": 7.682221,
+      "cumulativeConservative": 7.757332999999999,
       "ceiling": 20,
       "actualBilling": "NOT_VERIFIED"
     },
     {
       "provider": "qwen",
-      "requestIdentities": 1308,
-      "knownEstimate": 1.04329845,
+      "requestIdentities": 1344,
+      "knownEstimate": 1.07102685,
       "unknown": 0,
       "reserve": 0.0,
-      "cumulativeConservative": 2.70664405,
+      "cumulativeConservative": 2.73437245,
       "ceiling": 20,
       "actualBilling": "NOT_VERIFIED"
     }
